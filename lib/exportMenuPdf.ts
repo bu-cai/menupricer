@@ -75,7 +75,7 @@ export function exportMenuPdf(items: MenuItem[]) {
 
     // Tier columns
     const tierW = (W - margin * 2) / 3 - 2;
-    const tierColors: [number, number, number][] = [[200, 200, 200], ...([orange, amber])];
+    const tierColors: [number, number, number][] = [[200, 200, 200], [...orange] as [number, number, number], [...amber] as [number, number, number]];
     item.tiers.forEach((tier, i) => {
       const tx = margin + i * (tierW + 3);
       const tc = tierColors[i] ?? tierColors[0];
