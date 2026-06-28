@@ -188,19 +188,33 @@ Daily units needed to cover fixed costs (assuming $150/day in rent/labor/utiliti
 
 Be specific, professional, and data-driven.`;
 
-  const stream = await client.messages.stream({
-    model: "claude-opus-4-7",
-    max_tokens: 1500,
-    messages: [{ role: "user", content: prompt }],
-  });
+  let stream;
+  try {
+    stream = await client.messages.stream({
+      model: "claude-opus-4-7",
+      max_tokens: 1500,
+      messages: [{ role: "user", content: prompt }],
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "AI service unavailable";
+    return new Response(JSON.stringify({ error: msg }), {
+      status: 502,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
   const encoder = new TextEncoder();
   const readable = new ReadableStream({
     async start(controller) {
-      for await (const chunk of stream) {
-        if (chunk.type === "content_block_delta" && chunk.delta.type === "text_delta") {
-          controller.enqueue(encoder.encode(chunk.delta.text));
+      try {
+        for await (const chunk of stream) {
+          if (chunk.type === "content_block_delta" && chunk.delta.type === "text_delta") {
+            controller.enqueue(encoder.encode(chunk.delta.text));
+          }
         }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : "Stream error";
+        controller.enqueue(encoder.encode(`\n\n[ERROR: ${msg}]`));
       }
       controller.close();
     },

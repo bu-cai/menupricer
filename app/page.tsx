@@ -318,6 +318,7 @@ function HomeContent() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dishName, totalCost: 0, ingredientCost: 0, breakdown: "", estimateMode: true, lang }),
       });
+      if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
       while (true) { const { done, value } = await reader.read(); if (done) break; full += decoder.decode(value); setResult(full); }
@@ -340,6 +341,7 @@ function HomeContent() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dishName: data.dishName, totalCost: total, ingredientCost: ic, breakdown: bd, lang }),
       });
+      if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
       while (true) { const { done, value } = await reader.read(); if (done) break; full += decoder.decode(value); setResult(full); }
