@@ -239,7 +239,7 @@ function HomeContent() {
           setCurrentDishName(payload.dishName);
           setResult(payload.content);
           setIsSharedView(true);
-          history.replaceState(null, "", window.location.pathname);
+          window.history.replaceState(null, "", window.location.pathname);
         }
       } catch { /* ignore */ }
     }
