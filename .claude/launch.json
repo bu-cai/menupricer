@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "menupricer",
+      "runtimeExecutable": "C:\\Users\\bucai\\AppData\\Roaming\\360se6\\Application\\components\\Node\\node.exe",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "--port", "3012"],
+      "port": 3012
+    }
+  ]
+}
