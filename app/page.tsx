@@ -13,6 +13,7 @@ import { CurrencyProvider, useCurrency } from "@/lib/CurrencyContext";
 import { Currency, SYMBOLS } from "@/lib/currency";
 import { t, getFaq } from "@/lib/i18n";
 import OnboardingModal from "@/components/OnboardingModal";
+import AuthButton from "@/components/AuthButton";
 import MenuView from "@/components/MenuView";
 import { MenuItem, MenuTier, loadMenu, saveMenu } from "@/lib/menuStore";
 import { exportMenuPdf } from "@/lib/exportMenuPdf";
@@ -194,6 +195,7 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
           >
             {lang === "EN" ? "🇨🇳 中文" : "🇺🇸 EN"}
           </button>
+          <AuthButton />
         </div>
       </div>
     </header>
