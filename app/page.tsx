@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import CostForm from "@/components/CostForm";
 import PricingResult from "@/components/PricingResult";
 import ProfitChart from "@/components/ProfitChart";
@@ -75,13 +75,28 @@ function FaqAccordion() {
   const { lang } = useLang();
   const [open, setOpen] = useState<number | null>(null);
   const faqItems = getFaq(lang);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const items = el.querySelectorAll(".reveal");
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("revealed"); obs.unobserve(e.target); } }),
+      { threshold: 0.15 }
+    );
+    items.forEach((item) => obs.observe(item));
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section className="bg-gray-50 border-t border-gray-100 py-16">
+    <section ref={sectionRef} className="bg-gray-50 border-t border-gray-100 py-16">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-2xl font-black text-gray-900 tracking-tight mb-8">{t("faqTitle", lang)}</h2>
+        <h2 className="text-2xl font-black text-gray-900 tracking-tight mb-8 reveal">{t("faqTitle", lang)}</h2>
         <div className="space-y-2">
           {faqItems.map((item, i) => (
-            <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-shadow hover:shadow-sm">
+            <div key={i} className={`reveal bg-white rounded-xl border border-gray-200 overflow-hidden transition-shadow hover:shadow-sm`}
+              style={{ transitionDelay: `${i * 60}ms` }}>
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between px-5 py-4 text-left text-sm font-semibold text-gray-800 hover:text-orange-600 transition-colors"
@@ -111,9 +126,16 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 }) {
   const { lang, setLang } = useLang();
   const { currency, setCurrency } = useCurrency();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <header className={`sticky top-0 z-40 border-b border-gray-100 transition-all duration-300 ${scrolled ? "navbar-scrolled" : "bg-white/90 backdrop-blur-md"}`}>
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-4">
         {/* Logo */}
         <div className="flex items-center gap-2 mr-4">
@@ -188,15 +210,18 @@ function Hero() {
       {/* Orange radial glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/10 rounded-full blur-3xl" />
 
-      <div className="relative max-w-6xl mx-auto px-6 py-16 text-center" style={{ animation: "hero-drop 700ms ease both" }}>
-        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase">
+      <div className="relative max-w-6xl mx-auto px-6 py-16 text-center">
+        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase"
+          style={{ animation: "hero-badge 600ms ease both" }}>
           <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
           {t("tagline", lang)}
         </div>
-        <h1 className="text-5xl sm:text-6xl font-black text-gray-900 tracking-tight leading-none mb-4">
+        <h1 className="text-5xl sm:text-6xl font-black text-gray-900 tracking-tight leading-none mb-4"
+          style={{ animation: "hero-title 700ms ease 150ms both" }}>
           Menu<span className="text-orange-500">Pricer</span>
         </h1>
-        <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed"
+          style={{ animation: "hero-sub 700ms ease 300ms both" }}>
           {t("subtitle", lang)}
         </p>
       </div>

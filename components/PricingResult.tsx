@@ -233,7 +233,7 @@ export default function PricingResult({ content, loading, dishName = "dish", tot
           {tiers.map((tier, i) => {
             const c = tierColors[i] ?? tierColors[0];
             return (
-              <div key={i} className={`relative rounded-xl border-2 ${c.border} ${c.bg} p-3 text-center`}
+              <div key={i} className={`card-hover relative rounded-xl border-2 ${c.border} ${c.bg} p-3 text-center`}
                 style={{ animation: "slide-up 400ms ease both", animationDelay: `${i * 100}ms` }}>
                 {c.badge && (
                   <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">{c.badge}</span>
