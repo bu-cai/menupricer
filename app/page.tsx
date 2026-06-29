@@ -175,7 +175,7 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 
         {/* Right controls */}
         <div className="flex items-center gap-2 ml-auto">
-          {/* Currency */}
+          {/* Currency — hidden on mobile */}
           <div className="hidden sm:flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5">
             {(["USD", "CNY", "EUR"] as Currency[]).map((c) => (
               <button
@@ -192,9 +192,9 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
           {/* Language */}
           <button
             onClick={() => setLang(lang === "EN" ? "ZH" : "EN")}
-            className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 transition-colors"
+            className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-600 transition-colors"
           >
-            {lang === "EN" ? "🇨🇳 中文" : "🇺🇸 EN"}
+            {lang === "EN" ? "中文" : "EN"}
           </button>
           <AuthButton />
         </div>
@@ -325,7 +325,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
             </div>
 
             {/* H1 */}
-            <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
+            <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
               style={{ animation: "hero-title 700ms ease 150ms both" }}>
               {ZH ? (
                 <>停止猜测，用 AI<br /><span className="text-orange-500">精准定价</span></>
@@ -363,8 +363,8 @@ function Hero({ onStart }: { onStart?: () => void }) {
               </a>
             </div>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-gray-400"
+            {/* Trust badges — 2×2 on mobile, 4-col on desktop */}
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-3 sm:gap-4 mt-6 text-xs text-gray-400"
               style={{ animation: "hero-sub 700ms ease 600ms both" }}>
               {["✓ Free to start", "✓ No credit card", "✓ AI-powered", "✓ 3 pricing tiers"].map(b => (
                 <span key={b}>{b}</span>
@@ -385,10 +385,12 @@ function Hero({ onStart }: { onStart?: () => void }) {
       {/* How it works strip */}
       <div className="relative border-t border-gray-100 bg-gray-50/60">
         <div className="max-w-5xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {/* Mobile: horizontal snap scroll — Desktop: 3-col grid */}
+          <div className="flex sm:grid sm:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-2 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 scrollbar-none"
+            style={{ scrollbarWidth: "none" }}>
 
             {/* Step 1 — Enter costs */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 min-w-[80vw] sm:min-w-0 snap-start">
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-2.5">
                 {/* Mini dish name input */}
                 <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
@@ -418,7 +420,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
             </div>
 
             {/* Step 2 — AI analyzing */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 min-w-[80vw] sm:min-w-0 snap-start">
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-3">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
@@ -446,7 +448,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
             </div>
 
             {/* Step 3 — Results */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 min-w-[80vw] sm:min-w-0 snap-start">
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-2.5">
                 {/* Mini tier cards */}
                 <div className="grid grid-cols-3 gap-1.5">
@@ -551,12 +553,13 @@ function Testimonials() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Cards — horizontal scroll on mobile, 3-col on desktop */}
+        <div className="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 pb-2 md:pb-0"
+          style={{ scrollbarWidth: "none" }}>
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="reveal card-hover bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm"
+              className="reveal card-hover bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm min-w-[80vw] md:min-w-0 snap-start"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Stars */}
@@ -591,7 +594,7 @@ function Testimonials() {
               { n: "4.9★", label: ZH ? "用户评分" : "User rating" },
             ].map(({ n, label }) => (
               <div key={label}>
-                <p className="text-2xl font-black text-orange-500">{n}</p>
+                <p className="text-3xl font-black text-orange-500">{n}</p>
                 <p className="text-xs text-gray-500 mt-0.5">{label}</p>
               </div>
             ))}
@@ -765,7 +768,7 @@ function HomeContent() {
           )}
 
           {/* Pricer tab content */}
-          <div className={activeTab === "pricer" ? "grid grid-cols-1 lg:grid-cols-2 gap-8" : "hidden"}>
+          <div className={activeTab === "pricer" ? "grid grid-cols-1 lg:grid-cols-2 gap-8 pb-24 lg:pb-0" : "hidden"}>
             {/* Left: Form */}
             <div className="space-y-5">
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 hover:shadow-md transition-shadow">
