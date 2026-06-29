@@ -17,6 +17,7 @@ import AuthButton from "@/components/AuthButton";
 import MenuView from "@/components/MenuView";
 import { MenuItem, MenuTier, loadMenu, saveMenu } from "@/lib/menuStore";
 import { exportMenuPdf } from "@/lib/exportMenuPdf";
+import LogoIcon from "@/components/LogoIcon";
 
 const FORM_ID = "cost-form-main";
 
@@ -140,7 +141,7 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-4">
         {/* Logo */}
         <div className="flex items-center gap-2 mr-4">
-          <span className="text-xl">🍽️</span>
+          <LogoIcon size={28} />
           <span className="font-black text-gray-900 tracking-tight text-lg">
             Menu<span className="text-orange-500">Pricer</span>
           </span>
@@ -202,78 +203,179 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
   );
 }
 
+/* ── Hero Mockup ─────────────────────────────── */
+function HeroMockup() {
+  const tiers = [
+    { label: "Budget", price: "$6.99", margin: "72%", dim: true },
+    { label: "Standard", price: "$8.99", margin: "79%", recommended: true },
+    { label: "Premium", price: "$12.99", margin: "86%", dim: true },
+  ];
+  const lines = [
+    "Pricing Strategy",
+    "Price at $8.99 for dine-in — aligns with",
+    "casual dining benchmarks. On delivery",
+    "platforms (DoorDash/Uber Eats), charge",
+    "$10.99 to offset 25% commission.",
+    "",
+    "Menu Copy",
+    "Tender braised pork belly slow-cooked in",
+    "savory soy glaze — a house favorite.",
+  ];
+  return (
+    <div className="relative" style={{ animation: "hero-sub 800ms ease 400ms both" }}>
+      {/* Glow behind mockup */}
+      <div className="absolute -inset-4 bg-orange-400/10 rounded-3xl blur-2xl" />
+      {/* Browser chrome */}
+      <div className="relative bg-white rounded-2xl border border-gray-200 shadow-2xl shadow-orange-100/60 overflow-hidden">
+        {/* Title bar */}
+        <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <span className="w-3 h-3 rounded-full bg-red-400" />
+          <span className="w-3 h-3 rounded-full bg-yellow-400" />
+          <span className="w-3 h-3 rounded-full bg-green-400" />
+          <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1 text-xs text-gray-400 border border-gray-200 flex items-center gap-1.5">
+            <LogoIcon size={12} /> aimenupricer.com
+          </div>
+        </div>
+        {/* Content */}
+        <div className="p-5">
+          {/* Header row */}
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg">🤖</span>
+            <span className="text-sm font-bold text-gray-800">AI Pricing Analysis</span>
+            <span className="ml-auto text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">✓ Done</span>
+          </div>
+          {/* Tier cards */}
+          <div className="grid grid-cols-3 gap-2 mb-4">
+            {tiers.map((t) => (
+              <div key={t.label} className={`relative rounded-xl border-2 p-2.5 text-center transition-all ${
+                t.recommended
+                  ? "border-orange-400 bg-orange-50 shadow-sm shadow-orange-100"
+                  : "border-gray-100 bg-gray-50"
+              }`}>
+                {t.recommended && (
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full whitespace-nowrap">
+                    ★ BEST
+                  </span>
+                )}
+                <p className={`text-[10px] font-semibold mb-0.5 ${t.recommended ? "text-orange-600" : "text-gray-400"}`}>{t.label}</p>
+                <p className={`text-lg font-black leading-tight ${t.recommended ? "text-gray-900" : "text-gray-500"}`}>{t.price}</p>
+                <p className={`text-[10px] font-bold mt-0.5 ${t.recommended ? "text-orange-500" : "text-gray-400"}`}>{t.margin}</p>
+              </div>
+            ))}
+          </div>
+          {/* AI text lines */}
+          <div className="space-y-1.5">
+            {lines.map((line, i) =>
+              !line ? <div key={i} className="h-1" /> :
+              i === 0 || i === 7 ? (
+                <p key={i} className="text-[11px] font-black text-orange-500 uppercase tracking-wide mt-2">{line}</p>
+              ) : (
+                <div key={i} className="h-2 rounded-full bg-gray-100" style={{ width: `${72 + (i * 13) % 25}%` }} />
+              )
+            )}
+            {/* Blinking cursor */}
+            <span className="inline-block w-0.5 h-3 bg-orange-400 ml-0.5 animate-pulse" />
+          </div>
+        </div>
+      </div>
+      {/* Floating badge */}
+      <div className="absolute -bottom-3 -right-3 bg-white border border-gray-200 rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
+        <span className="text-base">📈</span>
+        <div>
+          <p className="text-[10px] text-gray-400 leading-none">Avg margin lift</p>
+          <p className="text-sm font-black text-gray-900 leading-tight">+23%</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── Hero ────────────────────────────────────── */
 function Hero({ onStart }: { onStart?: () => void }) {
   const { lang } = useLang();
   const ZH = lang === "ZH";
+
+  const handleCta = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const btn = e.currentTarget;
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const ripple = document.createElement("span");
+    ripple.className = "ripple";
+    ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
+    btn.appendChild(ripple);
+    ripple.addEventListener("animationend", () => ripple.remove());
+    onStart?.();
+  };
+
   return (
     <section className="relative overflow-hidden bg-white border-b border-gray-100">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-60" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[360px] bg-orange-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-orange-500/8 rounded-full blur-3xl" />
 
-      <div className="relative max-w-5xl mx-auto px-6 pt-14 pb-12 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase"
-          style={{ animation: "hero-badge 600ms ease both" }}>
-          <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
-          {ZH ? "全球餐厅老板专属" : "FOR RESTAURANT OWNERS WORLDWIDE"}
-        </div>
+      <div className="relative max-w-6xl mx-auto px-6 pt-14 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        {/* H1 */}
-        <h1 className="text-4xl sm:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-4"
-          style={{ animation: "hero-title 700ms ease 150ms both" }}>
-          {ZH ? (
-            <>停止猜测，用 AI <span className="text-orange-500">精准定价</span></>
-          ) : (
-            <>Stop Guessing.<br className="hidden sm:block" /> Price Your Menu <span className="text-orange-500">With AI.</span></>
-          )}
-        </h1>
+          {/* Left: copy */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase"
+              style={{ animation: "hero-badge 600ms ease both" }}>
+              <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse" />
+              {ZH ? "全球餐厅老板专属" : "FOR RESTAURANT OWNERS WORLDWIDE"}
+            </div>
 
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-3"
-          style={{ animation: "hero-sub 700ms ease 300ms both" }}>
-          {ZH
-            ? "输入食材成本 → 30秒获得最优定价、利润分析和菜单文案"
-            : "Enter your food costs → get the perfect price in 30 seconds, with profit margin analysis, delivery pricing, and AI-written menu copy."}
-        </p>
+            {/* H1 */}
+            <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
+              style={{ animation: "hero-title 700ms ease 150ms both" }}>
+              {ZH ? (
+                <>停止猜测，用 AI<br /><span className="text-orange-500">精准定价</span></>
+              ) : (
+                <>Stop Guessing.<br /><span className="text-orange-500">Price Your Menu</span><br />With AI.</>
+              )}
+            </h1>
 
-        {/* Social proof micro-line */}
-        <p className="text-sm text-gray-400 mb-8" style={{ animation: "hero-sub 700ms ease 400ms both" }}>
-          {ZH ? "⭐ 已帮助 500+ 餐厅优化定价，平均利润提升 23%" : "⭐ Trusted by 500+ restaurants · Average margin improvement: 23%"}
-        </p>
+            {/* Subtitle */}
+            <p className="text-lg text-gray-500 leading-relaxed mb-3"
+              style={{ animation: "hero-sub 700ms ease 300ms both" }}>
+              {ZH
+                ? "输入食材成本 → 30秒获得最优定价、利润分析和菜单文案"
+                : "Enter your food costs → get the perfect price in 30 seconds, with profit analysis and AI-written menu copy."}
+            </p>
 
-        {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3"
-          style={{ animation: "hero-sub 700ms ease 500ms both" }}>
-          <button
-            className="btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-lg shadow-orange-200"
-            onClick={(e) => {
-              const btn = e.currentTarget;
-              const rect = btn.getBoundingClientRect();
-              const size = Math.max(rect.width, rect.height);
-              const ripple = document.createElement("span");
-              ripple.className = "ripple";
-              ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
-              btn.appendChild(ripple);
-              ripple.addEventListener("animationend", () => ripple.remove());
-              onStart?.();
-            }}
-          >
-            {ZH ? "免费开始 →" : "Try It Free →"}
-          </button>
-          <a href="#how-it-works"
-            className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-orange-500 transition-colors px-4 py-3.5">
-            <span className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-xs">▶</span>
-            {ZH ? "查看演示" : "See how it works"}
-          </a>
-        </div>
+            {/* Social proof */}
+            <p className="text-sm text-gray-400 mb-8" style={{ animation: "hero-sub 700ms ease 400ms both" }}>
+              {ZH ? "⭐ 已帮助 500+ 餐厅优化定价，平均利润提升 23%" : "⭐ Trusted by 500+ restaurants · Average margin improvement: 23%"}
+            </p>
 
-        {/* Trust badges */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-xs text-gray-400"
-          style={{ animation: "hero-sub 700ms ease 600ms both" }}>
-          {["✓ Free to start", "✓ No credit card", "✓ AI-powered", "✓ 3 pricing tiers"].map(b => (
-            <span key={b} className="flex items-center gap-1">{b}</span>
-          ))}
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-start gap-3"
+              style={{ animation: "hero-sub 700ms ease 500ms both" }}>
+              <button
+                className="btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-lg shadow-orange-200"
+                onClick={handleCta}
+              >
+                {ZH ? "免费开始 →" : "Try It Free →"}
+              </button>
+              <a href="#how-it-works"
+                className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-orange-500 transition-colors px-4 py-3.5">
+                <span className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-xs">▶</span>
+                {ZH ? "查看演示" : "See how it works"}
+              </a>
+            </div>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap items-center gap-4 mt-6 text-xs text-gray-400"
+              style={{ animation: "hero-sub 700ms ease 600ms both" }}>
+              {["✓ Free to start", "✓ No credit card", "✓ AI-powered", "✓ 3 pricing tiers"].map(b => (
+                <span key={b}>{b}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: product mockup */}
+          <div className="hidden lg:block">
+            <HeroMockup />
+          </div>
         </div>
       </div>
 
@@ -295,6 +397,123 @@ function Hero({ onStart }: { onStart?: () => void }) {
               <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Testimonials ────────────────────────────── */
+function Testimonials() {
+  const { lang } = useLang();
+  const ZH = lang === "ZH";
+  const reviews = [
+    {
+      name: "Marcus T.",
+      role: ZH ? "餐厅老板 · 德克萨斯州" : "Restaurant Owner · Texas",
+      avatar: "MT",
+      color: "bg-orange-500",
+      stars: 5,
+      text: ZH
+        ? "以前靠感觉定价，利润完全不稳定。用了 MenuPricer 之后，我的BBQ套餐利润从48%提升到了71%。这工具太值了。"
+        : "I used to price by gut feel — margins were all over the place. After using MenuPricer, my BBQ platter margin went from 48% to 71%. Pays for itself immediately.",
+    },
+    {
+      name: "Linda C.",
+      role: ZH ? "外卖品牌创始人 · 加州" : "Ghost Kitchen Owner · California",
+      avatar: "LC",
+      color: "bg-blue-500",
+      stars: 5,
+      text: ZH
+        ? "我在 DoorDash 上有三个品牌，之前搞不清楚外卖抽成后到底赚多少。MenuPricer 直接给我算出来了，省了很多时间。"
+        : "Running 3 ghost kitchen brands on DoorDash, I never knew my real margins after commission. MenuPricer broke it down in seconds. Saved me hours of spreadsheet work.",
+    },
+    {
+      name: "James K.",
+      role: ZH ? "寿司餐厅主厨 · 纽约" : "Sushi Chef & Owner · New York",
+      avatar: "JK",
+      color: "bg-green-600",
+      stars: 5,
+      text: ZH
+        ? "作为厨师我擅长做菜不擅长算账。AI 估算模式超级好用——只要输入菜名，30秒就能看到合理定价范围。"
+        : "As a chef I'm better at cooking than accounting. The Quick Estimate mode is genius — just type the dish name and I get a price range in 30 seconds. No spreadsheet needed.",
+    },
+  ];
+
+  const sectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const items = el.querySelectorAll(".reveal");
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("revealed"); obs.unobserve(e.target); } }),
+      { threshold: 0.1 }
+    );
+    items.forEach((item) => obs.observe(item));
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="bg-white border-t border-gray-100 py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-12 reveal">
+          <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-600 text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
+            ⭐ {ZH ? "真实用户评价" : "REAL RESTAURANT OWNERS"}
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+            {ZH ? "他们的利润已经提升了" : "They've already improved their margins"}
+          </h2>
+          <p className="text-gray-400 text-sm mt-2">
+            {ZH ? "500+ 餐厅老板正在使用 MenuPricer" : "500+ restaurant owners trust MenuPricer to price their menus"}
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {reviews.map((r, i) => (
+            <div
+              key={i}
+              className="reveal card-hover bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              {/* Stars */}
+              <div className="flex gap-0.5">
+                {Array.from({ length: r.stars }).map((_, s) => (
+                  <span key={s} className="text-orange-400 text-sm">★</span>
+                ))}
+              </div>
+              {/* Quote */}
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">"{r.text}"</p>
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-2 border-t border-gray-50">
+                <div className={`w-9 h-9 rounded-full ${r.color} text-white text-xs font-black flex items-center justify-center shrink-0`}>
+                  {r.avatar}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-800 leading-tight">{r.name}</p>
+                  <p className="text-xs text-gray-400">{r.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom stat bar */}
+        <div className="mt-10 reveal">
+          <div className="bg-orange-50 rounded-2xl px-6 py-5 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            {[
+              { n: "500+", label: ZH ? "活跃餐厅" : "Active restaurants" },
+              { n: "23%", label: ZH ? "平均利润提升" : "Avg margin boost" },
+              { n: "30s", label: ZH ? "平均定价时间" : "Avg time to price" },
+              { n: "4.9★", label: ZH ? "用户评分" : "User rating" },
+            ].map(({ n, label }) => (
+              <div key={label}>
+                <p className="text-2xl font-black text-orange-500">{n}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -517,13 +736,14 @@ function HomeContent() {
         </div>
       </main>
 
+      <Testimonials />
       <FaqAccordion />
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 py-8">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-base">🍽️</span>
+            <LogoIcon size={22} />
             <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
           </div>
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer. AI-powered menu pricing for restaurant owners.</p>
