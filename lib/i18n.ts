@@ -131,7 +131,7 @@ const translations = {
   mobileLoading: { EN: "Analyzing...", ZH: "分析中..." },
 
   // FAQ
-  faqTitle: { EN: "FAQ", ZH: "常见问题" },
+  faqTitle: { EN: "Frequently Asked Questions", ZH: "常见问题" },
   faq: {
     EN: [
       {
@@ -150,6 +150,54 @@ const translations = {
         q: "What cuisines are supported?",
         a: "All cuisines — Chinese, Japanese, American, Mediterranean, and more. As long as you enter accurate ingredient costs, the AI will provide relevant pricing recommendations.",
       },
+      {
+        q: "What is a good food cost percentage for a restaurant?",
+        a: "Most restaurants target 28–35% food cost. Fine dining can run 30–38% due to premium ingredients. Fast casual and QSR typically aim for 25–30%. Use our food cost calculator to check where your dishes stand.",
+      },
+      {
+        q: "How do I price a menu item for the first time?",
+        a: "Start with your ingredient cost, add 25–30% for labor and overhead, then divide by your target food cost percentage (e.g. 0.30 for 30%). MenuPricer automates this: just enter your costs or dish name and the AI handles the rest.",
+      },
+      {
+        q: "Can I use MenuPricer without entering ingredient costs?",
+        a: "Yes. Use Quick Estimate mode — just type the dish name and the AI estimates realistic North American ingredient costs from wholesale prices (Costco Business, US Foods, Restaurant Depot) and gives you a full pricing recommendation.",
+      },
+      {
+        q: "How does the AI account for DoorDash and Uber Eats commissions?",
+        a: "The AI factors in typical 15–30% delivery platform commissions when suggesting delivery prices. The 'Budget' pricing tier is specifically calibrated to maintain healthy margins after commission deductions.",
+      },
+      {
+        q: "Can I export my menu pricing to PDF?",
+        a: "Yes. After generating pricing for a dish, click 'Export PDF' to download a branded report with cost breakdown, 3 pricing tiers, and AI analysis. You can also build a full menu and export all dishes at once from the Menu tab.",
+      },
+      {
+        q: "Is MenuPricer free to use?",
+        a: "Yes, the core pricing tool is free with no credit card required. You can calculate pricing for unlimited dishes, save recipes, and export PDFs without signing up.",
+      },
+      {
+        q: "How accurate are the AI ingredient cost estimates?",
+        a: "The AI references typical North American wholesale prices and is accurate within 10–20% for most common ingredients. For the most accurate results, enter your actual supplier costs using the manual ingredient entry mode.",
+      },
+      {
+        q: "Can I save my recipes and pricing history?",
+        a: "Yes. MenuPricer automatically saves your last 10 pricing analyses in History and lets you save unlimited recipes to your Recipe Library — all stored locally in your browser. Sign in with Google to sync across devices (coming soon).",
+      },
+      {
+        q: "What currencies does MenuPricer support?",
+        a: "MenuPricer supports USD ($), CNY (¥), and EUR (€). Switch currencies using the toggle in the top navigation bar. The AI will adjust pricing benchmarks to match the selected market.",
+      },
+      {
+        q: "How do I calculate break-even for a menu item?",
+        a: "The AI includes a break-even analysis in every pricing report — it tells you how many servings you need to sell per day to cover fixed costs (assuming $150/day in rent, utilities, and labor). You can adjust this based on your actual fixed costs.",
+      },
+      {
+        q: "Can I use MenuPricer for a food truck or ghost kitchen?",
+        a: "Absolutely. MenuPricer works for all food service formats — restaurants, food trucks, ghost kitchens, catering, and bakeries. The AI tailors pricing recommendations based on your market context and cost structure.",
+      },
+      {
+        q: "Does MenuPricer generate menu descriptions?",
+        a: "Yes. Every AI pricing report includes a professionally written menu copy — a 15–30 word description designed to appeal to customers and highlight the dish's key selling points. Ready to copy directly onto your menu.",
+      },
     ],
     ZH: [
       {
@@ -167,6 +215,54 @@ const translations = {
       {
         q: "支持哪些菜系？",
         a: "支持所有菜系！中餐、日料、西餐、融合菜等均可。只要填入准确的食材成本，AI 都能给出合理的定价建议。",
+      },
+      {
+        q: "餐厅食材成本率应该控制在多少？",
+        a: "大多数餐厅目标食材成本率在 28-35% 之间。精致餐厅可以稍高（30-38%），快餐和快休闲餐厅通常控制在 25-30%。可用我们的食材成本计算器检查你的菜品是否达标。",
+      },
+      {
+        q: "第一次给菜品定价怎么做？",
+        a: "先算食材成本，加上 25-30% 的人工和运营费用，再除以目标成本率（比如 30% → 除以 0.30）。MenuPricer 自动完成这些计算——只要填入成本或菜名，AI 搞定一切。",
+      },
+      {
+        q: "不知道食材成本也能用吗？",
+        a: "可以。用「快速估算」模式，只输入菜名，AI 会根据北美批发市场价格（Costco Business、美国食品等）自动估算食材成本，给出完整定价建议。",
+      },
+      {
+        q: "AI 怎么处理外卖平台抽成？",
+        a: "AI 会将 DoorDash、Uber Eats 等平台 15-30% 的抽成纳入计算。「经济档」定价专门为外卖场景设计，扣除平台佣金后依然保持健康利润。",
+      },
+      {
+        q: "可以导出 PDF 吗？",
+        a: "可以。生成定价后点击「导出 PDF」即可下载带品牌设计的完整报告，包含成本明细、三档定价和 AI 分析。也可以在「菜单」标签页批量导出整份菜单。",
+      },
+      {
+        q: "MenuPricer 免费吗？",
+        a: "核心定价功能完全免费，无需信用卡或注册账号。可以无限次计算菜品定价、保存食谱、导出 PDF。",
+      },
+      {
+        q: "AI 估算的食材成本准确吗？",
+        a: "AI 参考北美批发市场价格，对常见食材的估算误差通常在 10-20% 以内。如果需要更精确的结果，建议手动输入实际供应商价格。",
+      },
+      {
+        q: "可以保存食谱和定价历史吗？",
+        a: "可以。MenuPricer 自动保存最近 10 条定价记录，食谱库可无限保存——数据存在本地浏览器中。登录 Google 账号后可跨设备同步（即将上线）。",
+      },
+      {
+        q: "支持哪些货币？",
+        a: "支持美元（$）、人民币（¥）和欧元（€）。在顶部导航栏切换货币后，AI 会自动调整对应市场的定价基准。",
+      },
+      {
+        q: "如何计算菜品保本销量？",
+        a: "AI 定价报告中包含保本分析，告诉你每天需要售出多少份才能覆盖固定成本（默认按每日 $150 的房租、水电和人工计算）。可根据实际情况调整。",
+      },
+      {
+        q: "餐车或外卖品牌也能用吗？",
+        a: "完全可以。MenuPricer 适用于各类餐饮形式——堂食餐厅、餐车、外卖品牌、外卖厨房、烘焙店等。AI 会根据你的经营模式调整定价建议。",
+      },
+      {
+        q: "AI 会生成菜单文案吗？",
+        a: "会的。每份定价报告都包含一句专业菜单介绍文案（15-30 字），突出菜品卖点，可直接复制到菜单上使用。",
       },
     ],
   },
