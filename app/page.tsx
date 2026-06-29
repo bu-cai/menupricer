@@ -384,19 +384,101 @@ function Hero({ onStart }: { onStart?: () => void }) {
 
       {/* How it works strip */}
       <div className="relative border-t border-gray-100 bg-gray-50/60">
-        <div className="max-w-4xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-          {[
-            { n: "1", icon: "🧾", title: ZH ? "输入食材成本" : "Enter Costs", desc: ZH ? "填写食材、人工和包装成本" : "Add ingredients, labor & overhead" },
-            { n: "2", icon: "🤖", title: ZH ? "AI 分析定价" : "AI Analyzes", desc: ZH ? "AI 参考市场行情计算最优价格" : "AI benchmarks against market rates" },
-            { n: "3", icon: "💰", title: ZH ? "获得定价方案" : "Get Your Price", desc: ZH ? "3档定价 + 利润率 + 菜单文案" : "3 tiers + margin + menu copy" },
-          ].map(({ n, icon, title, desc }) => (
-            <div key={n} className="flex flex-col items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-orange-100 text-orange-600 font-black text-lg flex items-center justify-center">{n}</div>
-              <div className="text-2xl">{icon}</div>
-              <p className="font-bold text-gray-800 text-sm">{title}</p>
-              <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+            {/* Step 1 — Enter costs */}
+            <div className="flex flex-col gap-3">
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-2.5">
+                {/* Mini dish name input */}
+                <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
+                  <span className="text-[10px] text-gray-400 shrink-0">Dish</span>
+                  <span className="text-[11px] font-bold text-gray-700 truncate">Kung Pao Chicken</span>
+                </div>
+                {/* Mini ingredient rows */}
+                {[["Chicken breast", "$2.40"], ["Peanuts", "$0.30"], ["Sauce mix", "$0.45"]].map(([name, cost]) => (
+                  <div key={name} className="flex items-center justify-between gap-2">
+                    <div className="h-2 bg-gray-100 rounded-full flex-1" style={{ maxWidth: "55%" }} />
+                    <span className="text-[10px] font-bold text-orange-500">{cost}</span>
+                  </div>
+                ))}
+                {/* Mini total */}
+                <div className="flex items-center justify-between pt-1 border-t border-gray-100">
+                  <span className="text-[10px] text-gray-400">Total cost</span>
+                  <span className="text-[11px] font-black text-gray-800">$3.15</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-orange-500 text-white font-black text-xs flex items-center justify-center shrink-0">1</div>
+                <div>
+                  <p className="font-bold text-gray-800 text-sm">{ZH ? "输入食材成本" : "Enter Costs"}</p>
+                  <p className="text-xs text-gray-500">{ZH ? "填写食材、人工和包装成本" : "Add ingredients, labor & overhead"}</p>
+                </div>
+              </div>
             </div>
-          ))}
+
+            {/* Step 2 — AI analyzing */}
+            <div className="flex flex-col gap-3">
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
+                    <span className="text-[10px]">🤖</span>
+                  </div>
+                  <span className="text-[11px] font-bold text-gray-700">AI analyzing…</span>
+                  <span className="ml-auto flex gap-0.5">
+                    {[0, 1, 2].map(i => (
+                      <span key={i} className="w-1 h-1 rounded-full bg-orange-400 animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
+                    ))}
+                  </span>
+                </div>
+                {/* Skeleton lines */}
+                {[80, 100, 65, 90, 55].map((w, i) => (
+                  <div key={i} className="h-2 bg-gray-100 rounded-full animate-pulse" style={{ width: `${w}%`, animationDelay: `${i * 100}ms` }} />
+                ))}
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-orange-500 text-white font-black text-xs flex items-center justify-center shrink-0">2</div>
+                <div>
+                  <p className="font-bold text-gray-800 text-sm">{ZH ? "AI 分析定价" : "AI Analyzes"}</p>
+                  <p className="text-xs text-gray-500">{ZH ? "AI 参考市场行情计算最优价格" : "AI benchmarks against market rates"}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 — Results */}
+            <div className="flex flex-col gap-3">
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 space-y-2.5">
+                {/* Mini tier cards */}
+                <div className="grid grid-cols-3 gap-1.5">
+                  {[
+                    { label: "Budget", price: "$8.99", margin: "65%", highlight: false },
+                    { label: "Standard", price: "$11.99", margin: "74%", highlight: true },
+                    { label: "Premium", price: "$15.99", margin: "80%", highlight: false },
+                  ].map(t => (
+                    <div key={t.label} className={`rounded-lg border-2 p-1.5 text-center ${t.highlight ? "border-orange-400 bg-orange-50" : "border-gray-100 bg-gray-50"}`}>
+                      <p className={`text-[8px] font-semibold ${t.highlight ? "text-orange-500" : "text-gray-400"}`}>{t.label}</p>
+                      <p className={`text-[11px] font-black ${t.highlight ? "text-gray-900" : "text-gray-500"}`}>{t.price}</p>
+                      <p className={`text-[8px] font-bold ${t.highlight ? "text-orange-400" : "text-gray-400"}`}>{t.margin}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Mini text lines */}
+                <div className="space-y-1.5 pt-1">
+                  <div className="h-1.5 bg-gray-100 rounded-full w-3/4" />
+                  <div className="h-1.5 bg-gray-100 rounded-full w-full" />
+                  <div className="h-1.5 bg-gray-100 rounded-full w-2/3" />
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-orange-500 text-white font-black text-xs flex items-center justify-center shrink-0">3</div>
+                <div>
+                  <p className="font-bold text-gray-800 text-sm">{ZH ? "获得定价方案" : "Get Your Price"}</p>
+                  <p className="text-xs text-gray-500">{ZH ? "3档定价 + 利润率 + 菜单文案" : "3 tiers + margin + menu copy"}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
