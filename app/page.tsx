@@ -18,6 +18,13 @@ import MenuView from "@/components/MenuView";
 import { MenuItem, MenuTier, loadMenu, saveMenu } from "@/lib/menuStore";
 import { exportMenuPdf } from "@/lib/exportMenuPdf";
 import LogoIcon from "@/components/LogoIcon";
+import { useSession } from "next-auth/react";
+import {
+  cloudLoadMenus, cloudSaveMenus,
+  cloudLoadHistory, cloudSaveHistory,
+  cloudLoadRecipes, cloudSaveRecipes,
+  mergeLocalToCloud,
+} from "@/lib/cloudSync";
 
 const FORM_ID = "cost-form-main";
 
@@ -609,6 +616,7 @@ function Testimonials() {
 function HomeContent() {
   const { lang } = useLang();
   const { currency } = useCurrency();
+  const { data: session } = useSession();
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [totalCost, setTotalCost] = useState(0);
@@ -623,15 +631,54 @@ function HomeContent() {
   const [activeTab, setActiveTab] = useState<"pricer" | "menu">("pricer");
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [menuToast, setMenuToast] = useState(false);
+  const [syncToast, setSyncToast] = useState(false);
   const [isSharedView, setIsSharedView] = useState(false);
+  const syncedRef = useRef(false);
 
-  useEffect(() => { setMenuItems(loadMenu()); }, []);
+  // Initial load from cloud (if logged in) or localStorage
+  useEffect(() => {
+    async function initialLoad() {
+      if (session?.user?.email) {
+        const [cloudMenus, cloudHistory, cloudRecipes] = await Promise.all([
+          cloudLoadMenus(), cloudLoadHistory(), cloudLoadRecipes(),
+        ]);
+        if (cloudMenus) setMenuItems(cloudMenus);
+        else setMenuItems(loadMenu());
+        if (cloudHistory) setHistory(cloudHistory);
+        else {
+          const saved = localStorage.getItem("menupricer_history");
+          if (saved) setHistory(JSON.parse(saved));
+        }
+        if (cloudRecipes) setRecipes(cloudRecipes);
+        else {
+          const savedRecipes = localStorage.getItem("menupricer_recipes");
+          if (savedRecipes) setRecipes(JSON.parse(savedRecipes));
+        }
+      } else {
+        setMenuItems(loadMenu());
+        const saved = localStorage.getItem("menupricer_history");
+        if (saved) setHistory(JSON.parse(saved));
+        const savedRecipes = localStorage.getItem("menupricer_recipes");
+        if (savedRecipes) setRecipes(JSON.parse(savedRecipes));
+      }
+    }
+    initialLoad();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session?.user?.email]);
+
+  // Merge localStorage → cloud on first login
+  useEffect(() => {
+    if (session?.user?.email && !syncedRef.current) {
+      syncedRef.current = true;
+      mergeLocalToCloud(session.user.email).then((mergedMenus) => {
+        if (mergedMenus) setMenuItems(mergedMenus);
+        setSyncToast(true);
+        setTimeout(() => setSyncToast(false), 3000);
+      });
+    }
+  }, [session?.user?.email]);
 
   useEffect(() => {
-    const saved = localStorage.getItem("menupricer_history");
-    if (saved) setHistory(JSON.parse(saved));
-    const savedRecipes = localStorage.getItem("menupricer_recipes");
-    if (savedRecipes) setRecipes(JSON.parse(savedRecipes));
     const hash = window.location.hash;
     if (hash.startsWith("#share=")) {
       try {
@@ -650,9 +697,10 @@ function HomeContent() {
 
   const saveHistory = (dishName: string, cost: number, suggestedPrice?: number, formData?: CostData) => {
     const item: HistoryItem = { id: Date.now().toString(), dishName, totalCost: cost, suggestedPrice, formData, timestamp: Date.now() };
-    const updated = [item, ...history].slice(0, 10);
+    const updated = [item, ...history].slice(0, 20);
     setHistory(updated);
     localStorage.setItem("menupricer_history", JSON.stringify(updated));
+    if (session?.user?.email) cloudSaveHistory(updated);
   };
 
   const saveRecipe = (data: CostData, total: number) => {
@@ -663,6 +711,7 @@ function HomeContent() {
     const updated = [item, ...recipes.filter(r => r.dishName !== data.dishName)].slice(0, 20);
     setRecipes(updated);
     localStorage.setItem("menupricer_recipes", JSON.stringify(updated));
+    if (session?.user?.email) cloudSaveRecipes(updated);
   };
 
   const handleAddToMenu = (tiers: MenuTier[]) => {
@@ -670,6 +719,7 @@ function HomeContent() {
     const updated = [item, ...menuItems.filter(m => m.dishName !== currentDishName)];
     setMenuItems(updated);
     saveMenu(updated);
+    if (session?.user?.email) cloudSaveMenus(updated);
     setMenuToast(true);
     setTimeout(() => setMenuToast(false), 4000);
   };
@@ -678,12 +728,33 @@ function HomeContent() {
     const updated = menuItems.filter(m => m.id !== id);
     setMenuItems(updated);
     saveMenu(updated);
+    if (session?.user?.email) cloudSaveMenus(updated);
+  };
+
+  const handleCategoryChange = (id: string, category: string) => {
+    const updated = menuItems.map(m => m.id === id ? { ...m, category } : m);
+    setMenuItems(updated);
+    saveMenu(updated);
+    if (session?.user?.email) cloudSaveMenus(updated);
+  };
+
+  const handleBatchAdd = (newItems: Omit<MenuItem, "id" | "addedAt">[]) => {
+    const toAdd: MenuItem[] = newItems.map(item => ({
+      ...item, id: `${Date.now()}_${Math.random().toString(36).slice(2)}`, addedAt: Date.now(),
+    }));
+    const updated = [...toAdd, ...menuItems.filter(m => !toAdd.some(n => n.dishName === m.dishName))];
+    setMenuItems(updated);
+    saveMenu(updated);
+    if (session?.user?.email) cloudSaveMenus(updated);
+    setActiveTab("menu");
+    setMenuToast(false);
   };
 
   const deleteRecipe = (id: string) => {
     const updated = recipes.filter(r => r.id !== id);
     setRecipes(updated);
     localStorage.setItem("menupricer_recipes", JSON.stringify(updated));
+    if (session?.user?.email) cloudSaveRecipes(updated);
   };
 
   const handleQuickEstimate = async (dishName: string) => {
@@ -741,6 +812,16 @@ function HomeContent() {
       <main className="flex-1 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-10">
 
+          {/* Sync Toast */}
+          {syncToast && (
+            <div
+              className="flex items-center gap-3 bg-gray-900 text-white text-sm px-5 py-3.5 rounded-2xl mb-4 shadow-lg"
+              style={{ animation: "slide-up 250ms ease both" }}
+            >
+              <span>☁️ {lang === "ZH" ? "数据已同步到云端" : "Data synced to cloud"}</span>
+            </div>
+          )}
+
           {/* Toast */}
           {menuToast && (
             <div
@@ -762,8 +843,10 @@ function HomeContent() {
             <MenuView
               items={menuItems}
               onDelete={handleDeleteMenuItem}
+              onCategoryChange={handleCategoryChange}
               onAddMore={() => setActiveTab("pricer")}
-              onExportPdf={() => exportMenuPdf(menuItems)}
+              onExportPdf={(brand) => exportMenuPdf(menuItems, brand)}
+              onBatchAdd={handleBatchAdd}
             />
           )}
 

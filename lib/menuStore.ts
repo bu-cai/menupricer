@@ -11,6 +11,7 @@ export interface MenuItem {
   totalCost: number;
   tiers: MenuTier[];
   addedAt: number;
+  category?: string;
 }
 
 const KEY = "menupricer_menu_v1";
