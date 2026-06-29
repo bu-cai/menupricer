@@ -1,10 +1,11 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-  baseURL: process.env.DATAEYESAI_BASE_URL ?? "https://api.anthropic.com",
-});
+const proxyClient = process.env.DATAEYESAI_BASE_URL
+  ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, baseURL: process.env.DATAEYESAI_BASE_URL })
+  : null;
+
+const directClient = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -188,19 +189,33 @@ Daily units needed to cover fixed costs (assuming $150/day in rent/labor/utiliti
 
 Be specific, professional, and data-driven.`;
 
+  const streamParams = {
+    model: "claude-haiku-4-5-20251001" as const,
+    max_tokens: 1500,
+    messages: [{ role: "user" as const, content: prompt }],
+  };
+
   let stream;
   try {
-    stream = await client.messages.stream({
-      model: "claude-opus-4-7",
-      max_tokens: 1500,
-      messages: [{ role: "user", content: prompt }],
-    });
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : "AI service unavailable";
-    return new Response(JSON.stringify({ error: msg }), {
-      status: 502,
-      headers: { "Content-Type": "application/json" },
-    });
+    // Try proxy first, fall back to direct Anthropic
+    const client = proxyClient ?? directClient;
+    stream = await client.messages.stream(streamParams);
+  } catch {
+    if (!proxyClient) {
+      return new Response(JSON.stringify({ error: "AI service unavailable" }), {
+        status: 502,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    try {
+      stream = await directClient.messages.stream(streamParams);
+    } catch (err2) {
+      const msg = err2 instanceof Error ? err2.message : "AI service unavailable";
+      return new Response(JSON.stringify({ error: msg }), {
+        status: 502,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
   }
 
   const encoder = new TextEncoder();
