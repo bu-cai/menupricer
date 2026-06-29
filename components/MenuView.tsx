@@ -14,10 +14,22 @@ interface Props {
   items: MenuItem[];
   onDelete: (id: string) => void;
   onCategoryChange: (id: string, category: string) => void;
+  onTagsChange: (id: string, tags: string[]) => void;
   onAddMore: () => void;
   onExportPdf: (brand: BrandConfig) => void;
   onBatchAdd: (newItems: Omit<MenuItem, "id" | "addedAt">[]) => void;
 }
+
+const TAGS = [
+  { key: "spicy",    label: "🌶️ Spicy" },
+  { key: "vegan",    label: "🥦 Vegan" },
+  { key: "gf",       label: "🌾 Gluten-Free" },
+  { key: "nuts",     label: "🥜 Nuts" },
+  { key: "seafood",  label: "🐟 Seafood" },
+  { key: "kid",      label: "🍼 Kid-Friendly" },
+  { key: "special",  label: "🔥 Chef's Special" },
+  { key: "new",      label: "✨ New" },
+];
 
 const TIER_COLORS = [
   { border: "border-gray-200", bg: "bg-gray-50", label: "text-gray-500" },
@@ -52,13 +64,14 @@ function MarginBar({ margin }: { margin: number }) {
   );
 }
 
-export default function MenuView({ items, onDelete, onCategoryChange, onAddMore, onExportPdf, onBatchAdd }: Props) {
+export default function MenuView({ items, onDelete, onCategoryChange, onTagsChange, onAddMore, onExportPdf, onBatchAdd }: Props) {
   const { lang } = useLang();
   const { currency } = useCurrency();
   const isZH = lang === "ZH";
 
   const [confirmId, setConfirmId] = useState<string | null>(null);
   const [editCategoryId, setEditCategoryId] = useState<string | null>(null);
+  const [editTagsId, setEditTagsId] = useState<string | null>(null);
   const [activeView, setActiveView] = useState<"menu" | "analytics">("menu");
   const [groupByCategory, setGroupByCategory] = useState(false);
   const [showBrand, setShowBrand] = useState(false);
@@ -184,6 +197,59 @@ export default function MenuView({ items, onDelete, onCategoryChange, onAddMore,
         >
           {confirmId === item.id ? t("menuConfirmDelete", lang) : t("menuDelete", lang)}
         </button>
+      </div>
+
+      {/* Tags row */}
+      <div className="mb-3">
+        {editTagsId === item.id ? (
+          <div className="space-y-2">
+            <div className="flex flex-wrap gap-1.5">
+              {TAGS.map(tag => {
+                const active = item.tags?.includes(tag.key);
+                return (
+                  <button
+                    key={tag.key}
+                    onClick={() => {
+                      const current = item.tags ?? [];
+                      const next = active ? current.filter(k => k !== tag.key) : [...current, tag.key];
+                      onTagsChange(item.id, next);
+                    }}
+                    className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-colors ${
+                      active
+                        ? "bg-orange-500 text-white border-orange-500"
+                        : "bg-white text-gray-500 border-gray-200 hover:border-orange-300"
+                    }`}
+                  >
+                    {tag.label}
+                  </button>
+                );
+              })}
+            </div>
+            <button
+              onClick={() => setEditTagsId(null)}
+              className="text-xs text-gray-400 hover:text-gray-600"
+            >
+              {isZH ? "完成" : "Done"}
+            </button>
+          </div>
+        ) : (
+          <div className="flex flex-wrap items-center gap-1.5">
+            {(item.tags ?? []).map(key => {
+              const tag = TAGS.find(t => t.key === key);
+              return tag ? (
+                <span key={key} className="text-xs bg-orange-50 text-orange-600 border border-orange-100 px-2 py-0.5 rounded-full font-medium">
+                  {tag.label}
+                </span>
+              ) : null;
+            })}
+            <button
+              onClick={() => setEditTagsId(item.id)}
+              className="text-xs text-gray-300 hover:text-orange-400 transition-colors px-1"
+            >
+              {(item.tags?.length ?? 0) > 0 ? (isZH ? "编辑标签" : "Edit tags") : (isZH ? "+ 添加标签" : "+ Add tags")}
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-3 gap-2">

@@ -731,6 +731,13 @@ function HomeContent() {
     if (session?.user?.email) cloudSaveMenus(updated);
   };
 
+  const handleTagsChange = (id: string, tags: string[]) => {
+    const updated = menuItems.map(m => m.id === id ? { ...m, tags } : m);
+    setMenuItems(updated);
+    saveMenu(updated);
+    if (session?.user?.email) cloudSaveMenus(updated);
+  };
+
   const handleCategoryChange = (id: string, category: string) => {
     const updated = menuItems.map(m => m.id === id ? { ...m, category } : m);
     setMenuItems(updated);
@@ -844,6 +851,7 @@ function HomeContent() {
               items={menuItems}
               onDelete={handleDeleteMenuItem}
               onCategoryChange={handleCategoryChange}
+              onTagsChange={handleTagsChange}
               onAddMore={() => setActiveTab("pricer")}
               onExportPdf={(brand) => exportMenuPdf(menuItems, brand)}
               onBatchAdd={handleBatchAdd}

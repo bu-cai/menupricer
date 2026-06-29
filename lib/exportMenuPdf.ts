@@ -3,6 +3,12 @@ import { MenuItem } from "./menuStore";
 import { calcMargin } from "./calculations";
 import { BrandConfig } from "./brandConfig";
 
+const TAG_LABELS: Record<string, string> = {
+  spicy: "Spicy", vegan: "Vegan", gf: "Gluten-Free",
+  nuts: "Nuts", seafood: "Seafood", kid: "Kid-Friendly",
+  special: "Chef's Special", new: "New",
+};
+
 export function exportMenuPdf(items: MenuItem[], brand?: BrandConfig) {
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   const W = 210;
@@ -106,6 +112,24 @@ export function exportMenuPdf(items: MenuItem[], brand?: BrandConfig) {
         doc.text(`Cost: $${item.totalCost.toFixed(2)}`, W - margin - 4, y + 7, { align: "right" });
       }
       y += 13;
+
+      // Tags row
+      if (item.tags && item.tags.length > 0) {
+        let tx2 = margin + 2;
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(6.5);
+        for (const key of item.tags) {
+          const lbl = TAG_LABELS[key];
+          if (!lbl) continue;
+          const tw = doc.getTextWidth(lbl) + 6;
+          doc.setFillColor(255, 237, 213);
+          doc.roundedRect(tx2, y, tw, 5.5, 1, 1, "F");
+          doc.setTextColor(...orange);
+          doc.text(lbl, tx2 + 3, y + 4);
+          tx2 += tw + 3;
+        }
+        y += 9;
+      }
 
       const tierW = (W - margin * 2) / 3 - 2;
       const tierColors: [number, number, number][] = [[200, 200, 200], [...orange] as [number, number, number], [...amber] as [number, number, number]];
