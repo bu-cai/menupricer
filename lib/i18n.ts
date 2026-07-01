@@ -121,6 +121,12 @@ const translations = {
   onboardStep3Title: { EN: "Get AI pricing instantly", ZH: "立刻获取 AI 定价建议" },
   onboardStep3Desc: { EN: "Click \"Get AI Pricing\" to receive Budget / Standard / Premium tiers with margins, strategy tips, and ready-to-use menu copy.", ZH: "点击「获取 AI 定价建议」，即可获得实惠 / 标准 / 高端三档定价，含利润率分析、策略建议和可直接使用的菜单文案。" },
 
+  // Hero trust badges
+  trustFree: { EN: "✓ Free to start", ZH: "✓ 免费开始" },
+  trustNoCard: { EN: "✓ No credit card", ZH: "✓ 无需信用卡" },
+  trustAI: { EN: "✓ AI-powered", ZH: "✓ AI 驱动" },
+  trustTiers: { EN: "✓ 3 pricing tiers", ZH: "✓ 三档定价方案" },
+
   // Empty state
   emptyHint: { EN: "👆 Fill in costs to generate analysis", ZH: "👆 填写左侧即可生成类似分析" },
   exampleLabel: { EN: "Example: General Tso's Chicken", ZH: "示例：左宗鸡" },

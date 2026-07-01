@@ -72,6 +72,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
   const [confirmId, setConfirmId] = useState<string | null>(null);
   const [editCategoryId, setEditCategoryId] = useState<string | null>(null);
   const [editTagsId, setEditTagsId] = useState<string | null>(null);
+  const [draftTags, setDraftTags] = useState<string[]>([]);
   const [activeView, setActiveView] = useState<"menu" | "analytics">("menu");
   const [groupByCategory, setGroupByCategory] = useState(false);
   const [showBrand, setShowBrand] = useState(false);
@@ -82,11 +83,14 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
 
   const categories = isZH ? CATEGORIES_ZH : CATEGORIES_EN;
 
+  const getMargin = (item: MenuItem) => {
+    const std = item.tiers[1] ?? item.tiers[0];
+    if (!std) return 0;
+    return item.totalCost > 0 ? calcMargin(std.price, item.totalCost) : std.margin;
+  };
+
   const avgMargin = items.length === 0 ? 0 :
-    items.reduce((sum, item) => {
-      const std = item.tiers[1] ?? item.tiers[0];
-      return sum + (std ? calcMargin(std.price, item.totalCost) : 0);
-    }, 0) / items.length;
+    items.reduce((sum, item) => sum + getMargin(item), 0) / items.length;
 
   const lowestCost = items.length === 0 ? 0 : Math.min(...items.map(i => i.totalCost));
 
@@ -110,11 +114,8 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
   }
 
   // Sorted by margin for analytics
-  const withMargin = items.map(item => {
-    const std = item.tiers[1] ?? item.tiers[0];
-    const margin = std ? (item.totalCost > 0 ? calcMargin(std.price, item.totalCost) : std.margin) : 0;
-    return { item, margin };
-  }).sort((a, b) => b.margin - a.margin);
+  const withMargin = items.map(item => ({ item, margin: getMargin(item) }))
+    .sort((a, b) => b.margin - a.margin);
 
   if (items.length === 0) {
     return (
@@ -205,15 +206,13 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
           <div className="space-y-2">
             <div className="flex flex-wrap gap-1.5">
               {TAGS.map(tag => {
-                const active = item.tags?.includes(tag.key);
+                const active = draftTags.includes(tag.key);
                 return (
                   <button
                     key={tag.key}
-                    onClick={() => {
-                      const current = item.tags ?? [];
-                      const next = active ? current.filter(k => k !== tag.key) : [...current, tag.key];
-                      onTagsChange(item.id, next);
-                    }}
+                    onClick={() => setDraftTags(prev =>
+                      prev.includes(tag.key) ? prev.filter(k => k !== tag.key) : [...prev, tag.key]
+                    )}
                     className={`text-xs px-2.5 py-1 rounded-full border font-medium transition-colors ${
                       active
                         ? "bg-orange-500 text-white border-orange-500"
@@ -226,10 +225,10 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
               })}
             </div>
             <button
-              onClick={() => setEditTagsId(null)}
-              className="text-xs text-gray-400 hover:text-gray-600"
+              onClick={() => { onTagsChange(item.id, draftTags); setEditTagsId(null); }}
+              className="text-xs font-semibold text-orange-500 hover:text-orange-600"
             >
-              {isZH ? "完成" : "Done"}
+              {isZH ? "✓ 完成" : "✓ Done"}
             </button>
           </div>
         ) : (
@@ -243,7 +242,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
               ) : null;
             })}
             <button
-              onClick={() => setEditTagsId(item.id)}
+              onClick={() => { setEditTagsId(item.id); setDraftTags(item.tags ?? []); }}
               className="text-xs text-gray-300 hover:text-orange-400 transition-colors px-1"
             >
               {(item.tags?.length ?? 0) > 0 ? (isZH ? "编辑标签" : "Edit tags") : (isZH ? "+ 添加标签" : "+ Add tags")}
@@ -345,10 +344,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
               </h3>
               <div className="space-y-3">
                 {Object.entries(grouped).map(([cat, catItems]) => {
-                  const catAvg = catItems.reduce((s, item) => {
-                    const std = item.tiers[1] ?? item.tiers[0];
-                    return s + (std ? (item.totalCost > 0 ? calcMargin(std.price, item.totalCost) : std.margin) : 0);
-                  }, 0) / catItems.length;
+                  const catAvg = catItems.reduce((s, item) => s + getMargin(item), 0) / catItems.length;
                   return (
                     <div key={cat} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
                       <div>

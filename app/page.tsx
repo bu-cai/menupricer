@@ -373,7 +373,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
             {/* Trust badges — 2×2 on mobile, 4-col on desktop */}
             <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-3 sm:gap-4 mt-6 text-xs text-gray-400"
               style={{ animation: "hero-sub 700ms ease 600ms both" }}>
-              {["✓ Free to start", "✓ No credit card", "✓ AI-powered", "✓ 3 pricing tiers"].map(b => (
+              {[t("trustFree", lang), t("trustNoCard", lang), t("trustAI", lang), t("trustTiers", lang)].map(b => (
                 <span key={b}>{b}</span>
               ))}
             </div>

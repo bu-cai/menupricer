@@ -70,6 +70,23 @@ export default function BatchPricingModal({ onClose, onAddAll }: Props) {
     setRunning(false);
   }
 
+  async function handleRetryFailed() {
+    const failedIdxs = results.map((r, i) => r.status === "error" ? i : -1).filter(i => i >= 0);
+    setRunning(true);
+    for (const i of failedIdxs) {
+      setCurrentIdx(i);
+      setResults(prev => prev.map((r, idx) => idx === i ? { ...r, status: "pricing" } : r));
+      try {
+        const tiers = await priceDish(results[i].dishName);
+        setResults(prev => prev.map((r, idx) => idx === i ? { ...r, tiers, status: tiers.length > 0 ? "done" : "error" } : r));
+      } catch {
+        setResults(prev => prev.map((r, idx) => idx === i ? { ...r, status: "error" } : r));
+      }
+    }
+    setCurrentIdx(-1);
+    setRunning(false);
+  }
+
   function handleAddAll() {
     const toAdd = results
       .filter(r => r.status === "done" && r.tiers.length > 0)
@@ -79,6 +96,7 @@ export default function BatchPricingModal({ onClose, onAddAll }: Props) {
   }
 
   const doneCount = results.filter(r => r.status === "done").length;
+  const errorCount = results.filter(r => r.status === "error").length;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/50 flex items-end sm:items-center justify-center p-4">
@@ -200,6 +218,14 @@ export default function BatchPricingModal({ onClose, onAddAll }: Props) {
                   {isZH
                     ? `加入菜单（${doneCount} 道菜）`
                     : `Add to Menu (${doneCount} dish${doneCount > 1 ? "es" : ""})`}
+                </button>
+              )}
+              {!running && errorCount > 0 && (
+                <button
+                  onClick={handleRetryFailed}
+                  className="w-full py-2.5 rounded-xl border border-red-200 text-red-500 text-sm font-medium hover:bg-red-50 transition-colors"
+                >
+                  {isZH ? `↻ 重试失败项（${errorCount} 道）` : `↻ Retry failed (${errorCount})`}
                 </button>
               )}
               {!running && (
