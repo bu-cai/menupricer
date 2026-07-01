@@ -18,12 +18,13 @@ const BASE_URL = "https://www.aimenupricer.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "AI Menu Pricing Tool for Restaurants | Free Food Cost Calculator | MenuPricer",
+    default: "AI Menu Pricing Tool & Menu Calculator for Restaurants | Free Food Cost Calculator | MenuPricer",
     template: "%s | MenuPricer",
   },
   description:
-    "Calculate the perfect menu price in seconds. Enter your ingredient costs and get AI-powered pricing recommendations with profit margins. Free for restaurant owners.",
+    "Free menu calculator and AI pricing tool for restaurants. Enter ingredient costs and get profit-optimized menu prices in seconds — with margin analysis and PDF export.",
   keywords: [
+    "menu calculator",
     "menu pricing tool",
     "food cost calculator",
     "restaurant menu pricing",
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     "restaurant pricing software",
     "menu price calculator",
     "food cost percentage",
+    "menu metric",
   ],
   authors: [{ name: "MenuPricer" }],
   creator: "MenuPricer",
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "MenuPricer",
-    title: "AI Menu Pricing Tool for Restaurants — MenuPricer",
+    title: "Free Menu Calculator & AI Pricing Tool for Restaurants — MenuPricer",
     description:
-      "Enter your food costs and get the perfect menu price in 30 seconds — with profit margin analysis, delivery platform pricing, and AI-written menu copy.",
+      "Free menu calculator for restaurant owners. Enter ingredient costs and get AI-powered menu prices in seconds — with profit margin analysis and PDF export.",
     images: [
       {
         url: "/og-image.png",
@@ -54,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Menu Pricing Tool for Restaurants — MenuPricer",
+    title: "Free Menu Calculator & AI Pricing Tool — MenuPricer",
     description:
-      "Enter your food costs and get the perfect menu price in 30 seconds.",
+      "Free menu calculator for restaurants. AI-powered pricing with profit margin analysis.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -101,16 +103,12 @@ export default function RootLayout({
                 "AI menu pricing recommendations",
                 "Food cost calculator",
                 "Profit margin analysis",
+                "Menu calculator",
                 "Delivery platform commission calculator",
                 "Multi-currency support (USD, CNY, EUR)",
                 "PDF menu export",
                 "Recipe library",
               ],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                ratingCount: "87",
-              },
             }),
           }}
         />
