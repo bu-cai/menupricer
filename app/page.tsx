@@ -18,6 +18,7 @@ import MenuView from "@/components/MenuView";
 import { MenuItem, MenuTier, loadMenu, saveMenu } from "@/lib/menuStore";
 import { exportMenuPdf } from "@/lib/exportMenuPdf";
 import LogoIcon from "@/components/LogoIcon";
+import UpgradeModal from "@/components/UpgradeModal";
 import { useSession } from "next-auth/react";
 import {
   cloudLoadMenus, cloudSaveMenus,
@@ -633,7 +634,24 @@ function HomeContent() {
   const [menuToast, setMenuToast] = useState(false);
   const [syncToast, setSyncToast] = useState(false);
   const [isSharedView, setIsSharedView] = useState(false);
+  const [userPlan, setUserPlan] = useState<"free" | "pro">("free");
+  const [showUpgrade, setShowUpgrade] = useState(false);
   const syncedRef = useRef(false);
+
+  // Fetch user plan
+  useEffect(() => {
+    fetch("/api/user/plan").then(r => r.json()).then(d => setUserPlan(d.plan ?? "free"));
+  }, [session]);
+
+  // Show success toast after Stripe redirect
+  useEffect(() => {
+    if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("upgraded") === "1") {
+      setUserPlan("pro");
+      setSyncToast(true);
+      setTimeout(() => setSyncToast(false), 4000);
+      window.history.replaceState({}, "", "/");
+    }
+  }, []);
 
   // Initial load from cloud (if logged in) or localStorage
   useEffect(() => {
@@ -714,7 +732,14 @@ function HomeContent() {
     if (session?.user?.email) cloudSaveRecipes(updated);
   };
 
+  const FREE_LIMIT = 5;
+
   const handleAddToMenu = (tiers: MenuTier[]) => {
+    const isNew = !menuItems.find(m => m.dishName === currentDishName);
+    if (isNew && userPlan === "free" && menuItems.length >= FREE_LIMIT) {
+      setShowUpgrade(true);
+      return;
+    }
     const item: MenuItem = { id: Date.now().toString(), dishName: currentDishName, totalCost, tiers, addedAt: Date.now() };
     const updated = [item, ...menuItems.filter(m => m.dishName !== currentDishName)];
     setMenuItems(updated);
@@ -746,9 +771,17 @@ function HomeContent() {
   };
 
   const handleBatchAdd = (newItems: Omit<MenuItem, "id" | "addedAt">[]) => {
-    const toAdd: MenuItem[] = newItems.map(item => ({
+    const reallyNew = newItems.filter(n => !menuItems.find(m => m.dishName === n.dishName));
+    const allowed = userPlan === "free"
+      ? reallyNew.slice(0, Math.max(0, FREE_LIMIT - menuItems.length))
+      : reallyNew;
+    if (allowed.length < reallyNew.length && userPlan === "free") {
+      setShowUpgrade(true);
+    }
+    const toAdd: MenuItem[] = allowed.map(item => ({
       ...item, id: `${Date.now()}_${Math.random().toString(36).slice(2)}`, addedAt: Date.now(),
     }));
+    if (toAdd.length === 0) return;
     const updated = [...toAdd, ...menuItems.filter(m => !toAdd.some(n => n.dishName === m.dishName))];
     setMenuItems(updated);
     saveMenu(updated);
@@ -811,6 +844,9 @@ function HomeContent() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <OnboardingModal />
+      {showUpgrade && (
+        <UpgradeModal reason="menu_limit" onClose={() => setShowUpgrade(false)} />
+      )}
 
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} menuCount={menuItems.length} />
       <Hero onStart={() => document.getElementById("cost-form-main")?.scrollIntoView({ behavior: "smooth", block: "start" })} />
@@ -825,7 +861,10 @@ function HomeContent() {
               className="flex items-center gap-3 bg-gray-900 text-white text-sm px-5 py-3.5 rounded-2xl mb-4 shadow-lg"
               style={{ animation: "slide-up 250ms ease both" }}
             >
-              <span>☁️ {lang === "ZH" ? "数据已同步到云端" : "Data synced to cloud"}</span>
+              <span>{userPlan === "pro" && new URLSearchParams(typeof window !== "undefined" ? "" : "").get("upgraded") !== "1"
+                ? (lang === "ZH" ? "🎉 已升级到 Pro！" : "🎉 Upgraded to Pro!")
+                : (lang === "ZH" ? "☁️ 数据已同步到云端" : "☁️ Data synced to cloud")
+              }</span>
             </div>
           )}
 

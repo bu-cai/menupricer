@@ -3,9 +3,12 @@
   "configurations": [
     {
       "name": "menupricer",
-      "runtimeExecutable": "C:\\Users\\bucai\\AppData\\Roaming\\360se6\\Application\\components\\Node\\node.exe",
-      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "--port", "3012"],
-      "port": 3012
+      "runtimeExecutable": "C:\\Users\\bucai\\AppData\\Roaming\\360se6\\Application\\components\\Node\\npm.cmd",
+      "runtimeArgs": ["run", "dev", "--", "--port", "3000"],
+      "port": 3000,
+      "env": {
+        "PATH": "C:\\Users\\bucai\\AppData\\Roaming\\360se6\\Application\\components\\Node;C:\\Windows\\system32"
+      }
     }
   ]
 }
