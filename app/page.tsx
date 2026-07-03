@@ -961,9 +961,10 @@ function HomeContent() {
             <LogoIcon size={22} />
             <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
           </div>
-          <div className="flex items-center gap-4 text-xs text-gray-400">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
             <a href="/menu-cost-calculator" className="hover:text-orange-500 transition-colors">Menu Cost Calculator</a>
             <a href="/food-cost-calculator" className="hover:text-orange-500 transition-colors">Food Cost Calculator</a>
+            <a href="/menu-pricing" className="hover:text-orange-500 transition-colors">Menu Pricing by Type</a>
           </div>
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer. AI-powered menu pricing for restaurant owners.</p>
         </div>
