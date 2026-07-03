@@ -336,9 +336,9 @@ function Hero({ onStart }: { onStart?: () => void }) {
             <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
               style={{ animation: "hero-title 700ms ease 150ms both" }}>
               {ZH ? (
-                <>停止猜测，用 AI<br /><span className="text-orange-500">精准定价</span></>
+                <>餐厅菜单定价工具<br /><span className="text-orange-500">AI 精准定价</span>，30秒搞定</>
               ) : (
-                <>Stop Guessing.<br /><span className="text-orange-500">Price Your Menu</span><br />With AI.</>
+                <>AI Menu Pricing Tool<br />for <span className="text-orange-500">Restaurants</span> — Free</>
               )}
             </h1>
 
@@ -960,6 +960,10 @@ function HomeContent() {
           <div className="flex items-center gap-2">
             <LogoIcon size={22} />
             <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
+          </div>
+          <div className="flex items-center gap-4 text-xs text-gray-400">
+            <a href="/menu-cost-calculator" className="hover:text-orange-500 transition-colors">Menu Cost Calculator</a>
+            <a href="/food-cost-calculator" className="hover:text-orange-500 transition-colors">Food Cost Calculator</a>
           </div>
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer. AI-powered menu pricing for restaurant owners.</p>
         </div>

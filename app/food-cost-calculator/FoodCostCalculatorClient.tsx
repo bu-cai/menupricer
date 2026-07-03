@@ -367,6 +367,7 @@ export default function FoodCostCalculatorClient() {
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-400">
             <Link href="/" className="hover:text-orange-500 transition-colors">AI Pricing Tool</Link>
+            <Link href="/menu-cost-calculator" className="hover:text-orange-500 transition-colors">Menu Cost Calculator</Link>
             <Link href="/food-cost-calculator" className="hover:text-orange-500 transition-colors">Food Cost Calculator</Link>
           </div>
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer</p>
