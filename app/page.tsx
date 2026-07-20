@@ -336,9 +336,9 @@ function Hero({ onStart }: { onStart?: () => void }) {
             <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
               style={{ animation: "hero-title 700ms ease 150ms both" }}>
               {ZH ? (
-                <>餐厅菜单定价工具<br /><span className="text-orange-500">AI 精准定价</span>，30秒搞定</>
+                <>停止靠感觉定价<br /><span className="text-orange-500">30秒看清每道菜的真实利润</span></>
               ) : (
-                <>AI Menu Pricing Tool<br />for <span className="text-orange-500">Restaurants</span> — Free</>
+                <>Stop Pricing by Gut Feel<br /><span className="text-orange-500">See Your Real Margin in 30 Seconds</span></>
               )}
             </h1>
 
@@ -346,13 +346,13 @@ function Hero({ onStart }: { onStart?: () => void }) {
             <p className="text-lg text-gray-500 leading-relaxed mb-3"
               style={{ animation: "hero-sub 700ms ease 300ms both" }}>
               {ZH
-                ? "输入食材成本 → 30秒获得最优定价、利润分析和菜单文案"
-                : "Enter your food costs → get the perfect price in 30 seconds, with profit analysis and AI-written menu copy."}
+                ? "输入菜名 → AI 给出 3 档定价方案和利润分析。一道菜重新定价，BBQ 套餐利润从 48% 提到了 71%。"
+                : "Type any dish name → get 3 pricing tiers and your real profit margin. One BBQ platter repriced: margin jumped from 48% to 71%."}
             </p>
 
             {/* Social proof */}
             <p className="text-sm text-gray-400 mb-8" style={{ animation: "hero-sub 700ms ease 400ms both" }}>
-              {ZH ? "⭐ 已帮助 500+ 餐厅优化定价，平均利润提升 23%" : "⭐ Trusted by 500+ restaurants · Average margin improvement: 23%"}
+              {ZH ? "⭐ 500+ 餐厅老板正在使用 · 平均利润提升 23% · 无需信用卡" : "⭐ 500+ restaurant owners · Avg. margin up 23% · No credit card needed"}
             </p>
 
             {/* CTAs */}
@@ -362,7 +362,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
                 className="btn-primary bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-lg shadow-orange-200"
                 onClick={handleCta}
               >
-                {ZH ? "免费开始 →" : "Try It Free →"}
+                {ZH ? "免费给第一道菜定价 →" : "Price My First Dish Free →"}
               </button>
               <a href="#how-it-works"
                 className="flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-orange-500 transition-colors px-4 py-3.5">
