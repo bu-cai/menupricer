@@ -962,6 +962,7 @@ function HomeContent() {
             <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
+            <a href="/pricing" className="hover:text-orange-500 transition-colors">Pricing</a>
             <a href="/menu-cost-calculator" className="hover:text-orange-500 transition-colors">Menu Cost Calculator</a>
             <a href="/food-cost-calculator" className="hover:text-orange-500 transition-colors">Food Cost Calculator</a>
             <a href="/menu-pricing" className="hover:text-orange-500 transition-colors">Menu Pricing by Type</a>

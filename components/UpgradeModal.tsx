@@ -49,6 +49,7 @@ export default function UpgradeModal({ onClose, reason }: Props) {
   const { lang } = useLang();
   const isZH = lang === "ZH";
   const [loading, setLoading] = useState(false);
+  const [plan, setPlan] = useState<"monthly" | "annual">("annual");
 
   async function handleUpgrade() {
     if (!session) {
@@ -57,7 +58,8 @@ export default function UpgradeModal({ onClose, reason }: Props) {
     }
     setLoading(true);
     try {
-      const res = await fetch("/api/stripe/checkout", { method: "POST" });
+      const qs = plan === "annual" ? "?plan=annual" : "";
+      const res = await fetch(`/api/stripe/checkout${qs}`, { method: "POST" });
       const { url } = await res.json();
       if (url) window.location.href = url;
     } finally {
@@ -113,14 +115,33 @@ export default function UpgradeModal({ onClose, reason }: Props) {
             </>
           )}
 
-          {/* Price — anchored after the value story */}
-          <div className="mt-4 flex items-baseline gap-1">
-            <span className="text-3xl font-black">$9</span>
-            <span className="text-orange-200 text-sm">{isZH ? "/ 月" : "/ month"}</span>
-            <span className="ml-2 text-xs text-orange-200">
-              {isZH ? "· 随时取消" : "· Cancel anytime"}
-            </span>
+          {/* Plan toggle */}
+          <div className="mt-4 flex items-center gap-2">
+            <div className="flex bg-white/15 rounded-lg p-0.5 gap-0.5">
+              <button
+                onClick={() => setPlan("monthly")}
+                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${plan === "monthly" ? "bg-white text-orange-600" : "text-white/80 hover:text-white"}`}
+              >
+                {isZH ? "月付 $9" : "Monthly $9"}
+              </button>
+              <button
+                onClick={() => setPlan("annual")}
+                className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors ${plan === "annual" ? "bg-white text-orange-600" : "text-white/80 hover:text-white"}`}
+              >
+                {isZH ? "年付 $79" : "Annual $79"}
+              </button>
+            </div>
+            {plan === "annual" && (
+              <span className="bg-yellow-400 text-yellow-900 text-xs font-black px-2 py-0.5 rounded-full">
+                {isZH ? "省 $29" : "Save $29"}
+              </span>
+            )}
           </div>
+          <p className="text-xs text-orange-200 mt-1.5">
+            {plan === "annual"
+              ? (isZH ? "≈ $6.6/月 · 随时取消" : "≈ $6.6/mo · Cancel anytime")
+              : (isZH ? "$9/月 · 随时取消" : "$9/mo · Cancel anytime")}
+          </p>
         </div>
 
         <div className="p-6">
@@ -151,7 +172,9 @@ export default function UpgradeModal({ onClose, reason }: Props) {
             >
               {loading
                 ? (isZH ? "跳转中..." : "Redirecting...")
-                : (isZH ? "解锁完整菜单 — $9/月" : "Unlock My Full Menu — $9/mo")}
+                : plan === "annual"
+                  ? (isZH ? "解锁完整菜单 — $79/年" : "Unlock My Full Menu — $79/yr")
+                  : (isZH ? "解锁完整菜单 — $9/月" : "Unlock My Full Menu — $9/mo")}
             </button>
             <button
               onClick={onClose}
