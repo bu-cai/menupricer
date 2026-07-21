@@ -48,6 +48,7 @@ export async function POST(req: NextRequest) {
       success_url: `${BASE_URL}/?upgraded=1`,
       cancel_url: `${BASE_URL}/`,
       allow_promotion_codes: true,
+      payment_method_types: ["card", "alipay"],
     });
 
     return NextResponse.json({ url: checkoutSession.url });
