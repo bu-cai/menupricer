@@ -1,7 +1,7 @@
 ﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "MenuPricer — Free Menu Calculator & AI Pricing Tool for Restaurants";
+export const alt = "MenuPricer — AI Menu Pricing Calculator for Restaurants";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,74 +10,106 @@ export default function OgImage() {
     (
       <div
         style={{
+          background: "#0D1B2A",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#fff7ed",
-          padding: "60px 80px",
-          fontFamily: "sans-serif",
+          justifyContent: "center",
+          padding: "80px",
+          position: "relative",
+          fontFamily: "system-ui, sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 48 }}>
+        {/* Glow circle */}
+        <div
+          style={{
+            position: "absolute",
+            right: -80,
+            top: -80,
+            width: 480,
+            height: 480,
+            borderRadius: "50%",
+            background: "#E8A020",
+            opacity: 0.09,
+          }}
+        />
+        {/* Logo */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 44 }}>
           <div
             style={{
-              width: 48,
-              height: 48,
+              width: 52,
+              height: 52,
               borderRadius: 12,
-              background: "#f97316",
+              background: "#E8A020",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 28,
+              fontSize: 26,
             }}
           >
-            🍽️
+            🍽
           </div>
-          <span style={{ fontSize: 28, fontWeight: 700, color: "#f97316" }}>MenuPricer</span>
-        </div>
-
-        <div
-          style={{
-            fontSize: 64,
-            fontWeight: 800,
-            color: "#1f2937",
-            lineHeight: 1.1,
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <span>Free Menu Calculator</span>
-          <span style={{ color: "#f97316" }}>&amp; AI Pricing Tool</span>
-          <span style={{ fontSize: 36, fontWeight: 400, color: "#6b7280", marginTop: 24 }}>
-            for Restaurants
+          <span style={{ color: "#fff", fontWeight: 900, fontSize: 30, letterSpacing: -0.5 }}>
+            Menu<span style={{ color: "#E8A020" }}>Pricer</span>
           </span>
         </div>
-
-        <div style={{ display: "flex", gap: 16, marginTop: 48 }}>
-          {["✓ Food Cost Calculator", "✓ 3 Pricing Tiers", "✓ PDF Export", "✓ Free to Start"].map(
-            (f) => (
-              <div
-                key={f}
-                style={{
-                  background: "#fff",
-                  border: "2px solid #fed7aa",
-                  borderRadius: 999,
-                  padding: "10px 24px",
-                  fontSize: 22,
-                  color: "#92400e",
-                  fontWeight: 600,
-                }}
-              >
-                {f}
-              </div>
-            )
-          )}
+        {/* Headline */}
+        <div
+          style={{
+            color: "#fff",
+            fontSize: 60,
+            fontWeight: 900,
+            lineHeight: 1.1,
+            marginBottom: 22,
+            maxWidth: 820,
+            letterSpacing: -2,
+          }}
+        >
+          AI Menu Pricing Calculator for Restaurants
         </div>
-
-        <div style={{ marginTop: 32, fontSize: 22, color: "#9ca3af" }}>
+        {/* Subtext */}
+        <div
+          style={{
+            color: "rgba(255,255,255,0.6)",
+            fontSize: 24,
+            lineHeight: 1.5,
+            maxWidth: 660,
+            marginBottom: 44,
+          }}
+        >
+          Know your real food cost and profit margin — in 30 seconds.
+        </div>
+        {/* Pills */}
+        <div style={{ display: "flex", gap: 14 }}>
+          {["✓ Free to start", "✓ No credit card", "✓ AI cost estimates"].map((label) => (
+            <div
+              key={label}
+              style={{
+                background: "rgba(232,160,32,0.14)",
+                border: "1px solid rgba(232,160,32,0.4)",
+                borderRadius: 8,
+                padding: "10px 20px",
+                color: "#E8A020",
+                fontSize: 19,
+                fontWeight: 700,
+              }}
+            >
+              {label}
+            </div>
+          ))}
+        </div>
+        {/* URL */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 44,
+            right: 80,
+            color: "rgba(255,255,255,0.25)",
+            fontSize: 18,
+            fontWeight: 600,
+          }}
+        >
           aimenupricer.com
         </div>
       </div>

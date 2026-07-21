@@ -1010,19 +1010,53 @@ function HomeContent() {
       <FaqAccordion />
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <LogoIcon size={22} />
-            <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
+      <footer className="bg-white border-t border-gray-100 py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+            <div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Free Calculators</p>
+              <div className="space-y-2">
+                <a href="/food-cost-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Food Cost Calculator</a>
+                <a href="/recipe-cost-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Recipe Cost Calculator</a>
+                <a href="/menu-cost-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Menu Cost Calculator</a>
+                <a href="/restaurant-markup-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Markup Calculator</a>
+                <a href="/restaurant-profit-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Profit Calculator</a>
+                <a href="/bakery-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Bakery Pricing Calculator</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">By Industry</p>
+              <div className="space-y-2">
+                <a href="/menu-pricing/cafe" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Coffee Shop</a>
+                <a href="/menu-pricing/bakery" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Bakery</a>
+                <a href="/menu-pricing/food-truck" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Food Truck</a>
+                <a href="/menu-pricing/pizza" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Pizza</a>
+                <a href="/menu-pricing/fine-dining" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Fine Dining</a>
+                <a href="/menu-pricing" className="block text-xs text-orange-500 hover:text-orange-600 transition-colors">All Types →</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Product</p>
+              <div className="space-y-2">
+                <a href="/pricing" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Pricing</a>
+                <a href="/?upgrade=1" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Upgrade to Pro</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Legal</p>
+              <div className="space-y-2">
+                <a href="/privacy" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Privacy Policy</a>
+                <a href="/terms" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Terms of Service</a>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-gray-400">
-            <a href="/pricing" className="hover:text-orange-500 transition-colors">Pricing</a>
-            <a href="/menu-cost-calculator" className="hover:text-orange-500 transition-colors">Menu Cost Calculator</a>
-            <a href="/food-cost-calculator" className="hover:text-orange-500 transition-colors">Food Cost Calculator</a>
-            <a href="/menu-pricing" className="hover:text-orange-500 transition-colors">Menu Pricing by Type</a>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-gray-100">
+            <div className="flex items-center gap-2">
+              <LogoIcon size={20} />
+              <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
+            </div>
+            <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer — AI-powered menu pricing for restaurant owners.</p>
           </div>
-          <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer. AI-powered menu pricing for restaurant owners.</p>
         </div>
       </footer>
 

@@ -94,11 +94,29 @@ export default function RootLayout({
               url: BASE_URL,
               description:
                 "AI-powered menu pricing tool for restaurant owners. Enter ingredient costs and get optimal pricing recommendations with profit margin analysis.",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
+              offers: [
+                {
+                  "@type": "Offer",
+                  name: "Free Plan",
+                  price: "0",
+                  priceCurrency: "USD",
+                  description: "Price up to 5 dishes free. No credit card required.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Pro Monthly",
+                  price: "9.00",
+                  priceCurrency: "USD",
+                  description: "Unlimited dishes, batch pricing, PDF export.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Pro Annual",
+                  price: "79.00",
+                  priceCurrency: "USD",
+                  description: "Best value — save $29 vs monthly.",
+                },
+              ],
               featureList: [
                 "AI menu pricing recommendations",
                 "Food cost calculator",

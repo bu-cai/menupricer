@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /api/stripe/
+Disallow: /api/auth/
+
+Sitemap: https://www.aimenupricer.com/sitemap.xml
