@@ -214,85 +214,140 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 /* ── Hero Mockup ─────────────────────────────── */
 function HeroMockup() {
   const tiers = [
-    { label: "Budget", price: "$6.99", margin: "72%", dim: true },
-    { label: "Standard", price: "$8.99", margin: "79%", recommended: true },
-    { label: "Premium", price: "$12.99", margin: "86%", dim: true },
+    { label: "Budget", price: "$8.99", margin: 65, dim: true },
+    { label: "Standard", price: "$11.99", margin: 74, recommended: true },
+    { label: "Premium", price: "$15.99", margin: 80, dim: true },
   ];
-  const lines = [
-    "Pricing Strategy",
-    "Price at $8.99 for dine-in — aligns with",
-    "casual dining benchmarks. On delivery",
-    "platforms (DoorDash/Uber Eats), charge",
-    "$10.99 to offset 25% commission.",
-    "",
-    "Menu Copy",
-    "Tender braised pork belly slow-cooked in",
-    "savory soy glaze — a house favorite.",
+  const costs = [
+    { label: "Ingredients", pct: 52, color: "bg-orange-400" },
+    { label: "Labor", pct: 20, color: "bg-blue-300" },
+    { label: "Overhead", pct: 10, color: "bg-purple-300" },
   ];
   return (
-    <div className="relative" style={{ animation: "hero-sub 800ms ease 400ms both" }}>
-      {/* Glow behind mockup */}
-      <div className="absolute -inset-4 bg-orange-400/10 rounded-3xl blur-2xl" />
-      {/* Browser chrome */}
-      <div className="relative bg-white rounded-2xl border border-gray-200 shadow-2xl shadow-orange-100/60 overflow-hidden">
-        {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-          <span className="w-3 h-3 rounded-full bg-red-400" />
-          <span className="w-3 h-3 rounded-full bg-yellow-400" />
-          <span className="w-3 h-3 rounded-full bg-green-400" />
-          <div className="flex-1 mx-3 bg-white rounded-md px-3 py-1 text-xs text-gray-400 border border-gray-200 flex items-center gap-1.5">
-            <LogoIcon size={12} /> aimenupricer.com
+    <div className="relative select-none" style={{ animation: "hero-sub 800ms ease 400ms both" }}>
+      {/* Ambient glow */}
+      <div className="absolute -inset-6 bg-gradient-to-br from-orange-200/40 to-amber-100/20 rounded-3xl blur-3xl" />
+
+      {/* Browser window */}
+      <div className="relative bg-white rounded-2xl border border-gray-200/80 shadow-2xl shadow-orange-100/50 overflow-hidden">
+
+        {/* Browser chrome */}
+        <div className="flex items-center gap-1.5 px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+          <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+          <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+          <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+          <div className="flex-1 mx-3 bg-white rounded-md px-2.5 py-1 text-[11px] text-gray-400 border border-gray-200 flex items-center gap-1.5">
+            <LogoIcon size={10} />
+            <span>aimenupricer.com</span>
           </div>
         </div>
-        {/* Content */}
-        <div className="p-5">
-          {/* Header row */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-lg">🤖</span>
-            <span className="text-sm font-bold text-gray-800">AI Pricing Analysis</span>
-            <span className="ml-auto text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">✓ Done</span>
+
+        <div className="p-4 space-y-3">
+          {/* Dish header */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-base">🍜</span>
+              <div>
+                <p className="text-xs font-black text-gray-900">Kung Pao Chicken</p>
+                <p className="text-[10px] text-gray-400">Total cost: $3.15</p>
+              </div>
+            </div>
+            <span className="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse inline-block" />
+              AI Done
+            </span>
           </div>
-          {/* Tier cards */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
+
+          {/* Cost breakdown bar */}
+          <div>
+            <p className="text-[9px] font-bold text-gray-400 uppercase tracking-wide mb-1">Cost Breakdown</p>
+            <div className="flex rounded-full overflow-hidden h-2 gap-px">
+              {costs.map((c) => (
+                <div key={c.label} className={`${c.color} h-full`} style={{ width: `${c.pct}%` }} />
+              ))}
+              <div className="bg-green-400 h-full flex-1" />
+            </div>
+            <div className="flex items-center gap-3 mt-1.5">
+              {costs.map((c) => (
+                <span key={c.label} className="flex items-center gap-1 text-[9px] text-gray-400">
+                  <span className={`w-1.5 h-1.5 rounded-full ${c.color} inline-block`} />
+                  {c.label}
+                </span>
+              ))}
+              <span className="flex items-center gap-1 text-[9px] text-green-600 font-semibold ml-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+                Profit
+              </span>
+            </div>
+          </div>
+
+          {/* Pricing tiers */}
+          <div className="grid grid-cols-3 gap-1.5">
             {tiers.map((t) => (
-              <div key={t.label} className={`relative rounded-xl border-2 p-2.5 text-center transition-all ${
+              <div key={t.label} className={`relative rounded-xl border-2 p-2 text-center ${
                 t.recommended
-                  ? "border-orange-400 bg-orange-50 shadow-sm shadow-orange-100"
-                  : "border-gray-100 bg-gray-50"
+                  ? "border-orange-400 bg-gradient-to-b from-orange-50 to-white shadow-sm"
+                  : "border-gray-100 bg-gray-50/80"
               }`}>
                 {t.recommended && (
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full whitespace-nowrap">
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full whitespace-nowrap">
                     ★ BEST
                   </span>
                 )}
-                <p className={`text-[10px] font-semibold mb-0.5 ${t.recommended ? "text-orange-600" : "text-gray-400"}`}>{t.label}</p>
-                <p className={`text-lg font-black leading-tight ${t.recommended ? "text-gray-900" : "text-gray-500"}`}>{t.price}</p>
-                <p className={`text-[10px] font-bold mt-0.5 ${t.recommended ? "text-orange-500" : "text-gray-400"}`}>{t.margin}</p>
+                <p className={`text-[9px] font-bold mb-0.5 ${t.recommended ? "text-orange-500" : "text-gray-400"}`}>{t.label}</p>
+                <p className={`text-base font-black leading-tight ${t.recommended ? "text-gray-900" : "text-gray-400"}`}>{t.price}</p>
+                {/* Mini margin bar */}
+                <div className="mt-1 h-1 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    className={`h-full rounded-full ${t.recommended ? "bg-orange-400" : "bg-gray-300"}`}
+                    style={{ width: `${t.margin}%` }}
+                  />
+                </div>
+                <p className={`text-[9px] font-bold mt-0.5 ${t.recommended ? "text-orange-500" : "text-gray-400"}`}>{t.margin}% margin</p>
               </div>
             ))}
           </div>
-          {/* AI text lines */}
-          <div className="space-y-1.5">
-            {lines.map((line, i) =>
-              !line ? <div key={i} className="h-1" /> :
-              i === 0 || i === 7 ? (
-                <p key={i} className="text-[11px] font-black text-orange-500 uppercase tracking-wide mt-2">{line}</p>
-              ) : (
-                <div key={i} className="h-2 rounded-full bg-gray-100" style={{ width: `${72 + (i * 13) % 25}%` }} />
-              )
-            )}
-            {/* Blinking cursor */}
-            <span className="inline-block w-0.5 h-3 bg-orange-400 ml-0.5 animate-pulse" />
+
+          {/* AI menu copy preview */}
+          <div className="bg-gray-50 rounded-xl p-2.5 border border-gray-100">
+            <p className="text-[9px] font-black text-orange-500 uppercase tracking-wide mb-1.5">✦ AI Menu Copy</p>
+            <p className="text-[10px] text-gray-600 leading-relaxed">
+              &ldquo;Wok-tossed chicken with roasted peanuts in a&nbsp;
+            </p>
+            <div className="flex gap-1 mt-1">
+              <div className="h-1.5 bg-gray-200 rounded-full w-3/4" />
+            </div>
+            <div className="flex gap-1 mt-1">
+              <div className="h-1.5 bg-gray-200 rounded-full w-1/2" />
+              <span className="inline-block w-0.5 h-3 bg-orange-400 animate-pulse -mt-0.5" />
+            </div>
+          </div>
+
+          {/* Delivery row */}
+          <div className="flex items-center justify-between bg-blue-50 rounded-lg px-3 py-2">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs">🛵</span>
+              <span className="text-[10px] font-semibold text-blue-700">DoorDash price</span>
+            </div>
+            <span className="text-[11px] font-black text-blue-700">$14.99</span>
+            <span className="text-[9px] text-blue-500">+25% offset</span>
           </div>
         </div>
       </div>
-      {/* Floating badge */}
-      <div className="absolute -bottom-3 -right-3 bg-white border border-gray-200 rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
-        <span className="text-base">📈</span>
+
+      {/* Floating badge — margin lift */}
+      <div className="absolute -bottom-4 -right-4 bg-white border border-gray-200 rounded-2xl px-3 py-2 shadow-xl shadow-gray-200/60 flex items-center gap-2.5">
+        <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center text-sm">📈</div>
         <div>
-          <p className="text-[10px] text-gray-400 leading-none">Avg margin lift</p>
-          <p className="text-sm font-black text-gray-900 leading-tight">+23%</p>
+          <p className="text-[9px] text-gray-400 leading-none">Margin improved</p>
+          <p className="text-sm font-black text-gray-900 leading-tight">48% → 71%</p>
         </div>
+      </div>
+
+      {/* Floating badge — top left */}
+      <div className="absolute -top-3 -left-3 bg-orange-500 text-white rounded-xl px-2.5 py-1.5 shadow-lg shadow-orange-200 flex items-center gap-1.5">
+        <span className="text-xs">⚡</span>
+        <span className="text-[10px] font-black">30 seconds</span>
       </div>
     </div>
   );
