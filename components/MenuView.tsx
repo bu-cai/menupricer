@@ -9,6 +9,7 @@ import { useCurrency } from "@/lib/CurrencyContext";
 import { t } from "@/lib/i18n";
 import { BrandConfig, loadBrand, saveBrand } from "@/lib/brandConfig";
 import BatchPricingModal from "@/components/BatchPricingModal";
+import UpgradeModal from "@/components/UpgradeModal";
 
 interface Props {
   items: MenuItem[];
@@ -18,6 +19,7 @@ interface Props {
   onAddMore: () => void;
   onExportPdf: (brand: BrandConfig) => void;
   onBatchAdd: (newItems: Omit<MenuItem, "id" | "addedAt">[]) => void;
+  userPlan?: "free" | "pro";
 }
 
 const TAGS = [
@@ -64,7 +66,7 @@ function MarginBar({ margin }: { margin: number }) {
   );
 }
 
-export default function MenuView({ items, onDelete, onCategoryChange, onTagsChange, onAddMore, onExportPdf, onBatchAdd }: Props) {
+export default function MenuView({ items, onDelete, onCategoryChange, onTagsChange, onAddMore, onExportPdf, onBatchAdd, userPlan = "free" }: Props) {
   const { lang } = useLang();
   const { currency } = useCurrency();
   const isZH = lang === "ZH";
@@ -78,6 +80,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
   const [showBrand, setShowBrand] = useState(false);
   const [brand, setBrand] = useState<BrandConfig>({ restaurantName: "", tagline: "", accentColor: "#ea580c" });
   const [showBatch, setShowBatch] = useState(false);
+  const [showBatchUpgrade, setShowBatchUpgrade] = useState(false);
 
   useEffect(() => { setBrand(loadBrand()); }, []);
 
@@ -131,13 +134,14 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
             {t("menuAddMore", lang)}
           </button>
           <button
-            onClick={() => setShowBatch(true)}
+            onClick={() => userPlan === "pro" ? setShowBatch(true) : setShowBatchUpgrade(true)}
             className="border-2 border-orange-200 text-orange-500 font-bold px-5 py-3 rounded-xl hover:bg-orange-50 transition-colors text-sm"
           >
-            {isZH ? "⚡ 批量定价" : "⚡ Batch Pricing"}
+            {isZH ? "⚡ 批量定价" : "⚡ Batch Pricing"}{userPlan !== "pro" && " 🔒"}
           </button>
         </div>
         {showBatch && <BatchPricingModal onClose={() => setShowBatch(false)} onAddAll={onBatchAdd} />}
+        {showBatchUpgrade && <UpgradeModal reason="batch_pricing" onClose={() => setShowBatchUpgrade(false)} />}
       </div>
     );
   }
@@ -432,10 +436,10 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
             {t("menuAddMore", lang)}
           </button>
           <button
-            onClick={() => setShowBatch(true)}
+            onClick={() => userPlan === "pro" ? setShowBatch(true) : setShowBatchUpgrade(true)}
             className="flex-1 py-3 rounded-xl border-2 border-dashed border-blue-200 text-blue-500 font-semibold text-sm hover:bg-blue-50 transition-colors"
           >
-            {isZH ? "⚡ 批量" : "⚡ Batch"}
+            {isZH ? "⚡ 批量" : "⚡ Batch"}{userPlan !== "pro" && " 🔒"}
           </button>
         </div>
         <div className="flex gap-3">
@@ -462,6 +466,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
       </div>
 
       {showBatch && <BatchPricingModal onClose={() => setShowBatch(false)} onAddAll={onBatchAdd} />}
+      {showBatchUpgrade && <UpgradeModal reason="batch_pricing" onClose={() => setShowBatchUpgrade(false)} />}
     </div>
   );
 }

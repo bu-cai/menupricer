@@ -6,7 +6,7 @@ import { useLang } from "@/lib/LanguageContext";
 
 interface Props {
   onClose: () => void;
-  reason?: "menu_limit";
+  reason?: "menu_limit" | "batch_pricing" | "upgrade_required";
 }
 
 // Features written as outcomes, not feature names
@@ -98,6 +98,22 @@ export default function UpgradeModal({ onClose, reason }: Props) {
                 {isZH
                   ? "Pro 用户平均在 30 天内定价 18 道菜"
                   : "Pro users price an average of 18 dishes in their first month"}
+              </p>
+            </>
+          ) : reason === "batch_pricing" || reason === "upgrade_required" ? (
+            <>
+              <div className="inline-block bg-white/20 rounded-full px-3 py-1 text-xs font-semibold mb-3">
+                {isZH ? "Pro 专属功能" : "Pro feature"}
+              </div>
+              <h2 className="text-xl font-black leading-snug mb-1">
+                {isZH
+                  ? "批量定价 — 一次定价整份菜单"
+                  : "Batch pricing — price your whole menu at once"}
+              </h2>
+              <p className="text-sm text-orange-100">
+                {isZH
+                  ? "输入 20 道菜，AI 自动定价全部"
+                  : "Enter 20 dishes, AI prices them all in seconds"}
               </p>
             </>
           ) : (

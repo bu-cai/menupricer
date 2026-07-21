@@ -1,5 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getUser, upsertUser, checkUserRateLimit, checkIpRateLimit } from "@/lib/db";
 
 const proxyClient = process.env.DATAEYESAI_BASE_URL
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, baseURL: process.env.DATAEYESAI_BASE_URL })
@@ -7,7 +10,47 @@ const proxyClient = process.env.DATAEYESAI_BASE_URL
 
 const directClient = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
+function getClientIp(req: NextRequest): string {
+  return (
+    req.headers.get("x-real-ip") ??
+    req.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+    "unknown"
+  );
+}
+
 export async function POST(req: NextRequest) {
+  // ── Rate limiting ──────────────────────────────────────────────────────────
+  const session = await getServerSession(authOptions);
+  const userId = (session?.user as { id?: string })?.id;
+
+  if (userId) {
+    // Logged-in user: ensure exists in DB then check plan + daily limit
+    await upsertUser(userId, session?.user?.email ?? "");
+    const user = await getUser(userId);
+    const isPro = user?.plan === "pro" && (user.plan_expires_at ?? 0) > Date.now();
+
+    if (!isPro) {
+      const allowed = await checkUserRateLimit(userId);
+      if (!allowed) {
+        return new Response(JSON.stringify({ error: "daily_limit_reached", reason: "upgrade_required" }), {
+          status: 429,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+    }
+  } else {
+    // Anonymous user: limit by IP
+    const ip = getClientIp(req);
+    const allowed = await checkIpRateLimit(ip);
+    if (!allowed) {
+      return new Response(JSON.stringify({ error: "daily_limit_reached", reason: "login_required" }), {
+        status: 429,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+  }
+
+  // ── AI pricing ────────────────────────────────────────────────────────────
   const body = await req.json();
   const { dishName, totalCost, ingredientCost, breakdown, estimateMode, lang } = body;
   const isZH = lang === "ZH";
@@ -197,7 +240,6 @@ Be specific, professional, and data-driven.`;
 
   let stream;
   try {
-    // Try proxy first, fall back to direct Anthropic
     const client = proxyClient ?? directClient;
     stream = await client.messages.stream(streamParams);
   } catch {

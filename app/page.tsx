@@ -19,6 +19,7 @@ import { MenuItem, MenuTier, loadMenu, saveMenu } from "@/lib/menuStore";
 import { exportMenuPdf } from "@/lib/exportMenuPdf";
 import LogoIcon from "@/components/LogoIcon";
 import UpgradeModal from "@/components/UpgradeModal";
+import LoginModal from "@/components/LoginModal";
 import { useSession } from "next-auth/react";
 import {
   cloudLoadMenus, cloudSaveMenus,
@@ -691,6 +692,7 @@ function HomeContent() {
   const [isSharedView, setIsSharedView] = useState(false);
   const [userPlan, setUserPlan] = useState<"free" | "pro">("free");
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const syncedRef = useRef(false);
 
   // Fetch user plan
@@ -860,6 +862,7 @@ function HomeContent() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dishName, totalCost: 0, ingredientCost: 0, breakdown: "", estimateMode: true, lang }),
       });
+      if (res.status === 429) { const e = await res.json().catch(() => ({})); setLoading(false); if (e.reason === "login_required") { setShowLoginModal(true); } else { setShowUpgrade(true); } return; }
       if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
@@ -883,6 +886,7 @@ function HomeContent() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dishName: data.dishName, totalCost: total, ingredientCost: ic, breakdown: bd, lang }),
       });
+      if (res.status === 429) { const e = await res.json().catch(() => ({})); setLoading(false); if (e.reason === "login_required") { setShowLoginModal(true); } else { setShowUpgrade(true); } return; }
       if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
@@ -902,6 +906,7 @@ function HomeContent() {
       {showUpgrade && (
         <UpgradeModal reason="menu_limit" onClose={() => setShowUpgrade(false)} />
       )}
+      {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
 
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} menuCount={menuItems.length} />
       <Hero onStart={() => document.getElementById("cost-form-main")?.scrollIntoView({ behavior: "smooth", block: "start" })} />
@@ -949,6 +954,7 @@ function HomeContent() {
               onAddMore={() => setActiveTab("pricer")}
               onExportPdf={(brand) => exportMenuPdf(menuItems, brand)}
               onBatchAdd={handleBatchAdd}
+              userPlan={userPlan}
             />
           )}
 
