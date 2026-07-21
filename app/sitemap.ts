@@ -22,8 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/coffee-shop-pricing-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/food-truck-pricing-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/delivery-platform-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    // About
+    // About & Compare
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/compare`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/menupricer-vs-spreadsheet`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/menupricer-vs-square`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/menupricer-vs-toast`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({
