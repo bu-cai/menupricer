@@ -36,12 +36,12 @@ export async function GET(req: NextRequest) {
   ].filter((k) => !!process.env[k]);
 
   if (!connStr) {
+    // Print ALL env var keys to find the real DB variable name
+    const allKeys = Object.keys(process.env).sort();
     return NextResponse.json({
       error: "No database connection string found",
       availableDbVars,
-      allEnvKeys: Object.keys(process.env).filter((k) =>
-        k.includes("POST") || k.includes("DATABASE") || k.includes("NEON") || k.includes("PG")
-      ),
+      allEnvKeys: allKeys,
     });
   }
 
