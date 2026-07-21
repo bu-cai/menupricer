@@ -130,6 +130,47 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is a good food cost percentage for a restaurant?",
+                  acceptedAnswer: { "@type": "Answer", text: "A good food cost percentage is 28–35% of the menu price. Fine dining can go up to 38%; fast casual should stay below 30%. MenuPricer calculates this automatically for every dish." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I calculate menu pricing?",
+                  acceptedAnswer: { "@type": "Answer", text: "Divide your ingredient cost by your target food cost percentage. If a dish costs $4 to make and you want 30% food cost, the menu price is $4 ÷ 0.30 = $13.33. MenuPricer automates this and shows Budget, Standard, and Premium price tiers." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How much does DoorDash charge restaurants?",
+                  acceptedAnswer: { "@type": "Answer", text: "DoorDash charges 15–30% commission depending on plan (Basic: 25–30%, Plus: 20–25%, Premier: 15%), plus ~2.9% payment processing. MenuPricer calculates a delivery-adjusted price that offsets these fees." },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is MenuPricer free to use?",
+                  acceptedAnswer: { "@type": "Answer", text: "Yes. MenuPricer is free for up to 5 dishes with no credit card required. The Pro plan ($9/month or $79/year) unlocks unlimited dishes, batch pricing, and PDF export." },
+                },
+                {
+                  "@type": "Question",
+                  name: "What currencies does MenuPricer support?",
+                  acceptedAnswer: { "@type": "Answer", text: "MenuPricer supports USD, CNY (Chinese Yuan), and EUR. You can switch currencies from the settings panel at the top of the page." },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I price a dish for delivery vs. dine-in?",
+                  acceptedAnswer: { "@type": "Answer", text: "Set your dine-in price based on food cost + target margin. Then add 15–25% for delivery platforms to offset commissions. MenuPricer shows both prices in every pricing report." },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <SessionWrapper>{children}</SessionWrapper>
