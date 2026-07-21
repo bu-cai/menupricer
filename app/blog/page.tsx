@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: "Restaurant Pricing & Food Cost Blog — MenuPricer",
   description:
     "Guides on menu pricing, food cost calculation, and restaurant profitability. Free resources for restaurant owners, food truck operators, and caterers.",
-  alternates: { canonical: "https://www.aimenupricer.com/blog" },
+  alternates: {
+    canonical: "https://www.aimenupricer.com/blog",
+    types: { "application/rss+xml": "https://www.aimenupricer.com/feed.xml" },
+  },
   openGraph: {
     title: "Restaurant Pricing & Food Cost Blog — MenuPricer",
     description: "Free guides on menu pricing, food cost, and restaurant profitability.",
@@ -51,12 +54,27 @@ const POSTS = [
 
 const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Profitability", "Delivery"];
 
+const ITEM_LIST_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Restaurant Pricing & Food Cost Guides",
+  url: "https://www.aimenupricer.com/blog",
+  numberOfItems: POSTS.length,
+  itemListElement: POSTS.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `https://www.aimenupricer.com/blog/${p.slug}`,
+    name: p.title,
+  })),
+};
+
 export default function BlogPage() {
   const featured = POSTS.filter((p) => p.featured);
   const rest = POSTS.filter((p) => !p.featured);
 
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ITEM_LIST_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -142,6 +160,7 @@ export default function BlogPage() {
             <Link href="/food-cost-calculator" className="hover:text-orange-500">Food Cost Calculator</Link>
             <Link href="/restaurant-profit-calculator" className="hover:text-orange-500">Profit Calculator</Link>
             <Link href="/compare" className="hover:text-orange-500">Compare</Link>
+            <a href="/feed.xml" className="hover:text-orange-500">RSS Feed</a>
           </div>
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer</p>
         </div>

@@ -33,9 +33,20 @@ const FAQS = [
   { q: "Is MenuPricer a POS system?", a: "No. MenuPricer is a menu pricing and food cost calculator — not a POS. It helps you determine the right price for each dish before it goes on your menu. You still need a POS like Square or Toast to process payments." },
 ];
 
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.aimenupricer.com/compare" },
+    { "@type": "ListItem", position: 3, name: "MenuPricer vs Square", item: "https://www.aimenupricer.com/compare/menupricer-vs-square" },
+  ],
+};
+
 export default function VsSquarePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">

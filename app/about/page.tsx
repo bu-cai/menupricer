@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "MenuPricer helps restaurant owners price their menus accurately. AI-powered food cost calculation, 3 pricing tiers, delivery platform markup, and PDF export.",
     url: "https://www.aimenupricer.com/about",
+    images: [{ url: "/images/hero-kitchen-ai.png", width: 1200, height: 630, alt: "Restaurant kitchen with AI-powered pricing dashboard" }],
   },
 };
 
@@ -80,6 +82,16 @@ export default function AboutPage() {
           <p className="text-lg text-gray-500 leading-relaxed">
             MenuPricer solves this. Type a dish name, enter your ingredient costs (or let AI estimate them), and get the right price in under 30 seconds — with food cost percentage, gross margin, and three pricing tiers calibrated for Budget, Standard, and Premium positioning.
           </p>
+          <div className="mt-10 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <Image
+              src="/images/hero-kitchen-ai.png"
+              alt="Restaurant kitchen with AI-powered menu pricing dashboard"
+              width={1200}
+              height={630}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
         </section>
 
         {/* What it is */}

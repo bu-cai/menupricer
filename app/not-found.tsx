@@ -9,11 +9,13 @@ export const metadata: Metadata = {
 
 const TOOLS = [
   { href: "/food-cost-calculator", label: "Food Cost Calculator" },
-  { href: "/menu-cost-calculator", label: "Menu Cost Calculator" },
   { href: "/recipe-cost-calculator", label: "Recipe Cost Calculator" },
-  { href: "/restaurant-markup-calculator", label: "Markup Calculator" },
   { href: "/restaurant-profit-calculator", label: "Profit Calculator" },
-  { href: "/bakery-pricing-calculator", label: "Bakery Pricing" },
+  { href: "/delivery-platform-calculator", label: "Delivery Calculator" },
+  { href: "/compare", label: "Compare vs Alternatives" },
+  { href: "/blog", label: "Pricing Blog" },
+  { href: "/about", label: "About MenuPricer" },
+  { href: "/menu-pricing", label: "Menu Pricing by Type" },
 ];
 
 export default function NotFound() {

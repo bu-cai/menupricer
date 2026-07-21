@@ -11,12 +11,37 @@ export const metadata: Metadata = {
     title: "Food Cost Formula: Calculate Food Cost Percentage",
     description: "The exact formula to calculate food cost per dish and food cost percentage — with examples for every restaurant type.",
     url: "https://www.aimenupricer.com/blog/food-cost-formula",
+    images: [{ url: "/images/hero-restaurant-pricing.png", width: 1200, height: 630, alt: "Restaurant owner calculating food cost percentage" }],
   },
+};
+
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Food Cost Formula: How to Calculate Food Cost Percentage (2026)",
+  description: "The exact food cost formula restaurant owners use to calculate food cost percentage per dish and across the full menu — with examples, benchmarks, and a free calculator.",
+  author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  datePublished: "2026-06-15",
+  dateModified: "2026-07-21",
+  mainEntityOfPage: "https://www.aimenupricer.com/blog/food-cost-formula",
+};
+
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.aimenupricer.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Food Cost Formula", item: "https://www.aimenupricer.com/blog/food-cost-formula" },
+  ],
 };
 
 export default function FoodCostFormulaPost() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -34,7 +59,7 @@ export default function FoodCostFormulaPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Food Cost</span>
           <span className="text-xs text-gray-400">6 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <span className="text-xs text-gray-400">Updated July 2026</span>
+          <time dateTime="2026-06-15" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

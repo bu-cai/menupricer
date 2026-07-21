@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Free menu calculator for restaurant owners. Enter ingredient costs and get AI-powered menu prices in seconds — with profit margin analysis and PDF export.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "MenuPricer — AI-powered menu pricing for restaurants",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "Free Menu Calculator & AI Pricing Tool — MenuPricer",
     description:
       "Free menu calculator for restaurants. AI-powered pricing with profit margin analysis.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -68,6 +68,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
+    types: {
+      "application/rss+xml": `${BASE_URL}/feed.xml`,
+    },
   },
 };
 
@@ -168,6 +171,23 @@ export default function RootLayout({
                   acceptedAnswer: { "@type": "Answer", text: "Set your dine-in price based on food cost + target margin. Then add 15–25% for delivery platforms to offset commissions. MenuPricer shows both prices in every pricing report." },
                 },
               ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "MenuPricer",
+              url: BASE_URL,
+              description: "Free AI-powered menu pricing tool and food cost calculator for restaurant owners.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: { "@type": "EntryPoint", urlTemplate: `${BASE_URL}/?q={search_term_string}` },
+                "query-input": "required name=search_term_string",
+              },
             }),
           }}
         />

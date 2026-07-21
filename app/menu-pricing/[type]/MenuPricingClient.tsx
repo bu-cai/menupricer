@@ -194,6 +194,27 @@ export default function MenuPricingClient({ data }: Props) {
         </div>
       </section>
 
+      {/* Related calculators */}
+      <section className="bg-orange-50 border-y border-orange-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-4">Free Calculators</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { href: "/food-cost-calculator", label: "Food Cost Calculator", desc: "Cost % per dish" },
+              { href: "/recipe-cost-calculator", label: "Recipe Cost Calculator", desc: "Full recipe breakdown" },
+              { href: "/restaurant-profit-calculator", label: "Profit Calculator", desc: "Net margin analysis" },
+              { href: "/delivery-platform-calculator", label: "Delivery Calculator", desc: "DoorDash & Uber Eats fees" },
+            ].map((tool) => (
+              <Link key={tool.href} href={tool.href}
+                className="bg-white border border-orange-100 hover:border-orange-300 rounded-xl p-4 transition-all hover:shadow-sm">
+                <p className="font-bold text-gray-900 text-sm mb-0.5">{tool.label}</p>
+                <p className="text-xs text-gray-400">{tool.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related types */}
       <section className="max-w-4xl mx-auto px-6 py-14">
         <h2 className="text-xl font-black text-gray-900 mb-6">Menu Pricing by Restaurant Type</h2>

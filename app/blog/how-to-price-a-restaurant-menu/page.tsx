@@ -11,12 +11,37 @@ export const metadata: Metadata = {
     title: "How to Price a Restaurant Menu: The Complete Guide",
     description: "Step-by-step formula for calculating food cost and setting profitable menu prices — with examples.",
     url: "https://www.aimenupricer.com/blog/how-to-price-a-restaurant-menu",
+    images: [{ url: "/images/hero-restaurant-pricing.png", width: 1200, height: 630, alt: "Restaurant owner pricing menu with AI tool" }],
   },
+};
+
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "How to Price a Restaurant Menu: The Complete Guide (2026)",
+  description: "Step-by-step guide to pricing a restaurant menu using food cost percentage, markup formula, pricing tiers, and delivery platform pricing.",
+  author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  datePublished: "2026-07-01",
+  dateModified: "2026-07-21",
+  mainEntityOfPage: "https://www.aimenupricer.com/blog/how-to-price-a-restaurant-menu",
+};
+
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.aimenupricer.com/blog" },
+    { "@type": "ListItem", position: 3, name: "How to Price a Restaurant Menu", item: "https://www.aimenupricer.com/blog/how-to-price-a-restaurant-menu" },
+  ],
 };
 
 export default function HowToPriceMenuPost() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -35,7 +60,7 @@ export default function HowToPriceMenuPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Menu Pricing</span>
           <span className="text-xs text-gray-400">8 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <span className="text-xs text-gray-400">Updated July 2026</span>
+          <time dateTime="2026-07-01" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">
@@ -250,6 +275,14 @@ export default function HowToPriceMenuPost() {
             <Link href="/food-cost-calculator" className="group block border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
               <p className="text-xs text-gray-400 mb-1">Free Tool</p>
               <p className="font-bold text-gray-900 text-sm group-hover:text-orange-600 transition-colors">Food Cost Calculator — Free Online Tool →</p>
+            </Link>
+            <Link href="/blog/restaurant-profit-margin" className="group block border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-gray-400 mb-1">Profitability</p>
+              <p className="font-bold text-gray-900 text-sm group-hover:text-orange-600 transition-colors">What Is a Good Restaurant Profit Margin? →</p>
+            </Link>
+            <Link href="/compare/menupricer-vs-spreadsheet" className="group block border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-gray-400 mb-1">Compare</p>
+              <p className="font-bold text-gray-900 text-sm group-hover:text-orange-600 transition-colors">MenuPricer vs Spreadsheets for Pricing →</p>
             </Link>
           </div>
         </div>

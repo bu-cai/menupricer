@@ -1009,6 +1009,36 @@ function HomeContent() {
       <Testimonials />
       <FaqAccordion />
 
+      {/* From the Blog */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2">From the Blog</p>
+              <h2 className="text-3xl font-black text-gray-900 tracking-tight">Restaurant pricing guides</h2>
+            </div>
+            <a href="/blog" className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors hidden sm:block">All articles →</a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: "/blog/how-to-price-a-restaurant-menu", category: "Menu Pricing", title: "How to Price a Restaurant Menu", desc: "The complete formula for calculating food cost % and setting profitable prices for every dish." },
+              { href: "/blog/food-cost-formula", category: "Food Cost", title: "Food Cost Formula Explained", desc: "Calculate food cost percentage per dish and across your full menu — with worked examples." },
+              { href: "/blog/restaurant-profit-margin", category: "Profitability", title: "What's a Good Restaurant Profit Margin?", desc: "Average margins by restaurant type and five strategies to improve yours this week." },
+              { href: "/blog/delivery-platform-commission", category: "Delivery", title: "DoorDash & Uber Eats Commission Rates", desc: "Every fee broken down — and the exact formula to price your delivery menu profitably." },
+            ].map((post) => (
+              <a key={post.href} href={post.href} className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-5 transition-all hover:shadow-sm">
+                <span className="text-xs font-bold text-orange-500 uppercase tracking-widest">{post.category}</span>
+                <h3 className="font-black text-gray-900 text-sm mt-2 mb-2 group-hover:text-orange-600 transition-colors leading-tight">{post.title}</h3>
+                <p className="text-xs text-gray-400 leading-relaxed">{post.desc}</p>
+              </a>
+            ))}
+          </div>
+          <div className="mt-4 text-center sm:hidden">
+            <a href="/blog" className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors">All articles →</a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 py-10">
         <div className="max-w-6xl mx-auto px-6">

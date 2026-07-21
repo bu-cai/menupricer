@@ -14,6 +14,70 @@ export const metadata: Metadata = {
   },
 };
 
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "MenuPricer Pro",
+  description: "AI-powered menu pricing tool for restaurant owners. Unlimited dishes, batch pricing, analytics, and PDF export.",
+  url: "https://www.aimenupricer.com/pricing",
+  brand: { "@type": "Brand", name: "MenuPricer" },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Free Plan",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Price up to 5 dishes. No credit card required.",
+      availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "Offer",
+      name: "Pro Monthly",
+      price: "9.00",
+      priceCurrency: "USD",
+      priceSpecification: { "@type": "UnitPriceSpecification", price: "9.00", priceCurrency: "USD", unitCode: "MON" },
+      description: "Unlimited dishes, batch pricing, PDF export, analytics.",
+      availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "Offer",
+      name: "Pro Annual",
+      price: "79.00",
+      priceCurrency: "USD",
+      priceSpecification: { "@type": "UnitPriceSpecification", price: "79.00", priceCurrency: "USD", unitCode: "ANN" },
+      description: "Best value — save $29 vs monthly. All Pro features.",
+      availability: "https://schema.org/InStock",
+    },
+  ],
+};
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I cancel anytime?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Cancel from your account dashboard — no questions asked. You keep Pro access until the end of your billing period." },
+    },
+    {
+      "@type": "Question",
+      name: "What happens when I hit the 5-dish free limit?",
+      acceptedAnswer: { "@type": "Answer", text: "Your existing dishes stay saved. You can view and edit them — you just can't add more until you upgrade." },
+    },
+    {
+      "@type": "Question",
+      name: "Is the annual plan worth it?",
+      acceptedAnswer: { "@type": "Answer", text: "If you're actively managing your menu, yes. You save $29 vs monthly — that's over 3 months free. Most restaurant owners reprice seasonally, so annual makes sense." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer refunds?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes — if you're not satisfied within 7 days of subscribing, contact us for a full refund." },
+    },
+  ],
+};
+
 const FREE_FEATURES = [
   "5 menu items",
   "AI pricing (3 tiers per dish)",
@@ -53,6 +117,8 @@ const FAQS = [
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">

@@ -34,9 +34,20 @@ const FAQS = [
   { q: "Does MenuPricer replace Toast?", a: "No. Toast handles payments, kitchen displays, staff scheduling, inventory, and much more. MenuPricer only does menu pricing and food cost calculation — and it does that one thing much faster and with AI assistance." },
 ];
 
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.aimenupricer.com/compare" },
+    { "@type": "ListItem", position: 3, name: "MenuPricer vs Toast", item: "https://www.aimenupricer.com/compare/menupricer-vs-toast" },
+  ],
+};
+
 export default function VsToastPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     title: "MenuPricer vs Spreadsheets for Restaurant Menu Pricing",
     description: "AI menu pricing in 30 seconds vs. 2-hour spreadsheet builds that break when you edit them.",
     url: "https://www.aimenupricer.com/compare/menupricer-vs-spreadsheet",
+    images: [{ url: "/images/compare-spreadsheet-vs-tool.png", width: 1200, height: 630, alt: "MenuPricer vs spreadsheet comparison" }],
   },
 };
 
@@ -35,9 +37,20 @@ const FAQS = [
   { q: "Does MenuPricer replace restaurant accounting software?", a: "No. MenuPricer is a menu pricing and food cost calculator — not accounting software. It helps you set the right price before a dish goes on the menu. Use it alongside your accounting software, not instead of it." },
 ];
 
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.aimenupricer.com/compare" },
+    { "@type": "ListItem", position: 3, name: "MenuPricer vs Spreadsheets", item: "https://www.aimenupricer.com/compare/menupricer-vs-spreadsheet" },
+  ],
+};
+
 export default function VsSpreadsheetPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -80,6 +93,17 @@ export default function VsSpreadsheetPage() {
             <p className="text-5xl font-black text-gray-400 mb-2">2–4h</p>
             <p className="text-sm text-gray-400">To build a working pricing template</p>
           </div>
+        </div>
+
+        {/* Comparison illustration */}
+        <div className="rounded-2xl overflow-hidden shadow-md border border-gray-100 mb-12">
+          <Image
+            src="/images/compare-spreadsheet-vs-tool.png"
+            alt="MenuPricer AI dashboard vs spreadsheet comparison for restaurant menu pricing"
+            width={1200}
+            height={630}
+            className="w-full h-auto object-cover"
+          />
         </div>
 
         {/* Feature table */}
