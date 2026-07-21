@@ -28,6 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/compare/menupricer-vs-spreadsheet`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/compare/menupricer-vs-square`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/compare/menupricer-vs-toast`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    // Blog
+    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/blog/how-to-price-a-restaurant-menu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/food-cost-formula`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({

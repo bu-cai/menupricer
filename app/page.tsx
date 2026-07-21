@@ -1022,6 +1022,10 @@ function HomeContent() {
                 <a href="/restaurant-markup-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Markup Calculator</a>
                 <a href="/restaurant-profit-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Profit Calculator</a>
                 <a href="/bakery-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Bakery Pricing Calculator</a>
+                <a href="/catering-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Catering Calculator</a>
+                <a href="/coffee-shop-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Coffee Shop Pricing</a>
+                <a href="/food-truck-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Food Truck Pricing</a>
+                <a href="/delivery-platform-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Delivery Commission</a>
               </div>
             </div>
             <div>
@@ -1040,6 +1044,9 @@ function HomeContent() {
               <div className="space-y-2">
                 <a href="/pricing" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Pricing</a>
                 <a href="/?upgrade=1" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Upgrade to Pro</a>
+                <a href="/about" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">About</a>
+                <a href="/compare" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Compare</a>
+                <a href="/blog" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Blog</a>
               </div>
             </div>
             <div>
