@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/recipe-yield`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/how-to-cost-a-dish`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/how-to-raise-menu-prices`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/food-cost-percentage-by-restaurant-type`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({

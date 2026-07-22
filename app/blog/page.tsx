@@ -74,6 +74,14 @@ const POSTS = [
     readTime: "8 min read",
     featured: false,
   },
+  {
+    slug: "food-cost-percentage-by-restaurant-type",
+    title: "Food Cost Percentage by Restaurant Type: 2026 Benchmarks",
+    description: "What is a good food cost percentage? Benchmarks for fine dining, fast casual, food trucks, bakeries, coffee shops, and more — with industry averages and prime cost targets.",
+    category: "Food Cost",
+    readTime: "7 min read",
+    featured: false,
+  },
 ];
 
 const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Profitability", "Delivery"];
