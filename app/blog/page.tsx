@@ -66,6 +66,14 @@ const POSTS = [
     readTime: "7 min read",
     featured: false,
   },
+  {
+    slug: "how-to-raise-menu-prices",
+    title: "How to Raise Menu Prices Without Losing Customers",
+    description: "The step-by-step playbook for raising restaurant prices — when to do it, how much, which dishes first, and how to communicate it so your regulars stay.",
+    category: "Menu Pricing",
+    readTime: "8 min read",
+    featured: false,
+  },
 ];
 
 const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Profitability", "Delivery"];
