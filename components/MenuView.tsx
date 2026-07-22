@@ -148,15 +148,32 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
     );
   }
 
-  const renderDishCard = (item: MenuItem, idx: number) => (
+  const renderDishCard = (item: MenuItem, idx: number) => {
+    const margin = getMargin(item);
+    const isCritical = item.totalCost > 0 && margin < 30;
+    const isLow = item.totalCost > 0 && margin >= 30 && margin < 45;
+
+    return (
     <div
       key={item.id}
-      className="bg-white rounded-2xl border border-orange-100 shadow-sm p-5"
+      className={`bg-white rounded-2xl border shadow-sm p-5 ${isCritical ? "border-red-200" : isLow ? "border-amber-200" : "border-orange-100"}`}
       style={{ animation: "slide-up 300ms ease both", animationDelay: `${idx * 40}ms` }}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
           <h3 className="font-bold text-gray-900 text-base truncate">{item.dishName}</h3>
+          {isCritical && (
+            <span className="text-[10px] font-bold bg-red-100 text-red-600 px-2 py-0.5 rounded-full shrink-0">
+              🚨 {isZH ? "利润过低" : "Low margin"}
+            </span>
+          )}
+          {isLow && (
+            <span className="text-[10px] font-bold bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full shrink-0">
+              ⚠️ {isZH ? "利润偏低" : "Margin low"}
+            </span>
+          )}
+          </div>
           <div className="flex items-center gap-2 mt-1 flex-wrap">
             {item.totalCost > 0 && (
               <span className="text-xs text-gray-400">
@@ -280,6 +297,11 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
       </div>
     </div>
   );
+  };
+
+  // ── warning banner data ──────────────────────────────
+  const criticalItems = items.filter(item => item.totalCost > 0 && getMargin(item) < 30);
+  const lowItems = items.filter(item => item.totalCost > 0 && getMargin(item) >= 30 && getMargin(item) < 45);
 
   return (
     <div className="space-y-5">
@@ -292,6 +314,22 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
           value={lowestCost > 0 ? formatPrice(lowestCost, currency) : "—"}
         />
       </div>
+
+      {/* Cost warning banner */}
+      {(criticalItems.length > 0 || lowItems.length > 0) && (
+        <div className={`rounded-2xl border px-4 py-3 text-sm ${criticalItems.length > 0 ? "bg-red-50 border-red-200" : "bg-amber-50 border-amber-200"}`}>
+          <p className={`font-bold mb-1 ${criticalItems.length > 0 ? "text-red-700" : "text-amber-700"}`}>
+            {criticalItems.length > 0
+              ? (isZH ? `🚨 ${criticalItems.length} 道菜利润过低（<30%），建议重新定价` : `🚨 ${criticalItems.length} dish${criticalItems.length > 1 ? "es" : ""} below 30% margin — consider repricing`)
+              : (isZH ? `⚠️ ${lowItems.length} 道菜利润偏低（30–45%）` : `⚠️ ${lowItems.length} dish${lowItems.length > 1 ? "es" : ""} with low margin (30–45%)`)}
+          </p>
+          <p className={`text-xs ${criticalItems.length > 0 ? "text-red-500" : "text-amber-600"}`}>
+            {isZH
+              ? "标准目标：食材成本率 ≤30%，即利润率 ≥70%"
+              : "Target: food cost ≤30% (margin ≥70%). Raise price or reduce ingredient cost."}
+          </p>
+        </div>
+      )}
 
       {/* View tabs */}
       <div className="flex gap-2">
