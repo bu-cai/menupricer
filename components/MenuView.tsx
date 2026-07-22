@@ -81,6 +81,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
   const [brand, setBrand] = useState<BrandConfig>({ restaurantName: "", tagline: "", accentColor: "#ea580c" });
   const [showBatch, setShowBatch] = useState(false);
   const [showBatchUpgrade, setShowBatchUpgrade] = useState(false);
+  const [showPdfUpgrade, setShowPdfUpgrade] = useState(false);
 
   useEffect(() => { setBrand(loadBrand()); }, []);
 
@@ -142,6 +143,7 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
         </div>
         {showBatch && <BatchPricingModal onClose={() => setShowBatch(false)} onAddAll={onBatchAdd} />}
         {showBatchUpgrade && <UpgradeModal reason="batch_pricing" onClose={() => setShowBatchUpgrade(false)} />}
+        {showPdfUpgrade && <UpgradeModal reason="pdf_export" onClose={() => setShowPdfUpgrade(false)} />}
       </div>
     );
   }
@@ -454,19 +456,23 @@ export default function MenuView({ items, onDelete, onCategoryChange, onTagsChan
             {brand.restaurantName || (isZH ? "品牌设置" : "Brand")}
           </button>
           <button
-            onClick={() => onExportPdf(brand)}
+            onClick={() => {
+              if (userPlan !== "pro") { setShowPdfUpgrade(true); return; }
+              onExportPdf(brand);
+            }}
             className="flex-1 py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 1v9M4 7l3 3 3-3M1.5 11.5v1a1 1 0 001 1h9a1 1 0 001-1v-1" />
             </svg>
-            {t("menuExportPdf", lang)}
+            {t("menuExportPdf", lang)}{userPlan !== "pro" && " 🔒"}
           </button>
         </div>
       </div>
 
       {showBatch && <BatchPricingModal onClose={() => setShowBatch(false)} onAddAll={onBatchAdd} />}
       {showBatchUpgrade && <UpgradeModal reason="batch_pricing" onClose={() => setShowBatchUpgrade(false)} />}
+      {showPdfUpgrade && <UpgradeModal reason="pdf_export" onClose={() => setShowPdfUpgrade(false)} />}
     </div>
   );
 }

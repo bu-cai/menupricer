@@ -6,7 +6,7 @@ import { useLang } from "@/lib/LanguageContext";
 
 interface Props {
   onClose: () => void;
-  reason?: "menu_limit" | "batch_pricing" | "upgrade_required";
+  reason?: "menu_limit" | "batch_pricing" | "upgrade_required" | "pdf_export";
 }
 
 // Features written as outcomes, not feature names
@@ -32,8 +32,8 @@ const FEATURES = [
     icon: "📄",
   },
   {
-    en: "Cloud sync — access your menu on any device",
-    zh: "云同步 — 任何设备都能查看",
+    en: "Cloud sync — your menu saved automatically across all devices",
+    zh: "云同步 — 菜单自动保存，多设备随时查看",
     icon: "☁️",
   },
 ];
@@ -98,6 +98,22 @@ export default function UpgradeModal({ onClose, reason }: Props) {
                 {isZH
                   ? "Pro 用户平均在 30 天内定价 18 道菜"
                   : "Pro users price an average of 18 dishes in their first month"}
+              </p>
+            </>
+          ) : reason === "pdf_export" ? (
+            <>
+              <div className="inline-block bg-white/20 rounded-full px-3 py-1 text-xs font-semibold mb-3">
+                {isZH ? "Pro 专属功能" : "Pro feature"}
+              </div>
+              <h2 className="text-xl font-black leading-snug mb-1">
+                {isZH
+                  ? "导出品牌菜单 PDF — 直接发给印刷厂"
+                  : "Export a branded menu PDF — ready for print"}
+              </h2>
+              <p className="text-sm text-orange-100">
+                {isZH
+                  ? "含餐厅名、口号、价格分档，一键生成专业菜单"
+                  : "Your restaurant name, tagline, and tiered prices — one click"}
               </p>
             </>
           ) : reason === "batch_pricing" || reason === "upgrade_required" ? (
