@@ -82,9 +82,57 @@ const POSTS = [
     readTime: "7 min read",
     featured: false,
   },
+  {
+    slug: "menu-engineering",
+    title: "Menu Engineering: How to Use the Four-Quadrant Framework to Increase Profit",
+    description: "Menu engineering classifies every dish as a Star, Plowhorse, Puzzle, or Dog — and tells you exactly what to do with each. The complete framework for restaurant owners.",
+    category: "Menu Pricing",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    slug: "how-to-write-menu-descriptions",
+    title: "How to Write Menu Descriptions That Sell (With Examples)",
+    description: "The words on your menu directly affect what customers order and what they pay. Learn the five types of selling words, the two-sentence formula, and see 5 before/after examples.",
+    category: "Menu Design",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    slug: "catering-pricing-guide",
+    title: "Catering Pricing Guide: How Much to Charge Per Person (2026)",
+    description: "Per-person catering rates by event type, the food cost formula for catering, how to quote labor and equipment, and sample pricing for weddings, corporate, and social events.",
+    category: "Catering",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    slug: "bakery-pricing-guide",
+    title: "Bakery Pricing Guide: How to Price Baked Goods for Profit (2026)",
+    description: "The bakery pricing formula — ingredient cost + labor + overhead — with sample prices for bread, croissants, cakes, pastries, and custom cake orders.",
+    category: "Bakery",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    slug: "coffee-shop-menu-pricing",
+    title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
+    description: "Coffee shop pricing benchmarks for espresso drinks, cold brew, matcha, and food items — with food cost percentages and the formula to price any beverage profitably.",
+    category: "Café",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    slug: "restaurant-menu-design-tips",
+    title: "Restaurant Menu Design Tips: 12 Rules That Increase Sales (2026)",
+    description: "12 proven menu design rules — golden triangle placement, anchor pricing, decoy items, removing $ signs, and more — backed by Cornell University research.",
+    category: "Menu Design",
+    readTime: "7 min read",
+    featured: false,
+  },
 ];
 
-const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Profitability", "Delivery"];
+const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Menu Design", "Catering", "Bakery", "Café", "Profitability", "Delivery"];
 
 const ITEM_LIST_SCHEMA = {
   "@context": "https://schema.org",
