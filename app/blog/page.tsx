@@ -50,6 +50,22 @@ const POSTS = [
     readTime: "5 min read",
     featured: false,
   },
+  {
+    slug: "recipe-yield",
+    title: "What Is Recipe Yield? How to Calculate It (With Examples)",
+    description: "Recipe yield is how much usable food a recipe actually produces after trimming, cooking, and portioning. Learn the formula, yield % by ingredient, and how it affects your food cost.",
+    category: "Food Cost",
+    readTime: "5 min read",
+    featured: false,
+  },
+  {
+    slug: "how-to-cost-a-dish",
+    title: "How to Cost a Dish: Step-by-Step Guide for Restaurant Owners",
+    description: "The complete process for costing a restaurant dish — ingredient breakdown, yield adjustments, labor, overhead, and setting a menu price that protects your margins.",
+    category: "Food Cost",
+    readTime: "7 min read",
+    featured: false,
+  },
 ];
 
 const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Profitability", "Delivery"];
