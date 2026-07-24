@@ -290,10 +290,12 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
 
   const applyPreset = (idx: number) => {
     const p = PRESETS[idx];
-    setDishName(p.dishName);
-    setIngredients(p.ingredients);
-    setQtyInputs(p.ingredients.map((ing) => `${ing.quantity}${ing.unit}`));
-    const newKeys = p.ingredients.map(() => keyCounter.current++);
+    const isZH = lang === "ZH";
+    const ings = isZH ? p.ingredients : p.ingredientsEn;
+    setDishName(isZH ? p.dishName : p.dishNameEn);
+    setIngredients(ings);
+    setQtyInputs(ings.map((ing) => `${ing.quantity}${ing.unit}`));
+    const newKeys = ings.map(() => keyCounter.current++);
     setIngKeys(newKeys);
   };
 
@@ -409,7 +411,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         <div className="flex flex-wrap gap-2 mt-2">
           {PRESETS.map((p, i) => (
             <PresetButton key={i} onClick={() => applyPreset(i)}>
-              {p.emoji} {p.label}
+              {p.emoji} {lang === "ZH" ? p.label : p.labelEn}
             </PresetButton>
           ))}
         </div>
