@@ -46,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/restaurant-menu-design-tips`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/compare/menupricer-vs-menutotal`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/compare/menupricer-vs-craftable`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/food-cost-percentage-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/how-to-cost-a-menu-item`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/what-is-yield-in-cooking`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/ghost-kitchen-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/par-level-restaurant`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/corkage-fee`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({
