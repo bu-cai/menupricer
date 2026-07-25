@@ -58,6 +58,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/restaurant-profit-loss-statement`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/how-to-do-food-costing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/catering-cost-per-person`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/food-truck-startup-costs`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/how-to-start-a-catering-business`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-bookkeeping`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-seasonality`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/cost-to-open-a-restaurant`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/how-to-calculate-food-cost`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-kpis`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-budget-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-inventory-costing-methods`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/restaurant-failure-rate`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({
