@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {};
   const base = "https://www.aimenupricer.com";
   return {
-    title: `${data.name} Menu Pricing Calculator — Free Tool for ${data.nameFull}s | MenuPricer`,
+    title: `${data.name} Menu Pricing Calculator — Free Tool for ${data.nameFull}s`,
     description: `Free menu pricing calculator for ${data.nameFull.toLowerCase()}s. Target ${data.marginRange} gross margin with our AI tool. See real dish examples, pricing benchmarks, and industry tips.`,
     keywords: [
       `${data.name.toLowerCase()} menu pricing`,

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "Page Not Found — MenuPricer",
+  title: "Page Not Found",
   robots: { index: false, follow: false },
 };
 

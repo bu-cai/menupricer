@@ -41,18 +41,20 @@ function useCountUp(target: number, duration = 350): number {
   useEffect(() => {
     const start = prevRef.current;
     const diff = target - start;
+    prevRef.current = target;
     if (Math.abs(diff) < 0.001) { setDisplay(target); return; }
+    // Fallback: if rAF is throttled (background tab), show final value immediately
+    const fallback = setTimeout(() => setDisplay(target), duration + 50);
     const startTime = performance.now();
     const tick = (now: number) => {
       const t = Math.min((now - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - t, 3);
       setDisplay(start + diff * eased);
       if (t < 1) rafRef.current = requestAnimationFrame(tick);
-      else { setDisplay(target); prevRef.current = target; }
+      else { clearTimeout(fallback); setDisplay(target); }
     };
     rafRef.current = requestAnimationFrame(tick);
-    prevRef.current = target;
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => { cancelAnimationFrame(rafRef.current); clearTimeout(fallback); };
   }, [target, duration]);
 
   return display;

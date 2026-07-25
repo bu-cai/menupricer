@@ -4,7 +4,7 @@ import LogoIcon from "@/components/LogoIcon";
 import { ALL_TYPES } from "./[type]/data";
 
 export const metadata: Metadata = {
-  title: "Menu Pricing by Restaurant Type — Free Calculators | MenuPricer",
+  title: "Menu Pricing by Restaurant Type — Free Calculators",
   description:
     "Free menu pricing calculators for every restaurant type. Fine dining, fast casual, food truck, bakery, pizza, and café — get industry-specific benchmarks and pricing tools.",
   alternates: { canonical: "https://www.aimenupricer.com/menu-pricing" },
