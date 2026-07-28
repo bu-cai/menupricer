@@ -224,6 +224,15 @@ export default function ToolsHubPage() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-14 border-t border-gray-100 pt-10 text-center">
+          <p className="text-sm text-gray-500 mb-3">
+            Want a worked cost example for a specific dish instead of a calculator?
+          </p>
+          <Link href="/how-to-price" className="text-sm font-semibold text-orange-500 hover:underline">
+            See dish-by-dish pricing guides →
+          </Link>
+        </div>
       </section>
 
       <section className="bg-orange-500 py-14">

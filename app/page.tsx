@@ -1242,6 +1242,7 @@ function HomeContent() {
                 <a href="/menu-pricing/pizza" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Pizza</a>
                 <a href="/menu-pricing/fine-dining" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Fine Dining</a>
                 <a href="/menu-pricing" className="block text-xs text-orange-500 hover:text-orange-600 transition-colors">All Types →</a>
+                <a href="/how-to-price" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors mt-2">How to Price by Dish →</a>
               </div>
             </div>
             <div>
