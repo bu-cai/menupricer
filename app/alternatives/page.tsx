@@ -3,7 +3,7 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "Restaurant Software Alternatives — Honest Comparisons",
+  title: "Restaurant Costing Software Alternatives",
   description:
     "Alternatives to the major restaurant costing and inventory platforms, compared by price, setup time, and what each is actually built for. Including when the incumbent is the right choice.",
   alternates: { canonical: "https://www.aimenupricer.com/alternatives" },

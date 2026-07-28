@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProfitCalculatorClient from "./ProfitCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Restaurant Profit Calculator — Net Profit & Margin Estimator",
+  title: "Restaurant Profit Margin Calculator",
   description:
     "Free restaurant profit calculator. Enter your revenue, food cost, labor cost, and overhead to see net profit, profit margin, and how to improve profitability. Built for restaurant owners.",
   keywords: [

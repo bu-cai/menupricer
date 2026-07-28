@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BakeryCalculatorClient from "./BakeryCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Bakery Pricing Calculator — How to Price Baked Goods",
+  title: "Bakery Pricing Calculator",
   description:
     "Free bakery pricing calculator. Calculate the right selling price for cakes, bread, cookies, and pastries based on ingredient cost, labor, and overhead. Used by home bakers and professional bakeries.",
   keywords: [

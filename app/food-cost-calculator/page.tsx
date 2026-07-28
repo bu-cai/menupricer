@@ -3,7 +3,7 @@ import Link from "next/link";
 import FoodCostCalculatorClient from "./FoodCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Free Food Cost Calculator for Restaurants — Calculate Food Cost Percentage",
+  title: "Free Food Cost Calculator for Restaurants",
   description:
     "Calculate your restaurant's food cost percentage instantly. Enter ingredient costs and get your food cost %, suggested menu price, and profit margin. Free tool for restaurant owners.",
   keywords: [

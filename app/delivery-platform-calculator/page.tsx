@@ -3,7 +3,7 @@ import Link from "next/link";
 import DeliveryCalculatorClient from "./DeliveryCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "DoorDash & Uber Eats Commission Calculator — Delivery Profit Tool",
+  title: "DoorDash & Uber Eats Commission Calculator",
   description:
     "Free delivery platform commission calculator. See exactly how much DoorDash, Uber Eats, and Grubhub take from each order — and calculate the menu price you need to maintain your profit margin on delivery.",
   keywords: [

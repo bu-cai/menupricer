@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RecipeCostCalculatorClient from "./RecipeCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Recipe Cost Calculator — Calculate Exact Cost Per Serving",
+  title: "Recipe Cost Calculator — Cost Per Serving",
   description:
     "Free recipe cost calculator for restaurants. Add all ingredients, quantities, and prices — get total recipe cost, cost per serving, and ideal menu price instantly. No sign-up required.",
   keywords: [

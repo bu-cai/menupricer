@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FoodTruckCalculatorClient from "./FoodTruckCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Food Truck Pricing Calculator — Price Street Food Profitably",
+  title: "Food Truck Pricing Calculator",
   description:
     "Free food truck pricing calculator. Calculate the right menu price for your food truck based on ingredient cost, prep time, truck overhead, and event fees. Built for food truck owners and operators.",
   keywords: [

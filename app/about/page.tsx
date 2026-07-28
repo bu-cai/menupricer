@@ -4,7 +4,7 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "About MenuPricer — AI Menu Pricing Tool for Restaurant Owners",
+  title: "About — AI Menu Pricing for Restaurant Owners",
   description:
     "MenuPricer is an AI-powered menu pricing calculator that helps restaurant owners, food truck operators, bakeries, and caterers calculate food cost, profit margin, and optimal menu prices in seconds.",
   alternates: { canonical: "https://www.aimenupricer.com/about" },

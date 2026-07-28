@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CoffeeShopCalculatorClient from "./CoffeeShopCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Coffee Shop Pricing Calculator — Price Espresso, Lattes & More",
+  title: "Coffee Shop Pricing Calculator",
   description:
     "Free coffee shop pricing calculator. Calculate the right price for espresso, lattes, cold brew, and specialty drinks based on ingredient cost, labor, and overhead. Built for café and coffee shop owners.",
   keywords: [

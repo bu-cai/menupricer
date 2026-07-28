@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MarkupCalculatorClient from "./MarkupCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Restaurant Markup Calculator — Food Cost to Menu Price",
+  title: "Restaurant Markup Calculator",
   description:
     "Free restaurant markup calculator. Enter your ingredient cost and markup percentage to instantly calculate your menu price, gross margin, and profit per dish. Ideal for restaurant owners and caterers.",
   keywords: [

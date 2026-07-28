@@ -18,7 +18,7 @@ const BASE_URL = "https://www.aimenupricer.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "AI Menu Pricing Tool & Menu Calculator for Restaurants | Free Food Cost Calculator | MenuPricer",
+    default: "AI Menu Pricing Tool & Food Cost Calculator | MenuPricer",
     template: "%s | MenuPricer",
   },
   description:

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CateringCalculatorClient from "./CateringCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Catering Pricing Calculator — Cost Per Person & Event Pricing",
+  title: "Catering Pricing Calculator — Cost Per Person",
   description:
     "Free catering pricing calculator. Calculate cost per person for any event — weddings, corporate lunches, parties. Enter headcount, menu type, and labor to get accurate catering quotes instantly.",
   keywords: [

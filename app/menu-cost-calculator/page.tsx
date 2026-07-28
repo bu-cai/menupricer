@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MenuCostCalculatorClient from "./MenuCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Menu Cost Calculator — Free Menu Pricing Calculator for Restaurants",
+  title: "Menu Cost Calculator — Price Any Dish",
   description:
     "Free menu cost calculator for restaurant owners. Enter your ingredient costs, set your target margin, and instantly get the right menu price. Calculate menu item cost, profit margin, and food cost percentage.",
   keywords: [
