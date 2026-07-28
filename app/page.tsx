@@ -1228,6 +1228,8 @@ function HomeContent() {
                 <a href="/coffee-shop-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Coffee Shop Pricing</a>
                 <a href="/food-truck-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Food Truck Pricing</a>
                 <a href="/delivery-platform-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Delivery Commission</a>
+                <a href="/prime-cost-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Prime Cost Calculator</a>
+                <a href="/break-even-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Break-Even Calculator</a>
                 <a href="/tools" className="block text-xs text-orange-500 hover:text-orange-600 transition-colors">All Calculators →</a>
               </div>
             </div>

@@ -57,6 +57,39 @@ const CORE_TOOLS = [
   },
 ];
 
+const ADVANCED_TOOLS = [
+  {
+    href: "/prime-cost-calculator",
+    name: "Prime Cost Calculator",
+    icon: "🎯",
+    desc: "See food cost plus labor cost combined — the fastest single diagnostic for restaurant health.",
+  },
+  {
+    href: "/labor-cost-calculator",
+    name: "Labor Cost Calculator",
+    icon: "👥",
+    desc: "Calculate labor cost as a percentage of revenue from wages, payroll tax, and benefits.",
+  },
+  {
+    href: "/break-even-calculator",
+    name: "Break-Even Calculator",
+    icon: "📊",
+    desc: "Find the revenue and covers you need per month to cover fixed and variable costs.",
+  },
+  {
+    href: "/portion-cost-calculator",
+    name: "Portion Cost Calculator",
+    icon: "⚖️",
+    desc: "Turn a batch recipe cost into cost per serving, and the price it takes to hit your margin.",
+  },
+  {
+    href: "/cocktail-pricing-calculator",
+    name: "Cocktail Pricing Calculator",
+    icon: "🍸",
+    desc: "Price cocktails from spirit, mixer, and garnish cost at your target pour cost percentage.",
+  },
+];
+
 const VERTICAL_TOOLS = [
   {
     href: "/bakery-pricing-calculator",
@@ -131,6 +164,28 @@ export default function ToolsHubPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {CORE_TOOLS.map((t) => (
+            <Link
+              key={t.href}
+              href={t.href}
+              className="group block bg-white border border-gray-200 hover:border-orange-300 hover:shadow-md rounded-2xl p-6 transition-all"
+            >
+              <div className="text-2xl mb-3">{t.icon}</div>
+              <h3 className="font-black text-gray-900 group-hover:text-orange-600 transition-colors mb-2">
+                {t.name}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">{t.desc}</p>
+              <span className="text-xs font-semibold text-orange-500 group-hover:underline">
+                Open calculator →
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <h2 className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-5">
+          Advanced diagnostics
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+          {ADVANCED_TOOLS.map((t) => (
             <Link
               key={t.href}
               href={t.href}
