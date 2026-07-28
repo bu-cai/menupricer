@@ -1228,6 +1228,7 @@ function HomeContent() {
                 <a href="/coffee-shop-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Coffee Shop Pricing</a>
                 <a href="/food-truck-pricing-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Food Truck Pricing</a>
                 <a href="/delivery-platform-calculator" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Delivery Commission</a>
+                <a href="/tools" className="block text-xs text-orange-500 hover:text-orange-600 transition-colors">All Calculators →</a>
               </div>
             </div>
             <div>
@@ -1249,6 +1250,7 @@ function HomeContent() {
                 <a href="/about" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">About</a>
                 <a href="/compare" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Compare</a>
                 <a href="/blog" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Blog</a>
+                <a href="/glossary" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Glossary</a>
               </div>
             </div>
             <div>

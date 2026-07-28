@@ -71,6 +71,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/alternatives/marketman-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/alternatives/marginedge-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    // Free tools hub & glossary
+    { url: `${base}/tools`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     // Industry pages
     { url: `${base}/menu-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...RESTAURANT_TYPES.map((t) => ({
