@@ -107,6 +107,7 @@ export default function RestaurantProfitLossPage() {
             <span className="text-xs text-gray-400">8 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Restaurant Profit and Loss Statement: A Simple Guide for Operators</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">A restaurant P&L tells you exactly where your money is going — and where you are leaking margin. This guide walks through every line item, shows you the benchmarks, and explains how to use the numbers to make better decisions.</p>
         </div>
 

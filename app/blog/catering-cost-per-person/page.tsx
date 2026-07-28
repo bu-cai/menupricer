@@ -89,6 +89,7 @@ export default function CateringCostPerPersonPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">Catering prices vary widely depending on service style, event type, and what is included in the quote. This guide breaks down average costs per person for different group sizes so you know what to expect before you call a caterer.</p>
         </div>
 
@@ -232,7 +233,7 @@ export default function CateringCostPerPersonPage() {
               {[
                 { href: "/blog/catering-pricing-guide", title: "Catering Pricing Guide for Operators", desc: "How to set your catering prices and quote profitably." },
                 { href: "/blog/food-cost-percentage-calculator", title: "Food Cost Percentage", desc: "Calculate your food cost % for any dish." },
-                { href: "/blog/how-to-do-food-costing", title: "How to Do Food Costing", desc: "Step-by-step food costing process." },
+                { href: "/blog/food-cost-percentage-calculator", title: "How to Do Food Costing", desc: "Step-by-step food costing process." },
                 { href: "/blog/prime-cost-restaurant", title: "What Is Prime Cost?", desc: "Food cost + labor = prime cost explained." },
               ].map((post) => (
                 <Link key={post.href} href={post.href} className="group bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-xl p-4 transition-all">

@@ -77,6 +77,7 @@ export default function CorkageFeePage() {
             <span className="text-xs text-gray-400">5 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">What Is a Corkage Fee? How Much to Charge & When to Waive It</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">A corkage fee is what your restaurant charges when a guest brings their own bottle of wine. Get the amount wrong in either direction — too high and guests feel nickel-and-dimed, too low and you give away revenue your wine program was built to capture.</p>
         </div>
 

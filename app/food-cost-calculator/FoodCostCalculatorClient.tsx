@@ -103,6 +103,7 @@ export default function FoodCostCalculatorClient() {
             Food Cost Calculator<br />
             <span className="text-orange-500">for Restaurants</span>
           </h1>
+          <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Calculate your food cost percentage, find the ideal menu price, and see your profit margin — instantly.
           </p>

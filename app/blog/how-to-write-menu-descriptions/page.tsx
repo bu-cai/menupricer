@@ -123,6 +123,7 @@ export default function HowToWriteMenuDescriptionsPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">How to Write Menu Descriptions That Sell</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">A Cornell study found that descriptive menu copy increases dish sales by up to 27% — with no change to the food itself. The right words make customers perceive more value, feel better about their choice, and rate the dish higher after eating it.</p>
         </div>
         <div className="bg-orange-50 border border-orange-100 rounded-2xl p-5 mb-10 grid grid-cols-3 gap-4 text-center">

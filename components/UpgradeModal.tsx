@@ -38,10 +38,10 @@ const FEATURES = [
   },
 ];
 
-const TESTIMONIAL = {
-  en: `"My BBQ platter margin went from 48% to 71% after one repricing."`,
-  zh: `"一次调价后，我的BBQ套餐利润从 48% 提升到了 71%。"`,
-  author: "Marcus T. · Restaurant Owner, Texas",
+const REASSURANCE = {
+  en: "Cancel any time from your account page. No notice period, no cancellation fee, and your saved recipes stay exportable.",
+  zh: "随时可在账户页取消。没有通知期，没有违约金，已保存的配方随时可导出。",
+  label: { en: "Cancel anytime", zh: "随时可取消" },
 };
 
 export default function UpgradeModal({ onClose, reason }: Props) {
@@ -187,13 +187,15 @@ export default function UpgradeModal({ onClose, reason }: Props) {
             ))}
           </ul>
 
-          {/* Social proof — real testimonial */}
-          <blockquote className="bg-orange-50 border-l-2 border-orange-400 rounded-r-xl px-4 py-3 mb-5">
-            <p className="text-xs text-gray-600 italic leading-relaxed">
-              {isZH ? TESTIMONIAL.zh : TESTIMONIAL.en}
+          {/* Risk reversal — backed by our published Terms */}
+          <div className="bg-orange-50 border-l-2 border-orange-400 rounded-r-xl px-4 py-3 mb-5">
+            <p className="text-xs font-bold text-gray-700 mb-1">
+              {isZH ? REASSURANCE.label.zh : REASSURANCE.label.en}
             </p>
-            <p className="text-xs text-gray-400 mt-1 font-medium">{TESTIMONIAL.author}</p>
-          </blockquote>
+            <p className="text-xs text-gray-600 leading-relaxed">
+              {isZH ? REASSURANCE.zh : REASSURANCE.en}
+            </p>
+          </div>
 
           {/* CTA — action + outcome, price is secondary */}
           <div className="space-y-2">
@@ -218,8 +220,8 @@ export default function UpgradeModal({ onClose, reason }: Props) {
 
           <p className="text-center text-xs text-gray-400 mt-3">
             {isZH
-              ? "500+ 餐厅老板正在使用 · Stripe 安全支付"
-              : "500+ restaurant owners · Secure payment via Stripe"}
+              ? "Stripe 安全支付 · 不存储你的银行卡信息"
+              : "Secure payment via Stripe · We never store your card details"}
           </p>
         </div>
       </div>

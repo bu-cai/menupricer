@@ -73,6 +73,7 @@ export default function CateringCalculatorClient() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             Catering Pricing Calculator<br /><span className="text-orange-500">Cost Per Person & Event Quote</span>
           </h1>
+          <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Enter guest count, food cost, labor, and overhead to get total event cost, price per person, and profit margin instantly.
           </p>

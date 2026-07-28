@@ -3,7 +3,7 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "Restaurant Pricing & Food Cost Blog — MenuPricer",
+  title: "Restaurant Pricing & Food Cost Blog",
   description:
     "Guides on menu pricing, food cost calculation, and restaurant profitability. Free resources for restaurant owners, food truck operators, and caterers.",
   alternates: {
@@ -18,6 +18,14 @@ export const metadata: Metadata = {
 };
 
 const POSTS = [
+  {
+    slug: "recipe-costing-without-recipes",
+    title: "You Don't Have Written Recipes. Here's How to Cost Your Menu Anyway",
+    description: "Most costing tools assume you already have written recipes — most working kitchens don't. Three practical ways to cost a menu when the recipes only exist in someone's head, two of which need no software at all.",
+    category: "Food Cost",
+    readTime: "7 min read",
+    featured: true,
+  },
   {
     slug: "how-to-price-a-restaurant-menu",
     title: "How to Price a Restaurant Menu: The Complete Guide",
@@ -139,14 +147,6 @@ const POSTS = [
     featured: false,
   },
   {
-    slug: "how-to-cost-a-menu-item",
-    title: "How to Cost a Menu Item: Step-by-Step Recipe Costing Guide",
-    description: "How to cost a menu item from scratch — the step-by-step recipe costing process, yield adjustments, portion cost formula, and how to set a profitable menu price.",
-    category: "Food Cost",
-    readTime: "8 min read",
-    featured: false,
-  },
-  {
     slug: "what-is-yield-in-cooking",
     title: "What Is Yield in Cooking? Definition, Formula & Percentage Chart",
     description: "What does yield mean in cooking? The definition of recipe yield, how to calculate yield percentage, and a reference chart for common restaurant ingredients.",
@@ -211,14 +211,6 @@ const POSTS = [
     featured: false,
   },
   {
-    slug: "how-to-do-food-costing",
-    title: "How to Do Food Costing: Step-by-Step Process for Restaurants",
-    description: "How to do food costing for a restaurant — the complete step-by-step process for costing your entire menu, setting up a system, and keeping costs current as prices change.",
-    category: "Food Cost",
-    readTime: "7 min read",
-    featured: false,
-  },
-  {
     slug: "catering-cost-per-person",
     title: "Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)",
     description: "How much does catering cost per person? Average catering prices for 50, 100, and 150 guests — by service style, event type, and what is included in the quote.",
@@ -264,14 +256,6 @@ const POSTS = [
     description: "The full cost breakdown to open a restaurant in 2026 — by restaurant type, line-item startup costs from $189k to $1.1M, and strategies to reduce your opening investment.",
     category: "Profitability",
     readTime: "9 min read",
-    featured: false,
-  },
-  {
-    slug: "how-to-calculate-food-cost",
-    title: "How to Calculate Food Cost: Step-by-Step Formula with Examples",
-    description: "The two food cost formulas every restaurant owner needs — cost per dish and food cost percentage — with a worked example showing every ingredient, yield, and margin calculation.",
-    category: "Food Cost",
-    readTime: "7 min read",
     featured: false,
   },
   {

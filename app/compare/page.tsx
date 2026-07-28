@@ -3,7 +3,7 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "MenuPricer vs Alternatives — Compare Menu Pricing Tools",
+  title: "Compare Menu Pricing & Food Cost Tools",
   description:
     "See how MenuPricer compares to spreadsheets, Square, Toast, and other restaurant tools. Side-by-side feature comparison for menu pricing and food cost calculation.",
   alternates: { canonical: "https://www.aimenupricer.com/compare" },
@@ -115,6 +115,25 @@ export default function CompareHubPage() {
                 <p className="text-xs text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-link to the alternatives hub */}
+      <section className="bg-white py-10 border-t border-gray-100">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-xl font-black text-gray-900 mb-2">Shopping around more broadly?</h2>
+          <p className="text-sm text-gray-500 mb-5">
+            Our alternatives pages compare the major restaurant costing platforms against everything
+            else at that price point — including free options and tools you may already be paying for.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/alternatives/marketman-alternatives" className="text-sm font-semibold text-orange-500 hover:text-orange-600 border border-orange-200 rounded-xl px-5 py-2.5 transition-colors">
+              MarketMan alternatives →
+            </Link>
+            <Link href="/alternatives/marginedge-alternatives" className="text-sm font-semibold text-orange-500 hover:text-orange-600 border border-orange-200 rounded-xl px-5 py-2.5 transition-colors">
+              MarginEdge alternatives →
+            </Link>
           </div>
         </div>
       </section>

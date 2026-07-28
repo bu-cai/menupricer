@@ -336,12 +336,12 @@ function HeroMockup() {
         </div>
       </div>
 
-      {/* Floating badge — margin lift */}
+      {/* Floating badge — food cost readout for the Standard tier shown above */}
       <div className="absolute -bottom-4 -right-4 bg-white border border-gray-200 rounded-2xl px-3 py-2 shadow-xl shadow-gray-200/60 flex items-center gap-2.5">
-        <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center text-sm">📈</div>
+        <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center text-sm">✓</div>
         <div>
-          <p className="text-[9px] text-gray-400 leading-none">Margin improved</p>
-          <p className="text-sm font-black text-gray-900 leading-tight">48% → 71%</p>
+          <p className="text-[9px] text-gray-400 leading-none">Food cost</p>
+          <p className="text-sm font-black text-gray-900 leading-tight">26% · on target</p>
         </div>
       </div>
 
@@ -351,6 +351,165 @@ function HeroMockup() {
         <span className="text-[10px] font-black">30 seconds</span>
       </div>
     </div>
+  );
+}
+
+/* ── Homepage FAQ schema ─────────────────────── */
+const HOME_FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a good food cost percentage for a restaurant?",
+      acceptedAnswer: { "@type": "Answer", text: "A good food cost percentage is 28–35% of the menu price. Fine dining can go up to 38%; fast casual should stay below 30%. MenuPricer calculates this automatically for every dish." },
+    },
+    {
+      "@type": "Question",
+      name: "How do I calculate menu pricing?",
+      acceptedAnswer: { "@type": "Answer", text: "Divide your ingredient cost by your target food cost percentage. If a dish costs $4 to make and you want 30% food cost, the menu price is $4 ÷ 0.30 = $13.33. MenuPricer automates this and shows Budget, Standard, and Premium price tiers." },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need written recipes to use MenuPricer?",
+      acceptedAnswer: { "@type": "Answer", text: "No. MenuPricer drafts an ingredient list and typical quantities from the dish name alone, which you then correct to match how your kitchen actually cooks. This is the difference from tools that require you to import existing recipe cards before producing any number." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does DoorDash charge restaurants?",
+      acceptedAnswer: { "@type": "Answer", text: "DoorDash charges 15–30% commission depending on plan (Basic: 25–30%, Plus: 20–25%, Premier: 15%), plus ~2.9% payment processing. MenuPricer calculates a delivery-adjusted price that offsets these fees." },
+    },
+    {
+      "@type": "Question",
+      name: "Is MenuPricer free to use?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. MenuPricer is free for up to 5 dishes with no credit card required. The Pro plan ($9/month or $79/year) unlocks unlimited dishes, batch pricing, and PDF export." },
+    },
+    {
+      "@type": "Question",
+      name: "What currencies does MenuPricer support?",
+      acceptedAnswer: { "@type": "Answer", text: "MenuPricer supports USD, CNY (Chinese Yuan), and EUR. You can switch currencies from the settings panel at the top of the page." },
+    },
+    {
+      "@type": "Question",
+      name: "How do I price a dish for delivery vs. dine-in?",
+      acceptedAnswer: { "@type": "Answer", text: "Set your dine-in price based on food cost + target margin. Then add 15–25% for delivery platforms to offset commissions. MenuPricer shows both prices in every pricing report." },
+    },
+  ],
+};
+
+/* ── How We Compare ──────────────────────────── */
+function HowWeCompare() {
+  const { lang } = useLang();
+  const ZH = lang === "ZH";
+
+  const columns = [
+    {
+      name: ZH ? "表格" : "Spreadsheets",
+      icon: "📊",
+      good: ZH ? "完全可控，零成本" : "Total control, zero cost",
+      bad: ZH
+        ? "食材涨价后没人会回去更新，几个月后数字就失真了"
+        : "Nobody goes back to update them when costs move, so the numbers quietly go stale",
+      highlight: false,
+    },
+    {
+      name: ZH ? "通用 AI 助手" : "General AI chatbots",
+      icon: "💬",
+      good: ZH ? "灵活，什么都能问" : "Flexible, will answer anything",
+      bad: ZH
+        ? "不记得你的菜单，同一道菜问两次可能给出不同答案，也无法在成本变动时提醒你"
+        : "They do not remember your menu, can give different answers to the same dish twice, and cannot tell you when costs shift",
+      highlight: false,
+    },
+    {
+      name: ZH ? "企业级库存系统" : "Enterprise inventory platforms",
+      icon: "🏢",
+      good: ZH
+        ? "功能最全面，适合有专职财务的连锁"
+        : "The most complete feature set, right for chains with dedicated finance staff",
+      bad: ZH
+        ? "上线前要先花数周把配方和食材库录进去，年费对独立小店往往不划算"
+        : "Weeks of recipe and ingredient data entry before the first number, at an annual cost most independents cannot justify",
+      highlight: false,
+    },
+    {
+      name: "MenuPricer",
+      icon: "⚡",
+      good: ZH
+        ? "输入菜名就能开始，配方存一次，成本变了自动重算"
+        : "Starts from a dish name, saves the recipe once, and recalculates when costs change",
+      bad: ZH
+        ? "专注定价，不做采购和库存管理——需要全套库存系统的话，上面第三类更合适"
+        : "Focused on pricing only — no purchasing or stock management. If you need full inventory control, the third column is the better fit",
+      highlight: true,
+    },
+  ];
+
+  return (
+    <section className="bg-gray-50 border-t border-gray-100 py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2">
+            {ZH ? "如何选择" : "Honest comparison"}
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+            {ZH ? "和你现在用的方式比" : "How this compares to what you use today"}
+          </h2>
+          <p className="text-gray-400 text-sm mt-2 max-w-xl mx-auto">
+            {ZH
+              ? "每种方式都有它合适的场景。下面也写了 MenuPricer 不适合的情况。"
+              : "Each option is genuinely right for someone. Including where MenuPricer is not the answer."}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {columns.map((c) => (
+            <div
+              key={c.name}
+              className={`rounded-2xl p-5 flex flex-col gap-4 border transition-all ${
+                c.highlight
+                  ? "bg-white border-orange-300 shadow-md shadow-orange-100"
+                  : "bg-white border-gray-200"
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{c.icon}</span>
+                <p
+                  className={`text-sm font-black leading-tight ${
+                    c.highlight ? "text-orange-600" : "text-gray-900"
+                  }`}
+                >
+                  {c.name}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-[10px] font-bold text-green-600 uppercase tracking-wide mb-1">
+                  {ZH ? "强在哪" : "Where it wins"}
+                </p>
+                <p className="text-xs text-gray-600 leading-relaxed">{c.good}</p>
+              </div>
+
+              <div className="pt-3 border-t border-gray-100">
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-1">
+                  {ZH ? "弱在哪" : "Where it falls short"}
+                </p>
+                <p className="text-xs text-gray-500 leading-relaxed">{c.bad}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-xs text-gray-400 mt-6">
+          {ZH
+            ? "想看具体产品的逐项对比？"
+            : "Want a named, feature-by-feature breakdown?"}{" "}
+          <a href="/compare" className="text-orange-500 font-semibold hover:underline">
+            {ZH ? "查看详细对比 →" : "See the full comparisons →"}
+          </a>
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -392,9 +551,9 @@ function Hero({ onStart }: { onStart?: () => void }) {
             <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
               style={{ animation: "hero-title 700ms ease 150ms both" }}>
               {ZH ? (
-                <>停止靠感觉定价<br /><span className="text-orange-500">30秒看清每道菜的真实利润</span></>
+                <>30 秒给每道菜定价<br /><span className="text-orange-500">哪怕你从没写下过配方</span></>
               ) : (
-                <>Stop Pricing by Gut Feel<br /><span className="text-orange-500">See Your Real Margin in 30 Seconds</span></>
+                <>Price Every Dish in 30 Seconds<br /><span className="text-orange-500">Even the Ones You Never Wrote Down</span></>
               )}
             </h1>
 
@@ -402,13 +561,13 @@ function Hero({ onStart }: { onStart?: () => void }) {
             <p className="text-lg text-gray-500 leading-relaxed mb-3"
               style={{ animation: "hero-sub 700ms ease 300ms both" }}>
               {ZH
-                ? "输入菜名 → AI 给出 3 档定价方案和利润分析。一道菜重新定价，BBQ 套餐利润从 48% 提到了 71%。"
-                : "Type any dish name → get 3 pricing tiers and your real profit margin. One BBQ platter repriced: margin jumped from 48% to 71%."}
+                ? "输入菜名，AI 自动生成食材成本拆解，并给出 3 档建议售价和真实利润率。不需要配方卡，不需要表格，不需要逐条录入。"
+                : "Type a dish name. The AI builds the ingredient cost breakdown and gives you 3 price tiers with your real margin. No recipe cards, no spreadsheets, no data entry."}
             </p>
 
             {/* Social proof */}
             <p className="text-sm text-gray-400 mb-8" style={{ animation: "hero-sub 700ms ease 400ms both" }}>
-              {ZH ? "⭐ 500+ 餐厅老板正在使用 · 平均利润提升 23% · 无需信用卡" : "⭐ 500+ restaurant owners · Avg. margin up 23% · No credit card needed"}
+              {ZH ? "只需一个菜名 · 无需配方卡 · 无需先搭建食材库" : "Works from a dish name alone · No recipe cards · No ingredient database to build first"}
             </p>
 
             {/* CTAs */}
@@ -555,36 +714,33 @@ function Hero({ onStart }: { onStart?: () => void }) {
 function Testimonials() {
   const { lang } = useLang();
   const ZH = lang === "ZH";
-  const reviews = [
+  const useCases = [
     {
-      name: "Marcus T.",
-      role: ZH ? "餐厅老板 · 德克萨斯州" : "Restaurant Owner · Texas",
-      avatar: "MT",
+      icon: "📝",
       color: "bg-orange-500",
-      stars: 5,
+      title: ZH ? "你的配方只在脑子里" : "Your recipes live in your head",
+      problem: ZH ? "没有写下来的配方" : "No written recipe cards",
       text: ZH
-        ? "以前靠感觉定价，利润完全不稳定。用了 MenuPricer 之后，我的BBQ套餐利润从48%提升到了71%。这工具太值了。"
-        : "I used to price by gut feel — margins were all over the place. After using MenuPricer, my BBQ platter margin went from 48% to 71%. Pays for itself immediately.",
+        ? "大多数成本核算工具的第一步是「导入你的配方」——可如果配方从来没被写下来过，这一步就走不通。输入菜名，AI 直接生成食材清单和用量估算，你再按自己的实际做法调整。"
+        : "Most costing tools start with \"import your recipes\" — which stalls immediately if they were never written down. Type the dish name instead, and the AI drafts the ingredient list and quantities for you to adjust to how you actually make it.",
     },
     {
-      name: "Linda C.",
-      role: ZH ? "外卖品牌创始人 · 加州" : "Ghost Kitchen Owner · California",
-      avatar: "LC",
+      icon: "🛵",
       color: "bg-blue-500",
-      stars: 5,
+      title: ZH ? "外卖抽成吃掉了利润" : "Delivery commission eats the margin",
+      problem: ZH ? "堂食价直接上外卖" : "Dine-in prices on delivery apps",
       text: ZH
-        ? "我在 DoorDash 上有三个品牌，之前搞不清楚外卖抽成后到底赚多少。MenuPricer 直接给我算出来了，省了很多时间。"
-        : "Running 3 ghost kitchen brands on DoorDash, I never knew my real margins after commission. MenuPricer broke it down in seconds. Saved me hours of spreadsheet work.",
+        ? "把堂食价加 30% 放到外卖平台是错的——因为平台佣金会对加价后的价格再抽一次。正确做法是从「你需要到手多少」倒推挂牌价，这一步工具会替你算。"
+        : "Marking your dine-in price up by 30% for delivery does not work, because the commission applies to the marked-up price too. The right move is to work backwards from the payout you need — the tool does that arithmetic for you.",
     },
     {
-      name: "James K.",
-      role: ZH ? "寿司餐厅主厨 · 纽约" : "Sushi Chef & Owner · New York",
-      avatar: "JK",
+      icon: "📈",
       color: "bg-green-600",
-      stars: 5,
+      title: ZH ? "食材又涨价了" : "Ingredient costs moved again",
+      problem: ZH ? "表格没人回去更新" : "Nobody updates the spreadsheet",
       text: ZH
-        ? "作为厨师我擅长做菜不擅长算账。AI 估算模式超级好用——只要输入菜名，30秒就能看到合理定价范围。"
-        : "As a chef I'm better at cooking than accounting. The Quick Estimate mode is genius — just type the dish name and I get a price range in 30 seconds. No spreadsheet needed.",
+        ? "表格的问题从来不是难用，而是食材涨价后没人会回去改。存下配方后，改一次原料价格，所有用到它的菜品会同时重算，并标出哪些已经跌破你的目标成本线。"
+        : "The problem with spreadsheets was never that they are hard to build — it is that nobody goes back to update them. Save a recipe once, change an ingredient price, and every dish using it recalculates, flagging the ones that fell below your target.",
     },
   ];
 
@@ -607,55 +763,48 @@ function Testimonials() {
         {/* Header */}
         <div className="text-center mb-12 reveal">
           <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-600 text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
-            ⭐ {ZH ? "真实用户评价" : "REAL RESTAURANT OWNERS"}
+            {ZH ? "常见场景" : "WHERE PRICING BREAKS DOWN"}
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-            {ZH ? "他们的利润已经提升了" : "They've already improved their margins"}
+            {ZH ? "三个让定价失控的时刻" : "Three moments where menu pricing goes wrong"}
           </h2>
           <p className="text-gray-400 text-sm mt-2">
-            {ZH ? "500+ 餐厅老板正在使用 MenuPricer" : "500+ restaurant owners trust MenuPricer to price their menus"}
+            {ZH ? "每一个，MenuPricer 都有对应的解法" : "Each one is a specific thing MenuPricer is built to handle"}
           </p>
         </div>
 
         {/* Cards — horizontal scroll on mobile, 3-col on desktop */}
         <div className="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 pb-2 md:pb-0"
           style={{ scrollbarWidth: "none" }}>
-          {reviews.map((r, i) => (
+          {useCases.map((u, i) => (
             <div
               key={i}
               className="reveal card-hover bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm min-w-[80vw] md:min-w-0 snap-start"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Stars */}
-              <div className="flex gap-0.5">
-                {Array.from({ length: r.stars }).map((_, s) => (
-                  <span key={s} className="text-orange-400 text-sm">★</span>
-                ))}
-              </div>
-              {/* Quote */}
-              <p className="text-gray-600 text-sm leading-relaxed flex-1">"{r.text}"</p>
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-2 border-t border-gray-50">
-                <div className={`w-9 h-9 rounded-full ${r.color} text-white text-xs font-black flex items-center justify-center shrink-0`}>
-                  {r.avatar}
+              {/* Icon + problem tag */}
+              <div className="flex items-center gap-3">
+                <div className={`w-9 h-9 rounded-xl ${u.color} text-white text-base flex items-center justify-center shrink-0`}>
+                  {u.icon}
                 </div>
-                <div>
-                  <p className="text-sm font-bold text-gray-800 leading-tight">{r.name}</p>
-                  <p className="text-xs text-gray-400">{r.role}</p>
-                </div>
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">{u.problem}</span>
               </div>
+              {/* Title */}
+              <p className="text-base font-black text-gray-900 leading-snug">{u.title}</p>
+              {/* Explanation */}
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">{u.text}</p>
             </div>
           ))}
         </div>
 
-        {/* Bottom stat bar */}
+        {/* Bottom fact bar — verifiable product capabilities only */}
         <div className="mt-10 reveal">
           <div className="bg-orange-50 rounded-2xl px-6 py-5 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
-              { n: "500+", label: ZH ? "活跃餐厅" : "Active restaurants" },
-              { n: "23%", label: ZH ? "平均利润提升" : "Avg margin boost" },
-              { n: "30s", label: ZH ? "平均定价时间" : "Avg time to price" },
-              { n: "4.9★", label: ZH ? "用户评分" : "User rating" },
+              { n: "5", label: ZH ? "免费定价菜品数" : "Dishes free, no card" },
+              { n: "3", label: ZH ? "每道菜定价档位" : "Price tiers per dish" },
+              { n: "30s", label: ZH ? "从菜名到定价" : "Dish name to price" },
+              { n: "3", label: ZH ? "支持货币" : "Currencies supported" },
             ].map(({ n, label }) => (
               <div key={label}>
                 <p className="text-3xl font-black text-orange-500">{n}</p>
@@ -908,6 +1057,13 @@ function HomeContent() {
       )}
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
 
+      {/* Homepage FAQ schema — scoped here, not in layout, so article pages
+          do not end up with two competing FAQPage blocks. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ_SCHEMA) }}
+      />
+
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} menuCount={menuItems.length} />
       <Hero onStart={() => document.getElementById("cost-form-main")?.scrollIntoView({ behavior: "smooth", block: "start" })} />
 
@@ -1013,6 +1169,7 @@ function HomeContent() {
       </main>
 
       <Testimonials />
+      <HowWeCompare />
       <FaqAccordion />
 
       {/* From the Blog */}

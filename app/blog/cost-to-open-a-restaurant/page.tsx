@@ -99,6 +99,7 @@ export default function CostToOpenRestaurantPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           How Much Does It Cost to Open a Restaurant? Full Cost Breakdown
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           Opening a restaurant costs $175,000–750,000 for most full-service concepts — but the range is enormous depending on restaurant type, location, and whether you are building from scratch or taking over an existing space. Here is every cost you need to budget for.
         </p>

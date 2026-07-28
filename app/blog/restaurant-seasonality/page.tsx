@@ -82,6 +82,7 @@ export default function RestaurantSeasonalityPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           Restaurant Seasonality: How to Adjust Menu Prices When Ingredient Costs Change
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           A tomato that costs $0.90/lb in August can cost $3.00/lb in February. If your menu price stays the same, your food cost percentage doubles on that dish. Here is how to manage seasonal ingredient swings without constantly raising prices or quietly losing margin.
         </p>
@@ -230,7 +231,7 @@ export default function RestaurantSeasonalityPage() {
               { href: "/blog/food-cost-formula", title: "Food Cost Formula", desc: "Calculate food cost percentage for any dish or season." },
               { href: "/blog/restaurant-bookkeeping", title: "Restaurant Bookkeeping 101", desc: "How to track food cost, labor, and profit the right way." },
               { href: "/blog/menu-engineering", title: "Menu Engineering Guide", desc: "How to redesign your menu to protect high-margin items." },
-              { href: "/blog/how-to-calculate-food-cost", title: "How to Calculate Food Cost", desc: "Step-by-step guide to accurate food cost calculation." },
+              { href: "/blog/food-cost-formula", title: "How to Calculate Food Cost", desc: "Step-by-step guide to accurate food cost calculation." },
             ].map((link, i) => (
               <Link key={i} href={link.href} className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
                 <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">{link.title}</p>

@@ -83,6 +83,7 @@ export default function RestaurantFailureRatePage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           Restaurant Failure Rate: Why Most Restaurants Fail and How Pricing Fixes It
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           You have heard the statistic: 90% of restaurants fail in the first year. It is wrong — but the real numbers are still sobering. And the root cause almost always traces back to one place: menu pricing and financial planning done before the doors ever opened.
         </p>

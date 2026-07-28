@@ -86,6 +86,7 @@ export default function HowToStartCateringBusinessPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           How to Start a Catering Business: Startup Costs, Pricing & Business Plan
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           Starting a catering business is one of the lowest-overhead ways to enter the food industry — but most new caterers fail because they underestimate costs or underprice their events. This guide covers everything: startup budget, licensing, pricing, and how to land your first clients.
         </p>

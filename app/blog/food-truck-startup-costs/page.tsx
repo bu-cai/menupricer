@@ -101,6 +101,7 @@ export default function FoodTruckStartupCostsPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           Food Truck Startup Costs: How Much Does a Food Truck Cost in 2026?
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           Starting a food truck costs between $40,000 and $200,000 depending on whether you buy new or used, your city&apos;s permit requirements, and how lean you run your first few months. Here is what every line item actually costs — and what new operators consistently underestimate.
         </p>
@@ -300,7 +301,7 @@ export default function FoodTruckStartupCostsPage() {
               { href: "/blog/food-cost-formula", title: "Food Cost Formula Explained", desc: "Calculate food cost percentage for every dish." },
               { href: "/blog/ghost-kitchen-pricing", title: "Ghost Kitchen Pricing Guide", desc: "How to price menus for delivery-only kitchen brands." },
               { href: "/food-truck-pricing-calculator", title: "Food Truck Pricing Calculator", desc: "Free tool: enter your costs, get the right price." },
-              { href: "/blog/how-to-do-food-costing", title: "How to Do Food Costing", desc: "Step-by-step recipe costing for any menu." },
+              { href: "/blog/food-cost-percentage-calculator", title: "How to Do Food Costing", desc: "Step-by-step recipe costing for any menu." },
             ].map((link, i) => (
               <Link key={i} href={link.href} className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
                 <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">{link.title}</p>

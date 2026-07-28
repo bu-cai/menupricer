@@ -79,6 +79,7 @@ export default function FoodCostingTemplatePage() {
             <span className="text-xs text-gray-400">7 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Food Costing Template: How to Build a Recipe Cost Spreadsheet (Free)</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">A food costing template is the foundation of profitable menu pricing. This guide walks you through exactly what to include, how to structure the formulas, and shows you a worked example for a real dish.</p>
         </div>
 
@@ -275,7 +276,7 @@ export default function FoodCostingTemplatePage() {
             <h2 className="text-lg font-black text-gray-900 mb-4">Related guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { href: "/blog/how-to-cost-a-menu-item", title: "How to Cost a Menu Item", desc: "Step-by-step recipe costing walkthrough." },
+                { href: "/blog/how-to-cost-a-dish", title: "How to Cost a Menu Item", desc: "Step-by-step recipe costing walkthrough." },
                 { href: "/blog/food-cost-percentage-calculator", title: "Food Cost Percentage Formula", desc: "Calculate and benchmark your food cost %." },
                 { href: "/blog/what-is-yield-in-cooking", title: "Yield in Cooking", desc: "Yield % chart for proteins, vegetables, produce." },
                 { href: "/blog/how-to-cost-a-dish", title: "How to Cost a Dish", desc: "The complete dish costing process." },

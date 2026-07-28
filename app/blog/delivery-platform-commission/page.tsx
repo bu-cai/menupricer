@@ -37,11 +37,39 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How much commission does DoorDash take from restaurants?",
+      acceptedAnswer: { "@type": "Answer", text: "DoorDash commission depends on the partnership tier a restaurant selects, and published rates have generally ranged from about 15% on the highest tier to about 30% on the entry tier, with delivery radius and marketing exposure differing by tier. Payment processing is charged on top. Always confirm the current rate in your own merchant agreement, since platform pricing changes without notice." },
+    },
+    {
+      "@type": "Question",
+      name: "Should I charge more on delivery apps than in the restaurant?",
+      acceptedAnswer: { "@type": "Answer", text: "Generally yes, because commission and packaging are real costs the dine-in price was never built to absorb. Most platforms permit different menu pricing. The important detail is that you cannot simply add the commission percentage to your dine-in price, because commission is charged on the listed price, so the markup gets taxed too." },
+    },
+    {
+      "@type": "Question",
+      name: "How do I calculate the right delivery price?",
+      acceptedAnswer: { "@type": "Answer", text: "Work backwards from the payout you need rather than forwards from your dine-in price. Divide the net revenue you want by one minus the commission rate. To net $14 after a 30% commission, list the item at $14 ÷ 0.70 = $20. Marking a $14 item up by 30% to $18.20 nets only $12.74, which is less than you needed." },
+    },
+    {
+      "@type": "Question",
+      name: "Is delivery worth it for restaurants?",
+      acceptedAnswer: { "@type": "Answer", text: "It depends on the dish, not the channel. Items with high margins and low packaging cost survive commission comfortably. Items with thin margins, expensive packaging, or quality that degrades in transit can lose money on every order. The correct analysis is per-dish rather than per-channel, and some menus are more profitable with a reduced delivery selection." },
+    },
+  ],
+};
+
 export default function DeliveryPlatformCommissionPost() {
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
@@ -60,7 +88,7 @@ export default function DeliveryPlatformCommissionPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Delivery</span>
           <span className="text-xs text-gray-400">5 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <time dateTime="2026-07-01" className="text-xs text-gray-400">Updated July 2026</time>
+          <time dateTime="2026-07-21" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

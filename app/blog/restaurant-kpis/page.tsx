@@ -156,6 +156,7 @@ export default function RestaurantKPIsPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           8 Restaurant KPIs Every Owner Should Track
         </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           Most restaurant owners find out they have a problem when they look at their bank balance. The operators who survive long-term catch problems in their KPIs — weeks before they hit cash. Here are the 8 numbers that matter most and exactly how to track them.
         </p>

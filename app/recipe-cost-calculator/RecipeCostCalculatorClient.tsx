@@ -76,6 +76,7 @@ export default function RecipeCostCalculatorClient() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             Recipe Cost Calculator<br /><span className="text-orange-500">for Restaurants</span>
           </h1>
+          <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Add your ingredients to get exact recipe cost, cost per serving, and the ideal menu price — instantly.
           </p>

@@ -86,6 +86,71 @@ export default function DeliveryCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Delivery Platform Calculator", item: "https://www.aimenupricer.com/delivery-platform-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Price Menu Items for Delivery Platforms",
+            description:
+              "Set a delivery menu price that survives platform commission by working backwards from the net payout you need rather than marking up the dine-in price.",
+            totalTime: "PT4M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Delivery Platform Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Start with your dine-in price and plate cost",
+                text: "Enter the price the dish sells for in-house and its ingredient cost. This establishes the margin you are trying to protect on the delivery channel.",
+                url: "https://www.aimenupricer.com/delivery-platform-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Enter the platform commission rate",
+                text: "Commission varies by platform and plan tier, commonly in the 15 to 30 percent range. Use your actual contracted rate, not the headline marketing rate.",
+                url: "https://www.aimenupricer.com/delivery-platform-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Add packaging and payment processing",
+                text: "Delivery containers, bags, and utensils are real per-order costs that dine-in service does not carry, plus roughly 3 percent payment processing.",
+                url: "https://www.aimenupricer.com/delivery-platform-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Work backwards from required net payout",
+                text: "Divide the net revenue you need by one minus the commission rate. To net $14 after a 30 percent commission, the listed price must be $14 divided by 0.70, or $20. Marking the dine-in price up by 30 percent does not work, because the commission applies to the marked-up price too.",
+                url: "https://www.aimenupricer.com/delivery-platform-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Check the price against guest tolerance",
+                text: "If the delivery-adjusted price is far above what guests will pay, the item may not belong on the delivery menu at all. Some dishes are more profitable removed from delivery than sold at a loss.",
+                url: "https://www.aimenupricer.com/delivery-platform-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <DeliveryCalculatorClient />
       <div className="bg-gray-50 border-t border-gray-100 py-10">
         <div className="max-w-4xl mx-auto px-6">

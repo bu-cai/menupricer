@@ -3,7 +3,7 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "Pricing — MenuPricer Pro | $9/month or $79/year",
+  title: "Pricing — Free Plan, or Pro at $9/month",
   description:
     "MenuPricer Pro gives restaurant owners unlimited menu pricing, batch pricing, analytics, and PDF export. Start free, upgrade when ready.",
   alternates: { canonical: "https://www.aimenupricer.com/pricing" },
@@ -229,18 +229,19 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Social proof bar */}
+      {/* Value bar */}
       <section className="max-w-3xl mx-auto px-6 py-6">
         <div className="bg-orange-50 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-          <blockquote className="flex-1">
-            <p className="text-sm text-gray-700 italic leading-relaxed">
-              &ldquo;My BBQ platter margin went from 48% to 71% after one repricing. Paid for itself in two days.&rdquo;
+          <div className="flex-1">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              <strong className="text-gray-900">No setup project, no onboarding fee.</strong> Enterprise
+              inventory platforms typically need weeks of data entry before they produce a single
+              number. MenuPricer prices your first dish from its name, today.
             </p>
-            <p className="text-xs text-gray-400 mt-2 font-semibold">Marcus T. · Restaurant Owner, Texas</p>
-          </blockquote>
+          </div>
           <div className="flex sm:flex-col items-center gap-4 sm:gap-1 shrink-0">
-            <span className="text-2xl font-black text-orange-500">500+</span>
-            <span className="text-xs text-gray-400">restaurant owners</span>
+            <span className="text-2xl font-black text-orange-500">$0</span>
+            <span className="text-xs text-gray-400">setup fee</span>
           </div>
         </div>
       </section>

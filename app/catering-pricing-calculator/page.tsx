@@ -85,6 +85,71 @@ export default function CateringCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Catering Pricing Calculator", item: "https://www.aimenupricer.com/catering-pricing-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Price a Catering Job Per Person",
+            description:
+              "Build a catering quote from per-guest food cost, event staffing, rentals and travel, then apply a margin that survives the extra risk catering carries.",
+            totalTime: "PT8M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Catering Pricing Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Cost the menu per guest",
+                text: "Total the food cost for one guest's full portion across every course. Build in an overage factor, commonly 5 to 10 percent, because catering always runs slightly over headcount.",
+                url: "https://www.aimenupricer.com/catering-pricing-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Add event labor",
+                text: "Count prep hours, on-site service hours, travel time, and breakdown. Staff-to-guest ratios differ sharply by service style: plated service needs roughly one server per 12 to 15 guests, buffet service far fewer.",
+                url: "https://www.aimenupricer.com/catering-pricing-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Add rentals, transport, and equipment",
+                text: "Linens, chafers, china, glassware, vehicle costs, and fuel. These are pass-through costs that must be recovered explicitly, not absorbed into the food price.",
+                url: "https://www.aimenupricer.com/catering-pricing-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Apply a catering margin",
+                text: "Catering typically targets a lower food cost percentage than restaurant service, often 25 to 30 percent, because the operation carries higher risk: weather, headcount changes, and cancellations.",
+                url: "https://www.aimenupricer.com/catering-pricing-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Present the quote per person plus itemized extras",
+                text: "Clients compare on the per-person number, so lead with it and itemize staffing, rentals, and service charge separately. Bundling everything into one per-head figure makes your quote look expensive against competitors who itemize.",
+                url: "https://www.aimenupricer.com/catering-pricing-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <CateringCalculatorClient />
     </>
   );

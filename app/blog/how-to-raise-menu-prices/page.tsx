@@ -134,6 +134,7 @@ export default function HowToRaiseMenuPricesPage() {
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             How to Raise Menu Prices Without Losing Customers
           </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">
             Food costs are up. Labor is up. Rent is up. At some point, you have to raise prices — or watch your margins
             shrink to zero. Here is how to do it without triggering a Yelp backlash or losing your regulars.

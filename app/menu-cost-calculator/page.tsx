@@ -79,6 +79,71 @@ export default function MenuCostCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Menu Cost Calculator", item: "https://www.aimenupricer.com/menu-cost-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Set a Menu Price from Ingredient Cost",
+            description:
+              "Turn a known ingredient cost into a profitable menu price by choosing a target food cost percentage, dividing, and then sanity-checking the result against your market.",
+            totalTime: "PT3M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Menu Cost Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Start with a verified plate cost",
+                text: "Enter the total ingredient cost for one portion, already adjusted for yield. Pricing off an unverified cost simply produces a confident wrong answer.",
+                url: "https://www.aimenupricer.com/menu-cost-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Choose a target food cost percentage",
+                text: "Pick the target that matches your concept: roughly 25 to 30 percent for fine dining, 28 to 33 percent for fast casual, and 15 to 22 percent for beverage-led concepts.",
+                url: "https://www.aimenupricer.com/menu-cost-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Divide cost by the target percentage",
+                text: "Menu price equals plate cost divided by target food cost as a decimal. A $5 plate cost at a 30 percent target gives $5 divided by 0.30, or $16.67.",
+                url: "https://www.aimenupricer.com/menu-cost-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Check the price against your market",
+                text: "The formula gives a floor, not a ceiling. If comparable restaurants nearby charge $19 for the same dish, the formula price is leaving money on the table. If they charge $13, you need a cost problem solved, not a price raised.",
+                url: "https://www.aimenupricer.com/menu-cost-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Round deliberately",
+                text: "Round to a psychologically sensible number such as $16.95 or $17. Do not round down below your calculated floor, because that silently raises your food cost percentage on every cover.",
+                url: "https://www.aimenupricer.com/menu-cost-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <MenuCostCalculatorClient />
     </>
   );

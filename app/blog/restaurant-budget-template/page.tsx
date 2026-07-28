@@ -9,6 +9,28 @@ export const metadata: Metadata = {
   openGraph: { url: "https://www.aimenupricer.com/blog/restaurant-budget-template" },
 };
 
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Restaurant Budget Template: How to Forecast Food Cost, Labor & Revenue",
+  description: "A monthly restaurant budget template covering revenue, COGS, labor and operating expenses, with target cost percentages and a weekly actual-vs-budget review process.",
+  author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
+  datePublished: "2026-07-25",
+  dateModified: "2026-07-25",
+  mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-budget-template",
+};
+
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.aimenupricer.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Restaurant Budget Template", item: "https://www.aimenupricer.com/blog/restaurant-budget-template" },
+  ],
+};
+
 const FAQ_SCHEMA = {
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
@@ -56,6 +78,8 @@ const TEMPLATE_ROWS = [
 export default function RestaurantBudgetTemplatePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}></script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}></script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}></script>
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center gap-3">
@@ -69,6 +93,7 @@ export default function RestaurantBudgetTemplatePage() {
       </header>
       <main className="max-w-3xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-black text-gray-900 mb-4">Restaurant Budget Template</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
         <p className="text-lg text-gray-500 mb-8">A restaurant without a monthly budget is flying blind. Here is the P&amp;L template, target cost percentages, and weekly review process.</p>
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Monthly Budget Template</h2>
@@ -96,7 +121,7 @@ export default function RestaurantBudgetTemplatePage() {
         </section>
         <div className="bg-orange-500 rounded-2xl p-8 text-center mb-10"><h2 className="text-2xl font-bold text-white mb-2">Keep Your Food Cost on Budget</h2><p className="text-orange-100 mb-5">A budget sets your food cost target. MenuPricer prices your menu to hit it.</p><Link href="/" className="inline-block bg-white text-orange-500 font-bold px-8 py-3 rounded-xl">Try MenuPricer Free</Link></div>
         <section className="mb-10"><h2 className="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2><div className="space-y-4">{FAQ_SCHEMA.mainEntity.map((faq,i)=>(<div key={i} className="border border-gray-200 rounded-xl p-5"><h3 className="font-bold text-gray-900 mb-2">{faq.name}</h3><p className="text-gray-600 text-sm">{faq.acceptedAnswer.text}</p></div>))}</div></section>
-        <section className="border-t border-gray-100 pt-8"><h2 className="text-lg font-bold text-gray-900 mb-4">Related Articles</h2><div className="grid sm:grid-cols-2 gap-4">{[{href:"/blog/restaurant-kpis",title:"8 Restaurant KPIs to Track",desc:"The metrics that go in your budget variance analysis every week."},{href:"/blog/restaurant-bookkeeping",title:"Restaurant Bookkeeping 101",desc:"The bookkeeping setup that makes budget vs actual tracking easy."},{href:"/blog/prime-cost-restaurant",title:"Restaurant Prime Cost Guide",desc:"Deep dive into the most important budget line."},{href:"/blog/how-to-calculate-food-cost",title:"How to Calculate Food Cost",desc:"Calculate the food cost input for your budget accurately."}].map((link,i)=>(<Link key={i} href={link.href} className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group"><p className="font-semibold text-gray-900 group-hover:text-orange-500 text-sm mb-1">{link.title}</p><p className="text-xs text-gray-500">{link.desc}</p></Link>))}</div></section>
+        <section className="border-t border-gray-100 pt-8"><h2 className="text-lg font-bold text-gray-900 mb-4">Related Articles</h2><div className="grid sm:grid-cols-2 gap-4">{[{href:"/blog/restaurant-kpis",title:"8 Restaurant KPIs to Track",desc:"The metrics that go in your budget variance analysis every week."},{href:"/blog/restaurant-bookkeeping",title:"Restaurant Bookkeeping 101",desc:"The bookkeeping setup that makes budget vs actual tracking easy."},{href:"/blog/prime-cost-restaurant",title:"Restaurant Prime Cost Guide",desc:"Deep dive into the most important budget line."},{href:"/blog/food-cost-formula",title:"How to Calculate Food Cost",desc:"Calculate the food cost input for your budget accurately."}].map((link,i)=>(<Link key={i} href={link.href} className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group"><p className="font-semibold text-gray-900 group-hover:text-orange-500 text-sm mb-1">{link.title}</p><p className="text-xs text-gray-500">{link.desc}</p></Link>))}</div></section>
       </main>
       <footer className="border-t border-gray-100 mt-16 py-8"><div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4"><Link href="/" className="flex items-center gap-2"><LogoIcon size={24}></LogoIcon><span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span></Link><p className="text-xs text-gray-400">2026 MenuPricer.</p></div></footer>
     </div>

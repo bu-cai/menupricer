@@ -37,11 +37,39 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is a good profit margin for a restaurant?",
+      acceptedAnswer: { "@type": "Answer", text: "Net profit margin for full-service restaurants commonly falls in the 3% to 6% range, with quick service often somewhat higher because labor per transaction is lower. Anything above 10% is exceptional. Restaurants are a high-revenue, low-margin business, which is why small cost changes have an outsized effect on whether the year is profitable." },
+    },
+    {
+      "@type": "Question",
+      name: "Why is my restaurant busy but not profitable?",
+      acceptedAnswer: { "@type": "Answer", text: "Volume amplifies whatever your unit economics already are. If your average dish is priced below its true cost once labor and overhead are counted, every additional cover increases the loss. The usual culprits are food cost above 38%, labor above 40%, or rent above 10% of sales. Busy is only good when the per-dish math works first." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between gross and net profit margin?",
+      acceptedAnswer: { "@type": "Answer", text: "Gross margin is revenue minus cost of goods sold, so it only accounts for ingredients and typically looks healthy at 65% to 70%. Net margin subtracts everything else too: labor, rent, utilities, insurance, marketing, and card processing. The distance between a comfortable gross margin and a thin net margin is where most restaurant financial surprises live." },
+    },
+    {
+      "@type": "Question",
+      name: "How can I improve my restaurant profit margin?",
+      acceptedAnswer: { "@type": "Answer", text: "In rough order of speed and impact: reprice the specific dishes running above target food cost, tighten portion control on your highest-volume items, schedule labor against forecast covers rather than habit, renegotiate or consolidate suppliers, and cut the menu items that are both low-margin and low-selling. Repricing is usually the fastest lever because it needs no operational change." },
+    },
+  ],
+};
+
 export default function RestaurantProfitMarginPost() {
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
@@ -60,7 +88,7 @@ export default function RestaurantProfitMarginPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Profitability</span>
           <span className="text-xs text-gray-400">7 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <time dateTime="2026-07-01" className="text-xs text-gray-400">Updated July 2026</time>
+          <time dateTime="2026-07-21" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

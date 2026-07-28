@@ -143,6 +143,7 @@ export default function RestaurantMenuDesignTipsPage() {
             <span className="text-xs text-gray-400">7 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Restaurant Menu Design Tips: 12 Rules That Increase Sales in 2026</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">Your menu is your most cost-effective salesperson. A well-engineered menu raises average check, steers customers toward high-margin items, and builds perceived value — without a single extra server. Here are the 12 rules that drive measurable results.</p>
         </div>
         <div className="bg-orange-50 border border-orange-100 rounded-2xl p-5 mb-10 grid grid-cols-3 gap-4 text-center">

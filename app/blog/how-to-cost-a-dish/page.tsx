@@ -293,6 +293,26 @@ export default function HowToCostADishPost() {
           </div>
         </div>
 
+        <h2 className="text-2xl font-black text-gray-900 mb-4">5 Costing Mistakes That Quietly Distort Your Numbers</h2>
+        <p className="text-gray-600 mb-4">
+          Every one of these produces a costing card that looks finished and is wrong. They are
+          listed in roughly the order we see them cause the most damage.
+        </p>
+        <div className="space-y-3 mb-10">
+          {[
+            { t: "Using purchase weight instead of yield-adjusted weight", b: "The most common costing error by a wide margin. Proteins especially lose significant weight through trimming and cooking, so costing a 200g portion against the raw purchase price understates the true cost. Always apply a yield percentage to proteins." },
+            { t: "Costing the recipe as written, not as cooked", b: "If your cooks plate a different portion than the spec says, your costing card describes a dish nobody serves. Weigh a few plated portions during an actual service before trusting the card." },
+            { t: "Forgetting the small ingredients", b: "Oils, spices, herbs, and condiments feel too minor to bother with. Together they commonly add $0.30 to $0.60 per dish, which is enough to move food cost 2 to 3 points on a lower-priced item." },
+            { t: "Ignoring house-made components", b: "If you make your own stock, dressing, sauce, bread, or pasta, each needs its own sub-recipe cost before it can be entered into the main dish. Costing them as though they were free is one of the biggest silent gaps in scratch kitchens." },
+            { t: "Never updating after supplier prices move", b: "A costing card from six months ago can already be 10 to 15% off on proteins. The build is not the hard part; keeping it current is. Put a recurring audit in the calendar or use something that recalculates for you." },
+          ].map(({ t, b }) => (
+            <div key={t} className="border-l-4 border-orange-300 pl-4">
+              <p className="font-bold text-gray-800 text-sm">{t}</p>
+              <p className="text-sm text-gray-500 mt-1">{b}</p>
+            </div>
+          ))}
+        </div>
+
         <h2 className="text-2xl font-black text-gray-900 mb-6">Frequently Asked Questions</h2>
         <div className="space-y-5 mb-10">
           {[

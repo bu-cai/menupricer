@@ -64,6 +64,7 @@ export default function MarkupCalculatorClient() {
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             Restaurant Markup Calculator<br /><span className="text-orange-500">Food Cost → Menu Price</span>
           </h1>
+          <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Enter ingredient cost and markup % to get your menu price, food cost percentage, and gross margin.
           </p>

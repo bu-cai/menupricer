@@ -37,11 +37,39 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do you price a restaurant menu?",
+      acceptedAnswer: { "@type": "Answer", text: "Cost each dish's ingredients per portion including yield loss, divide that cost by your target food cost percentage to get a price floor, then check the result against what comparable restaurants near you charge. The formula gives you the minimum you can charge and stay profitable; the market tells you the maximum. Price between the two, not at the floor." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the 3x rule for menu pricing?",
+      acceptedAnswer: { "@type": "Answer", text: "The 3x rule says to sell a dish at roughly three times its ingredient cost, which corresponds to a 33% food cost. It is a fast sanity check rather than a pricing method, because it ignores labor intensity, so a dish taking 20 minutes of prep and one taking two minutes get treated identically despite very different true costs." },
+    },
+    {
+      "@type": "Question",
+      name: "Should every dish hit the same food cost percentage?",
+      acceptedAnswer: { "@type": "Answer", text: "No, and forcing it usually hurts. What matters is the blended food cost across your actual sales mix. Deliberately running a higher food cost on a signature dish that draws people in can be a good trade if lower-cost items alongside it carry the average. Manage the weighted blend, not each dish in isolation." },
+    },
+    {
+      "@type": "Question",
+      name: "How often should I reprice my menu?",
+      acceptedAnswer: { "@type": "Answer", text: "Review costs monthly and reprice when they justify it, rather than repricing on a fixed calendar. Trigger a review when a key ingredient moves roughly 10% or more, when overall food cost drifts past your target by 2 to 3 points, or at any menu change. Repricing a few affected dishes as costs move is far less noticeable to guests than one large across-the-board increase." },
+    },
+  ],
+};
+
 export default function HowToPriceMenuPost() {
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -60,7 +88,7 @@ export default function HowToPriceMenuPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Menu Pricing</span>
           <span className="text-xs text-gray-400">8 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <time dateTime="2026-07-01" className="text-xs text-gray-400">Updated July 2026</time>
+          <time dateTime="2026-07-21" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

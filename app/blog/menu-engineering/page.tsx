@@ -125,6 +125,7 @@ export default function MenuEngineeringPage() {
             <span className="text-xs text-gray-400">8 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Menu Engineering: Design Your Menu to Sell More Profitable Dishes</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">Menu engineering is one of the highest-ROI changes a restaurant can make — and it costs nothing except an afternoon of analysis. By mapping your dishes across profit and popularity, you can redesign your menu to naturally steer customers toward the dishes that make you the most money.</p>
         </div>
 

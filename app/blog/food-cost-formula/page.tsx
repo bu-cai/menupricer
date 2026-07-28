@@ -37,11 +37,39 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the food cost formula?",
+      acceptedAnswer: { "@type": "Answer", text: "Food cost percentage = (Cost of ingredients ÷ Menu price) × 100. To go the other direction and find a price from a cost, divide instead: Menu price = Ingredient cost ÷ target food cost percentage expressed as a decimal. A $5 plate cost at a 30% target gives $5 ÷ 0.30 = $16.67." },
+    },
+    {
+      "@type": "Question",
+      name: "What is a good food cost percentage?",
+      acceptedAnswer: { "@type": "Answer", text: "Most full-service restaurants target 28% to 35%. Fine dining often runs 30% to 38% because premium proteins carry higher cost, fast casual typically sits at 28% to 33%, and beverage-led concepts such as coffee shops run much lower at 15% to 22%. The right number depends on your concept, not on a universal benchmark." },
+    },
+    {
+      "@type": "Question",
+      name: "Should I use food cost per dish or across the whole menu?",
+      acceptedAnswer: { "@type": "Answer", text: "Both, for different jobs. Per-dish food cost tells you which individual items to reprice or re-engineer. Overall food cost, calculated as total COGS divided by total food sales, tells you whether the business as a whole is healthy. A menu can have several badly-priced dishes while the overall percentage still looks acceptable, which is exactly why per-dish costing matters." },
+    },
+    {
+      "@type": "Question",
+      name: "Why is my calculated food cost different from my actual food cost?",
+      acceptedAnswer: { "@type": "Answer", text: "The gap between theoretical and actual food cost is waste, over-portioning, spoilage, theft, and comps. Your recipe math describes the perfect world; your inventory numbers describe reality. A gap of 2 to 3 percentage points is normal. Consistently more than that points to a portioning or shrinkage problem rather than a pricing problem." },
+    },
+  ],
+};
+
 export default function FoodCostFormulaPost() {
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
@@ -59,7 +87,7 @@ export default function FoodCostFormulaPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Food Cost</span>
           <span className="text-xs text-gray-400">6 min read</span>
           <span className="text-xs text-gray-400">·</span>
-          <time dateTime="2026-06-15" className="text-xs text-gray-400">Updated July 2026</time>
+          <time dateTime="2026-07-21" className="text-xs text-gray-400">Updated July 2026</time>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

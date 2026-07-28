@@ -79,6 +79,7 @@ export default function FoodCostPercentageCalculatorPage() {
             <span className="text-xs text-gray-400">7 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Food Cost Percentage: Formula, Benchmarks & How to Calculate It</h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">Food cost percentage is the single most important number in restaurant operations. It tells you whether your prices are right, your portions are controlled, and your menu is actually making money. Here is everything you need to calculate it, benchmark it, and fix it.</p>
         </div>
 
@@ -190,6 +191,28 @@ export default function FoodCostPercentageCalculatorPage() {
                 <div key={t} className="border-l-4 border-orange-300 pl-4">
                   <p className="font-bold text-gray-800 text-sm">{t}</p>
                   <p className="text-sm text-gray-500 mt-1">{b}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-black text-gray-900 mb-4">How to keep the number current as prices move</h2>
+            <p className="text-sm text-gray-500 mb-4">
+              A food cost percentage calculated once is accurate once. Supplier prices move
+              underneath it, and the number silently stops describing your business. Four habits
+              that keep it honest:
+            </p>
+            <div className="space-y-3 text-sm">
+              {[
+                { t: "Ask suppliers to flag significant moves", b: "Most main suppliers will notify you when a commodity price shifts more than about 5% if you simply ask. Even a weekly email listing your top 10 ingredient prices is enough to catch the changes that matter." },
+                { t: "Reconcile invoices against your costing monthly", b: "Pull your latest invoice and compare per-unit prices for your ten highest-spend ingredients against what your costing assumes. Fifteen minutes a month catches drift before it compounds into a real margin problem." },
+                { t: "Update every affected dish, not just the one in front of you", b: "When chicken moves 20%, it moves for every dish containing chicken. Updating one recipe and leaving the rest is how a costing system develops blind spots that take months to surface." },
+                { t: "Watch the gap between actual and theoretical", b: "Your P&L reports actual food cost; your recipes imply a theoretical one. The gap is waste, portion drift, and shrinkage. A stable gap is normal. A widening one is a signal to investigate before you touch prices." },
+              ].map(({ t, b }) => (
+                <div key={t} className="border-l-4 border-orange-300 pl-4">
+                  <p className="font-bold text-gray-800">{t}</p>
+                  <p className="text-gray-500 mt-1">{b}</p>
                 </div>
               ))}
             </div>

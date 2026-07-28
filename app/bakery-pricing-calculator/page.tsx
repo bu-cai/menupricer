@@ -77,6 +77,71 @@ export default function BakeryCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Bakery Pricing Calculator", item: "https://www.aimenupricer.com/bakery-pricing-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Price Bakery Products",
+            description:
+              "Price baked goods profitably by costing ingredients per batch, adding the labor hours that bakery pricing usually omits, allocating overhead, and dividing by yield.",
+            totalTime: "PT6M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Bakery Pricing Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Cost the recipe at batch level",
+                text: "Bakery recipes are batch recipes. Cost flour, butter, sugar, eggs, and leavening for the full batch, then divide by the number of finished units the batch produces.",
+                url: "https://www.aimenupricer.com/bakery-pricing-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Add your labor time — this is the step most bakeries skip",
+                text: "Count mixing, proofing attendance, shaping, baking, cooling, and decorating. Multiply total hands-on hours by your hourly labor rate and divide across the batch. Labor is often a larger share of a bakery item's true cost than ingredients, which is why ingredient-only pricing quietly loses money.",
+                url: "https://www.aimenupricer.com/bakery-pricing-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Allocate packaging and overhead",
+                text: "Add boxes, liners, labels, ribbon, and a share of oven energy and rent. Custom and decorated items should also absorb consultation and design time.",
+                url: "https://www.aimenupricer.com/bakery-pricing-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Apply a margin appropriate to the channel",
+                text: "Retail counter sales support a higher multiple than wholesale accounts. Wholesale typically needs a lower per-unit margin offset by volume and predictable ordering.",
+                url: "https://www.aimenupricer.com/bakery-pricing-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Reprice when butter, flour, or eggs move",
+                text: "Bakery margins are unusually sensitive to a handful of commodity inputs. A butter or egg price spike can erase the margin on an entire product line within one purchasing cycle.",
+                url: "https://www.aimenupricer.com/bakery-pricing-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <BakeryCalculatorClient />
     </>
   );

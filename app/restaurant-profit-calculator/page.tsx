@@ -75,6 +75,71 @@ export default function ProfitCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Restaurant Profit Calculator", item: "https://www.aimenupricer.com/restaurant-profit-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Calculate Restaurant Profit Margin",
+            description:
+              "Work out a restaurant's net profit margin by subtracting cost of goods sold, labor, and operating expenses from revenue, then compare against industry benchmarks.",
+            totalTime: "PT4M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Restaurant Profit Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Enter total revenue for the period",
+                text: "Use net sales for a full period, typically one month. Exclude sales tax, and net out comps and discounts so the figure reflects money you actually kept.",
+                url: "https://www.aimenupricer.com/restaurant-profit-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Subtract cost of goods sold",
+                text: "COGS equals beginning inventory plus purchases minus ending inventory. Using purchases alone instead of true COGS is the most common reason a P&L looks better than the bank account.",
+                url: "https://www.aimenupricer.com/restaurant-profit-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Subtract total labor",
+                text: "Include hourly wages, salaried management, payroll taxes, and benefits. Labor excluding payroll burden understates real cost by roughly 10 to 15 percent.",
+                url: "https://www.aimenupricer.com/restaurant-profit-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Subtract operating expenses",
+                text: "Rent, utilities, insurance, marketing, card processing, software, repairs, and supplies. Card processing in particular is frequently forgotten and runs about 2 to 3 percent of revenue.",
+                url: "https://www.aimenupricer.com/restaurant-profit-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Divide net profit by revenue",
+                text: "Net profit margin equals net profit divided by revenue, times 100. Full-service restaurants typically run 3 to 6 percent; anything above 10 percent is exceptional and anything negative needs immediate attention.",
+                url: "https://www.aimenupricer.com/restaurant-profit-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <ProfitCalculatorClient />
     </>
   );

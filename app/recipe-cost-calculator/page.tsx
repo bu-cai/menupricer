@@ -76,6 +76,71 @@ export default function RecipeCostCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Recipe Cost Calculator", item: "https://www.aimenupricer.com/recipe-cost-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Cost a Recipe",
+            description:
+              "Cost a restaurant recipe from scratch by breaking it into ingredients, converting purchase units to recipe units, adjusting for yield, and dividing by the number of portions.",
+            totalTime: "PT5M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Recipe Cost Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Write down the full recipe at batch size",
+                text: "Record every ingredient and quantity for one full batch, not one plate. Batch-level costing is more accurate because it matches how you actually buy and prep.",
+                url: "https://www.aimenupricer.com/recipe-cost-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Convert purchase units to recipe units",
+                text: "You buy flour by the 50 lb bag but use it by the cup. Divide the case or bag price by the number of recipe units it contains to get a true cost per unit. Unit conversion errors are the single most common source of wrong recipe costs.",
+                url: "https://www.aimenupricer.com/recipe-cost-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Apply yield percentages",
+                text: "Divide the as-purchased cost by the yield percentage to get edible-portion cost. Onions yield about 90 percent after peeling; whole fish can yield under 50 percent after filleting.",
+                url: "https://www.aimenupricer.com/recipe-cost-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Total the batch and divide by portions",
+                text: "Add every adjusted ingredient cost to get the batch cost, then divide by the number of portions the batch actually yields to get cost per portion.",
+                url: "https://www.aimenupricer.com/recipe-cost-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Recheck when supplier prices change",
+                text: "A recipe cost is only valid on the day you calculated it. Re-run the recipe whenever a key ingredient price moves more than about 10 percent, or on a fixed monthly schedule.",
+                url: "https://www.aimenupricer.com/recipe-cost-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <RecipeCostCalculatorClient />
     </>
   );

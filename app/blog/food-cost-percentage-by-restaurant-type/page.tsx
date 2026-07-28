@@ -218,6 +218,7 @@ export default function FoodCostByRestaurantTypePage() {
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             Food Cost Percentage by Restaurant Type: 2026 Industry Benchmarks
           </h1>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
           <p className="text-lg text-gray-500 leading-relaxed">
             Your food cost percentage only means something when you compare it against the right benchmark. A 33% food
             cost is fine for a casual dining restaurant and a warning sign for a coffee shop. Here are the real numbers,

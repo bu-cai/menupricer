@@ -125,6 +125,7 @@ export default function MenuCostCalculatorClient() {
             Menu Cost Calculator<br />
             <span className="text-orange-500">for Restaurants</span>
           </h1>
+          <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
           <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
             Calculate your menu item cost, set your profit margin, and instantly get the right selling price — free for restaurant owners.
           </p>

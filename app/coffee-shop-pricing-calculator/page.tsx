@@ -77,6 +77,71 @@ export default function CoffeeShopCalculatorPage() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+              { "@type": "ListItem", position: 2, name: "Coffee Shop Pricing Calculator", item: "https://www.aimenupricer.com/coffee-shop-pricing-calculator" },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "How to Price Coffee Shop Drinks",
+            description:
+              "Price espresso drinks and specialty beverages by costing the shot, the milk, and the cup separately, then applying a beverage-appropriate margin.",
+            totalTime: "PT4M",
+            estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "0" },
+            tool: [{ "@type": "HowToTool", name: "MenuPricer Coffee Shop Pricing Calculator" }],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Calculate cost per espresso shot",
+                text: "Divide the price per pound of beans by the number of shots it yields. A pound at 18 grams per double shot yields roughly 25 doubles, so a $16 pound costs about $0.64 per double shot.",
+                url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator#step-1",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Add milk and syrup by volume",
+                text: "Cost milk per ounce and multiply by the drink size. Milk, not coffee, is usually the largest ingredient cost in a large latte, and alternative milks can double that line.",
+                url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator#step-2",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Do not forget the cup",
+                text: "Cup, lid, sleeve, and straw frequently total $0.20 to $0.40 per drink. On a beverage with a very low ingredient cost, packaging can exceed the coffee itself, and it is the most commonly omitted cost in coffee shop pricing.",
+                url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator#step-3",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Apply a beverage margin target",
+                text: "Coffee programs typically target 15 to 22 percent beverage cost, materially lower than food, because labor per transaction and rent per square foot are high relative to ticket size.",
+                url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator#step-4",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Price add-ons deliberately",
+                text: "Extra shots, alternative milks, and syrups should each carry a price that covers cost plus margin. Free or underpriced modifiers are a common silent margin leak in high-volume cafes.",
+                url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator#step-5",
+              },
+            ],
+          }),
+        }}
+      />
       <CoffeeShopCalculatorClient />
     </>
   );
