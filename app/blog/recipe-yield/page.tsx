@@ -96,6 +96,8 @@ export default function RecipeYieldPost() {
           <span className="text-xs font-bold bg-orange-100 text-orange-600 px-2.5 py-1 rounded-full">Recipe Costing</span>
           <span className="text-xs text-gray-400">5 min read</span>
           <time dateTime="2026-07-21" className="text-xs text-gray-400">July 21, 2026</time>
+          <span className="text-xs text-gray-400">·</span>
+          <span className="text-xs text-gray-400">Reviewed by the MenuPricer Team</span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-5">

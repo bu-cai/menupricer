@@ -84,7 +84,7 @@ export default function RestaurantInventoryCostingMethodsPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           Restaurant Inventory Costing Methods: FIFO vs Weighted Average Explained
         </h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026 · Reviewed by the MenuPricer Team</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           When you buy chicken at $3.50/lb one week and $4.00/lb the next, which cost goes into your recipes? The answer depends on your inventory costing method — and it directly affects your reported food cost percentage. Here is what FIFO and weighted average mean in practice, and which one most restaurants should use.
         </p>

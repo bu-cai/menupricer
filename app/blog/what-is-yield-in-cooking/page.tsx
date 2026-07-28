@@ -99,7 +99,7 @@ export default function WhatIsYieldInCookingPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">What Is Yield in Cooking? Definition, Formula & Percentage Chart</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Yield is the percentage of a purchased ingredient that is actually usable after prep. It is one of the most overlooked factors in food costing — and one of the most expensive to ignore.</p>
         </div>
 

@@ -89,6 +89,8 @@ export default function RestaurantProfitMarginPost() {
           <span className="text-xs text-gray-400">7 min read</span>
           <span className="text-xs text-gray-400">·</span>
           <time dateTime="2026-07-21" className="text-xs text-gray-400">Updated July 2026</time>
+          <span className="text-xs text-gray-400">·</span>
+          <span className="text-xs text-gray-400">Reviewed by the MenuPricer Team</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">

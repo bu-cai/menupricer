@@ -181,7 +181,7 @@ export default function RecipeCostingWithoutRecipesPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-3">
           You Don&apos;t Have Written Recipes. Here&apos;s How to Cost Your Menu Anyway
         </h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: {LAST_UPDATED}</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: {LAST_UPDATED} · Reviewed by the MenuPricer Team</p>
 
         {/* Direct answer box */}
         <div className="bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5 mb-8">

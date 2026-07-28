@@ -1090,7 +1090,16 @@ function HomeContent() {
               className="flex items-center justify-between gap-3 bg-gray-900 text-white text-sm px-5 py-3.5 rounded-2xl mb-6 shadow-lg"
               style={{ animation: "slide-up 250ms ease both" }}
             >
-              <span>✅ {lang === "ZH" ? `已加入菜单：${currentDishName}` : `Added "${currentDishName}" to menu`}</span>
+              <span>
+                ✅ {lang === "ZH" ? `已加入菜单：${currentDishName}` : `Added "${currentDishName}" to menu`}
+                {userPlan === "free" && menuItems.length >= FREE_LIMIT - 1 && (
+                  <span className="text-orange-300 ml-2">
+                    {lang === "ZH"
+                      ? `· 还剩 ${Math.max(0, FREE_LIMIT - menuItems.length)} 个免费名额`
+                      : `· ${Math.max(0, FREE_LIMIT - menuItems.length)} free ${Math.max(0, FREE_LIMIT - menuItems.length) === 1 ? "slot" : "slots"} left`}
+                  </span>
+                )}
+              </span>
               <button
                 onClick={() => { setActiveTab("menu"); setMenuToast(false); }}
                 className="text-orange-300 font-bold hover:text-orange-200 whitespace-nowrap transition-colors text-sm"

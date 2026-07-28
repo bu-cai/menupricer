@@ -93,7 +93,7 @@ export default function RestaurantBudgetTemplatePage() {
       </header>
       <main className="max-w-3xl mx-auto px-6 py-12">
         <h1 className="text-3xl font-black text-gray-900 mb-4">Restaurant Budget Template</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026 · Reviewed by the MenuPricer Team</p>
         <p className="text-lg text-gray-500 mb-8">A restaurant without a monthly budget is flying blind. Here is the P&amp;L template, target cost percentages, and weekly review process.</p>
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Monthly Budget Template</h2>

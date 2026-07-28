@@ -78,7 +78,7 @@ export default function ServiceChargeVsTipPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Service Charge vs Tip vs Gratuity: What Is the Difference?</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Three terms that look similar on a restaurant bill but mean very different things legally, operationally, and for your staff. Here is exactly how they differ — and what restaurant owners need to know before setting policy.</p>
         </div>
 

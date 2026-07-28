@@ -77,7 +77,7 @@ export default function GhostKitchenPricingPage() {
             <span className="text-xs text-gray-400">7 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">What Is a Ghost Kitchen? Definition, Costs & Pricing Strategy</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Ghost kitchens have rewritten the math of opening a restaurant. Lower overhead, no front-of-house staff, and instant access to a delivery customer base. But the economics only work if you understand how platform commissions eat into your margin — and price accordingly.</p>
         </div>
 

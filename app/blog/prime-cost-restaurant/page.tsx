@@ -76,7 +76,7 @@ export default function PrimeCostRestaurantPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">What Is Prime Cost? Restaurant Prime Cost Formula Explained</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Prime cost is the single most useful number for diagnosing restaurant profitability. It combines your two largest controllable costs — food and labor — into one benchmark that tells you immediately whether your operation has room to be profitable.</p>
         </div>
 

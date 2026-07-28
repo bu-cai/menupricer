@@ -76,7 +76,7 @@ export default function ParLevelRestaurantPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Par Level in Restaurants: What It Means and How to Set It</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Par level is one of the most practical tools in restaurant inventory management. Set it right and you eliminate both spoilage and stockouts. Ignore it and your food cost will always run higher than it should.</p>
         </div>
 

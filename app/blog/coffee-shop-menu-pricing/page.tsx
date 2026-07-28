@@ -82,7 +82,7 @@ export default function CoffeeShopMenuPricingPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Coffee Shop Menu Pricing: How to Price Every Drink for Profit in 2026</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 22, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Espresso drinks have some of the highest gross margins in food service — but only if you price them correctly. This guide shows you the formula, the benchmarks, and the pitfalls that turn a profitable cafe into a break-even grind.</p>
         </div>
         <div className="bg-orange-50 border border-orange-100 rounded-2xl p-5 mb-10 grid grid-cols-3 gap-4 text-center">

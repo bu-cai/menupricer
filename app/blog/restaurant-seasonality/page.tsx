@@ -82,7 +82,7 @@ export default function RestaurantSeasonalityPage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">
           Restaurant Seasonality: How to Adjust Menu Prices When Ingredient Costs Change
         </h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 25, 2026 · Reviewed by the MenuPricer Team</p>
         <p className="text-lg text-gray-500 leading-relaxed mb-8">
           A tomato that costs $0.90/lb in August can cost $3.00/lb in February. If your menu price stays the same, your food cost percentage doubles on that dish. Here is how to manage seasonal ingredient swings without constantly raising prices or quietly losing margin.
         </p>

@@ -79,7 +79,7 @@ export default function FoodCostPercentageCalculatorPage() {
             <span className="text-xs text-gray-400">7 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Food Cost Percentage: Formula, Benchmarks & How to Calculate It</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Food cost percentage is the single most important number in restaurant operations. It tells you whether your prices are right, your portions are controlled, and your menu is actually making money. Here is everything you need to calculate it, benchmark it, and fix it.</p>
         </div>
 

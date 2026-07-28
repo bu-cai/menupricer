@@ -89,7 +89,7 @@ export default function CateringCostPerPersonPage() {
             <span className="text-xs text-gray-400">6 min read · July 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)</h1>
-        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026</p>
+        <p className="text-sm text-gray-400 mb-6">Last updated: July 24, 2026 · Reviewed by the MenuPricer Team</p>
           <p className="text-lg text-gray-500 leading-relaxed">Catering prices vary widely depending on service style, event type, and what is included in the quote. This guide breaks down average costs per person for different group sizes so you know what to expect before you call a caterer.</p>
         </div>
 
