@@ -526,6 +526,334 @@ export const DISH_DATA: Record<string, DishPriceData> = {
       { q: "How much should a chicken or shrimp add-on cost?", a: "Price it against the actual protein cost you'd use elsewhere on the menu (typically $1.30-2.00 for 4oz chicken, more for shrimp), not a flat round-number upcharge." },
     ],
   },
+  steak: {
+    slug: "steak",
+    name: "Steak",
+    category: "American / Steakhouse",
+    foodCostRange: "35–45%",
+    typicalPriceRange: "$28–$55 (8-12oz cut)",
+    costBreakdown: [
+      { ingredient: "Beef cut", note: "Dominates cost more than almost any other menu category — grade and cut matter enormously", costShare: "70–85%" },
+      { ingredient: "Compound butter / sauce", note: "Small cost, meaningful perceived value add", costShare: "3–5%" },
+      { ingredient: "Sides (if included)", note: "Often costed as an afterthought despite real impact on plate cost", costShare: "10–20%" },
+      { ingredient: "Aging and trim loss", note: "Dry-aged cuts lose 15-20% of weight to moisture loss and trim — rarely priced in", costShare: "built into cut cost" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Ribeye (12oz, USDA Choice)", amount: "12 oz", cost: 9.5 },
+        { ingredient: "Compound herb butter", amount: "—", cost: 0.4 },
+        { ingredient: "Side (potato or vegetable)", amount: "—", cost: 1.1 },
+      ],
+      totalCost: 11.0,
+      targetFoodCostPct: 38,
+    },
+    mistakes: [
+      { title: "Not costing dry-aging weight and moisture loss", desc: "Dry-aged beef loses 15-20% of its weight during the aging process before any trimming even happens. Costing against the pre-aged purchase weight significantly understates true cost." },
+      { title: "Pricing all grades the same across the menu", desc: "USDA Select, Choice, and Prime carry meaningfully different costs per pound. A flat markup applied uniformly either overprices Select cuts or loses money on Prime." },
+      { title: "Treating the side dish as free", desc: "A steakhouse plate with a $9-12 cut and an uncosted side can still run a healthy blended food cost on paper while the side itself quietly loses money." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for steak?", a: "Steak typically runs 35-45% food cost — higher than almost any other menu category because beef, especially higher grades, is genuinely expensive. Steakhouses offset this with higher overall check averages and beverage margin." },
+      { q: "Why does steak have a higher food cost than other proteins?", a: "Beef, particularly aged or higher-grade cuts, costs significantly more per pound than chicken, pork, or most seafood. Guests also expect steak pricing to reflect genuine market value, limiting how much markup the category can bear." },
+      { q: "Should dry-aged steak be priced differently than fresh?", a: "Yes. Dry-aging causes 15-20% weight loss from moisture evaporation before trimming, meaning the usable yield per pound purchased is meaningfully lower. Dry-aged cuts need a price premium that reflects this real cost, not just a marketing premium." },
+    ],
+  },
+
+  sandwich: {
+    slug: "sandwich",
+    name: "Sandwich",
+    category: "American / Deli",
+    foodCostRange: "28–34%",
+    typicalPriceRange: "$9–$14",
+    costBreakdown: [
+      { ingredient: "Protein filling", note: "The main cost lever, varies widely by choice", costShare: "40–50%" },
+      { ingredient: "Bread", note: "Artisan or specialty bread costs more than standard sliced", costShare: "8–12%" },
+      { ingredient: "Cheese, spreads, condiments", note: "Small individually but frequently under-counted in aggregate", costShare: "15–25%" },
+      { ingredient: "Side (chips, fries, salad)", note: "Bundled sides quietly move overall plate cost", costShare: "10–20%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Roasted turkey", amount: "4 oz", cost: 1.4 },
+        { ingredient: "Artisan sourdough", amount: "2 slices", cost: 0.55 },
+        { ingredient: "Cheese, bacon, spread", amount: "—", cost: 0.9 },
+        { ingredient: "Side of chips", amount: "—", cost: 0.35 },
+      ],
+      totalCost: 3.2,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Costing deli meat at case price without portion discipline", desc: "Sandwich protein portions drift easily when sliced by hand rather than weighed. A consistently 20% heavier portion than spec meaningfully erodes margin across volume." },
+      { title: "Bundling a side without costing it into the sandwich price", desc: "Chips or fries included 'free' with a sandwich still carry real cost that needs to be reflected in the total plate price, not treated as a value-add that costs nothing." },
+      { title: "Pricing premium bread upgrades the same as standard", desc: "Swapping to artisan sourdough or a specialty roll can add $0.30-0.50 that should show up in the price of that specific sandwich, not get absorbed into the general menu markup." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for sandwiches?", a: "Sandwiches typically run 28-34% food cost. Protein choice and whether a side is bundled into the price are the two biggest levers within that range." },
+      { q: "How much protein should be costed per sandwich?", a: "Weigh actual portions rather than estimating by eye — 4oz is a common standard for deli meats, but drift toward 5-6oz is common when meat is hand-sliced without a scale, which can add $0.35-0.50 in uncounted cost per sandwich." },
+      { q: "Should a bundled side be priced separately?", a: "Cost it explicitly even if it's presented as included. A sandwich-plus-chips combo needs the chips' real cost built into the total price, not treated as a free value-add." },
+    ],
+  },
+
+  brunch: {
+    slug: "brunch",
+    name: "Brunch (Eggs Benedict)",
+    category: "Brunch / Breakfast",
+    foodCostRange: "24–30%",
+    typicalPriceRange: "$14–$19",
+    costBreakdown: [
+      { ingredient: "Eggs (poached)", note: "Cheap individually, but hollandaise and protein add up fast", costShare: "10–15%" },
+      { ingredient: "English muffin", note: "Low cost per serving", costShare: "5–8%" },
+      { ingredient: "Protein (Canadian bacon, salmon)", note: "The main differentiator between a $14 and $19 version", costShare: "25–35%" },
+      { ingredient: "Hollandaise sauce", note: "Butter-heavy sauce that's easy to underestimate in cost", costShare: "15–20%" },
+      { ingredient: "Side (potatoes, fruit)", note: "Standard inclusion that needs its own cost line", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Eggs (2, poached)", amount: "2", cost: 0.5 },
+        { ingredient: "English muffin", amount: "1", cost: 0.35 },
+        { ingredient: "Canadian bacon", amount: "2 oz", cost: 0.9 },
+        { ingredient: "Hollandaise", amount: "2 oz", cost: 0.75 },
+        { ingredient: "Home fries", amount: "—", cost: 0.6 },
+      ],
+      totalCost: 3.1,
+      targetFoodCostPct: 27,
+    },
+    mistakes: [
+      { title: "Underestimating hollandaise cost", desc: "A proper butter-and-egg-yolk hollandaise costs more per ounce than most sauces on the menu, and it's easy to treat as a negligible finishing touch rather than a real cost line." },
+      { title: "Not differentiating protein swaps in pricing", desc: "Swapping Canadian bacon for smoked salmon meaningfully changes ingredient cost, but menus sometimes price all Benedict variations within a dollar of each other regardless of protein cost." },
+      { title: "Treating the side as free because it's 'standard'", desc: "Home fries or fruit included with every brunch plate still cost money per serving and need to be part of the total dish cost calculation." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for brunch dishes?", a: "Brunch entrées like eggs Benedict typically run 24-30% food cost. Protein choice (Canadian bacon vs. smoked salmon vs. crab) is the main driver of where a specific version lands." },
+      { q: "Why is hollandaise more expensive than it seems?", a: "A proper hollandaise made with butter and egg yolks costs more per ounce than most sauces used elsewhere on a menu, since both core ingredients carry real per-unit cost even in small quantities." },
+      { q: "Should salmon Benedict cost more than the standard version?", a: "Yes — smoked salmon costs meaningfully more than Canadian bacon per ounce, and the menu price should reflect that gap rather than treating all protein options as interchangeable." },
+    ],
+  },
+
+  cake: {
+    slug: "cake",
+    name: "Custom Cake",
+    category: "Bakery",
+    foodCostRange: "20–28%",
+    typicalPriceRange: "$45–$150+ (based on size and design)",
+    costBreakdown: [
+      { ingredient: "Cake base (batter, filling)", note: "Relatively low cost compared to labor and decoration", costShare: "15–25%" },
+      { ingredient: "Buttercream / fondant", note: "Fondant costs meaningfully more than buttercream per pound", costShare: "15–20%" },
+      { ingredient: "Decoration (fondant details, sugar flowers, toppers)", note: "Highly variable — this is where custom cakes differ most from standard ones", costShare: "10–30%" },
+      { ingredient: "Labor (decorating time)", note: "Often the largest true cost, even though it's not an ingredient", costShare: "not in food cost %, but essential to total pricing" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Cake batter + filling (2-tier, serves 30)", amount: "—", cost: 12.0 },
+        { ingredient: "Buttercream", amount: "—", cost: 8.5 },
+        { ingredient: "Fondant details + topper", amount: "—", cost: 6.0 },
+        { ingredient: "Box + board", amount: "—", cost: 3.5 },
+      ],
+      totalCost: 30.0,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Pricing custom cakes on ingredients alone, ignoring decorating labor", desc: "A hand-piped, multi-hour decorated cake has real labor cost that dwarfs the ingredient cost, but many bakers price purely off ingredients and undercharge for design complexity." },
+      { title: "Quoting a flat per-serving price regardless of design complexity", desc: "A simple buttercream cake and an elaborate sugar-flower fondant cake serving the same number of guests have very different true costs — flat per-serving pricing loses money on complex designs." },
+      { title: "Not costing the box, board, and delivery separately", desc: "Cake boxes, boards, and delivery/setup for large tiered cakes carry real cost that's easy to treat as incidental rather than building into the quote." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for custom cakes?", a: "Custom cakes typically run 20-28% food cost on ingredients alone, but decorating labor is usually the larger true cost driver and needs to be priced separately from the food cost percentage." },
+      { q: "How should decorating time be factored into cake pricing?", a: "Estimate hours of decorating labor at your effective hourly rate and add it explicitly to the ingredient cost, rather than trying to fold labor into a single 'food cost' markup — the two need to be priced as separate components." },
+      { q: "Should all cakes serving the same number of guests cost the same?", a: "No. A simple buttercream design and an elaborate hand-piped fondant design serving 30 guests have very different labor costs, even with similar ingredient costs. Price by total complexity, not just serving count." },
+    ],
+  },
+
+  "wine-by-the-glass": {
+    slug: "wine-by-the-glass",
+    name: "Wine by the Glass",
+    category: "Beverage / Bar",
+    foodCostRange: "25–35%",
+    typicalPriceRange: "$10–$16 per glass",
+    costBreakdown: [
+      { ingredient: "Wine bottle cost per glass", note: "Standard pour is 5oz, meaning a 750ml bottle yields about 5 glasses", costShare: "90%+" },
+      { ingredient: "Waste and spoilage allowance", note: "Opened bottles oxidize and lose sellable glasses over time", costShare: "built into effective cost" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Bottle cost ÷ 5 glasses (5oz pour)", amount: "1 glass from $18 bottle", cost: 3.6 },
+      ],
+      totalCost: 3.6,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Assuming a full 5 glasses per bottle with zero waste", desc: "In practice, an opened bottle rarely yields a perfectly clean 5 glasses due to pour variance and the last glass often being sold below ideal freshness or discarded. Build in a waste allowance rather than assuming perfect yield." },
+      { title: "Not accounting for bottles that don't sell out before oxidizing", desc: "A by-the-glass wine that sells slowly can lose 1-2 glasses to oxidation before the bottle is finished, which effectively raises the true cost per glass sold." },
+      { title: "Pricing all wines at the same pour cost percentage regardless of category", desc: "Sparkling, entry-level reds, and premium by-the-glass pours often warrant different target pour costs — treating them identically can overprice easy-sell categories and underprice premium ones." },
+    ],
+    faqs: [
+      { q: "What is a good pour cost for wine by the glass?", a: "Most restaurants target 25-35% pour cost for wine by the glass, similar to or slightly higher than spirits, since wine carries less labor cost per serving than mixed cocktails." },
+      { q: "How many glasses does a wine bottle actually yield?", a: "A standard 750ml bottle yields about 5 glasses at a 5oz pour, but real-world yield is often slightly lower due to pour variance and the practical loss of a partial last glass." },
+      { q: "Should slow-selling wines by the glass be priced differently?", a: "Consider it. A wine that takes several days to sell through a bottle risks losing 1-2 glasses to oxidation, effectively raising its true cost per glass sold compared to a fast-moving bottle." },
+    ],
+  },
+
+  bbq: {
+    slug: "bbq",
+    name: "BBQ Platter",
+    category: "American / BBQ",
+    foodCostRange: "32–38%",
+    typicalPriceRange: "$18–$26",
+    costBreakdown: [
+      { ingredient: "Smoked meat (brisket, ribs, pulled pork)", note: "Dominant cost, and smoking causes significant weight loss", costShare: "55–65%" },
+      { ingredient: "Sides (2 included)", note: "Individually cheap but two sides add up meaningfully per plate", costShare: "15–25%" },
+      { ingredient: "Sauce and bread", note: "Small cost, high perceived value", costShare: "5–10%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Smoked brisket (cooked weight)", amount: "6 oz", cost: 4.2 },
+        { ingredient: "Two sides", amount: "—", cost: 1.4 },
+        { ingredient: "Sauce, bread, pickles", amount: "—", cost: 0.5 },
+      ],
+      totalCost: 6.1,
+      targetFoodCostPct: 34,
+    },
+    mistakes: [
+      { title: "Costing brisket at raw weight instead of smoked, trimmed weight", desc: "Brisket can lose 35-45% of its raw weight during smoking through moisture loss and trimming the fat cap. Costing against the pre-smoke purchase weight dramatically understates true cost." },
+      { title: "Not weighing portions consistently at the cutting board", desc: "Hand-cutting brisket and ribs at the counter is one of the easiest places for portion sizes to drift upward without anyone deciding to change them." },
+      { title: "Underpricing platters with two premium meats", desc: "A combo plate with both brisket and ribs stacks two expensive proteins — pricing it like a single-meat plate with a small upcharge usually loses money." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for BBQ?", a: "BBQ platters typically run 32-38% food cost, on the higher side because smoked meats lose significant weight during cooking, meaning the edible yield is much lower than the raw purchase weight." },
+      { q: "How much weight does brisket lose during smoking?", a: "Brisket commonly loses 35-45% of its raw weight through moisture evaporation and fat cap trimming during a long smoke. This yield loss must be factored into cost per serving, not just the raw per-pound purchase price." },
+      { q: "Should a two-meat combo platter cost proportionally more?", a: "It should reflect the actual combined ingredient cost of both proteins, not a flat small upcharge over a single-meat plate — two premium smoked meats on one plate meaningfully changes total cost." },
+    ],
+  },
+
+  breakfast: {
+    slug: "breakfast",
+    name: "Breakfast Plate",
+    category: "Breakfast / Diner",
+    foodCostRange: "26–32%",
+    typicalPriceRange: "$10–$15",
+    costBreakdown: [
+      { ingredient: "Eggs", note: "One of the cheapest proteins on any menu, though prices can spike seasonally", costShare: "10–15%" },
+      { ingredient: "Breakfast meat (bacon, sausage)", note: "The main protein cost lever", costShare: "25–35%" },
+      { ingredient: "Potatoes / hash browns", note: "Cheap per serving", costShare: "8–12%" },
+      { ingredient: "Toast / pancakes", note: "Low individual cost, easy to underprice as an afterthought", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Eggs (2)", amount: "2", cost: 0.5 },
+        { ingredient: "Bacon (3 strips)", amount: "—", cost: 0.75 },
+        { ingredient: "Hash browns", amount: "—", cost: 0.4 },
+        { ingredient: "Toast (2 slices) + butter", amount: "—", cost: 0.3 },
+      ],
+      totalCost: 1.95,
+      targetFoodCostPct: 28,
+    },
+    mistakes: [
+      { title: "Not adjusting for egg price volatility", desc: "Egg prices can spike significantly during supply disruptions (avian flu outbreaks have historically caused 50%+ price swings). A breakfast menu priced once and left alone is exposed to this volatility more than most categories." },
+      { title: "Treating toast and butter as a free garnish", desc: "Bread and butter included with every breakfast plate carry real, if small, per-serving cost that should be counted rather than assumed negligible." },
+      { title: "Pricing all-day breakfast the same as morning-only breakfast", desc: "If breakfast is offered all day, consider whether the value proposition and willingness to pay differs enough by daypart to warrant different pricing or portion sizes." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for a breakfast plate?", a: "Classic breakfast plates typically run 26-32% food cost. Eggs and potatoes are cheap; the breakfast meat choice (bacon vs. sausage vs. ham) is the main cost lever." },
+      { q: "Why do egg prices matter so much for breakfast menu costing?", a: "Egg prices have historically been prone to significant spikes during supply disruptions, sometimes 50% or more within weeks. Breakfast-heavy menus should monitor egg costs more frequently than other ingredients." },
+      { q: "Should toast and butter be costed separately?", a: "Yes, even though the cost per serving is small. It's a real, countable cost that adds up across volume and should be included in the total plate cost rather than treated as free." },
+    ],
+  },
+
+  "chocolate-cake-slice": {
+    slug: "chocolate-cake-slice",
+    name: "Chocolate Cake Slice",
+    category: "Dessert",
+    foodCostRange: "18–25%",
+    typicalPriceRange: "$7–$10",
+    costBreakdown: [
+      { ingredient: "Cake (baked, per slice)", note: "Cheap per slice when baked in bulk", costShare: "35–45%" },
+      { ingredient: "Chocolate ganache / frosting", note: "Quality chocolate costs meaningfully more than cocoa-based substitutes", costShare: "30–40%" },
+      { ingredient: "Garnish (berries, sauce, whipped cream)", note: "Small but easy to under-count across many desserts sold", costShare: "15–25%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Chocolate cake (1/12 of a whole cake)", amount: "1 slice", cost: 0.85 },
+        { ingredient: "Chocolate ganache", amount: "—", cost: 0.75 },
+        { ingredient: "Berries + whipped cream", amount: "—", cost: 0.4 },
+      ],
+      totalCost: 2.0,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Using low-quality chocolate cost assumptions for a premium-positioned dessert", desc: "If the menu markets a dessert as made with premium or single-origin chocolate, the costing needs to reflect that ingredient's actual higher price, not a generic cocoa-based estimate." },
+      { title: "Not costing garnish consistently across every slice sold", desc: "Berries, sauce drizzle, and whipped cream are individually cheap but compound across dozens of desserts sold nightly into a real, countable cost." },
+      { title: "Cutting slices inconsistently from a whole cake", desc: "A cake meant to yield 12 slices that's actually cut into 10 larger portions changes the effective cost per slice significantly — standardized cutting guides help control this." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for cake slices?", a: "Dessert slices typically run 18-25% food cost, on the lower end for a menu, because baked goods produced in bulk have low per-slice ingredient cost relative to their price." },
+      { q: "How much does chocolate quality affect dessert cost?", a: "Significantly — premium or single-origin chocolate can cost multiples of standard cocoa-based products. If a dessert is marketed as premium, its costing should reflect the actual chocolate used, not a generic estimate." },
+      { q: "Does slice size affect food cost percentage?", a: "Yes, directly. A cake meant to yield 12 slices that's cut into 10 larger ones raises the ingredient cost per slice by 20%, which needs to be reflected in either the price or a corrected portion standard." },
+    ],
+  },
+
+  croissant: {
+    slug: "croissant",
+    name: "Croissant",
+    category: "Bakery",
+    foodCostRange: "22–30%",
+    typicalPriceRange: "$4–$6.50 (plain), $6–$9 (filled)",
+    costBreakdown: [
+      { ingredient: "Butter", note: "The single largest cost driver in laminated dough, and butter prices are volatile", costShare: "35–45%" },
+      { ingredient: "Flour and dough base", note: "Cheap relative to butter", costShare: "15–20%" },
+      { ingredient: "Filling (chocolate, almond, ham & cheese)", note: "Turns a plain croissant into a premium item with meaningfully higher cost", costShare: "20–35%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Laminated dough (butter-heavy)", amount: "1 croissant", cost: 0.75 },
+        { ingredient: "Chocolate filling", amount: "—", cost: 0.5 },
+      ],
+      totalCost: 1.25,
+      targetFoodCostPct: 24,
+    },
+    mistakes: [
+      { title: "Not adjusting pricing when butter prices spike", desc: "Butter is a genuinely volatile commodity, and croissants are unusually butter-intensive relative to most bakery items. A butter price spike hits croissant margin harder than almost any other product on a typical bakery menu." },
+      { title: "Pricing filled croissants too close to plain ones", desc: "A ham-and-cheese or almond croissant costs meaningfully more than a plain butter croissant, and the price gap needs to reflect that rather than a token $0.50-1.00 upcharge." },
+      { title: "Costing lamination waste inconsistently", desc: "Laminated dough production has real trim and scrap loss that should be factored into the effective cost per finished croissant, not costed as if 100% of dough becomes sellable product." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for croissants?", a: "Croissants typically run 22-30% food cost. Butter content makes this category more exposed to commodity price swings than most other bakery items." },
+      { q: "Why is butter such a large share of croissant cost?", a: "Traditional lamination requires a high ratio of butter to dough — often 20% or more of total dough weight — making croissants one of the most butter-intensive items on a typical bakery menu." },
+      { q: "How much more should a filled croissant cost than a plain one?", a: "Enough to reflect the actual added filling cost — for chocolate or almond, that's often $0.40-0.70 in ingredients, which should translate to at least a $1.50-2.50 higher menu price to maintain target food cost." },
+    ],
+  },
+
+  smoothie: {
+    slug: "smoothie",
+    name: "Smoothie",
+    category: "Café / Beverage",
+    foodCostRange: "22–30%",
+    typicalPriceRange: "$6–$9",
+    costBreakdown: [
+      { ingredient: "Fruit (fresh or frozen)", note: "The main cost driver, varies by seasonality and whether fresh or frozen is used", costShare: "35–50%" },
+      { ingredient: "Liquid base (juice, milk, yogurt)", note: "Moderate cost, protein or specialty milk add-ins raise it", costShare: "20–30%" },
+      { ingredient: "Add-ins (protein powder, superfoods)", note: "Where the real premium-pricing opportunity — and cost risk — lives", costShare: "15–30%" },
+      { ingredient: "Cup, lid, straw", note: "A meaningful share of total cost, frequently underestimated", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Frozen mixed berries", amount: "4 oz", cost: 0.9 },
+        { ingredient: "Banana", amount: "1/2", cost: 0.2 },
+        { ingredient: "Yogurt + juice base", amount: "8 oz", cost: 0.65 },
+        { ingredient: "Cup, lid, straw", amount: "1 set", cost: 0.35 },
+      ],
+      totalCost: 2.1,
+      targetFoodCostPct: 26,
+    },
+    mistakes: [
+      { title: "Not costing protein powder or superfood add-ins as real upcharges", desc: "Protein powder, collagen, and superfood boosts can cost $0.50-1.50 per serving depending on quality — pricing these add-ons below their actual cost is common and quietly erodes margin on 'upgraded' smoothies." },
+      { title: "Using fresh fruit pricing assumptions when fruit is out of season", desc: "Fresh berries and stone fruit can cost 2-3x more out of season. Frozen fruit avoids this volatility and is often the better cost-control choice for year-round menu items." },
+      { title: "Underestimating packaging cost on larger sizes", desc: "A large smoothie cup, dome lid, and wide straw cost meaningfully more than a small size, and the price gap between sizes should reflect both the added fruit and the larger packaging." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for smoothies?", a: "Smoothies typically run 22-30% food cost. Fruit choice (fresh vs. frozen, in-season vs. out) and add-ins like protein powder are the main levers within that range." },
+      { q: "Should protein powder add-ons be priced to match their cost?", a: "Yes. Quality protein powder or collagen add-ins can cost $0.50-1.50 per serving, and pricing the upcharge below that erodes margin every time a customer adds it, even though it feels like 'just an add-on.'" },
+      { q: "Is frozen fruit cheaper than fresh for smoothies?", a: "Often yes, especially out of season. Frozen fruit avoids the seasonal price volatility of fresh berries and stone fruit, which can cost 2-3x more when out of season, making it a more predictable cost base for year-round menu items." },
+    ],
+  },
 };
 
 export const ALL_DISHES = Object.values(DISH_DATA);
