@@ -73,6 +73,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/restaurant-inventory-costing-methods`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/restaurant-failure-rate`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/recipe-costing-without-recipes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/markup-vs-margin`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/menu-pricing-mistakes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/how-often-to-reprice-menu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/portion-control-food-cost`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/supplier-price-increases`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Alternatives — high commercial intent
     { url: `${base}/alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/alternatives/marketman-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
