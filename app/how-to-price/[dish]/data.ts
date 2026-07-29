@@ -854,6 +854,339 @@ export const DISH_DATA: Record<string, DishPriceData> = {
       { q: "Is frozen fruit cheaper than fresh for smoothies?", a: "Often yes, especially out of season. Frozen fruit avoids the seasonal price volatility of fresh berries and stone fruit, which can cost 2-3x more when out of season, making it a more predictable cost base for year-round menu items." },
     ],
   },
+
+  "fish-and-chips": {
+    slug: "fish-and-chips",
+    name: "Fish and Chips",
+    category: "British / Pub Food",
+    foodCostRange: "30–36%",
+    typicalPriceRange: "$15–$20",
+    costBreakdown: [
+      { ingredient: "White fish (cod, haddock)", note: "The dominant cost, and one of the more volatile seafood commodities", costShare: "45–55%" },
+      { ingredient: "Batter", note: "Cheap per portion", costShare: "5–8%" },
+      { ingredient: "Fries", note: "Low cost but a full portion adds up more than expected", costShare: "10–15%" },
+      { ingredient: "Frying oil (allocated)", note: "Continuous cost that's easy to leave out of per-plate costing", costShare: "10–15%" },
+      { ingredient: "Tartar sauce, lemon, mushy peas", note: "Small individually, consistently forgotten in costing", costShare: "5–10%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Cod fillet", amount: "7 oz raw", cost: 4.9 },
+        { ingredient: "Batter", amount: "—", cost: 0.4 },
+        { ingredient: "Fries (large portion)", amount: "—", cost: 0.85 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.5 },
+        { ingredient: "Tartar sauce, lemon, peas", amount: "—", cost: 0.45 },
+      ],
+      totalCost: 7.1,
+      targetFoodCostPct: 33,
+    },
+    mistakes: [
+      { title: "Not tracking cod/haddock market price weekly", desc: "White fish prices can move significantly week to week depending on catch volume. A fish and chips menu priced once and revisited quarterly is exposed to real margin risk in a volatile month." },
+      { title: "Costing the fries portion as an afterthought", desc: "A generous pub-style fries portion costs more than a standard side, and treating it as a minor addition to the fish price understates total plate cost." },
+      { title: "Not allocating frying oil cost per order", desc: "Oil is a real, continuous cost across many fried orders that's easy to skip in individual dish costing because no single order consumes a measurable amount." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for fish and chips?", a: "Fish and chips typically runs 30-36% food cost. White fish is the dominant and most volatile cost, so this category benefits from more frequent price monitoring than lower-protein dishes." },
+      { q: "How much does fish and chips cost to make?", a: "A standard cod-based portion with fries typically costs $6-8 in ingredients, supporting a $15-18 menu price at a 33% food cost target, depending on current fish market prices." },
+      { q: "Should the fries portion be costed separately from the fish?", a: "Yes — cost each component of the plate individually. A generous pub-style fries portion adds more cost than a token side, and combining everything into one vague estimate risks underpricing the full plate." },
+    ],
+  },
+
+  "mac-and-cheese": {
+    slug: "mac-and-cheese",
+    name: "Mac and Cheese",
+    category: "American / Comfort Food",
+    foodCostRange: "20–28%",
+    typicalPriceRange: "$9–$14",
+    costBreakdown: [
+      { ingredient: "Pasta", note: "One of the cheapest base ingredients on the menu", costShare: "8–12%" },
+      { ingredient: "Cheese sauce", note: "The dominant cost, scales with cheese quality and blend", costShare: "45–55%" },
+      { ingredient: "Breadcrumb topping (if baked)", note: "Cheap addition with high perceived value", costShare: "5–8%" },
+      { ingredient: "Mix-ins (bacon, lobster, truffle)", note: "What separates a $10 side from a $18 entrée", costShare: "varies widely" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Elbow pasta", amount: "6 oz", cost: 0.5 },
+        { ingredient: "Cheese sauce (cheddar/gruyère blend)", amount: "6 oz", cost: 1.6 },
+        { ingredient: "Breadcrumb topping", amount: "—", cost: 0.2 },
+      ],
+      totalCost: 2.3,
+      targetFoodCostPct: 24,
+    },
+    mistakes: [
+      { title: "Not distinguishing cheese blend cost across menu variants", desc: "A basic cheddar mac and a gruyère-and-fontina version have meaningfully different cheese costs, but menus sometimes price all versions within a dollar of each other." },
+      { title: "Underpricing premium mix-ins like lobster or truffle", desc: "Adding lobster or truffle oil to mac and cheese can double or triple the ingredient cost, and the upcharge needs to reflect that gap, not a flat round-number premium." },
+      { title: "Treating this as a 'cheap' side that doesn't need real costing", desc: "Because the base ingredients feel humble, mac and cheese is one of the more commonly under-costed comfort food items, despite quality cheese being genuinely expensive per ounce." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for mac and cheese?", a: "Mac and cheese typically runs 20-28% food cost as a side, though entrée-sized or premium versions with lobster or truffle can run higher due to expensive mix-ins." },
+      { q: "Why is cheese sauce the dominant cost, not the pasta?", a: "Pasta is one of the cheapest ingredients on any menu. A quality cheese blend, especially with gruyère or other specialty cheeses, costs significantly more per ounce and dominates the total dish cost." },
+      { q: "How should a lobster mac and cheese be priced versus the classic version?", a: "Price it against the actual added lobster cost, which is substantial, rather than a flat upcharge. Lobster mac and cheese commonly costs 2-3x the classic version in ingredients alone." },
+    ],
+  },
+
+  dumplings: {
+    slug: "dumplings",
+    name: "Dumplings (Pork Potstickers)",
+    category: "Asian / Dim Sum",
+    foodCostRange: "25–32%",
+    typicalPriceRange: "$9–$14 (6-8 pieces)",
+    costBreakdown: [
+      { ingredient: "Filling (ground pork, vegetables)", note: "Moderate cost, protein choice is the main lever", costShare: "40–50%" },
+      { ingredient: "Wrapper", note: "Cheap per piece, whether store-bought or house-made", costShare: "10–15%" },
+      { ingredient: "Dipping sauce", note: "Small but consistent per-order cost", costShare: "8–12%" },
+      { ingredient: "Labor (hand-folding)", note: "Not in food cost %, but a genuine cost driver for hand-made dumplings", costShare: "significant, tracked separately" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Ground pork + cabbage + scallion filling", amount: "6 pieces", cost: 1.8 },
+        { ingredient: "Wrappers (6)", amount: "6", cost: 0.3 },
+        { ingredient: "Dipping sauce", amount: "—", cost: 0.25 },
+      ],
+      totalCost: 2.35,
+      targetFoodCostPct: 28,
+    },
+    mistakes: [
+      { title: "Not accounting for hand-folding labor time separately from ingredient cost", desc: "Hand-folded dumplings take real time per piece that a machine-made or frozen alternative doesn't. This labor cost needs its own consideration beyond the food cost percentage." },
+      { title: "Costing filling by recipe theory instead of actual fill weight per dumpling", desc: "Fill weight per dumpling can drift if not portioned with a scoop or scale, changing effective cost per piece without anyone deciding to change the recipe." },
+      { title: "Pricing pan-fried and steamed versions identically", desc: "If the pan-fried version uses more oil and a slightly different cooking process, the marginal cost difference, however small, is worth accounting for if the two versions are priced the same." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for dumplings?", a: "Dumplings typically run 25-32% food cost. Hand-folded versions carry meaningful labor cost beyond ingredients that should factor into the overall pricing decision, even if it doesn't show up in food cost percentage." },
+      { q: "How much filling should be costed per dumpling?", a: "Weigh actual fill amounts with a scoop or scale rather than estimating — fill weight is one of the easiest things to drift upward per piece without a standardized portioning tool." },
+      { q: "Should hand-made dumplings cost more than frozen ones on the menu?", a: "The ingredient cost difference may be small, but hand-folding carries real labor time that a frozen alternative doesn't. This labor cost should be factored into the price even though it's separate from food cost percentage." },
+    ],
+  },
+
+  pho: {
+    slug: "pho",
+    name: "Pho",
+    category: "Vietnamese",
+    foodCostRange: "26–32%",
+    typicalPriceRange: "$13–$17",
+    costBreakdown: [
+      { ingredient: "Broth", note: "Long-simmered bone broth carries real labor and utility cost beyond ingredients", costShare: "20–28%" },
+      { ingredient: "Rice noodles", note: "Cheap per bowl", costShare: "8–10%" },
+      { ingredient: "Protein (beef, chicken)", note: "The main lever between a basic and premium bowl", costShare: "35–45%" },
+      { ingredient: "Herbs and garnish plate (basil, bean sprouts, lime)", note: "Small individually, consistently under-costed in aggregate", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Beef bone broth", amount: "16 oz", cost: 1.3 },
+        { ingredient: "Rice noodles", amount: "5 oz", cost: 0.5 },
+        { ingredient: "Sliced beef + brisket", amount: "4 oz", cost: 2.6 },
+        { ingredient: "Herb plate (basil, sprouts, lime, jalapeño)", amount: "—", cost: 0.55 },
+      ],
+      totalCost: 4.95,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Not costing the long-simmer broth's labor and utility cost", desc: "A properly made pho broth simmers for many hours, consuming real labor time and utility cost beyond just the bones and aromatics — a cost that's easy to leave out entirely." },
+      { title: "Treating the herb garnish plate as free", desc: "Basil, bean sprouts, lime, and jalapeño served alongside every bowl carry real per-order cost that compounds significantly across volume, even though each component is individually cheap." },
+      { title: "Pricing the beef combination bowl the same as the basic bowl", desc: "A combination bowl with multiple cuts of beef (brisket, tendon, tripe) costs meaningfully more than a single-cut basic bowl, and the price gap should reflect that." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for pho?", a: "Pho typically runs 26-32% food cost. Broth labor time and protein choice (single cut vs. combination) are the main cost levers within that range." },
+      { q: "Why does pho broth carry labor cost beyond its ingredients?", a: "A proper pho broth simmers for many hours, which consumes real kitchen labor time and utility cost — factors that don't show up in a simple ingredient list but are genuine costs of production." },
+      { q: "Should the herb garnish plate be priced separately?", a: "It doesn't need a separate menu price, but it should be costed into the bowl's total ingredient cost rather than assumed to be negligible — the herb plate adds up meaningfully across volume." },
+    ],
+  },
+
+  gyro: {
+    slug: "gyro",
+    name: "Gyro",
+    category: "Mediterranean / Greek",
+    foodCostRange: "28–34%",
+    typicalPriceRange: "$10–$14",
+    costBreakdown: [
+      { ingredient: "Meat (lamb, beef, or chicken)", note: "The dominant cost, and spit-roasted meat has real trim and cooking loss", costShare: "45–55%" },
+      { ingredient: "Pita", note: "Cheap per serving", costShare: "8–10%" },
+      { ingredient: "Tzatziki sauce", note: "Yogurt-based, moderate cost, easy to over-portion", costShare: "10–15%" },
+      { ingredient: "Vegetables (tomato, onion, lettuce)", note: "Small but adds up across volume", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Gyro meat (lamb/beef blend)", amount: "5 oz cooked", cost: 2.4 },
+        { ingredient: "Pita bread", amount: "1", cost: 0.4 },
+        { ingredient: "Tzatziki", amount: "2 oz", cost: 0.35 },
+        { ingredient: "Tomato, onion, lettuce", amount: "—", cost: 0.3 },
+      ],
+      totalCost: 3.45,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Costing spit meat at raw weight before cooking loss", desc: "Vertical spit-roasted meat loses significant weight to rendered fat and moisture during cooking. Costing against the raw, pre-cook weight understates true cost." },
+      { title: "Free-pouring tzatziki instead of portioning it", desc: "Yogurt-based sauces are easy to over-pour without a standardized portion tool, and tzatziki has real ingredient cost that adds up when inconsistently applied." },
+      { title: "Not differentiating lamb-blend pricing from all-chicken options", desc: "Lamb typically costs more than chicken, and a menu offering both should price them to reflect the actual cost gap rather than a single flat gyro price." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for gyros?", a: "Gyros typically run 28-34% food cost. Meat choice (lamb blend vs. chicken) is the main driver, since lamb costs meaningfully more per pound than chicken." },
+      { q: "Why does spit-roasted meat cost more than the raw purchase price suggests?", a: "Vertical spit cooking causes real weight loss from rendered fat and moisture over the cooking time. The effective cost per usable ounce is higher than the raw purchase price implies." },
+      { q: "Should tzatziki be portioned with a measuring tool?", a: "Yes. Free-pouring yogurt-based sauces is one of the more common sources of cost inconsistency in Mediterranean menus — a standardized portion cup keeps cost predictable order to order." },
+    ],
+  },
+
+  nachos: {
+    slug: "nachos",
+    name: "Nachos",
+    category: "Mexican / Bar Food",
+    foodCostRange: "24–30%",
+    typicalPriceRange: "$11–$16 (shareable)",
+    costBreakdown: [
+      { ingredient: "Tortilla chips", note: "Cheap in bulk, but portion size on a shareable plate matters", costShare: "10–15%" },
+      { ingredient: "Cheese sauce or shredded cheese", note: "The dominant cost on a fully-loaded plate", costShare: "25–35%" },
+      { ingredient: "Protein (if added)", note: "Turns a basic nacho plate into a premium one", costShare: "20–35%" },
+      { ingredient: "Toppings (jalapeño, sour cream, guac, pico)", note: "Individually small, adds up fast when a plate is fully loaded", costShare: "20–30%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Tortilla chips (shareable portion)", amount: "6 oz", cost: 0.6 },
+        { ingredient: "Cheese sauce", amount: "6 oz", cost: 1.5 },
+        { ingredient: "Seasoned beef", amount: "4 oz", cost: 1.4 },
+        { ingredient: "Jalapeño, sour cream, guac, pico", amount: "—", cost: 1.3 },
+      ],
+      totalCost: 4.8,
+      targetFoodCostPct: 27,
+    },
+    mistakes: [
+      { title: "Not standardizing the topping load on a shareable plate", desc: "Nachos are one of the easiest dishes for topping portions to drift, since they're often built by eye rather than measured — a generous guac scoop or extra cheese pour compounds fast across volume." },
+      { title: "Underpricing the fully-loaded version relative to the basic version", desc: "A basic cheese-only nacho plate and a fully-loaded version with protein, guac, and sour cream can differ by $3+ in ingredient cost — pricing them $1-2 apart loses money on the loaded version." },
+      { title: "Not costing guacamole separately given avocado price volatility", desc: "Avocado prices swing meaningfully by season, and guac-topped items should be monitored more closely than most menu components for this reason." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for nachos?", a: "Shareable nacho plates typically run 24-30% food cost. Whether protein and guacamole are included is the main driver of where a specific version lands in that range." },
+      { q: "How should a fully-loaded nacho plate be priced versus a basic one?", a: "Price the gap to reflect actual added ingredient cost. A fully-loaded plate with protein, guac, and sour cream can cost $3 or more per serving than a basic cheese-only version, and the menu price gap should match that." },
+      { q: "Why does guacamole need closer cost monitoring than other toppings?", a: "Avocado prices are seasonally volatile and can move significantly within a few months. Menu items built around guacamole benefit from more frequent cost review than items with stable ingredients." },
+    ],
+  },
+
+  bagel: {
+    slug: "bagel",
+    name: "Bagel with Cream Cheese",
+    category: "Bakery / Breakfast",
+    foodCostRange: "18–26%",
+    typicalPriceRange: "$4–$7",
+    costBreakdown: [
+      { ingredient: "Bagel", note: "Cheap per unit, whether baked in-house or sourced", costShare: "20–30%" },
+      { ingredient: "Cream cheese", note: "The main cost lever, especially for flavored or specialty spreads", costShare: "35–45%" },
+      { ingredient: "Add-ins (lox, tomato, capers)", note: "Turns a $4 bagel into a $12+ item", costShare: "varies widely" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Bagel", amount: "1", cost: 0.55 },
+        { ingredient: "Cream cheese", amount: "2 oz", cost: 0.5 },
+      ],
+      totalCost: 1.05,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Not costing flavored cream cheese variants separately", desc: "Vegetable, herb, or specialty cream cheese blends can cost more per ounce than plain, and pricing all variants the same absorbs that gap into margin." },
+      { title: "Underpricing lox and specialty bagel add-ons", desc: "Smoked salmon is a significant cost jump from a basic bagel and cream cheese. The upcharge needs to reflect real lox cost, which is substantial per ounce, not a flat round number." },
+      { title: "Over-portioning cream cheese without a standard scoop", desc: "Cream cheese applied by eye rather than a measured scoop or portion tool is one of the easiest places for cost to drift upward on a high-volume breakfast item." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for a bagel with cream cheese?", a: "A standard bagel and cream cheese typically runs 18-26% food cost. Lox or specialty add-ons push cost meaningfully higher and need separate pricing consideration." },
+      { q: "How much should a lox bagel cost compared to a plain one?", a: "Smoked salmon costs substantially more per ounce than cream cheese alone, often $2-4 more per serving. The lox bagel's price should reflect that real cost gap, not just a token upcharge." },
+      { q: "Should cream cheese be portioned with a scoop?", a: "Yes. Cream cheese applied by eye rather than measured is a common source of cost drift on high-volume breakfast items — a standard 2oz scoop keeps cost predictable." },
+    ],
+  },
+
+  donut: {
+    slug: "donut",
+    name: "Donut",
+    category: "Bakery",
+    foodCostRange: "15–22%",
+    typicalPriceRange: "$3–$5.50 (glazed), $4.50–$7 (filled/specialty)",
+    costBreakdown: [
+      { ingredient: "Dough (fried)", note: "Cheap per unit even accounting for frying oil", costShare: "30–40%" },
+      { ingredient: "Glaze or icing", note: "Low cost, high perceived value", costShare: "10–15%" },
+      { ingredient: "Filling (if applicable)", note: "The main differentiator between basic and premium donuts", costShare: "20–35%" },
+      { ingredient: "Specialty toppings (bacon, sprinkles, gourmet glazes)", note: "Where premium donut pricing is actually earned", costShare: "15–30%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Yeast-raised dough (fried)", amount: "1", cost: 0.35 },
+        { ingredient: "Glaze", amount: "—", cost: 0.15 },
+        { ingredient: "Custard filling", amount: "—", cost: 0.4 },
+      ],
+      totalCost: 0.9,
+      targetFoodCostPct: 18,
+    },
+    mistakes: [
+      { title: "Pricing filled and unfilled donuts too close together", desc: "A custard or fruit-filled donut costs meaningfully more than a basic glazed one, and pricing them $0.50 apart when the ingredient cost gap is $0.30-0.40 barely protects margin." },
+      { title: "Underpricing specialty gourmet donuts with multiple toppings", desc: "A donut with bacon, specialty glaze, and a garnish stacks several cost components that a basic glazed donut price was never built to cover." },
+      { title: "Not allocating frying oil cost per unit", desc: "Frying oil is consumed continuously and easy to treat as overhead rather than a real per-donut cost, even though it's a genuine expense worth at least a rough allocation." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for donuts?", a: "Basic donuts typically run 15-22% food cost. Filled and specialty gourmet versions with multiple premium toppings can run higher due to added ingredient cost, and should be priced accordingly." },
+      { q: "How much more should a filled donut cost than a glazed one?", a: "The filling itself commonly adds $0.30-0.50 in ingredient cost, which should translate to at least $1-1.50 more on the menu price to maintain a consistent food cost percentage." },
+      { q: "Should specialty donuts be priced individually rather than by a flat markup?", a: "Yes. A gourmet donut with bacon, specialty glaze, and multiple toppings has real, stacked ingredient costs that a single flat markup across the whole donut case will misprice in one direction or the other." },
+    ],
+  },
+
+  milkshake: {
+    slug: "milkshake",
+    name: "Milkshake",
+    category: "Café / Dessert",
+    foodCostRange: "18–26%",
+    typicalPriceRange: "$6–$9",
+    costBreakdown: [
+      { ingredient: "Ice cream base", note: "The dominant cost, scales with quality and quantity used", costShare: "50–60%" },
+      { ingredient: "Milk", note: "Low individual cost", costShare: "8–12%" },
+      { ingredient: "Mix-ins (cookies, candy, syrup)", note: "The main lever for specialty/premium shake pricing", costShare: "15–30%" },
+      { ingredient: "Whipped cream, cherry, cup", note: "Small but consistently under-costed garnish", costShare: "8–12%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Vanilla ice cream", amount: "10 oz", cost: 1.6 },
+        { ingredient: "Milk", amount: "4 oz", cost: 0.2 },
+        { ingredient: "Whipped cream, cherry, cup/lid", amount: "—", cost: 0.35 },
+      ],
+      totalCost: 2.15,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Underpricing specialty mix-in shakes", desc: "A shake blended with cookies, candy, or specialty syrup costs meaningfully more in ingredients than a classic vanilla or chocolate shake, and the price gap should reflect the actual mix-in cost." },
+      { title: "Not standardizing ice cream scoop count per shake size", desc: "Shake size and ice cream quantity are easy to drift without a standardized scoop count or fill line, directly multiplying your most expensive ingredient." },
+      { title: "Treating whipped cream and cherry garnish as free", desc: "These finishing touches carry small but real per-serving cost that should be counted rather than assumed negligible, especially across high volume." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for milkshakes?", a: "Milkshakes typically run 18-26% food cost. Specialty mix-in versions with cookies, candy, or premium syrups run toward the higher end due to added ingredient cost." },
+      { q: "Why is ice cream the dominant cost in a milkshake?", a: "Ice cream typically makes up 50-60% of a milkshake's total ingredient cost, since it's used in larger quantity than any other component and is generally the most expensive ingredient per ounce." },
+      { q: "Should specialty shakes cost more than classic vanilla or chocolate?", a: "Yes, if they include cookies, candy, or specialty syrups, since those mix-ins add real cost beyond the base ice cream and milk. Pricing them the same as classic flavors absorbs that gap into reduced margin." },
+    ],
+  },
+
+  "hot-dog": {
+    slug: "hot-dog",
+    name: "Hot Dog",
+    category: "American / Ballpark",
+    foodCostRange: "22–28%",
+    typicalPriceRange: "$5–$9",
+    costBreakdown: [
+      { ingredient: "Hot dog (sausage)", note: "Quality tier (standard vs. all-beef vs. specialty) is the main cost lever", costShare: "40–50%" },
+      { ingredient: "Bun", note: "Cheap per serving", costShare: "10–15%" },
+      { ingredient: "Toppings (mustard, relish, onion, chili, cheese)", note: "Individually cheap, but a fully-loaded version adds up meaningfully", costShare: "25–40%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "All-beef hot dog", amount: "1", cost: 1.1 },
+        { ingredient: "Bun", amount: "1", cost: 0.35 },
+        { ingredient: "Chili, cheese, onion", amount: "—", cost: 0.9 },
+      ],
+      totalCost: 2.35,
+      targetFoodCostPct: 25,
+    },
+    mistakes: [
+      { title: "Pricing a loaded chili-cheese dog too close to the plain version", desc: "Adding chili and cheese can nearly double the ingredient cost of a basic hot dog, and pricing the loaded version only $1-2 higher often fails to protect margin." },
+      { title: "Not distinguishing sausage quality tiers in pricing", desc: "Standard, all-beef, and specialty/artisan sausages have meaningfully different costs per unit, and a menu offering multiple tiers should price them to reflect that." },
+      { title: "Treating condiments as free regardless of quantity offered", desc: "Self-serve or generously-applied toppings like relish, onion, and sauerkraut carry real per-order cost that adds up across volume, even if each individual squeeze feels negligible." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for hot dogs?", a: "Hot dogs typically run 22-28% food cost. Sausage quality tier and topping load (plain vs. fully-loaded chili-cheese) are the main drivers within that range." },
+      { q: "How much more should a chili-cheese dog cost than a plain one?", a: "Chili and cheese can add $0.80-1.20 in ingredient cost over a plain hot dog, which should translate to at least $2-3 more on the menu price to maintain the target food cost percentage." },
+      { q: "Should specialty or artisan hot dogs be priced higher than standard ones?", a: "Yes — artisan or all-beef sausages cost meaningfully more per unit than standard options, and the menu price should reflect that real cost difference rather than a single flat hot dog price across quality tiers." },
+    ],
+  },
 };
 
 export const ALL_DISHES = Object.values(DISH_DATA);
