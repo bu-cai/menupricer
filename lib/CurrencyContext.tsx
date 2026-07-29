@@ -13,7 +13,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("menupricer_currency") as Currency | null;
-    if (saved && ["USD", "CNY", "EUR"].includes(saved)) setCurrency(saved);
+    if (saved && ["USD", "CNY", "EUR", "GBP", "CAD", "AUD"].includes(saved)) setCurrency(saved);
   }, []);
 
   const handleSet = (c: Currency) => {

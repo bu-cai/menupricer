@@ -190,7 +190,7 @@ const translations = {
       },
       {
         q: "What currencies does MenuPricer support?",
-        a: "MenuPricer supports USD ($), CNY (¥), and EUR (€). Switch currencies using the toggle in the top navigation bar. The AI will adjust pricing benchmarks to match the selected market.",
+        a: "MenuPricer supports USD ($), CNY (¥), EUR (€), GBP (£), CAD (C$), and AUD (A$). Switch currencies using the toggle in the top navigation bar. The AI will adjust pricing benchmarks to match the selected market.",
       },
       {
         q: "How do I calculate break-even for a menu item?",

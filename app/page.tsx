@@ -185,18 +185,18 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
         {/* Right controls */}
         <div className="flex items-center gap-2 ml-auto">
           {/* Currency — hidden on mobile */}
-          <div className="hidden sm:flex items-center gap-0.5 bg-gray-100 rounded-lg p-0.5">
-            {(["USD", "CNY", "EUR"] as Currency[]).map((c) => (
-              <button
-                key={c}
-                onClick={() => setCurrency(c)}
-                className={`text-xs font-bold px-2.5 py-1 rounded-md transition-all ${
-                  currency === c ? "bg-white text-orange-600 shadow-sm" : "text-gray-400 hover:text-gray-600"
-                }`}
-              >
-                {SYMBOLS[c]} {c}
-              </button>
-            ))}
+          <div className="hidden sm:block relative">
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value as Currency)}
+              className="appearance-none text-xs font-bold pl-2.5 pr-6 py-1.5 rounded-lg bg-gray-100 text-gray-600 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-300 cursor-pointer"
+            >
+              {(["USD", "CNY", "EUR", "GBP", "CAD", "AUD"] as Currency[]).map((c) => (
+                <option key={c} value={c}>
+                  {SYMBOLS[c]} {c}
+                </option>
+              ))}
+            </select>
           </div>
           {/* Language */}
           <button
@@ -387,7 +387,7 @@ const HOME_FAQ_SCHEMA = {
     {
       "@type": "Question",
       name: "What currencies does MenuPricer support?",
-      acceptedAnswer: { "@type": "Answer", text: "MenuPricer supports USD, CNY (Chinese Yuan), and EUR. You can switch currencies from the settings panel at the top of the page." },
+      acceptedAnswer: { "@type": "Answer", text: "MenuPricer supports USD, CNY (Chinese Yuan), EUR, GBP (British Pound), CAD (Canadian Dollar), and AUD (Australian Dollar). You can switch currencies from the settings panel at the top of the page." },
     },
     {
       "@type": "Question",

@@ -126,7 +126,7 @@ export default function RootLayout({
                 "Profit margin analysis",
                 "Menu calculator",
                 "Delivery platform commission calculator",
-                "Multi-currency support (USD, CNY, EUR)",
+                "Multi-currency support (USD, CNY, EUR, GBP, CAD, AUD)",
                 "PDF menu export",
                 "Recipe library",
               ],

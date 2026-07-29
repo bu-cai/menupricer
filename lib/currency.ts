@@ -1,15 +1,21 @@
-export type Currency = "USD" | "CNY" | "EUR";
+export type Currency = "USD" | "CNY" | "EUR" | "GBP" | "CAD" | "AUD";
 
 export const RATES: Record<Currency, number> = {
   USD: 1,
   CNY: 7.2,
   EUR: 0.92,
+  GBP: 0.79,
+  CAD: 1.36,
+  AUD: 1.52,
 };
 
 export const SYMBOLS: Record<Currency, string> = {
   USD: "$",
   CNY: "¥",
   EUR: "€",
+  GBP: "£",
+  CAD: "C$",
+  AUD: "A$",
 };
 
 export function toDisplay(usdValue: number, currency: Currency): number {
