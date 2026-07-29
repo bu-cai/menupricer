@@ -78,6 +78,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/how-often-to-reprice-menu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/portion-control-food-cost`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/supplier-price-increases`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/why-chatgpt-cant-price-your-menu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/how-to-price-a-menu-before-opening`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/food-truck-event-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/meal-prep-business-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/catering-quote-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Alternatives — high commercial intent
     { url: `${base}/alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/alternatives/marketman-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
