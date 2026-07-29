@@ -1187,6 +1187,509 @@ export const DISH_DATA: Record<string, DishPriceData> = {
       { q: "Should specialty or artisan hot dogs be priced higher than standard ones?", a: "Yes — artisan or all-beef sausages cost meaningfully more per unit than standard options, and the menu price should reflect that real cost difference rather than a single flat hot dog price across quality tiers." },
     ],
   },
+
+  quesadilla: {
+    slug: "quesadilla",
+    name: "Quesadilla",
+    category: "Mexican",
+    foodCostRange: "26–32%",
+    typicalPriceRange: "$9–$14",
+    costBreakdown: [
+      { ingredient: "Cheese", note: "The dominant cost on a basic quesadilla", costShare: "35–45%" },
+      { ingredient: "Tortilla", note: "Cheap per unit", costShare: "8–10%" },
+      { ingredient: "Protein (chicken, steak)", note: "Turns a basic quesadilla into a premium one", costShare: "30–40%" },
+      { ingredient: "Salsa, sour cream, guac (sides)", note: "Standard accompaniments that carry real cost", costShare: "15–20%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Flour tortilla (large)", amount: "1", cost: 0.35 },
+        { ingredient: "Cheese blend", amount: "4 oz", cost: 1.2 },
+        { ingredient: "Grilled chicken", amount: "3 oz", cost: 1.0 },
+        { ingredient: "Salsa, sour cream", amount: "—", cost: 0.5 },
+      ],
+      totalCost: 3.05,
+      targetFoodCostPct: 28,
+    },
+    mistakes: [
+      { title: "Pricing cheese-only and protein-added versions too close together", desc: "Adding chicken or steak roughly doubles the ingredient cost of a basic cheese quesadilla, and a $2 upcharge often doesn't cover that real cost gap." },
+      { title: "Not costing the side of salsa and sour cream", desc: "These standard accompaniments carry real cost per order that's easy to treat as a free garnish rather than counting into the dish's total cost." },
+      { title: "Over-filling with cheese without a portioning standard", desc: "Cheese quantity is one of the easiest things to drift upward on a quesadilla without a measured portion, directly multiplying the dominant cost ingredient." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for quesadillas?", a: "Quesadillas typically run 26-32% food cost. Whether protein is added and how generously cheese is portioned are the main cost drivers." },
+      { q: "How much more should a chicken quesadilla cost than a cheese-only one?", a: "Chicken adds roughly $1 in ingredient cost per serving, which should translate to at least $2-3 more on the menu price to maintain a consistent food cost percentage." },
+      { q: "Should salsa and sour cream be costed into the quesadilla price?", a: "Yes. These standard sides carry real, countable cost per order and should be built into the total dish cost rather than assumed to be a free accompaniment." },
+    ],
+  },
+
+  "chicken-tenders": {
+    slug: "chicken-tenders",
+    name: "Chicken Tenders",
+    category: "American",
+    foodCostRange: "28–34%",
+    typicalPriceRange: "$10–$15 (4-5 pieces)",
+    costBreakdown: [
+      { ingredient: "Chicken tenderloin", note: "The dominant cost, and boneless tenders have less yield loss than bone-in cuts", costShare: "50–60%" },
+      { ingredient: "Breading", note: "Cheap per order", costShare: "8–10%" },
+      { ingredient: "Frying oil (allocated)", note: "Often left out of per-order costing", costShare: "10–15%" },
+      { ingredient: "Dipping sauce and side", note: "Standard inclusion that carries real cost", costShare: "15–20%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Chicken tenderloins (4-5 pc)", amount: "8 oz raw", cost: 2.6 },
+        { ingredient: "Breading", amount: "—", cost: 0.35 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.4 },
+        { ingredient: "Dipping sauce + fries", amount: "—", cost: 0.9 },
+      ],
+      totalCost: 4.25,
+      targetFoodCostPct: 31,
+    },
+    mistakes: [
+      { title: "Not allocating frying oil per order", desc: "Oil is a continuous, real cost across many fried orders that's easy to leave out of individual dish costing entirely." },
+      { title: "Costing tenders at bulk case price without checking actual piece count and size", desc: "Tenderloin size varies by supplier and grade — verify actual piece weight rather than assuming a standard count-per-pound figure applies to your specific product." },
+      { title: "Bundling fries and sauce into the price without costing them", desc: "A tender basket that includes fries and multiple dipping sauces has real added cost beyond the chicken itself that needs to be reflected in the total plate price." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for chicken tenders?", a: "Chicken tenders typically run 28-34% food cost. Boneless tenderloin has better yield than bone-in cuts, which helps keep this category slightly more predictable than other fried chicken formats." },
+      { q: "Should frying oil be included in tender basket costing?", a: "Yes, at least as a rough per-order allocation. It's a genuine cost that's easy to treat as overhead, but it belongs in the dish's true cost." },
+      { q: "How does bundled fries and sauce affect the total plate cost?", a: "A full tender basket with fries and multiple sauces can add $1 or more beyond the chicken cost alone, and this needs to be reflected in the plate price, not treated as included at no cost." },
+    ],
+  },
+
+  lasagna: {
+    slug: "lasagna",
+    name: "Lasagna",
+    category: "Italian",
+    foodCostRange: "24–30%",
+    typicalPriceRange: "$14–$19",
+    costBreakdown: [
+      { ingredient: "Pasta sheets", note: "Cheap relative to the rest of the dish", costShare: "8–10%" },
+      { ingredient: "Meat (ground beef/sausage)", note: "A major cost driver in traditional recipes", costShare: "30–40%" },
+      { ingredient: "Cheese (ricotta, mozzarella, parmesan)", note: "Often the single largest cost line once all three cheeses are counted", costShare: "30–40%" },
+      { ingredient: "Sauce", note: "Cheap if made in-house from canned tomatoes", costShare: "8–12%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Pasta sheets", amount: "—", cost: 0.5 },
+        { ingredient: "Ground beef + sausage", amount: "4 oz", cost: 1.6 },
+        { ingredient: "Ricotta, mozzarella, parmesan", amount: "—", cost: 1.9 },
+        { ingredient: "Tomato sauce", amount: "—", cost: 0.4 },
+      ],
+      totalCost: 4.4,
+      targetFoodCostPct: 27,
+    },
+    mistakes: [
+      { title: "Underestimating the combined cost of three cheeses", desc: "Ricotta, mozzarella, and parmesan together often cost more than the meat in a traditional lasagna, a total that's easy to underestimate when costing from memory rather than a real recipe breakdown." },
+      { title: "Not costing per-slice yield consistently from a full pan", desc: "A pan meant to yield 12 portions that's actually cut into 9-10 larger slices changes the effective cost per serving significantly — a cutting guide helps control this." },
+      { title: "Treating vegetarian lasagna as automatically cheaper", desc: "A vegetable or mushroom-based lasagna can cost similarly to a meat version once extra cheese or premium vegetables are factored in — don't assume it's cheaper without actually costing it." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for lasagna?", a: "Lasagna typically runs 24-30% food cost. The combined cost of three cheeses (ricotta, mozzarella, parmesan) is often underestimated relative to the meat." },
+      { q: "How does portion size affect lasagna cost per slice?", a: "A pan designed to yield 12 slices that's cut into 9-10 larger portions raises the effective ingredient cost per slice by 20-30%, which needs to be reflected in either the price or a corrected cutting standard." },
+      { q: "Is vegetarian lasagna cheaper to make than meat lasagna?", a: "Not necessarily. Vegetable-based versions often use more cheese or premium vegetables to compensate for the missing protein, which can bring the total cost close to or even above the meat version." },
+    ],
+  },
+
+  "crab-cakes": {
+    slug: "crab-cakes",
+    name: "Crab Cakes",
+    category: "Seafood",
+    foodCostRange: "35–45%",
+    typicalPriceRange: "$16–$28 (2 cakes)",
+    costBreakdown: [
+      { ingredient: "Crab meat", note: "One of the most expensive proteins on a typical menu, and quality tier varies enormously in price", costShare: "65–75%" },
+      { ingredient: "Filler (breadcrumbs, egg, mayo)", note: "Cheap, but ratio to crab meat determines both cost and perceived quality", costShare: "10–15%" },
+      { ingredient: "Sauce (remoulade, aioli)", note: "Small but real per-order cost", costShare: "8–12%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Jumbo lump crab meat", amount: "4 oz", cost: 9.5 },
+        { ingredient: "Breadcrumbs, egg, mayo, seasoning", amount: "—", cost: 0.6 },
+        { ingredient: "Remoulade sauce", amount: "—", cost: 0.4 },
+      ],
+      totalCost: 10.5,
+      targetFoodCostPct: 40,
+    },
+    mistakes: [
+      { title: "Not distinguishing crab meat grades in cost calculations", desc: "Jumbo lump, lump, and claw meat have very different costs per pound. A recipe costed against claw meat pricing but made with jumbo lump will significantly understate real cost." },
+      { title: "Increasing filler ratio without adjusting the marketed quality claim", desc: "If a menu advertises 'jumbo lump' but the recipe uses a high filler ratio to control cost, this creates a mismatch between cost management and customer expectation that eventually shows up in reviews." },
+      { title: "Not tracking crab meat price volatility", desc: "Crab prices can swing significantly based on seasonal catch and import factors. This is one of the higher-volatility proteins and benefits from more frequent price checks than most menu items." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for crab cakes?", a: "Crab cakes typically run 35-45% food cost — among the highest of any menu item because crab meat, especially jumbo lump, is genuinely one of the most expensive proteins available." },
+      { q: "Why does crab meat grade matter so much for pricing?", a: "Jumbo lump, lump, and claw meat differ substantially in price per pound. Costing a recipe against the wrong grade's price, or substituting grades without adjusting price, creates a real margin gap." },
+      { q: "How often should crab cake pricing be reviewed?", a: "More frequently than most menu items — crab meat pricing is subject to real seasonal and supply volatility, and a menu priced once and left unreviewed for months carries real margin risk in this category." },
+    ],
+  },
+
+  burrito: {
+    slug: "burrito",
+    name: "Burrito",
+    category: "Mexican",
+    foodCostRange: "28–34%",
+    typicalPriceRange: "$10–$15",
+    costBreakdown: [
+      { ingredient: "Protein", note: "The main cost lever between chicken/rice-and-bean and steak/carnitas versions", costShare: "30–40%" },
+      { ingredient: "Rice and beans", note: "Cheap bulk fillers that add real volume", costShare: "10–15%" },
+      { ingredient: "Tortilla (large flour)", note: "Low cost but larger than a standard taco tortilla", costShare: "8–10%" },
+      { ingredient: "Cheese, salsa, guac, sour cream", note: "Individually small, adds up fast on a build-your-own model", costShare: "25–35%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Large flour tortilla", amount: "1", cost: 0.45 },
+        { ingredient: "Rice and beans", amount: "—", cost: 0.5 },
+        { ingredient: "Carne asada", amount: "4 oz", cost: 1.6 },
+        { ingredient: "Cheese, salsa, guac, sour cream", amount: "—", cost: 1.1 },
+      ],
+      totalCost: 3.65,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Not standardizing scoop sizes on a build-your-own burrito model", desc: "Unmeasured scoops for rice, beans, protein, and toppings are one of the most common sources of cost drift in fast-casual burrito concepts, compounding across hundreds of orders." },
+      { title: "Pricing all proteins the same regardless of actual cost", desc: "Carnitas, steak, chicken, and vegetarian options have very different costs. A flat burrito price across all protein choices either overprices the cheap ones or loses money on premium ones." },
+      { title: "Underpricing guacamole given avocado price volatility", desc: "Guac is one of the more expensive add-ins and its underlying cost swings seasonally — pricing it as a flat, rarely-revisited upcharge risks margin erosion during high-price periods." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for burritos?", a: "Burritos typically run 28-34% food cost. Protein choice is the main lever, and build-your-own models need standardized scoop sizes to keep cost predictable across orders." },
+      { q: "Why do build-your-own burrito models make costing harder?", a: "Unmeasured scoop sizes across many mix-in options are one of the most common sources of cost creep in fast-casual concepts — standardized scoop sizes per ingredient are essential to controlling cost." },
+      { q: "Should guacamole upcharges change with avocado prices?", a: "Ideally yes. Avocado is one of the more seasonally volatile ingredients on a Mexican menu, and a guac upcharge set once and never revisited can erode margin significantly during high-price periods." },
+    ],
+  },
+
+  "spring-rolls": {
+    slug: "spring-rolls",
+    name: "Spring Rolls",
+    category: "Asian / Appetizer",
+    foodCostRange: "22–28%",
+    typicalPriceRange: "$7–$11 (4-5 pieces)",
+    costBreakdown: [
+      { ingredient: "Filling (vegetables, protein)", note: "Varies significantly between vegetable and shrimp/pork versions", costShare: "35–50%" },
+      { ingredient: "Wrapper", note: "Cheap per piece", costShare: "8–12%" },
+      { ingredient: "Dipping sauce", note: "Small but consistent cost that's easy to skip in calculations", costShare: "10–15%" },
+      { ingredient: "Frying oil (if fried, not fresh rolls)", note: "Continuous cost, easy to leave out of per-order costing", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Cabbage, carrot, glass noodle filling", amount: "5 pieces", cost: 0.9 },
+        { ingredient: "Wrappers (5)", amount: "5", cost: 0.4 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.3 },
+        { ingredient: "Sweet chili dipping sauce", amount: "—", cost: 0.25 },
+      ],
+      totalCost: 1.85,
+      targetFoodCostPct: 25,
+    },
+    mistakes: [
+      { title: "Pricing vegetable and shrimp versions the same", desc: "Adding shrimp meaningfully raises ingredient cost over a vegetable-only filling, and a menu that prices both versions identically loses money on the shrimp option." },
+      { title: "Not costing dipping sauce as a real ingredient", desc: "Sweet chili or peanut dipping sauce is a small but real per-order cost that's commonly left out of appetizer costing entirely." },
+      { title: "Skipping frying oil allocation on fried (not fresh) spring rolls", desc: "If the rolls are fried rather than fresh, oil is a genuine continuous cost that deserves at least a rough per-order allocation." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for spring rolls?", a: "Spring rolls typically run 22-28% food cost. Whether shrimp or another protein is added versus a vegetable-only filling is the main cost driver." },
+      { q: "Should fresh (non-fried) spring rolls be priced differently than fried ones?", a: "The frying oil cost difference is relatively small, but fresh rolls often use different, sometimes pricier fresh ingredients like herbs and rice noodles — cost each version on its own merits rather than assuming one is automatically cheaper." },
+      { q: "How much does dipping sauce add to spring roll cost?", a: "Typically $0.20-0.35 per order for sweet chili or peanut sauce — small, but a real cost that should be included in the total appetizer cost rather than treated as free." },
+    ],
+  },
+
+  waffles: {
+    slug: "waffles",
+    name: "Waffles",
+    category: "Breakfast / Brunch",
+    foodCostRange: "18–26%",
+    typicalPriceRange: "$9–$14",
+    costBreakdown: [
+      { ingredient: "Waffle batter", note: "Cheap per serving", costShare: "10–15%" },
+      { ingredient: "Butter and syrup", note: "Real cost per serving that's often underestimated", costShare: "15–20%" },
+      { ingredient: "Toppings (fruit, whipped cream, chocolate chips)", note: "The main lever between a basic and premium waffle", costShare: "25–40%" },
+      { ingredient: "Protein add-on (chicken, bacon)", note: "Turns a dessert-style waffle into a full entrée", costShare: "varies widely" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Waffle batter (Belgian style)", amount: "1 waffle", cost: 0.55 },
+        { ingredient: "Butter and syrup", amount: "—", cost: 0.45 },
+        { ingredient: "Fresh berries and whipped cream", amount: "—", cost: 1.1 },
+      ],
+      totalCost: 2.1,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Underestimating real maple syrup cost", desc: "Genuine maple syrup costs significantly more than imitation syrup, and menus marketing real maple syrup need to cost against its actual, higher price rather than a generic syrup estimate." },
+      { title: "Not costing fresh fruit toppings against seasonal price swings", desc: "Fresh berries can cost 2-3x more out of season, and a waffle menu priced once without revisiting fruit costs seasonally carries real margin risk." },
+      { title: "Pricing chicken and waffles the same as a plain waffle plus a token upcharge", desc: "Fried chicken added to a waffle plate roughly doubles or triples the total plate cost, and the price needs to reflect the actual chicken cost, not a small flat addition." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for waffles?", a: "Waffles typically run 18-26% food cost as a basic order. Fruit toppings and protein add-ons like fried chicken push cost meaningfully higher and need separate pricing consideration." },
+      { q: "Should real maple syrup be costed differently than imitation syrup?", a: "Yes. Genuine maple syrup costs substantially more per ounce than imitation syrup, and a menu advertising real maple syrup should cost against its actual, higher price." },
+      { q: "How much does chicken and waffles cost compared to a plain waffle?", a: "Adding fried chicken can roughly double or triple total plate cost compared to a plain waffle, since chicken is a meaningful additional protein cost, not just a garnish-level addition." },
+    ],
+  },
+
+  pancakes: {
+    slug: "pancakes",
+    name: "Pancakes",
+    category: "Breakfast / Diner",
+    foodCostRange: "16–24%",
+    typicalPriceRange: "$8–$13 (stack of 3)",
+    costBreakdown: [
+      { ingredient: "Pancake batter", note: "One of the cheapest base ingredients on any breakfast menu", costShare: "12–18%" },
+      { ingredient: "Butter and syrup", note: "Real per-order cost, especially with genuine maple syrup", costShare: "15–20%" },
+      { ingredient: "Mix-ins (blueberries, chocolate chips)", note: "Turns a plain stack into a premium one", costShare: "20–30%" },
+      { ingredient: "Toppings (whipped cream, fruit compote)", note: "The main differentiator for specialty pancake pricing", costShare: "20–35%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Pancake batter (stack of 3)", amount: "—", cost: 0.5 },
+        { ingredient: "Butter and syrup", amount: "—", cost: 0.4 },
+        { ingredient: "Blueberries", amount: "—", cost: 0.6 },
+      ],
+      totalCost: 1.5,
+      targetFoodCostPct: 20,
+    },
+    mistakes: [
+      { title: "Pricing blueberry and plain pancakes too close together", desc: "Fresh blueberries can add $0.50-0.80 per order, and a $1 upcharge sometimes doesn't fully cover the real ingredient cost gap, especially when berries are out of season." },
+      { title: "Not costing genuine maple syrup at its real price", desc: "Real maple syrup costs noticeably more than imitation, and this needs to be reflected in the base pancake cost if the menu advertises real syrup." },
+      { title: "Treating a specialty stack (chocolate chip, banana, s'mores) as a $1-2 upcharge regardless of actual added cost", desc: "Specialty mix-ins vary widely in cost — chocolate chips are cheap, but fresh banana and toasted marshmallow toppings add up faster than a flat token upcharge accounts for." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for pancakes?", a: "Pancakes typically run 16-24% food cost, among the lowest of any breakfast item, since the base batter is genuinely cheap. Toppings and mix-ins are what push cost toward the higher end." },
+      { q: "How much should a blueberry pancake stack cost compared to plain?", a: "Fresh blueberries typically add $0.50-0.80 in ingredient cost per stack, which should translate to at least $1.50-2 more on the menu price to maintain the target food cost percentage." },
+      { q: "Should real maple syrup change the base pancake price?", a: "Yes, if it's advertised as such. Real maple syrup costs meaningfully more per ounce than imitation, and the base price should reflect that rather than being costed against cheaper syrup." },
+    ],
+  },
+
+  churros: {
+    slug: "churros",
+    name: "Churros",
+    category: "Dessert / Mexican",
+    foodCostRange: "18–26%",
+    typicalPriceRange: "$6–$9 (4-5 pieces)",
+    costBreakdown: [
+      { ingredient: "Dough (fried)", note: "Cheap per piece even with frying oil factored in", costShare: "30–40%" },
+      { ingredient: "Cinnamon sugar coating", note: "Very low cost", costShare: "5–8%" },
+      { ingredient: "Dipping sauce (chocolate, dulce de leche)", note: "The main cost lever and easy to under-portion or over-portion", costShare: "35–45%" },
+      { ingredient: "Frying oil (allocated)", note: "Continuous cost frequently left out of costing", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Churro dough (5 pieces, fried)", amount: "—", cost: 0.9 },
+        { ingredient: "Cinnamon sugar", amount: "—", cost: 0.15 },
+        { ingredient: "Chocolate dipping sauce", amount: "3 oz", cost: 0.65 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.3 },
+      ],
+      totalCost: 2.0,
+      targetFoodCostPct: 22,
+    },
+    mistakes: [
+      { title: "Not portioning dipping sauce consistently", desc: "Chocolate or dulce de leche sauce poured by eye rather than a measured portion is one of the most common sources of cost inconsistency on this dessert." },
+      { title: "Underestimating dulce de leche cost relative to basic chocolate sauce", desc: "Dulce de leche typically costs more per ounce than a standard chocolate sauce, and offering both at the same price point absorbs that cost gap." },
+      { title: "Not allocating frying oil per order", desc: "Oil is a genuine, continuous cost that's easy to skip in per-dessert costing because no single order consumes a clearly measurable amount." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for churros?", a: "Churros typically run 18-26% food cost. Dipping sauce choice and portion size are the main cost levers, since the fried dough itself is genuinely cheap." },
+      { q: "Should dulce de leche churros cost more than chocolate sauce ones?", a: "If dulce de leche costs meaningfully more per ounce than the standard chocolate dipping sauce, yes — pricing both options the same absorbs that real cost difference into reduced margin." },
+      { q: "How should dipping sauce be portioned to control cost?", a: "Use a measured portion cup rather than free-pouring by eye. Sauce is one of the largest cost components of this dish, and inconsistent portioning is one of the most common sources of cost drift." },
+    ],
+  },
+
+  "shrimp-cocktail": {
+    slug: "shrimp-cocktail",
+    name: "Shrimp Cocktail",
+    category: "Seafood / Appetizer",
+    foodCostRange: "35–45%",
+    typicalPriceRange: "$14–$22 (4-6 shrimp)",
+    costBreakdown: [
+      { ingredient: "Shrimp", note: "The dominant cost, and size grade (16/20 vs. 21/25 vs. U/12) significantly changes price", costShare: "75–85%" },
+      { ingredient: "Cocktail sauce", note: "Cheap if made in-house", costShare: "8–12%" },
+      { ingredient: "Lemon, garnish", note: "Small but real cost", costShare: "3–5%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Jumbo shrimp (16/20 count, 5 pieces)", amount: "5 oz cooked", cost: 4.8 },
+        { ingredient: "Cocktail sauce", amount: "2 oz", cost: 0.35 },
+        { ingredient: "Lemon wedge, garnish", amount: "—", cost: 0.2 },
+      ],
+      totalCost: 5.35,
+      targetFoodCostPct: 40,
+    },
+    mistakes: [
+      { title: "Not distinguishing shrimp size grades in costing", desc: "Shrimp count-per-pound (16/20, 21/25, U/12) dramatically changes cost per piece. Costing against the wrong grade's price, or serving a different grade than what was costed, creates a real margin gap." },
+      { title: "Not tracking shrimp market price volatility", desc: "Shrimp prices can swing meaningfully based on farming conditions and import factors. This is a higher-volatility protein that benefits from more frequent price checks." },
+      { title: "Underpricing given the appetizer-portion perception versus actual protein cost", desc: "Because it's served as an appetizer, shrimp cocktail is sometimes priced like other starters despite carrying an entrée-level protein cost — the price needs to reflect the real shrimp cost, not the appetizer category norm." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for shrimp cocktail?", a: "Shrimp cocktail typically runs 35-45% food cost — among the highest of any appetizer because shrimp, particularly larger size grades, is a genuinely expensive protein." },
+      { q: "Why does shrimp size grade matter so much for pricing?", a: "Count-per-pound grades like 16/20 or U/12 (under 12 per pound, meaning larger shrimp) carry substantially different costs. Serving a larger grade than what was costed for creates a real, easy-to-miss margin gap." },
+      { q: "Should shrimp cocktail be priced like other appetizers?", a: "No — its protein cost is closer to an entrée-level item than a typical starter. Pricing it in line with lower-cost appetizers on the same menu section usually results in an unprofitable dish." },
+    ],
+  },
+
+  calzone: {
+    slug: "calzone",
+    name: "Calzone",
+    category: "Italian",
+    foodCostRange: "26–32%",
+    typicalPriceRange: "$13–$18",
+    costBreakdown: [
+      { ingredient: "Dough", note: "Cheap per calzone, similar to pizza dough cost", costShare: "10–12%" },
+      { ingredient: "Cheese (ricotta, mozzarella)", note: "The dominant cost, typically more cheese than an equivalent pizza slice", costShare: "35–45%" },
+      { ingredient: "Filling (meats, vegetables)", note: "The main lever between a basic and loaded calzone", costShare: "30–45%" },
+      { ingredient: "Marinara for dipping", note: "Small but real per-order cost", costShare: "5–8%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Pizza dough", amount: "1 large ball", cost: 0.5 },
+        { ingredient: "Ricotta and mozzarella", amount: "—", cost: 1.7 },
+        { ingredient: "Italian sausage and peppers", amount: "—", cost: 1.5 },
+        { ingredient: "Marinara dipping sauce", amount: "—", cost: 0.3 },
+      ],
+      totalCost: 4.0,
+      targetFoodCostPct: 29,
+    },
+    mistakes: [
+      { title: "Underestimating cheese quantity relative to an equivalent pizza slice", desc: "A calzone often contains meaningfully more cheese per serving than a single slice of pizza with the same toppings, and costing it like 'a folded pizza slice' understates true cost." },
+      { title: "Not pricing loaded (multi-meat) calzones proportionally higher", desc: "A calzone with sausage, pepperoni, and ham stacks multiple protein costs that a basic cheese calzone price was never built to cover." },
+      { title: "Skipping the marinara dipping sauce in cost calculations", desc: "The side of marinara served with nearly every calzone carries small but real per-order cost that's easy to treat as free." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for calzones?", a: "Calzones typically run 26-32% food cost. They often contain more cheese per serving than an equivalent pizza slice, which is easy to underestimate when costing by comparison to pizza." },
+      { q: "Should a meat-loaded calzone cost more than a cheese-only one?", a: "Yes, proportionally to the added protein cost. A calzone with multiple meats stacks real ingredient cost that a token upcharge over the basic cheese version usually doesn't fully cover." },
+      { q: "Is a calzone cheaper to make than an equivalent pizza?", a: "Not necessarily — per serving, calzones often use a comparable or greater amount of cheese and filling than a pizza slice of the same size, so assume similar or higher cost rather than automatically cheaper." },
+    ],
+  },
+
+  empanadas: {
+    slug: "empanadas",
+    name: "Empanadas",
+    category: "Latin American",
+    foodCostRange: "26–32%",
+    typicalPriceRange: "$3.50–$5.50 per piece",
+    costBreakdown: [
+      { ingredient: "Filling (beef, chicken, cheese)", note: "The main lever, protein-based fillings cost more than cheese or vegetable ones", costShare: "40–50%" },
+      { ingredient: "Dough", note: "Cheap per piece whether store-bought or house-made", costShare: "15–20%" },
+      { ingredient: "Frying or baking oil/butter", note: "Small but real per-piece cost", costShare: "8–12%" },
+      { ingredient: "Dipping sauce (chimichurri, salsa)", note: "Small individually, adds up across volume", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Empanada dough", amount: "1", cost: 0.35 },
+        { ingredient: "Seasoned ground beef filling", amount: "2 oz", cost: 0.7 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.15 },
+        { ingredient: "Chimichurri (per order)", amount: "—", cost: 0.2 },
+      ],
+      totalCost: 1.4,
+      targetFoodCostPct: 28,
+    },
+    mistakes: [
+      { title: "Pricing all filling varieties the same regardless of actual cost", desc: "Beef, chicken, and cheese-only fillings have different costs, and a single flat empanada price across all varieties either overprices the cheap ones or loses money on beef." },
+      { title: "Not costing dipping sauce served alongside empanadas", desc: "Chimichurri or salsa served per order carries small but real cost that's easy to treat as a free accompaniment rather than a countable ingredient." },
+      { title: "Inconsistent fill weight per empanada without a portioning standard", desc: "Filling amount is easy to drift without a scoop or scale standard, changing effective per-piece cost without anyone deciding to change the recipe." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for empanadas?", a: "Empanadas typically run 26-32% food cost. Filling choice (beef vs. chicken vs. cheese) is the main driver of where a specific empanada lands within that range." },
+      { q: "Should beef and cheese empanadas be priced the same?", a: "No — beef filling typically costs more than cheese or vegetable filling, and pricing all varieties identically either overcharges for the cheap ones or underprices the beef version." },
+      { q: "How much filling should go into each empanada?", a: "Use a scoop or scale to standardize fill weight — hand-filled empanadas without a measuring standard are prone to portion drift that changes effective cost per piece." },
+    ],
+  },
+
+  "biscuits-and-gravy": {
+    slug: "biscuits-and-gravy",
+    name: "Biscuits and Gravy",
+    category: "Southern / Breakfast",
+    foodCostRange: "20–28%",
+    typicalPriceRange: "$9–$13",
+    costBreakdown: [
+      { ingredient: "Biscuits (house-made)", note: "Cheap per serving even with quality butter", costShare: "15–20%" },
+      { ingredient: "Sausage gravy", note: "The dominant cost, driven mainly by the sausage content", costShare: "50–60%" },
+      { ingredient: "Butter", note: "Small but real additional cost if served on the side", costShare: "8–10%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "House-made biscuits (2)", amount: "2", cost: 0.6 },
+        { ingredient: "Sausage gravy", amount: "6 oz", cost: 1.3 },
+      ],
+      totalCost: 1.9,
+      targetFoodCostPct: 23,
+    },
+    mistakes: [
+      { title: "Underestimating sausage content in the gravy recipe", desc: "A gravy recipe heavy on sausage relative to roux and milk costs meaningfully more than a lighter version, and this ratio needs to be costed accurately rather than estimated." },
+      { title: "Not standardizing gravy portion size", desc: "Gravy ladled by eye rather than a measured portion is one of the easier places for cost to drift on this dish, since it's the dominant cost component." },
+      { title: "Treating this as a 'cheap' Southern classic that doesn't need real costing", desc: "Because the dish feels rustic and inexpensive, it's commonly under-costed despite the sausage gravy carrying genuine, non-trivial ingredient cost." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for biscuits and gravy?", a: "Biscuits and gravy typically runs 20-28% food cost. The sausage content in the gravy is the main cost driver and the easiest place for cost to be underestimated." },
+      { q: "Why is the gravy the dominant cost, not the biscuits?", a: "Biscuits are cheap to make even with quality butter. The gravy's sausage content — a genuine protein cost — typically represents 50-60% of the dish's total ingredient cost." },
+      { q: "Should gravy be portioned with a ladle?", a: "Yes. Since gravy is the dominant cost component, portioning it by eye rather than with a standard ladle size is one of the more common sources of cost drift on this dish." },
+    ],
+  },
+
+  "clam-chowder": {
+    slug: "clam-chowder",
+    name: "Clam Chowder",
+    category: "Seafood / Soup",
+    foodCostRange: "26–34%",
+    typicalPriceRange: "$7–$11 (bowl)",
+    costBreakdown: [
+      { ingredient: "Clams", note: "The dominant cost, whether fresh, frozen, or canned", costShare: "35–50%" },
+      { ingredient: "Cream base", note: "Heavy cream and butter add real cost that's easy to underestimate", costShare: "20–30%" },
+      { ingredient: "Potatoes and vegetables", note: "Cheap bulk filler that adds volume", costShare: "10–15%" },
+      { ingredient: "Bacon (if used)", note: "A meaningful cost addition in New England-style recipes", costShare: "10–15%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Clams (chopped, canned or fresh)", amount: "3 oz", cost: 1.4 },
+        { ingredient: "Heavy cream and butter", amount: "—", cost: 0.85 },
+        { ingredient: "Potatoes, onion, celery", amount: "—", cost: 0.4 },
+        { ingredient: "Bacon", amount: "—", cost: 0.35 },
+      ],
+      totalCost: 3.0,
+      targetFoodCostPct: 30,
+    },
+    mistakes: [
+      { title: "Not distinguishing fresh, frozen, and canned clam cost differences", desc: "Fresh clams cost significantly more than canned, and a recipe developed with one in mind but executed with another creates a real, often unnoticed cost gap." },
+      { title: "Underestimating heavy cream and butter cost in the base", desc: "A proper New England-style cream base uses more dairy than most operators initially assume, and this is a genuine cost that compounds across a full pot of chowder." },
+      { title: "Not costing bacon separately when it's a recipe component", desc: "Bacon used to build the chowder's flavor base carries real cost that should be counted as an ingredient, not treated as a negligible seasoning element." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for clam chowder?", a: "Clam chowder typically runs 26-34% food cost. Clam sourcing (fresh vs. canned) and cream content are the main cost levers." },
+      { q: "Does using fresh clams instead of canned significantly raise cost?", a: "Yes, often substantially. Fresh clams cost meaningfully more per ounce than canned, and a recipe should be costed against whichever form is actually used, not assumed interchangeable." },
+      { q: "Why is the cream base a bigger cost factor than expected?", a: "A properly rich New England-style chowder base uses more heavy cream and butter than many operators estimate from memory, and this dairy cost adds up meaningfully across a full batch." },
+    ],
+  },
+
+  "buffalo-cauliflower": {
+    slug: "buffalo-cauliflower",
+    name: "Buffalo Cauliflower",
+    category: "Vegetarian / Bar Food",
+    foodCostRange: "20–28%",
+    typicalPriceRange: "$9–$13",
+    costBreakdown: [
+      { ingredient: "Cauliflower", note: "One of the cheapest core ingredients on a bar food menu", costShare: "15–20%" },
+      { ingredient: "Batter", note: "Cheap per order", costShare: "8–10%" },
+      { ingredient: "Buffalo sauce", note: "The main cost lever, especially with butter-forward recipes", costShare: "20–30%" },
+      { ingredient: "Frying oil (allocated)", note: "Continuous cost often left out of per-order costing", costShare: "15–20%" },
+      { ingredient: "Ranch or blue cheese dip", note: "Standard accompaniment with real cost", costShare: "15–20%" },
+    ],
+    worked: {
+      items: [
+        { ingredient: "Cauliflower florets", amount: "8 oz", cost: 0.7 },
+        { ingredient: "Batter", amount: "—", cost: 0.3 },
+        { ingredient: "Buffalo sauce (butter-based)", amount: "3 oz", cost: 0.55 },
+        { ingredient: "Frying oil allocation", amount: "—", cost: 0.4 },
+        { ingredient: "Ranch dip", amount: "—", cost: 0.35 },
+      ],
+      totalCost: 2.3,
+      targetFoodCostPct: 24,
+    },
+    mistakes: [
+      { title: "Assuming this dish is automatically cheaper than meat-based wings", desc: "Once batter, frying oil, sauce, and dip are all counted, buffalo cauliflower's cost gap versus chicken wings is often smaller than operators assume, given cauliflower itself is only one line item among several." },
+      { title: "Underestimating butter content in a proper buffalo sauce", desc: "A classic buffalo sauce is butter-forward, and this cost is easy to underestimate when the sauce is thought of as 'just hot sauce.'" },
+      { title: "Not allocating frying oil cost per order", desc: "Oil is a genuine continuous cost that's easy to leave out of per-dish costing because no single order consumes an obviously measurable amount." },
+    ],
+    faqs: [
+      { q: "What is a good food cost percentage for buffalo cauliflower?", a: "Buffalo cauliflower typically runs 20-28% food cost. While cauliflower itself is cheap, batter, sauce, frying oil, and dip together bring total cost closer to a meat-based appetizer than many expect." },
+      { q: "Is buffalo cauliflower actually cheaper to make than chicken wings?", a: "The gap is often smaller than assumed. Cauliflower is cheap, but batter, a butter-forward buffalo sauce, frying oil, and dip all add up, narrowing the cost difference versus wings." },
+      { q: "Why does the buffalo sauce cost more than expected?", a: "A proper buffalo sauce is built on real butter in addition to hot sauce, and that butter content is easy to underestimate when thinking of the sauce as just a condiment." },
+    ],
+  },
 };
 
 export const ALL_DISHES = Object.values(DISH_DATA);
