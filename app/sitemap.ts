@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { ALL_DISHES } from "./how-to-price/[dish]/data";
+import { ALL_COUNTRIES } from "./restaurant-pricing/[country]/data";
 
 const RESTAURANT_TYPES = [
   "fine-dining", "fast-casual", "food-truck", "bakery", "pizza", "cafe",
@@ -94,6 +95,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/how-to-price`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     ...ALL_DISHES.map((d) => ({
       url: `${base}/how-to-price/${d.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    // Restaurant pricing by country
+    { url: `${base}/restaurant-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    ...ALL_COUNTRIES.map((c) => ({
+      url: `${base}/restaurant-pricing/${c.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
