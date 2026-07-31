@@ -84,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/food-truck-event-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/meal-prep-business-pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/catering-quote-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/cake-pricing-guide`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Alternatives — high commercial intent
     { url: `${base}/alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/alternatives/marketman-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },

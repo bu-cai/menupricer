@@ -29,6 +29,23 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQS = [
+  { q: "Is Craftable overkill for a single-location restaurant?", a: "For most independent restaurants, yes. Craftable is built for multi-unit groups that need inventory tracking, vendor invoice management, and AP automation across locations. A single-location operator typically doesn't need — or want to pay $200-800+/month for — that scope." },
+  { q: "Does Craftable have a free tier?", a: "No. Craftable is demo-only before purchase, with enterprise pricing and typically 1-3 weeks of onboarding. MenuPricer lets you price 5 dishes free with no credit card and no setup call." },
+  { q: "Can MenuPricer replace Craftable?", a: "Not for a multi-unit group that needs real-time inventory and vendor AP — that's Craftable's core strength. But for menu pricing specifically, MenuPricer does the job faster with AI-suggested prices, and at a fraction of the cost." },
+  { q: "Which tool should a growing single-location restaurant choose?", a: "MenuPricer, until the operation grows into multiple locations with dedicated back-of-house staff managing inventory and vendor relationships. That's the point where Craftable's broader platform starts to pay for itself." },
+];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const FEATURES = [
   { feature: "AI-powered price recommendations", mp: true, cr: false, note: "MenuPricer suggests optimal prices, not just costs" },
   { feature: "Food cost calculator", mp: true, cr: true, note: "" },
@@ -58,6 +75,7 @@ export default function MenuPricerVsCraftablePage() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2"><LogoIcon size={28} /><span className="font-black text-gray-900 tracking-tight text-lg">Menu<span className="text-orange-500">Pricer</span></span></Link>
@@ -178,6 +196,17 @@ export default function MenuPricerVsCraftablePage() {
           <h2 className="text-2xl font-black mb-2">Try MenuPricer — price your menu in 60 seconds</h2>
           <p className="text-orange-100 text-sm mb-5 max-w-xl mx-auto">No onboarding. No enterprise contract. Price 5 dishes free, then upgrade if you need more.</p>
           <Link href="/" className="inline-block bg-white text-orange-600 font-black px-8 py-3.5 rounded-xl hover:bg-orange-50 transition-colors">Start Free Now →</Link>
+        </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-black text-gray-900 mb-5">Common questions</h2>
+          <div className="space-y-5">
+            {FAQS.map((item, i) => (
+              <div key={i} className="border-b border-gray-100 pb-5">
+                <h3 className="font-bold text-gray-900 mb-2">{item.q}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
         </section>
         <section className="mt-10 border-t border-gray-100 pt-8">
           <h2 className="text-lg font-black text-gray-900 mb-4">More comparisons</h2>

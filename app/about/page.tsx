@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   },
 };
 
+const LAST_UPDATED = "2026-07-30";
+
 const TOOLS = [
   { href: "/food-cost-calculator", label: "Food Cost Calculator" },
   { href: "/recipe-cost-calculator", label: "Recipe Cost Calculator" },
@@ -52,6 +54,11 @@ export default function AboutPage() {
               contactType: "customer support",
               email: "support@aimenupricer.com",
             },
+            author: {
+              "@type": "Organization",
+              name: "MenuPricer Team",
+            },
+            dateModified: LAST_UPDATED,
           }),
         }}
       />
@@ -73,6 +80,9 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wide">
             About MenuPricer
           </div>
+          <p className="text-xs text-gray-400 mb-2">
+            By the MenuPricer Team · Last updated {LAST_UPDATED}
+          </p>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">
             Built for restaurant owners who are tired of guessing at menu prices
           </h1>

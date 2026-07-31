@@ -203,6 +203,14 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "cake-pricing-guide",
+    title: "Cake Pricing Guide: How Much to Charge for a Custom Cake (2026)",
+    description: "Per-serving cake pricing formula, a servings chart by cake size and tier, and how independent cake decorators avoid underpricing labor and design time.",
+    category: "Bakery",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
     slug: "coffee-shop-menu-pricing",
     title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
     description: "Coffee shop pricing benchmarks for espresso drinks, cold brew, matcha, and food items — with food cost percentages and the formula to price any beverage profitably.",

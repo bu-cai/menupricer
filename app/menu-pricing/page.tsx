@@ -15,9 +15,19 @@ export const metadata: Metadata = {
   },
 };
 
+const BREADCRUMB = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.aimenupricer.com" },
+    { "@type": "ListItem", position: 2, name: "Menu Pricing by Restaurant Type", item: "https://www.aimenupricer.com/menu-pricing" },
+  ],
+};
+
 export default function MenuPricingHubPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">

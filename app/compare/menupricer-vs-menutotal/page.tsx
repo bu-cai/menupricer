@@ -29,6 +29,23 @@ const BREADCRUMB = {
   ],
 };
 
+const FAQS = [
+  { q: "What's the main difference between MenuPricer and MenuTotal?", a: "MenuTotal is a recipe and food cost calculator focused on ingredient-level costing. MenuPricer does that plus AI-suggested selling prices, delivery platform margin math, and batch pricing across a whole menu — and it has a free tier, which MenuTotal does not." },
+  { q: "Does MenuTotal have a free plan?", a: "No. MenuTotal requires a paid subscription from the start. MenuPricer lets you price 5 dishes free with no credit card before you decide whether to upgrade." },
+  { q: "Can MenuPricer estimate ingredient costs for me?", a: "Yes. Type a dish name and MenuPricer's AI drafts a starting ingredient list and cost estimate, which you can then adjust. MenuTotal requires you to enter every ingredient and cost manually." },
+  { q: "Which tool is better for a single-location restaurant?", a: "For an independent restaurant or cafe that wants price recommendations (not just cost tracking) and a free way to try before paying, MenuPricer is the better fit. MenuTotal can work well if you already need deep recipe/sub-recipe management." },
+];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const FEATURES = [
   { feature: "AI-powered price suggestions", mp: true, mt: false, note: "MenuPricer uses AI to recommend optimal prices" },
   { feature: "Food cost calculator", mp: true, mt: true, note: "" },
@@ -50,6 +67,7 @@ export default function MenuPricerVsMenuTotalPage() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2"><LogoIcon size={28} /><span className="font-black text-gray-900 tracking-tight text-lg">Menu<span className="text-orange-500">Pricer</span></span></Link>
@@ -134,6 +152,17 @@ export default function MenuPricerVsMenuTotalPage() {
           <h2 className="text-2xl font-black mb-2">Try MenuPricer free — no credit card needed</h2>
           <p className="text-orange-100 text-sm mb-5 max-w-xl mx-auto">Price your first 5 dishes instantly. See exactly what AI-powered pricing looks like before committing to Pro.</p>
           <Link href="/" className="inline-block bg-white text-orange-600 font-black px-8 py-3.5 rounded-xl hover:bg-orange-50 transition-colors">Start Free Now →</Link>
+        </section>
+        <section className="mb-12">
+          <h2 className="text-2xl font-black text-gray-900 mb-5">Common questions</h2>
+          <div className="space-y-5">
+            {FAQS.map((item, i) => (
+              <div key={i} className="border-b border-gray-100 pb-5">
+                <h3 className="font-bold text-gray-900 mb-2">{item.q}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
         </section>
         <section className="mt-10 border-t border-gray-100 pt-8">
           <h2 className="text-lg font-black text-gray-900 mb-4">More comparisons</h2>
