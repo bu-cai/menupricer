@@ -160,6 +160,14 @@ export default function CountryPricingClient({ data }: { data: CountryPricingDat
               <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Food Cost Calculator</p>
               <p className="text-xs text-gray-500">Full calculator with all 6 supported currencies.</p>
             </Link>
+            <Link href="/how-to-price" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+              <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">How to Price Any Dish</p>
+              <p className="text-xs text-gray-500">Ingredient cost breakdowns for 50 specific dishes.</p>
+            </Link>
+            <Link href="/menu-pricing" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+              <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Pricing by Restaurant Type</p>
+              <p className="text-xs text-gray-500">Margin targets and benchmarks for your specific concept.</p>
+            </Link>
           </div>
         </section>
       </main>

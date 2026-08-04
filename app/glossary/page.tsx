@@ -176,10 +176,25 @@ const TERMS: Term[] = [
 
 const SORTED = [...TERMS].sort((a, b) => a.term.localeCompare(b.term));
 
+const DEFINED_TERM_SET = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  name: "Restaurant Pricing Glossary",
+  description: "Plain-language definitions for restaurant pricing and food cost terms.",
+  url: "https://www.aimenupricer.com/glossary",
+  hasDefinedTerm: TERMS.map((t) => ({
+    "@type": "DefinedTerm",
+    name: t.term,
+    description: t.def,
+    ...(t.href ? { url: `https://www.aimenupricer.com${t.href}` } : {}),
+  })),
+};
+
 export default function GlossaryPage() {
   return (
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(DEFINED_TERM_SET) }} />
 
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-6 h-14 flex items-center gap-3">

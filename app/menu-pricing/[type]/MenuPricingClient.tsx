@@ -229,6 +229,20 @@ export default function MenuPricingClient({ data }: Props) {
         </div>
       </section>
 
+      <section className="max-w-4xl mx-auto px-6 py-14 border-t border-gray-100">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Related</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link href="/how-to-price" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+            <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">How to Price Any Dish</p>
+            <p className="text-xs text-gray-500">Ingredient cost breakdowns for 50 specific dishes.</p>
+          </Link>
+          <Link href="/restaurant-pricing" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+            <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Pricing by Country</p>
+            <p className="text-xs text-gray-500">UK, Canada, and Australia pricing guides — tax and currency included.</p>
+          </Link>
+        </div>
+      </section>
+
       {/* Bottom CTA */}
       <section className="bg-orange-500 py-14">
         <div className="max-w-2xl mx-auto px-6 text-center">
