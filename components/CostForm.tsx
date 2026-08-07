@@ -354,6 +354,9 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         body: JSON.stringify({ image: base64, mimeType: file.type }),
       });
       const data = await res.json();
+      if (data.dishName && !dishName.trim()) {
+        setDishName(data.dishName);
+      }
       if (data.ingredients?.length > 0) {
         const recognized: Ingredient[] = data.ingredients;
         const hasBlankOnly = ingredients.length === 1 && !ingredients[0].name;
@@ -361,7 +364,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         setIngredients(merged);
         setQtyInputs(merged.map((ing) => `${ing.quantity}${ing.unit}`));
         setIngKeys(merged.map(() => keyCounter.current++));
-      } else {
+      } else if (!data.dishName) {
         setRecognizeError("No ingredients detected — try a clearer photo.");
       }
     } catch {
@@ -405,7 +408,16 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
     <form id={id} onSubmit={handleSubmit} className="space-y-5">
       {/* Dish name */}
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-1">{t("dishName", lang)}</label>
+        <div className="flex items-center justify-between mb-1">
+          <label className="text-sm font-semibold text-gray-700">{t("dishName", lang)}</label>
+          <button type="button" onClick={() => cameraInputRef.current?.click()} disabled={recognizing}
+            className="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-600 font-medium disabled:opacity-50 disabled:cursor-wait transition-colors">
+            {recognizing
+              ? <><span className="inline-block w-3.5 h-3.5 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" /><span className="text-xs">{t("scanning", lang)}</span></>
+              : <><span className="text-sm">📷</span><span className="text-xs">{t("scanPhoto", lang)}</span></>
+            }
+          </button>
+        </div>
         <input type="text" value={dishName} onChange={(e) => setDishName(e.target.value)}
           placeholder={t("dishNamePlaceholder", lang)}
           className="w-full border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" required />
