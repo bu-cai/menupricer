@@ -268,7 +268,12 @@ export default function FoodCostByRestaurantTypePage() {
             <p className="text-gray-600 leading-relaxed">
               The remaining 70% covers labor, rent, utilities, equipment, marketing, and — if everything goes well — profit.
               The reason food cost benchmarks differ so much between restaurant types is that each concept has a different
-              balance of these other costs.
+              balance of these other costs. The{" "}
+              <a href="https://restaurant.org/research-and-media/research/restaurant-economic-insights/economic-indicators/food-costs/" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">
+                National Restaurant Association
+              </a>{" "}
+              tracks food cost ratios across the industry and reports full-service restaurants running a median around
+              32% of sales, in line with the 28-35% range used throughout this guide.
             </p>
             <p className="text-gray-600 leading-relaxed mt-3">
               A fine dining restaurant with six cooks and an executive chef has massive labor costs — so it can
