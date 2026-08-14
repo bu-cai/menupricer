@@ -557,6 +557,11 @@ function Hero({ onStart }: { onStart?: () => void }) {
               )}
             </h1>
 
+            {/* Brand line — visible, small: keeps H1/title/schema brand name consistent for AI/SEO */}
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+              MenuPricer {ZH ? "· AI 菜单定价工具" : "· AI Menu Pricing Tool"}
+            </p>
+
             {/* Subtitle */}
             <p className="text-lg text-gray-500 leading-relaxed mb-3"
               style={{ animation: "hero-sub 700ms ease 300ms both" }}>
