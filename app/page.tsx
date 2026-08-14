@@ -124,6 +124,19 @@ function FaqAccordion() {
             </div>
           ))}
         </div>
+        <p className="text-xs text-gray-400 mt-6 leading-relaxed">
+          {lang === "ZH" ? (
+            <>行业食材成本区间参考自{" "}
+              <a href="https://restaurant.org/research-and-media/research/restaurant-economic-insights/economic-indicators/food-costs/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">
+                全美餐饮协会 (National Restaurant Association)
+              </a>{" "}的行业经济指标数据。</>
+          ) : (
+            <>Industry food cost ranges referenced from the{" "}
+              <a href="https://restaurant.org/research-and-media/research/restaurant-economic-insights/economic-indicators/food-costs/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">
+                National Restaurant Association
+              </a>{" "}economic indicators.</>
+          )}
+        </p>
       </div>
     </section>
   );
@@ -550,6 +563,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
             {/* H1 */}
             <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-4"
               style={{ animation: "hero-title 700ms ease 150ms both" }}>
+              <span className="sr-only">MenuPricer: </span>
               {ZH ? (
                 <>30 秒给每道菜定价<br /><span className="text-orange-500">哪怕你从没写下过配方</span></>
               ) : (
