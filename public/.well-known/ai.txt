@@ -1,0 +1,11 @@
+# ai.txt for MenuPricer (https://www.aimenupricer.com)
+# Defines AI crawler permissions and points to machine-readable site summaries.
+
+llms-txt: https://www.aimenupricer.com/llms.txt
+summary: https://www.aimenupricer.com/ai/summary.json
+faq: https://www.aimenupricer.com/ai/faq.json
+
+# Citation and answer-engine bots are welcome to crawl and cite this site.
+# See /robots.txt for the full crawler allow/deny list.
+allow-citation-bots: OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended
+contact: support@aimenupricer.com

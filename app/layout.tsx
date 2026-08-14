@@ -130,6 +130,7 @@ export default function RootLayout({
                 "PDF menu export",
                 "Recipe library",
               ],
+              dateModified: "2026-08-14",
             }),
           }}
         />
@@ -146,6 +147,26 @@ export default function RootLayout({
                 "@type": "SearchAction",
                 target: { "@type": "EntryPoint", urlTemplate: `${BASE_URL}/?q={search_term_string}` },
                 "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "MenuPricer",
+              url: BASE_URL,
+              logo: `${BASE_URL}/og-image.png`,
+              description:
+                "MenuPricer is an AI-powered menu pricing tool that helps restaurant owners, café operators, food truck vendors, caterers, and bakery owners calculate the correct selling price for any menu item.",
+              sameAs: ["https://www.producthunt.com/products/menupricer"],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "customer support",
+                email: "support@aimenupricer.com",
               },
             }),
           }}

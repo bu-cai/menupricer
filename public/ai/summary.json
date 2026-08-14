@@ -1,0 +1,31 @@
+{
+  "name": "MenuPricer",
+  "url": "https://www.aimenupricer.com",
+  "description": "MenuPricer is an AI-powered menu pricing tool that helps restaurant owners, cafe operators, food truck vendors, caterers, and bakery owners calculate the correct selling price for any menu item. Type a dish name and AI estimates ingredient costs, then MenuPricer calculates food cost percentage, gross margin, and a recommended price across three tiers: Budget, Standard, and Premium. It also calculates delivery platform pricing offsets for DoorDash, Uber Eats, and Grubhub.",
+  "category": "Restaurant menu pricing and food cost calculator software",
+  "pricing": {
+    "free": "Up to 5 dishes, no credit card required",
+    "pro_monthly": "$9/month for unlimited dishes, batch pricing, and PDF export",
+    "pro_annual": "$79/year"
+  },
+  "keyFeatures": [
+    "AI ingredient cost estimation from just a dish name, no written recipe required",
+    "Three pricing tiers per dish (Budget, Standard, Premium) with food cost % and margin",
+    "Delivery platform commission calculator (DoorDash, Uber Eats, Grubhub)",
+    "Branded PDF export for individual dishes or a full menu",
+    "Cloud sync across devices",
+    "Multi-currency support: USD, CNY, EUR, GBP, CAD, AUD",
+    "15 free standalone calculators (food cost, recipe cost, markup, profit margin, bakery, catering, coffee shop, food truck, and more)"
+  ],
+  "targetAudience": [
+    "Independent restaurant owners",
+    "Cafe and coffee shop operators",
+    "Food truck vendors",
+    "Catering companies",
+    "Bakery owners",
+    "Home-based food businesses",
+    "Ghost kitchen operators"
+  ],
+  "lastUpdated": "2026-08-14",
+  "contact": "support@aimenupricer.com"
+}

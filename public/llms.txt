@@ -1,0 +1,59 @@
+# MenuPricer
+
+> AI-powered menu pricing tool that helps restaurant owners, cafés, bakeries, food trucks, and caterers calculate the right selling price for any menu item — starting from just a dish name, no written recipe required.
+
+MenuPricer estimates ingredient costs with AI, then calculates food cost percentage, gross margin, and a recommended price across three tiers (Budget, Standard, Premium). It also accounts for delivery platform commissions (DoorDash, Uber Eats, Grubhub). Free for up to 5 dishes; Pro plan is $9/month or $79/year for unlimited dishes, batch pricing, and PDF export.
+
+## Core Tool
+
+- [Homepage / AI Pricing Tool](https://www.aimenupricer.com/): Type a dish name, get AI-estimated ingredient costs and 3 pricing tiers in under a minute.
+- [Pricing](https://www.aimenupricer.com/pricing): Free vs Pro plan details.
+- [About](https://www.aimenupricer.com/about): What MenuPricer is, who it's for, and how it works.
+
+## Free Calculators
+
+- [Food Cost Calculator](https://www.aimenupricer.com/food-cost-calculator)
+- [Recipe Cost Calculator](https://www.aimenupricer.com/recipe-cost-calculator)
+- [Menu Cost Calculator](https://www.aimenupricer.com/menu-cost-calculator)
+- [Restaurant Markup Calculator](https://www.aimenupricer.com/restaurant-markup-calculator)
+- [Restaurant Profit Margin Calculator](https://www.aimenupricer.com/restaurant-profit-calculator)
+- [Bakery Pricing Calculator](https://www.aimenupricer.com/bakery-pricing-calculator)
+- [Catering Pricing Calculator](https://www.aimenupricer.com/catering-pricing-calculator)
+- [Coffee Shop Pricing Calculator](https://www.aimenupricer.com/coffee-shop-pricing-calculator)
+- [Food Truck Pricing Calculator](https://www.aimenupricer.com/food-truck-pricing-calculator)
+- [Delivery Platform Commission Calculator](https://www.aimenupricer.com/delivery-platform-calculator)
+- [Prime Cost Calculator](https://www.aimenupricer.com/prime-cost-calculator)
+- [Labor Cost Calculator](https://www.aimenupricer.com/labor-cost-calculator)
+- [Break-Even Calculator](https://www.aimenupricer.com/break-even-calculator)
+- [Portion Cost Calculator](https://www.aimenupricer.com/portion-cost-calculator)
+- [Cocktail Pricing Calculator](https://www.aimenupricer.com/cocktail-pricing-calculator)
+
+## Guides
+
+- [How to Price a Restaurant Menu](https://www.aimenupricer.com/blog/how-to-price-a-restaurant-menu)
+- [Food Cost Formula](https://www.aimenupricer.com/blog/food-cost-formula)
+- [Recipe Costing Without Written Recipes](https://www.aimenupricer.com/blog/recipe-costing-without-recipes)
+- [Restaurant Profit Margin](https://www.aimenupricer.com/blog/restaurant-profit-margin)
+- [Bakery Pricing Guide](https://www.aimenupricer.com/blog/bakery-pricing-guide)
+- [Cake Pricing Guide](https://www.aimenupricer.com/blog/cake-pricing-guide)
+- [Catering Pricing Guide](https://www.aimenupricer.com/blog/catering-pricing-guide)
+- [Menu Engineering](https://www.aimenupricer.com/blog/menu-engineering)
+- [Why ChatGPT Can't Price Your Menu](https://www.aimenupricer.com/blog/why-chatgpt-cant-price-your-menu)
+- [Full blog index](https://www.aimenupricer.com/blog)
+
+## By Restaurant Type & Region
+
+- [Menu Pricing by Restaurant Type](https://www.aimenupricer.com/menu-pricing)
+- [How to Price Any Dish (50 dishes)](https://www.aimenupricer.com/how-to-price)
+- [Restaurant Pricing by Country (UK, Canada, Australia)](https://www.aimenupricer.com/restaurant-pricing)
+- [Glossary of Pricing Terms](https://www.aimenupricer.com/glossary)
+
+## Comparisons
+
+- [MenuPricer vs Spreadsheets](https://www.aimenupricer.com/compare/menupricer-vs-spreadsheet)
+- [MenuPricer vs Square](https://www.aimenupricer.com/compare/menupricer-vs-square)
+- [MenuPricer vs Toast](https://www.aimenupricer.com/compare/menupricer-vs-toast)
+- [MenuPricer vs Craftable](https://www.aimenupricer.com/compare/menupricer-vs-craftable)
+- [MenuPricer vs MenuTotal](https://www.aimenupricer.com/compare/menupricer-vs-menutotal)
+- [MarketMan Alternatives](https://www.aimenupricer.com/alternatives/marketman-alternatives)
+- [MarginEdge Alternatives](https://www.aimenupricer.com/alternatives/marginedge-alternatives)
