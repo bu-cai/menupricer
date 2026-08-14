@@ -1,0 +1,47 @@
+{
+  "name": "MenuPricer",
+  "url": "https://www.aimenupricer.com",
+  "serviceType": "AI-powered restaurant menu pricing and food cost calculator",
+  "description": "MenuPricer calculates the correct selling price for a menu item from just a dish name. AI drafts an ingredient cost estimate, which the user corrects, and MenuPricer returns food cost percentage, gross margin, and three pricing tiers (Budget, Standard, Premium), plus delivery-platform-adjusted pricing.",
+  "capabilities": [
+    {
+      "name": "AI ingredient cost estimation",
+      "input": "A dish name (text)",
+      "output": "A draft ingredient list with typical quantities and estimated costs",
+      "requiresWrittenRecipe": false
+    },
+    {
+      "name": "Menu price calculation",
+      "input": "Ingredient costs, labor %, overhead %, packaging cost, target food cost %",
+      "output": "Three pricing tiers (Budget, Standard, Premium) with food cost % and gross margin per tier"
+    },
+    {
+      "name": "Delivery platform pricing offset",
+      "input": "Base menu price, delivery platform (DoorDash, Uber Eats, Grubhub)",
+      "output": "Delivery-adjusted price that accounts for platform commission (15-30%) and payment processing (~2.9%)"
+    },
+    {
+      "name": "PDF export",
+      "output": "Branded PDF for a single dish's cost breakdown or the full menu"
+    },
+    {
+      "name": "Recipe and menu history",
+      "description": "Cloud sync of saved dishes, recipes, and pricing history across devices when signed in"
+    }
+  ],
+  "pricing": {
+    "free": { "dishLimit": 5, "creditCardRequired": false },
+    "pro_monthly": { "price": "9.00", "currency": "USD" },
+    "pro_annual": { "price": "79.00", "currency": "USD" }
+  },
+  "supportedCurrencies": ["USD", "CNY", "EUR", "GBP", "CAD", "AUD"],
+  "relatedTools": [
+    { "name": "Food Cost Calculator", "url": "https://www.aimenupricer.com/food-cost-calculator" },
+    { "name": "Recipe Cost Calculator", "url": "https://www.aimenupricer.com/recipe-cost-calculator" },
+    { "name": "Menu Cost Calculator", "url": "https://www.aimenupricer.com/menu-cost-calculator" },
+    { "name": "Restaurant Profit Margin Calculator", "url": "https://www.aimenupricer.com/restaurant-profit-calculator" },
+    { "name": "Delivery Platform Commission Calculator", "url": "https://www.aimenupricer.com/delivery-platform-calculator" }
+  ],
+  "lastUpdated": "2026-08-14",
+  "contact": "support@aimenupricer.com"
+}

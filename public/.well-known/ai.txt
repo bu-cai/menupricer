@@ -4,6 +4,7 @@
 llms-txt: https://www.aimenupricer.com/llms.txt
 summary: https://www.aimenupricer.com/ai/summary.json
 faq: https://www.aimenupricer.com/ai/faq.json
+service: https://www.aimenupricer.com/ai/service.json
 
 # Citation and answer-engine bots are welcome to crawl and cite this site.
 # See /robots.txt for the full crawler allow/deny list.
