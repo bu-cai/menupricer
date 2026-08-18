@@ -498,11 +498,14 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         {/* ⑤ 食材行入场动画，用稳定 key */}
         <div className="space-y-2">
           {ingredients.map((ing, i) => (
-            <div key={ingKeys[i]} className={`flex gap-2 items-center rounded-xl transition-all ${validationErrors.includes(i) ? "ring-2 ring-red-400 ring-offset-1" : ""}`}
+            <div key={ingKeys[i]} className={`flex flex-wrap gap-2 items-center rounded-xl transition-all ${validationErrors.includes(i) ? "ring-2 ring-red-400 ring-offset-1" : ""}`}
               style={{ animation: "row-enter 220ms ease both" }}>
+              {/* Ingredient name gets its own full-width line on mobile — at
+                  375px a flex-1 share left only ~50px, too narrow for real
+                  ingredient names. sm+ reverts to sharing the row. */}
               <input type="text" value={ing.name} onChange={(e) => updateIngredient(i, "name", e.target.value)}
                 placeholder={t("ingredientName", lang)}
-                className="flex-1 min-w-0 border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" />
+                className="w-full sm:flex-1 sm:min-w-0 border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" />
               <input type="text" value={qtyInputs[i] ?? `${ing.quantity}${ing.unit}`}
                 onChange={(e) => handleQtyInput(i, e.target.value)} placeholder="100g"
                 className="w-20 border border-gray-300 rounded-lg px-2 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" />
@@ -595,7 +598,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
               setSaved(true);
               setTimeout(() => setSaved(false), 2000);
             }}
-            className="flex items-center gap-1.5 px-4 py-3 rounded-xl border border-orange-200 text-orange-600 hover:bg-orange-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-semibold text-sm">
+            className="flex-1 justify-center lg:flex-none flex items-center gap-1.5 px-4 py-3 rounded-xl border border-orange-200 text-orange-600 hover:bg-orange-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-semibold text-sm">
             {saved ? (
               <span style={{ animation: "scale-in 300ms cubic-bezier(0.34,1.56,0.64,1) both" }}>{t("savedBtn", lang)}</span>
             ) : (
@@ -608,9 +611,13 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
             )}
           </button>
         )}
+        {/* Hidden on mobile — the fixed bottom bar (page.tsx) already has an
+            identical submit button there, so this would be a redundant
+            second "submit" CTA competing for thumb attention on small
+            screens. Desktop has no bottom bar, so it stays the only CTA there. */}
         <button type="submit" form={id}
           disabled={loading || !dishName.trim()}
-          className="btn-primary flex-1 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white font-bold py-3 rounded-xl text-base"
+          className="btn-primary hidden lg:flex flex-1 items-center justify-center bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white font-bold py-3 rounded-xl text-base"
           style={!loading && dishName.trim() ? { animation: "pulse-glow 2s ease-in-out infinite" } : undefined}
           onClick={(e) => {
             const btn = e.currentTarget;
