@@ -221,6 +221,33 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
           <AuthButton />
         </div>
       </div>
+
+      {/* Mobile tab nav — the desktop nav above is hidden below sm, so this is
+          the only way to reach "My Menu" on a phone. */}
+      <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 -mt-1">
+        {(["pricer", "menu"] as const).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`relative px-4 py-1.5 text-sm font-semibold rounded-lg transition-all ${
+              activeTab === tab
+                ? "text-orange-600 bg-orange-50"
+                : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+            }`}
+          >
+            {tab === "pricer" ? t("tabPricer", lang) : (
+              <span className="flex items-center gap-1.5">
+                {t("tabMenu", lang)}
+                {menuCount > 0 && (
+                  <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                    {menuCount}
+                  </span>
+                )}
+              </span>
+            )}
+          </button>
+        ))}
+      </nav>
     </header>
   );
 }

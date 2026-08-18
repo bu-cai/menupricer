@@ -462,8 +462,12 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         </div>
 
         {recognizeError && (
-          <div className="text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mb-2 flex items-center gap-1.5">
-            <span>⚠️</span> {recognizeError}
+          <div className="text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mb-2 flex items-center justify-between gap-2">
+            <span className="flex items-center gap-1.5"><span>⚠️</span> {recognizeError}</span>
+            <button type="button" onClick={() => cameraInputRef.current?.click()}
+              className="shrink-0 text-red-600 font-semibold underline hover:text-red-700 whitespace-nowrap">
+              {t("retakePhoto", lang)}
+            </button>
           </div>
         )}
 

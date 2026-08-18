@@ -33,6 +33,7 @@ const translations = {
   savedBtn: { EN: "✓ Saved!", ZH: "✓ 已保存！" },
   scanPhoto: { EN: "Scan photo", ZH: "拍照识别" },
   scanning: { EN: "Scanning...", ZH: "识别中..." },
+  retakePhoto: { EN: "Retake photo", ZH: "重新拍摄" },
   quickEstimate: { EN: "Quick Estimate — let AI figure out the costs", ZH: "快速估算 — 让 AI 自动推算成本" },
   calcTitle: { EN: "📦 Package Price Calculator", ZH: "📦 包装换算计算器" },
   iPaid: { EN: "I paid ($)", ZH: "我花了（$）" },
