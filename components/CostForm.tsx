@@ -406,6 +406,30 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
 
   return (
     <form id={id} onSubmit={handleSubmit} className="space-y-5">
+      {/* Primary CTA: photo scan — the main entry point on mobile/kitchen use.
+          Manual typing below is the fallback, not the default. */}
+      <button type="button" onClick={() => cameraInputRef.current?.click()} disabled={recognizing}
+        className="w-full flex items-center gap-3 bg-orange-500 hover:bg-orange-600 active:scale-[0.98] disabled:opacity-70 disabled:cursor-wait text-white rounded-2xl px-5 py-4 shadow-sm transition-all">
+        {recognizing ? (
+          <span className="inline-block w-7 h-7 border-[3px] border-white/40 border-t-white rounded-full animate-spin shrink-0" />
+        ) : (
+          <span className="text-3xl shrink-0">📷</span>
+        )}
+        <span className="text-left min-w-0">
+          <span className="block font-bold text-base leading-tight">
+            {recognizing ? t("scanCtaScanning", lang) : t("scanCta", lang)}
+          </span>
+          {!recognizing && (
+            <span className="block text-xs text-orange-100 leading-snug mt-0.5">{t("scanCtaSub", lang)}</span>
+          )}
+        </span>
+      </button>
+      <div className="flex items-center gap-3 text-xs text-gray-400">
+        <div className="h-px flex-1 bg-gray-200" />
+        {t("orTypeManually", lang)}
+        <div className="h-px flex-1 bg-gray-200" />
+      </div>
+
       {/* Dish name */}
       <div>
         <div className="flex items-center justify-between mb-1">
