@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | MenuPricer",
   },
   description:
-    "Free menu calculator and AI pricing tool for restaurants. Enter ingredient costs and get profit-optimized menu prices in seconds — with margin analysis and PDF export.",
+    "Free menu calculator and AI pricing tool for restaurants. Get profit-optimized menu prices in seconds, with margin analysis and PDF export.",
   keywords: [
     "menu calculator",
     "menu pricing tool",
