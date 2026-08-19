@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SessionWrapper from "@/components/SessionWrapper";
+
+const GA_MEASUREMENT_ID = "G-GHE77YMHXT";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -171,9 +175,22 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
         <SessionWrapper>{children}</SessionWrapper>
+        <Analytics />
       </body>
     </html>
   );
