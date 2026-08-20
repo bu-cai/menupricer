@@ -1316,7 +1316,15 @@ function HomeContent() {
               <LogoIcon size={20} />
               <span className="font-black text-gray-900 text-sm">Menu<span className="text-orange-500">Pricer</span></span>
             </div>
-            <p className="text-xs text-gray-400">© {new Date().getFullYear()} MenuPricer — AI-powered menu pricing for restaurant owners.</p>
+            <p className="text-xs text-gray-400 text-center">© {new Date().getFullYear()} MenuPricer — AI-powered menu pricing for restaurant owners.</p>
+            <a href="https://www.producthunt.com/products/menupricer?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-menupricer"
+              target="_blank" rel="noopener noreferrer" className="shrink-0">
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1226967&theme=light"
+                alt="MenuPricer - AI menu pricing for restaurants — no recipe needed | Product Hunt"
+                width={200} height={43}
+              />
+            </a>
           </div>
         </div>
       </footer>
