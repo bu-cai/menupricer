@@ -67,6 +67,7 @@ function PriceCalcPopover({ unit, onApply }: { unit: string; onApply: (unitPrice
   const [totalPrice, setTotalPrice] = useState("");
   const [totalQty, setTotalQty] = useState("");
   const popoverRef = useRef<HTMLDivElement>(null);
+  const uid = useId();
 
   const unitPrice = useMemo(() => {
     const p = parseFloat(totalPrice);
@@ -110,10 +111,11 @@ function PriceCalcPopover({ unit, onApply }: { unit: string; onApply: (unitPrice
           <p className="text-xs font-bold text-gray-700 mb-3">{t("calcTitle", lang)}</p>
           <div className="space-y-2">
             <div>
-              <label className="text-xs text-gray-500 mb-1 block">{t("iPaid", lang)}</label>
+              <label htmlFor={`${uid}-calc-total-price`} className="text-xs text-gray-500 mb-1 block">{t("iPaid", lang)}</label>
               <div className="relative">
                 <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
                 <input
+                  id={`${uid}-calc-total-price`}
                   type="number" value={totalPrice} onChange={(e) => setTotalPrice(e.target.value)}
                   placeholder="e.g. 3.99" min="0" step="any" autoFocus
                   className="w-full border border-gray-300 rounded-lg pl-6 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -121,8 +123,9 @@ function PriceCalcPopover({ unit, onApply }: { unit: string; onApply: (unitPrice
               </div>
             </div>
             <div>
-              <label className="text-xs text-gray-500 mb-1 block">{t("totalQty", lang)} ({unit || "g"})</label>
+              <label htmlFor={`${uid}-calc-total-qty`} className="text-xs text-gray-500 mb-1 block">{t("totalQty", lang)} ({unit || "g"})</label>
               <input
+                id={`${uid}-calc-total-qty`}
                 type="number" value={totalQty} onChange={(e) => setTotalQty(e.target.value)}
                 placeholder={`e.g. 500`} min="0" step="any"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -216,10 +219,11 @@ function ReverseCalc({ totalCost }: { totalCost: number }) {
       {open && (
         <div className="px-4 pb-4 border-t border-gray-50 pt-3 space-y-3" style={{ animation: "slide-up 200ms ease both" }}>
           <div>
-            <label className="text-xs text-gray-500 mb-1 block">{t("reverseTarget", lang)}</label>
+            <label htmlFor="reverse-target-price" className="text-xs text-gray-500 mb-1 block">{t("reverseTarget", lang)}</label>
             <div className="relative">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">{SYMBOLS[currency]}</span>
               <input
+                id="reverse-target-price"
                 type="number" value={targetPrice} onChange={e => setTargetPrice(e.target.value)}
                 placeholder="e.g. 12.99" min="0" step="any"
                 className="w-full border border-gray-300 rounded-lg pl-7 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -433,8 +437,9 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
       {/* Dish name */}
       <div>
         <div className="flex items-center justify-between mb-1">
-          <label className="text-sm font-semibold text-gray-700">{t("dishName", lang)}</label>
+          <label htmlFor="dish-name-input" className="text-sm font-semibold text-gray-700">{t("dishName", lang)}</label>
           <button type="button" onClick={() => cameraInputRef.current?.click()} disabled={recognizing}
+            aria-label={t("scanPhoto", lang)}
             className="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-600 font-medium disabled:opacity-50 disabled:cursor-wait transition-colors">
             {recognizing
               ? <><span className="inline-block w-3.5 h-3.5 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" /><span className="text-xs">{t("scanning", lang)}</span></>
@@ -442,7 +447,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
             }
           </button>
         </div>
-        <input type="text" value={dishName} onChange={(e) => setDishName(e.target.value)}
+        <input id="dish-name-input" type="text" value={dishName} onChange={(e) => setDishName(e.target.value)}
           placeholder={t("dishNamePlaceholder", lang)}
           className="w-full border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" required />
         {/* ④ 涟漪预设按钮 */}
@@ -478,7 +483,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
                 : <><span className="text-sm">📷</span><span className="text-xs">{t("scanPhoto", lang)}</span></>
               }
             </button>
-            <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={handleImageChange} />
+            <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={handleImageChange} aria-label={t("scanPhoto", lang)} />
             <button type="button" onClick={addIngredient} className="text-sm text-orange-500 hover:text-orange-600 font-medium">
               {t("addIngredient", lang)}
             </button>
@@ -486,7 +491,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         </div>
 
         {recognizeError && (
-          <div className="text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mb-2 flex items-center justify-between gap-2">
+          <div role="alert" aria-live="polite" className="text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mb-2 flex items-center justify-between gap-2">
             <span className="flex items-center gap-1.5"><span>⚠️</span> {recognizeError}</span>
             <button type="button" onClick={() => cameraInputRef.current?.click()}
               className="shrink-0 text-red-600 font-semibold underline hover:text-red-700 whitespace-nowrap">
@@ -505,15 +510,18 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
                   ingredient names. sm+ reverts to sharing the row. */}
               <input type="text" value={ing.name} onChange={(e) => updateIngredient(i, "name", e.target.value)}
                 placeholder={t("ingredientName", lang)}
+                aria-label={`${t("ingredientName", lang)} ${i + 1}`}
                 className="w-full sm:flex-1 sm:min-w-0 border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" />
               <input type="text" value={qtyInputs[i] ?? `${ing.quantity}${ing.unit}`}
                 onChange={(e) => handleQtyInput(i, e.target.value)} placeholder="100g"
+                aria-label={`${t("ingredientName", lang)} ${i + 1} ${t("totalQty", lang)}`}
                 className="w-20 border border-gray-300 rounded-lg px-2 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" />
               <div className="relative w-24">
                 <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
                 <input type="number" value={ing.unitPrice || ""}
                   onChange={(e) => updateIngredient(i, "unitPrice", parseFloat(e.target.value) || 0)}
                   placeholder="0.00"
+                  aria-label={`${t("ingredientName", lang)} ${i + 1} ${t("iPaid", lang)}`}
                   className="w-full border border-gray-300 rounded-lg pl-5 pr-2 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400"
                   min="0" step="any" />
               </div>
@@ -530,7 +538,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
         </div>
         <p className="text-xs text-gray-400 mt-1">{t("qtyHint", lang)}</p>
         {validationErrors.length > 0 && (
-          <div className="flex items-center gap-1.5 text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mt-2" style={{ animation: "slide-up 200ms ease both" }}>
+          <div role="alert" aria-live="polite" className="flex items-center gap-1.5 text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2 mt-2" style={{ animation: "slide-up 200ms ease both" }}>
             <span>⚠️</span>
             <span>{t("validationError", lang)} {validationErrors.map(i => ingredients[i]?.name).join(", ")}</span>
           </div>
@@ -540,18 +548,18 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
       {/* Cost percentages */}
       <div className="grid grid-cols-3 gap-3">
         <div>
-          <label className="block text-xs font-semibold text-gray-600 mb-1">{t("laborCost", lang)}</label>
-          <input type="number" value={laborCostPercent} onChange={(e) => setLaborCostPercent(parseFloat(e.target.value) || 0)}
+          <label htmlFor="labor-cost-input" className="block text-xs font-semibold text-gray-600 mb-1">{t("laborCost", lang)}</label>
+          <input id="labor-cost-input" type="number" value={laborCostPercent} onChange={(e) => setLaborCostPercent(parseFloat(e.target.value) || 0)}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" min="0" max="100" />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-gray-600 mb-1">{t("overheadCost", lang)}</label>
-          <input type="number" value={overheadCostPercent} onChange={(e) => setOverheadCostPercent(parseFloat(e.target.value) || 0)}
+          <label htmlFor="overhead-cost-input" className="block text-xs font-semibold text-gray-600 mb-1">{t("overheadCost", lang)}</label>
+          <input id="overhead-cost-input" type="number" value={overheadCostPercent} onChange={(e) => setOverheadCostPercent(parseFloat(e.target.value) || 0)}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" min="0" max="100" />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-gray-600 mb-1">{t("packagingCost", lang)}</label>
-          <input type="number" value={packagingCost || ""} onChange={(e) => setPackagingCost(parseFloat(e.target.value) || 0)}
+          <label htmlFor="packaging-cost-input" className="block text-xs font-semibold text-gray-600 mb-1">{t("packagingCost", lang)}</label>
+          <input id="packaging-cost-input" type="number" value={packagingCost || ""} onChange={(e) => setPackagingCost(parseFloat(e.target.value) || 0)}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-orange-400" min="0" step="any" />
         </div>
       </div>
