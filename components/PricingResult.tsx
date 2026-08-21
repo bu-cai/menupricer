@@ -269,6 +269,17 @@ export default function PricingResult({ content, loading, dishName = "dish", tot
             style={{ animation: "blink 1s step-end infinite" }}>|</span>
         )}
       </div>
+      {!loading && content && (
+        <p className="text-xs text-gray-300 mt-4 pt-3 border-t border-gray-50">
+          {lang === "ZH" ? "这个结果准不准？" : "Was this pricing useful?"}{" "}
+          <a
+            href={`mailto:support@aimenupricer.com?subject=${encodeURIComponent(`Feedback on ${dishName} pricing`)}`}
+            className="text-gray-400 hover:text-orange-500 underline transition-colors"
+          >
+            {lang === "ZH" ? "告诉我们 →" : "Tell us →"}
+          </a>
+        </p>
+      )}
     </div>
   );
 }

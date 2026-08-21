@@ -1316,6 +1316,7 @@ function HomeContent() {
                 <a href="/compare" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Compare</a>
                 <a href="/blog" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Blog</a>
                 <a href="/glossary" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Glossary</a>
+                <a href="mailto:support@aimenupricer.com?subject=Feedback%20on%20MenuPricer" className="block text-xs text-gray-500 hover:text-orange-500 transition-colors">Send Feedback</a>
               </div>
             </div>
             <div>
