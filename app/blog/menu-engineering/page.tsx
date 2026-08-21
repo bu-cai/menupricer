@@ -211,6 +211,8 @@ export default function MenuEngineeringPage() {
             <h2 className="text-lg font-black text-gray-900 mb-4">Related guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
+                { href: "/menu-cost-calculator", title: "Menu Pricing Calculator", desc: "Price every dish on your menu against your target margin." },
+                { href: "/restaurant-profit-calculator", title: "Restaurant Profit Margin Calculator", desc: "See net profit and margin from revenue, food cost, and labor." },
                 { href: "/blog/how-to-price-a-restaurant-menu", title: "How to Price a Restaurant Menu", desc: "The complete formula for food cost and markup." },
                 { href: "/blog/how-to-raise-menu-prices", title: "How to Raise Menu Prices", desc: "When and how to raise prices without losing customers." },
                 { href: "/blog/food-cost-percentage-by-restaurant-type", title: "Food Cost Benchmarks by Concept", desc: "Industry averages for fine dining, fast casual, and more." },

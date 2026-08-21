@@ -434,6 +434,21 @@ const HOME_FAQ_SCHEMA = {
       name: "How do I price a dish for delivery vs. dine-in?",
       acceptedAnswer: { "@type": "Answer", text: "Set your dine-in price based on food cost + target margin. Then add 15–25% for delivery platforms to offset commissions. MenuPricer shows both prices in every pricing report." },
     },
+    {
+      "@type": "Question",
+      name: "What is AI menu pricing?",
+      acceptedAnswer: { "@type": "Answer", text: "AI menu pricing is using artificial intelligence to estimate ingredient costs and recommend a menu price from just a dish name, instead of manually building a recipe card first. MenuPricer drafts the ingredient breakdown, calculates food cost percentage and margin, and returns three price tiers." },
+    },
+    {
+      "@type": "Question",
+      name: "What is menu engineering?",
+      acceptedAnswer: { "@type": "Answer", text: "Menu engineering is classifying every dish by popularity and profitability — Stars, Plowhorses, Puzzles, and Dogs — then repricing, repositioning, or cutting items based on that quadrant. It starts with knowing each dish's food cost percentage and sales volume." },
+    },
+    {
+      "@type": "Question",
+      name: "How can restaurants increase menu profitability?",
+      acceptedAnswer: { "@type": "Answer", text: "Reprice dishes whose food cost has crept above target, adjust low-margin high-volume items without necessarily raising price, and set delivery-platform-adjusted pricing so commission doesn't erase margin on off-premise orders. All three start with knowing your actual food cost per dish." },
+    },
   ],
 };
 

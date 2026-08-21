@@ -444,6 +444,31 @@ export default function MenuCostCalculatorClient() {
         </div>
       </section>
 
+      {/* Related guides */}
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/food-cost-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Cost Calculator</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Calculate Food Cost % for One Dish →</p>
+            </Link>
+            <Link href="/blog/how-to-price-a-restaurant-menu" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Restaurant Menu Pricing</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">How to Price a Restaurant Menu: Complete Guide →</p>
+            </Link>
+            <Link href="/blog/menu-engineering" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Engineering</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Classify Every Dish by Profit and Popularity →</p>
+            </Link>
+            <Link href="/restaurant-profit-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Profit Margin Calculator</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Restaurant Profit Margin Calculator →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom CTA */}
       <section className="bg-orange-500 py-14">
         <div className="max-w-2xl mx-auto px-6 text-center">

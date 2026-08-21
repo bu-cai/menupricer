@@ -209,6 +209,18 @@ const translations = {
         q: "Does MenuPricer generate menu descriptions?",
         a: "Yes. Every AI pricing report includes a professionally written menu copy — a 15–30 word description designed to appeal to customers and highlight the dish's key selling points. Ready to copy directly onto your menu.",
       },
+      {
+        q: "What is AI menu pricing?",
+        a: "AI menu pricing is using artificial intelligence to estimate ingredient costs and recommend a menu price from just a dish name, instead of manually building a recipe card first. MenuPricer drafts the ingredient breakdown, calculates food cost percentage and margin, and returns three price tiers — cutting a task that normally takes 20-30 minutes per dish down to under a minute.",
+      },
+      {
+        q: "What is menu engineering?",
+        a: "Menu engineering is the practice of classifying every dish by popularity and profitability — Stars (high on both), Plowhorses (popular but low-margin), Puzzles (profitable but rarely ordered), and Dogs (neither) — then repricing, repositioning, or cutting items based on that quadrant. Restaurants typically start by pulling food cost % and sales volume for every dish, which is exactly what MenuPricer's AI pricing reports calculate automatically.",
+      },
+      {
+        q: "How can restaurants increase menu profitability?",
+        a: "The three highest-leverage moves are: repricing dishes whose food cost has crept above target (most operators haven't repriced in 6+ months), moving low-margin \"Plowhorse\" items toward better ingredients or portion sizes without raising price, and adding delivery-platform-adjusted pricing so commission doesn't silently erase margin on off-premise orders. All three start with knowing your actual food cost per dish, which is what MenuPricer calculates first.",
+      },
     ],
     ZH: [
       {
@@ -274,6 +286,18 @@ const translations = {
       {
         q: "AI 会生成菜单文案吗？",
         a: "会的。每份定价报告都包含一句专业菜单介绍文案（15-30 字），突出菜品卖点，可直接复制到菜单上使用。",
+      },
+      {
+        q: "什么是 AI 菜单定价？",
+        a: "AI 菜单定价是指用人工智能从菜名直接估算食材成本并给出建议售价，而不用先手动做一份完整配方卡。MenuPricer 会自动生成食材清单、计算食材成本率和利润率，并给出三档定价——把原本每道菜需要 20-30 分钟的工作压缩到一分钟以内。",
+      },
+      {
+        q: "什么是菜单工程（Menu Engineering）？",
+        a: "菜单工程是按「受欢迎程度」和「利润率」两个维度给每道菜分类——明星菜（两者都高）、跑量菜（受欢迎但利润低）、待推广菜（利润高但点单少）、问题菜（两者都低），再据此调价、调整菜单位置或直接下架。做这件事的第一步是拿到每道菜的食材成本率和销量数据，这正是 MenuPricer 的AI定价报告自动帮你算出来的。",
+      },
+      {
+        q: "餐厅怎么提升菜单利润率？",
+        a: "三个最有效的方向：给食材成本已经悄悄涨过目标线的菜品重新定价（很多老板超过半年没调过价）、把利润率低的「跑量菜」通过调整食材或份量优化而不是直接涨价、给外卖平台单独设置抽成后定价避免佣金偷偷吃掉利润。这三件事都需要先知道每道菜真实的食材成本，这正是 MenuPricer 最先帮你算清楚的。",
       },
     ],
   },

@@ -154,6 +154,14 @@ export default function FoodCostCalculatorPage() {
               <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing</p>
               <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">How to Price a Restaurant Menu: Complete Guide →</p>
             </Link>
+            <Link href="/menu-cost-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing Calculator</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Price a Full Menu at Once →</p>
+            </Link>
+            <Link href="/blog/menu-engineering" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Engineering</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Classify Every Dish by Profit and Popularity →</p>
+            </Link>
           </div>
         </div>
       </div>
