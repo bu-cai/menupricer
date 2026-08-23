@@ -211,6 +211,14 @@ const POSTS = [
     featured: false,
   },
   {
+    slug: "best-food-costing-software",
+    title: "Best Food Costing Software for Restaurants in 2026 (Free & Paid)",
+    description: "Food costing software compared by category — recipe costing, invoice processing, or full inventory control — and who each is actually built for.",
+    category: "Food Cost",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
     slug: "coffee-shop-menu-pricing",
     title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
     description: "Coffee shop pricing benchmarks for espresso drinks, cold brew, matcha, and food items — with food cost percentages and the formula to price any beverage profitably.",
