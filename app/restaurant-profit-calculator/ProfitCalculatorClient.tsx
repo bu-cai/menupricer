@@ -174,6 +174,30 @@ export default function ProfitCalculatorClient() {
         </div>
       </section>
 
+      <div className="bg-white border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/delivery-platform-calculator" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Delivery Pricing</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">DoorDash & Uber Eats Commission Calculator →</p>
+            </Link>
+            <Link href="/blog/menu-engineering" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Engineering</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Classify Every Dish by Profit and Popularity →</p>
+            </Link>
+            <Link href="/menu-pricing" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">By Restaurant Type</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Margin Benchmarks for Your Concept →</p>
+            </Link>
+            <Link href="/restaurant-pricing" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">By Country</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Pricing Guides for UK, Canada, Australia →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <section className="bg-orange-500 py-14">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">Improve margins by repricing your menu</h2>

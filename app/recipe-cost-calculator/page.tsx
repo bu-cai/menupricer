@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     "how to calculate recipe cost",
     "ingredient cost calculator",
     "cost per serving calculator",
-    "menu item cost calculator",
     "restaurant recipe costing",
   ],
   alternates: { canonical: "https://www.aimenupricer.com/recipe-cost-calculator" },

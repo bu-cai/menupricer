@@ -10,11 +10,9 @@ export const metadata: Metadata = {
     "food cost calculator",
     "food cost percentage calculator",
     "restaurant food cost calculator",
-    "recipe cost calculator",
     "how to calculate food cost",
     "food cost formula",
-    "menu price calculator",
-    "restaurant profit margin calculator",
+    "food cost percentage",
   ],
   alternates: {
     canonical: "https://www.aimenupricer.com/food-cost-calculator",

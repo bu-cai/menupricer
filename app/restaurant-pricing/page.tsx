@@ -97,6 +97,14 @@ export default function RestaurantPricingIndexPage() {
               <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Food Cost Benchmarks by Type</p>
               <p className="text-xs text-gray-500">General benchmarks by restaurant concept, not by country.</p>
             </Link>
+            <Link href="/menu-cost-calculator" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+              <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Menu Pricing Calculator</p>
+              <p className="text-xs text-gray-500">Price a full menu at once, in your local currency.</p>
+            </Link>
+            <Link href="/menu-pricing" className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors group">
+              <p className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors text-sm mb-1">Pricing by Restaurant Type</p>
+              <p className="text-xs text-gray-500">Margin benchmarks for your specific concept.</p>
+            </Link>
           </div>
         </section>
       </main>
