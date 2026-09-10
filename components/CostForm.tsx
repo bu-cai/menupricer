@@ -281,6 +281,7 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
   const [recognizeError, setRecognizeError] = useState("");
   const [saved, setSaved] = useState(false);
   const [validationErrors, setValidationErrors] = useState<number[]>([]);
+  const [noCostError, setNoCostError] = useState(false);
 
   // Load recipe from library
   useEffect(() => {
@@ -394,7 +395,18 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!dishName.trim() || totalCost <= 0) return;
+    if (!dishName.trim()) return;
+    if (totalCost <= 0) {
+      // Previously a silent no-op: dish name filled, no ingredient costs
+      // entered, click "Get AI Pricing" -> nothing happens, no result, no
+      // error. The Quick Estimate shortcut handles this case above the fold,
+      // but a user who scrolls straight to the main submit button never
+      // sees it fail silently otherwise.
+      setNoCostError(true);
+      setTimeout(() => setNoCostError(false), 4000);
+      return;
+    }
+    setNoCostError(false);
     // Validate: named ingredients must have a price
     const errorIdx = ingredients
       .map((ing, i) => (ing.name.trim() && !ing.unitPrice ? i : -1))
@@ -595,6 +607,13 @@ export default function CostForm({ onSubmit, onQuickEstimate, onSaveRecipe, load
 
       {/* Reverse Calculator */}
       {totalCost > 0 && <ReverseCalc totalCost={totalCost} />}
+
+      {noCostError && (
+        <div role="alert" aria-live="polite" className="flex items-center gap-1.5 text-xs text-red-500 bg-red-50 rounded-lg px-3 py-2">
+          <span>⚠️</span>
+          <span>{t("noCostError", lang)}</span>
+        </div>
+      )}
 
       <div className="flex gap-3">
         {/* Save Recipe */}

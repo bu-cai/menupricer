@@ -34,6 +34,7 @@ const translations = {
   scanPhoto: { EN: "Scan photo", ZH: "拍照识别" },
   scanning: { EN: "Scanning...", ZH: "识别中..." },
   retakePhoto: { EN: "Retake photo", ZH: "重新拍摄" },
+  noCostError: { EN: "Add at least one ingredient cost above, or use Quick Estimate / Scan photo to let AI fill it in.", ZH: "请先在上方填写至少一项食材成本，或使用「快速估算」/「拍照识别」让AI自动填写。" },
   scanCta: { EN: "Take a photo", ZH: "拍照，自动识别" },
   scanCtaSub: { EN: "Snap a dish or a recipe — AI fills in the name and ingredients for you", ZH: "拍一张菜品或菜谱照片，AI 自动填好菜名和食材" },
   scanCtaScanning: { EN: "Reading your photo...", ZH: "正在识别照片..." },

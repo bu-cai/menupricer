@@ -41,6 +41,25 @@ function parsePrices(content: string): number[] {
   return results.slice(0, 3);
 }
 
+// Quick Estimate asks the AI to both draft ingredient line items AND state a
+// "Total cost" for them in the same free-text response — an LLM adding up
+// its own multi-line output is not reliable arithmetic, and the two numbers
+// can (and did) disagree. Sum the per-ingredient "Est. cost: $X.XX" /
+// "估算成本：$X.XX" lines ourselves instead of trusting whatever total the
+// model claims elsewhere in the text, so the number shown in the side panel
+// and history is at least internally consistent with the ingredient list
+// the user is looking at.
+function parseEstimatedIngredientCost(content: string): number {
+  const re = /(?:Est\.?\s*cost|估算成本)[:：]\s*\$?([\d.]+)/g;
+  let sum = 0;
+  let m;
+  while ((m = re.exec(content)) !== null) {
+    const v = parseFloat(m[1]);
+    if (!isNaN(v) && v > 0) sum += v;
+  }
+  return sum;
+}
+
 function ExamplePreview() {
   const { lang } = useLang();
   const exampleTiers = [
@@ -1077,8 +1096,17 @@ function HomeContent() {
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
       while (true) { const { done, value } = await reader.read(); if (done) break; full += decoder.decode(value); setResult(full); }
+      // Recompute from the parsed ingredient lines rather than trusting the
+      // AI's own stated "Total cost" line — see parseEstimatedIngredientCost.
+      // Matches the ingredientCost + 15% labor + 10% overhead formula used
+      // everywhere else in the app (CostForm's totalCost calc).
+      const estIngredientCost = parseEstimatedIngredientCost(full);
+      if (estIngredientCost > 0) {
+        setIngredientCost(estIngredientCost);
+        setTotalCost(estIngredientCost * 1.25);
+      }
       const prices = parsePrices(full);
-      saveHistory(dishName, 0, prices[1] ?? prices[0]);
+      saveHistory(dishName, estIngredientCost > 0 ? estIngredientCost * 1.25 : 0, prices[1] ?? prices[0]);
     } catch (err) { setResult("Request failed.\n\n" + String(err)); }
     finally { setLoading(false); }
   };
