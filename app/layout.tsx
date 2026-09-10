@@ -163,7 +163,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "MenuPricer",
               url: BASE_URL,
-              logo: `${BASE_URL}/og-image.png`,
+              logo: `${BASE_URL}/opengraph-image`,
               description:
                 "MenuPricer is an AI-powered menu pricing tool that helps restaurant owners, café operators, food truck vendors, caterers, and bakery owners calculate the correct selling price for any menu item.",
               sameAs: ["https://www.producthunt.com/products/menupricer"],

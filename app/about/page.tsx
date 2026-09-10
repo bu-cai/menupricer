@@ -43,7 +43,7 @@ export default function AboutPage() {
             "@type": "Organization",
             name: "MenuPricer",
             url: "https://www.aimenupricer.com",
-            logo: "https://www.aimenupricer.com/og-image.png",
+            logo: "https://www.aimenupricer.com/opengraph-image",
             description:
               "AI MenuPricer is a web-based SaaS tool that helps restaurant owners, café operators, food truck vendors, caterers, and bakery owners calculate the correct selling price for any menu item. It uses AI to estimate ingredient costs, then calculates food cost percentage, gross margin, and recommended price across three tiers (Budget, Standard, Premium).",
             sameAs: [

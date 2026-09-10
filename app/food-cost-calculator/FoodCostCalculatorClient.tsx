@@ -50,14 +50,22 @@ export default function FoodCostCalculatorClient() {
   const [sellingPrice, setSellingPrice] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const ic = parseFloat(ingredientCost) || 0;
+  const icRaw = parseFloat(ingredientCost);
+  const spRaw = parseFloat(sellingPrice);
+  // A raw negative value is a genuine input error, not "no input yet" (which
+  // parseFloat("") already represents as NaN, not 0). Treat both distinctly
+  // so a negative cost/price can't silently fall through to `|| 0` and
+  // produce a nonsensical-but-plausible-looking result (e.g. -4 cost / 10
+  // price previously rendered as 140% gross margin).
+  const hasInvalidInput = (!Number.isNaN(icRaw) && icRaw < 0) || (!Number.isNaN(spRaw) && spRaw < 0);
+  const ic = !Number.isNaN(icRaw) && icRaw >= 0 ? icRaw : 0;
   const tp = clamp(parseFloat(targetPct) || 30, 1, 99);
-  const sp = parseFloat(sellingPrice) || 0;
+  const sp = !Number.isNaN(spRaw) && spRaw >= 0 ? spRaw : 0;
 
-  const suggestedPrice = ic > 0 ? ic / (tp / 100) : 0;
-  const actualPct = ic > 0 && sp > 0 ? (ic / sp) * 100 : 0;
-  const grossMargin = sp > 0 ? ((sp - ic) / sp) * 100 : 0;
-  const profitPerDish = sp > 0 ? sp - ic : 0;
+  const suggestedPrice = !hasInvalidInput && ic > 0 ? ic / (tp / 100) : 0;
+  const actualPct = !hasInvalidInput && ic > 0 && sp > 0 ? (ic / sp) * 100 : 0;
+  const grossMargin = !hasInvalidInput && sp > 0 ? ((sp - ic) / sp) * 100 : 0;
+  const profitPerDish = !hasInvalidInput && sp > 0 ? sp - ic : 0;
 
   const pctColor =
     actualPct === 0
@@ -119,19 +127,22 @@ export default function FoodCostCalculatorClient() {
             <h2 className="text-base font-black text-gray-900">Enter Your Numbers</h2>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+              <label htmlFor="fc-ingredient-cost" className="block text-sm font-semibold text-gray-700 mb-1.5">
                 Ingredient Cost per Serving ($)
               </label>
               <input
+                id="fc-ingredient-cost"
                 type="number"
                 min="0"
                 step="0.01"
                 placeholder="e.g. 3.50"
                 value={ingredientCost}
                 onChange={(e) => setIngredientCost(e.target.value)}
+                aria-invalid={!Number.isNaN(icRaw) && icRaw < 0}
+                aria-describedby="fc-ingredient-cost-hint"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
               />
-              <p className="text-xs text-gray-400 mt-1">Total cost of all ingredients for one serving</p>
+              <p id="fc-ingredient-cost-hint" className="text-xs text-gray-400 mt-1">Total cost of all ingredients for one serving</p>
             </div>
 
             <div>
@@ -157,20 +168,29 @@ export default function FoodCostCalculatorClient() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+              <label htmlFor="fc-selling-price" className="block text-sm font-semibold text-gray-700 mb-1.5">
                 Your Current Selling Price ($) <span className="text-gray-400 font-normal">(optional)</span>
               </label>
               <input
+                id="fc-selling-price"
                 type="number"
                 min="0"
                 step="0.01"
                 placeholder="e.g. 12.00"
                 value={sellingPrice}
                 onChange={(e) => setSellingPrice(e.target.value)}
+                aria-invalid={!Number.isNaN(spRaw) && spRaw < 0}
+                aria-describedby="fc-selling-price-hint"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
               />
-              <p className="text-xs text-gray-400 mt-1">Fill this to check if your current price is profitable</p>
+              <p id="fc-selling-price-hint" className="text-xs text-gray-400 mt-1">Fill this to check if your current price is profitable</p>
             </div>
+            {hasInvalidInput && (
+              <div role="alert" aria-live="polite" className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-600">
+                <span className="text-base leading-none mt-0.5">⚠️</span>
+                <span>Cost and price can&apos;t be negative. Results are hidden until both are zero or higher.</span>
+              </div>
+            )}
           </div>
 
           {/* Results */}

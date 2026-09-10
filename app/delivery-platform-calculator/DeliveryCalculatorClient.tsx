@@ -243,7 +243,7 @@ export default function DeliveryCalculatorClient() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Link href="/menu-cost-calculator" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
               <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing Calculator</p>
-              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Price a Full Menu at Once →</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Set a Target Margin and Get the Price →</p>
             </Link>
             <Link href="/recipe-cost-calculator" className="group bg-gray-50 border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
               <p className="text-xs text-orange-500 font-bold mb-1">Recipe Cost Calculator</p>
