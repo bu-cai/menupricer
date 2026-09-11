@@ -146,17 +146,19 @@ export default function FoodCostCalculatorClient() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+              <label htmlFor="fc-target-pct" className="block text-sm font-semibold text-gray-700 mb-1.5">
                 Target Food Cost Percentage (%)
               </label>
               <div className="flex items-center gap-3">
                 <input
+                  id="fc-target-pct"
                   type="range"
                   min="15"
                   max="50"
                   step="1"
                   value={targetPct}
                   onChange={(e) => setTargetPct(e.target.value)}
+                  aria-valuetext={`${targetPct}%`}
                   className="flex-1 accent-orange-500"
                 />
                 <span className="w-14 text-center font-black text-orange-500 text-lg">{targetPct}%</span>

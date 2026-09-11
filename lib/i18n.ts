@@ -35,6 +35,8 @@ const translations = {
   scanning: { EN: "Scanning...", ZH: "识别中..." },
   retakePhoto: { EN: "Retake photo", ZH: "重新拍摄" },
   noCostError: { EN: "Add at least one ingredient cost above, or use Quick Estimate / Scan photo to let AI fill it in.", ZH: "请先在上方填写至少一项食材成本，或使用「快速估算」/「拍照识别」让AI自动填写。" },
+  signInGoogle: { EN: "Sign in with Google", ZH: "Google 登录" },
+  signOutBtn: { EN: "Sign out", ZH: "退出登录" },
   scanCta: { EN: "Take a photo", ZH: "拍照，自动识别" },
   scanCtaSub: { EN: "Snap a dish or a recipe — AI fills in the name and ingredients for you", ZH: "拍一张菜品或菜谱照片，AI 自动填好菜名和食材" },
   scanCtaScanning: { EN: "Reading your photo...", ZH: "正在识别照片..." },
@@ -274,7 +276,7 @@ const translations = {
       },
       {
         q: "支持哪些货币？",
-        a: "支持美元（$）、人民币（¥）和欧元（€）。在顶部导航栏切换货币后，AI 会自动调整对应市场的定价基准。",
+        a: "支持美元（$）、人民币（¥）、欧元（€）、英镑（£）、加元（C$）和澳元（A$），共6种货币。在顶部导航栏切换货币后，AI 会自动调整对应市场的定价基准。",
       },
       {
         q: "如何计算菜品保本销量？",

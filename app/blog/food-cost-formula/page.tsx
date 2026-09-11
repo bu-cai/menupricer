@@ -206,7 +206,7 @@ export default function FoodCostFormulaPost() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
               {[
                 { title: "Food cost per dish", formula: "Sum of all ingredient costs for one serving", use: "Set individual dish prices" },
-                { title: "Total food cost %", formula: "(Total food purchased ÷ Total food revenue) × 100", use: "Monitor overall restaurant performance" },
+                { title: "Total food cost %", formula: "(COGS ÷ Total food revenue) × 100", use: "Monitor overall restaurant performance" },
               ].map((item) => (
                 <div key={item.title} className="bg-gray-50 rounded-xl border border-gray-200 p-4">
                   <p className="font-bold text-gray-900 text-sm mb-2">{item.title}</p>
@@ -215,7 +215,20 @@ export default function FoodCostFormulaPost() {
                 </div>
               ))}
             </div>
-            <p>Track both. Per-dish food cost tells you whether each item is priced correctly. Total food cost % tells you whether your restaurant as a whole is performing within target.</p>
+            <p>
+              COGS (cost of goods sold) is not the same as what you purchased this period — it's what you actually
+              <em> used</em>. If you bought more than you sold through, some of that spend is sitting in inventory,
+              not reflected in this period&apos;s cost. The formula:
+            </p>
+            <div className="bg-gray-900 rounded-xl p-5 my-4 font-mono text-sm text-green-400">
+              <p>COGS = Beginning Inventory + Purchases − Ending Inventory</p>
+            </div>
+            <p>Example: $1,000 beginning inventory, $3,000 in purchases, $1,500 ending inventory, $10,000 in food sales for the period:</p>
+            <div className="bg-orange-50 rounded-xl p-5 my-4 border border-orange-100 font-mono text-sm text-orange-700">
+              <p>COGS = $1,000 + $3,000 − $1,500 = <strong>$2,500</strong></p>
+              <p className="mt-2">Total food cost % = $2,500 ÷ $10,000 = <strong className="text-xl">25%</strong></p>
+            </div>
+            <p>Using purchases alone ($3,000 ÷ $10,000 = 30%) would have overstated this period&apos;s real food cost, because $500 of that spend ended up as ending inventory rather than being sold. Track both. Per-dish food cost tells you whether each item is priced correctly. Total food cost % tells you whether your restaurant as a whole is performing within target — but only when it&apos;s built from actual COGS, not raw purchase totals.</p>
           </section>
 
           <section>

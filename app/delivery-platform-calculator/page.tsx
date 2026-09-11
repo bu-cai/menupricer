@@ -55,7 +55,7 @@ export default function DeliveryCalculatorPage() {
                 name: "What percentage does DoorDash take from restaurants?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "DoorDash charges restaurants 15–30% commission per order depending on the partnership plan: Basic plan (25–30%), Plus plan (20–25%), and Premier plan (15%). Additional fees may include payment processing (2.5–3%) and marketing promotions.",
+                  text: "DoorDash charges restaurants 15–30% commission per order depending on the partnership plan: Basic plan (15%), Plus plan (25%), and Premier plan (30%), per DoorDash's official Marketplace pricing page. Additional fees may include payment processing (~2.9%). Confirm current rates directly with DoorDash — plans and rates change.",
                 },
               },
               {
@@ -71,7 +71,7 @@ export default function DeliveryCalculatorPage() {
                 name: "Should restaurants charge more on delivery platforms?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Most restaurants add a 15–25% markup to delivery platform prices to offset commission costs and maintain the same profit margin as dine-in orders. A dish priced at $12 in-house should be $14–$15 on DoorDash to achieve the same net revenue.",
+                  text: "Yes — to net the same take-home as dine-in, divide by (1 minus the commission rate) rather than adding a flat percentage. At 25% commission, a $12 dine-in dish needs to be priced at $12 ÷ 0.75 = $16 on the platform to net the same $12, a 33% markup, not 15–25%.",
                 },
               },
               {
@@ -79,7 +79,7 @@ export default function DeliveryCalculatorPage() {
                 name: "How do I calculate my delivery profit margin?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Delivery Net Revenue = Menu Price × (1 - Commission Rate). Then: Profit = Delivery Net Revenue - Food Cost - Labor. Example: $14 price × 0.75 (25% commission) = $10.50 net. Minus $4 food cost = $6.50 gross profit vs. $8 dine-in. This is why delivery markup is essential.",
+                  text: "Delivery Net Revenue = Menu Price × (1 - Commission Rate). Then: Profit = Delivery Net Revenue - Food Cost - Labor. Example: $16 price × 0.75 (25% commission) = $12.00 net. Minus $4 food cost = $8.00 gross profit, matching the $8 dine-in profit at $12. This is why pricing to (dine-in price) ÷ (1 - commission) matters, not a flat markup.",
                 },
               },
             ],

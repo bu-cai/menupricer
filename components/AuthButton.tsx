@@ -2,10 +2,13 @@
 
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useState } from "react";
+import { useLang } from "@/lib/LanguageContext";
+import { t } from "@/lib/i18n";
 
 export default function AuthButton() {
   const { data: session, status } = useSession();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang } = useLang();
 
   if (status === "loading") return null;
 
@@ -33,7 +36,7 @@ export default function AuthButton() {
               onClick={() => { signOut(); setMenuOpen(false); }}
               className="w-full text-left px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 hover:text-orange-500 transition-colors"
             >
-              退出登录
+              {t("signOutBtn", lang)}
             </button>
           </div>
         )}
@@ -52,7 +55,7 @@ export default function AuthButton() {
         <path d="M3.964 10.707A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/>
         <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
       </svg>
-      Google 登录
+      {t("signInGoogle", lang)}
     </button>
   );
 }

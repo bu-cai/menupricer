@@ -167,7 +167,7 @@ export default function DeliveryPlatformCommissionPost() {
 
           <section>
             <h2 className="text-2xl font-black text-gray-900 mb-4">How to price your delivery menu to stay profitable</h2>
-            <p>The solution is a separate delivery menu priced 18–25% higher than your dine-in menu. Here's the formula:</p>
+            <p>The solution is a separate delivery menu, priced with the formula below rather than a flat markup — the increase you actually need scales with your commission tier (roughly 18% at a 15% commission rate, up to 43% at a 30% rate), not a single fixed percentage.</p>
             <div className="bg-gray-900 rounded-xl p-5 my-4 font-mono text-sm text-green-400">
               <p>Delivery Price = Dine-In Price ÷ (1 − Commission Rate)</p>
               <p className="text-gray-500 mt-2 text-xs">Example: $14 ÷ (1 − 0.25) = $18.67 → round to $18.99</p>
@@ -209,7 +209,7 @@ export default function DeliveryPlatformCommissionPost() {
             <h2 className="text-2xl font-black text-gray-900 mb-4">5 ways to protect margin on delivery</h2>
             <div className="space-y-3">
               {[
-                { tip: "Price delivery menus 18–25% higher than dine-in", desc: "The single most impactful change. Set it once in each platform's menu editor." },
+                { tip: "Price delivery menus using dine-in price ÷ (1 − commission), not a flat markup", desc: "The single most impactful change. Set it once in each platform's menu editor — the exact increase needed depends on your commission tier." },
                 { tip: "Negotiate your commission rate", desc: "High-volume restaurants ($15K+/month on a single platform) can often negotiate 2–5% lower commission rates. Call your account rep." },
                 { tip: "Cut low-margin items from your delivery menu", desc: "Items with food cost above 35% become money-losers on delivery. Remove them or adjust delivery pricing specifically." },
                 { tip: "Add packaging costs to delivery pricing", desc: "Delivery requires better packaging ($0.50–$1.50/order). Factor this into your delivery price increase." },

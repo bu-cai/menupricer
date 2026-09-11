@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
     {
       "@type": "Question",
       name: "Is the annual plan worth it?",
-      acceptedAnswer: { "@type": "Answer", text: "If you're actively managing your menu, yes. You save $29 vs monthly — that's over 3 months free. Most restaurant owners reprice seasonally, so annual makes sense." },
+      acceptedAnswer: { "@type": "Answer", text: "If you're actively managing your menu, yes. You save $29/year vs monthly (26.9% off). Most restaurant owners reprice seasonally, so annual makes sense." },
     },
     {
       "@type": "Question",
@@ -106,7 +106,7 @@ const FAQS = [
   },
   {
     q: "Is the annual plan worth it?",
-    a: "If you're actively managing your menu, yes. You save $29 vs monthly — that's over 3 months free. Most restaurant owners reprice seasonally, so annual makes sense.",
+    a: "If you're actively managing your menu, yes. You save $29/year vs monthly (26.9% off). Most restaurant owners reprice seasonally, so annual makes sense.",
   },
   {
     q: "Do you offer refunds?",
@@ -209,7 +209,7 @@ export default function PricingPage() {
                 <span className="text-4xl font-black text-gray-900">$79</span>
                 <span className="text-gray-400 text-sm">/ year</span>
               </div>
-              <p className="text-sm text-orange-500 font-semibold mt-1">≈ $6.6/month · 2 months free</p>
+              <p className="text-sm text-orange-500 font-semibold mt-1">≈ $6.6/month · Save $29/year (26.9%)</p>
             </div>
             <Link
               href="/?upgrade=annual"

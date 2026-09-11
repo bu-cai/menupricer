@@ -4,10 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
+// Rates per DoorDash's official Marketplace pricing page (merchants.doordash.com/en-us/products/marketplace):
+// Basic 15%, Plus 25%, Premier 30% — verified 2026-09-11. Confirm current
+// rates directly with DoorDash before relying on these for a real decision;
+// plans and rates change, and some merchants are on custom contracts.
 const PLATFORMS = [
-  { name: "DoorDash Basic", commission: 25, processing: 2.9 },
-  { name: "DoorDash Plus", commission: 20, processing: 2.9 },
-  { name: "DoorDash Premier", commission: 15, processing: 2.9 },
+  { name: "DoorDash Basic", commission: 15, processing: 2.9 },
+  { name: "DoorDash Plus", commission: 25, processing: 2.9 },
+  { name: "DoorDash Premier", commission: 30, processing: 2.9 },
   { name: "Uber Eats Standard", commission: 25, processing: 3.0 },
   { name: "Uber Eats Plus", commission: 30, processing: 3.0 },
   { name: "Grubhub Basic", commission: 15, processing: 3.05 },
@@ -16,11 +20,11 @@ const PLATFORMS = [
 ];
 
 const FAQS = [
-  { q: "What percentage does DoorDash take from restaurants?", a: "DoorDash charges 15–30% commission depending on plan: Basic (25–30%), Plus (20–25%), Premier (15%). Payment processing adds ~2.9%. Most restaurants pay 25–30% total on each order." },
+  { q: "What percentage does DoorDash take from restaurants?", a: "DoorDash charges 15–30% commission depending on plan: Basic (15%), Plus (25%), Premier (30%). Payment processing adds ~2.9%. Confirm current rates on DoorDash's Marketplace pricing page — plans change and some merchants are on custom contracts." },
   { q: "How much does Uber Eats charge restaurants?", a: "Uber Eats charges 15–30% commission: Lite (15%, limited area), Standard (25%), Plus (30%, more marketing). Plus payment processing of ~3%. Net payout is typically 67–82% of the menu price." },
-  { q: "Should restaurants charge more on delivery platforms?", a: "Yes — most restaurants add 15–25% to delivery platform prices to offset commissions. A dish at $12 dine-in should be $14–$15 on DoorDash to achieve the same net revenue. Many platforms now allow separate menus." },
-  { q: "How do I calculate my delivery profit margin?", a: "Net Revenue = Price × (1 − Commission − Processing). Profit = Net Revenue − Food Cost − Labor. At 25% commission on a $14 item: $14 × 0.722 = $10.11 net. Minus $4 food cost = $6.11 profit vs. $8 dine-in." },
-  { q: "Can I have different prices on delivery apps vs. dine-in?", a: "Yes. DoorDash, Uber Eats, and Grubhub all allow you to set different prices for your delivery menu. This is the recommended approach — add 15–25% to offset commissions and maintain your margin." },
+  { q: "Should restaurants charge more on delivery platforms?", a: "Yes — to keep the same take-home revenue as dine-in, divide by (1 − commission rate), don't just add a flat percentage. At 25% commission, a $12 dine-in dish needs to be priced at $12 ÷ 0.75 = $16 on the platform to net the same $12 — a 33% markup, not 15–25%. The higher the commission tier, the bigger the required markup." },
+  { q: "How do I calculate my delivery profit margin?", a: "Net Revenue = Price × (1 − Commission − Processing). Profit = Net Revenue − Food Cost − Labor. At 25% commission on a $16 item: $16 × 0.721 = $11.54 net. Minus $4 food cost = $7.54 profit." },
+  { q: "Can I have different prices on delivery apps vs. dine-in?", a: "Yes. DoorDash, Uber Eats, and Grubhub all allow you to set different prices for your delivery menu. This is the recommended approach — price to (dine-in price) ÷ (1 − commission rate) so commission doesn't erode your margin." },
 ];
 
 export default function DeliveryCalculatorClient() {
