@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     description:
       "Calculate food cost percentage instantly. Get your ideal menu price and profit margin in seconds.",
     url: "https://www.aimenupricer.com/food-cost-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

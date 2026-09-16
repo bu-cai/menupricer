@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     description:
       "Calculate cost per portion from batch cost and portions produced, with a suggested menu price at your target food cost.",
     url: "https://www.aimenupricer.com/portion-cost-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

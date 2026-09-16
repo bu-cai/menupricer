@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     description:
       "Add ingredients and quantities to calculate your exact recipe cost, cost per serving, and the ideal menu price for your target margin.",
     url: "https://www.aimenupricer.com/recipe-cost-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

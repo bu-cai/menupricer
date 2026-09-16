@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Par Level in Restaurants: What It Means and How to Set It",
     description: "Par level definition for restaurants — how to calculate par levels and use them to control food cost and reduce waste.",
     url: "https://www.aimenupricer.com/blog/par-level-restaurant",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

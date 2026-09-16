@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "MenuPricer vs MenuTotal: Which Menu Pricing Tool Is Better? (2026)",
     description: "Feature-by-feature comparison of MenuPricer and MenuTotal. Which menu costing tool should you use for your restaurant?",
     url: "https://www.aimenupricer.com/compare/menupricer-vs-menutotal",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

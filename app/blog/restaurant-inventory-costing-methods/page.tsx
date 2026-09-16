@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Inventory Costing Methods: FIFO vs Weighted Average Explained",
     description: "How FIFO and weighted average inventory costing work in restaurants, how each affects food cost percentage, and which to use.",
     url: "https://www.aimenupricer.com/blog/restaurant-inventory-costing-methods",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

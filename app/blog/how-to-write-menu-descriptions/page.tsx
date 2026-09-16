@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How to Write Menu Descriptions That Sell (With Examples)",
     description: "The copywriting guide for restaurant menus — words that increase perceived value, sensory language, and before/after examples.",
     url: "https://www.aimenupricer.com/blog/how-to-write-menu-descriptions",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     description:
       "See how much delivery platforms take per order and calculate the price needed to keep your margin on DoorDash and Uber Eats.",
     url: "https://www.aimenupricer.com/delivery-platform-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

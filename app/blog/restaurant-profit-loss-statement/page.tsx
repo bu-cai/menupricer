@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Profit and Loss Statement: A Simple Guide for Operators",
     description: "Restaurant P&L guide — line items, chart of accounts, benchmarks, and how to use it to improve profitability.",
     url: "https://www.aimenupricer.com/blog/restaurant-profit-loss-statement",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

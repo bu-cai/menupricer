@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Service Charge vs Tip vs Gratuity: What Is the Difference?",
     description: "Service charge, tip, and gratuity explained — definitions, legal differences, and what restaurant owners need to know.",
     url: "https://www.aimenupricer.com/blog/service-charge-vs-tip",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

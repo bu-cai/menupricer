@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Meal Prep Business Pricing: Subscription Margin Model",
     description: "How batch production cost and subscription churn change meal prep pricing compared to a standard restaurant menu.",
     url: "https://www.aimenupricer.com/blog/meal-prep-business-pricing",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

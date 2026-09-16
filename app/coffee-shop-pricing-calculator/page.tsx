@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     description:
       "Calculate the right selling price for any coffee drink. Enter coffee, milk, syrup costs and see your margin instantly.",
     url: "https://www.aimenupricer.com/coffee-shop-pricing-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -30,6 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `Restaurant Menu Pricing in ${data.name} | MenuPricer`,
       description: `${data.taxName} treatment, labor cost structure, and benchmarks for pricing a restaurant menu in ${data.name}.`,
       url: `${base}/restaurant-pricing/${country}`,
+      type: "article",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
     },
   };
 }

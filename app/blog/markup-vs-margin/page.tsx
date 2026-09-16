@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Markup vs Margin: The Mistake That Costs Restaurants Thousands",
     description: "Why a '300% markup' and a '300% margin' are not the same thing, and how confusing them silently underprices your menu.",
     url: "https://www.aimenupricer.com/blog/markup-vs-margin",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

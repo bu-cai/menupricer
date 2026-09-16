@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "What Is a Ghost Kitchen? Definition, Costs & How to Start One",
     description: "Ghost kitchen definition, startup costs, menu pricing strategy, and what operators need to know before launching a delivery-only restaurant concept.",
     url: "https://www.aimenupricer.com/blog/ghost-kitchen-pricing",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

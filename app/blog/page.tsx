@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     title: "Restaurant Pricing & Food Cost Blog — MenuPricer",
     description: "Free guides on menu pricing, food cost, and restaurant profitability.",
     url: "https://www.aimenupricer.com/blog",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

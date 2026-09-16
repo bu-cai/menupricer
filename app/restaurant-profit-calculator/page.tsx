@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     description:
       "Enter revenue, food cost, labor, and overhead to calculate your restaurant net profit and margin.",
     url: "https://www.aimenupricer.com/restaurant-profit-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

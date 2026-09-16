@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     title: "How to Price Any Dish | MenuPricer",
     description: "Food cost breakdowns and worked pricing examples by dish.",
     url: "https://www.aimenupricer.com/how-to-price",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

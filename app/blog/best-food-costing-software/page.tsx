@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "Best Food Costing Software for Restaurants in 2026 (Free & Paid)",
     description: "An honest comparison of food costing and recipe costing software, grouped by what each tool is actually built to solve.",
     url: "https://www.aimenupricer.com/blog/best-food-costing-software",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

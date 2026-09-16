@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Menu Design Tips: 12 Rules That Increase Sales (2026)",
     description: "12 restaurant menu design principles: layout zones, anchor pricing, decoy items, typography, and psychological pricing tactics to increase revenue per table.",
     url: "https://www.aimenupricer.com/blog/restaurant-menu-design-tips",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

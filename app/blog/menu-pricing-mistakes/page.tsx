@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "12 Menu Pricing Mistakes That Kill Independent Restaurants",
     description: "The pricing mistakes that show up again and again in independent restaurants, and what to check on your own menu this week.",
     url: "https://www.aimenupricer.com/blog/menu-pricing-mistakes",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

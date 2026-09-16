@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Menu Engineering: The Data-Driven Guide for Restaurant Owners",
     description: "How to use the Stars/Plowhorses/Puzzles/Dogs framework to redesign your menu and increase average check size without adding a single new dish.",
     url: "https://www.aimenupricer.com/blog/menu-engineering",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

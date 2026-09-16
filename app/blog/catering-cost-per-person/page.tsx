@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)",
     description: "Average catering costs per person for different event sizes and service styles — what to expect and what drives the price.",
     url: "https://www.aimenupricer.com/blog/catering-cost-per-person",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

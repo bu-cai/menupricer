@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     description:
       "Calculate catering cost per person for weddings, corporate events, and parties. Get accurate quotes based on headcount, menu, and service style.",
     url: "https://www.aimenupricer.com/catering-pricing-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

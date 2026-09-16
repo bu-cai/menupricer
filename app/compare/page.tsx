@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "MenuPricer vs Alternatives — Compare Menu Pricing Tools",
     description: "Side-by-side comparison of MenuPricer vs spreadsheets, Square, Toast, and more.",
     url: "https://www.aimenupricer.com/compare",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

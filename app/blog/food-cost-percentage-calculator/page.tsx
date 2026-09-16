@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Food Cost Percentage: Formula, Benchmarks & How to Calculate It",
     description: "The food cost percentage formula every restaurant owner needs — with examples, benchmarks, and a free calculator.",
     url: "https://www.aimenupricer.com/blog/food-cost-percentage-calculator",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

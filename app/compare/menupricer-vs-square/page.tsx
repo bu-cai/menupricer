@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "MenuPricer vs Square for Restaurants",
     description: "Square is a POS. MenuPricer is a menu pricing tool. They solve different problems — here's how they compare.",
     url: "https://www.aimenupricer.com/compare/menupricer-vs-square",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

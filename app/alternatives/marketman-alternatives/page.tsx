@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     description:
       "Honest comparison of MarketMan alternatives by price, setup time, and fit — including when MarketMan is still the right choice.",
     url: "https://www.aimenupricer.com/alternatives/marketman-alternatives",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

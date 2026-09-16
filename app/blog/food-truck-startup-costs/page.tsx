@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Food Truck Startup Costs: How Much Does a Food Truck Cost in 2026?",
     description: "Full breakdown of food truck startup costs — from buying the truck to permits, equipment, and first month inventory.",
     url: "https://www.aimenupricer.com/blog/food-truck-startup-costs",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

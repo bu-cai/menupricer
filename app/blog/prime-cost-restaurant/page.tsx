@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "What Is Prime Cost? Restaurant Prime Cost Formula Explained",
     description: "Prime cost definition for restaurants — formula, benchmarks, and how to use it to improve profitability.",
     url: "https://www.aimenupricer.com/blog/prime-cost-restaurant",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

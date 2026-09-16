@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Catering Pricing Guide: How Much to Charge Per Person (2026)",
     description: "Per-person catering rates by event type, food cost formula, labor markup, and sample quotes for weddings, corporate events, and parties.",
     url: "https://www.aimenupricer.com/blog/catering-pricing-guide",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

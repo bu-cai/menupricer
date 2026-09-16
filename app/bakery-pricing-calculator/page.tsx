@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     description:
       "Calculate selling price for any baked good based on ingredients, labor time, and overhead. Free tool for bakeries and home bakers.",
     url: "https://www.aimenupricer.com/bakery-pricing-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

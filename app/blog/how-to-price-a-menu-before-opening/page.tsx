@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How to Price a Menu Before You Open (No Sales History)",
     description: "A pre-opening pricing process for a menu with zero sales history to lean on.",
     url: "https://www.aimenupricer.com/blog/how-to-price-a-menu-before-opening",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

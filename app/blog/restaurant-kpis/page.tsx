@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "8 Restaurant KPIs Every Owner Should Track",
     description: "Track these 8 restaurant KPIs weekly and you will always know where your money is going — and what to do about it.",
     url: "https://www.aimenupricer.com/blog/restaurant-kpis",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

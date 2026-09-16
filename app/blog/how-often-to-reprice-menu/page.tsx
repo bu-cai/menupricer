@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How Often Should You Reprice Your Menu?",
     description: "A weekly, monthly, and trigger-based schedule for reviewing restaurant menu prices before costs quietly erode margin.",
     url: "https://www.aimenupricer.com/blog/how-often-to-reprice-menu",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

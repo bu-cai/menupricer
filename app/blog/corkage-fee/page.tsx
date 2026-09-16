@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "What Is a Corkage Fee? How Much to Charge & When to Waive It",
     description: "Corkage fee definition — what restaurants charge when guests bring their own wine, typical fee ranges, and how to set a fair policy.",
     url: "https://www.aimenupricer.com/blog/corkage-fee",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

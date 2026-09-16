@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Catering Quote Template: How to Price and Present Any Event",
     description: "What line items a catering quote needs and how to structure them so a client understands the price without a phone call.",
     url: "https://www.aimenupricer.com/blog/catering-quote-template",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

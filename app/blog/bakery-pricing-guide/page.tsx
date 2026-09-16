@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Bakery Pricing Guide: How to Price Baked Goods for Profit (2026)",
     description: "Bakery pricing formula: ingredient cost markup, labor rate for bakers, overhead per item, and sample prices for bread, cakes, pastries, and custom orders.",
     url: "https://www.aimenupricer.com/blog/bakery-pricing-guide",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

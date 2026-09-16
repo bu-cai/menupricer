@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "MenuPricer vs Craftable: Which Is Better for Restaurant Pricing? (2026)",
     description: "MenuPricer vs Craftable side-by-side: features, pricing, and which restaurant cost management tool fits your operation.",
     url: "https://www.aimenupricer.com/compare/menupricer-vs-craftable",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

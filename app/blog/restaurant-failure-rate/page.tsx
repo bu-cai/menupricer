@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Failure Rate: Why Most Restaurants Fail and How Pricing Fixes It",
     description: "Restaurant failure statistics, root causes of closure, and how menu pricing directly addresses the most common reasons restaurants go under.",
     url: "https://www.aimenupricer.com/blog/restaurant-failure-rate",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

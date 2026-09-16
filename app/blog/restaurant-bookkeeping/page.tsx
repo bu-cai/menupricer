@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Bookkeeping 101: Track Food Costs, Labor & Profit the Right Way",
     description: "How to set up restaurant bookkeeping, track food cost and labor, and read your financial numbers like an owner.",
     url: "https://www.aimenupricer.com/blog/restaurant-bookkeeping",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

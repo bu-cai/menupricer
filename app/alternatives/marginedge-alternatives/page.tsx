@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     description:
       "An honest look at MarginEdge alternatives — including when MarginEdge is worth every dollar.",
     url: "https://www.aimenupricer.com/alternatives/marginedge-alternatives",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

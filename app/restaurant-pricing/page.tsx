@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "Restaurant Menu Pricing by Country | MenuPricer",
     description: "Tax treatment, labor cost rules, and pricing benchmarks by country.",
     url: "https://www.aimenupricer.com/restaurant-pricing",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Supplier Price Increases: Negotiate or Reprice?",
     description: "A decision framework for responding to a supplier price increase — when to negotiate, when to reprice, and when to substitute instead.",
     url: "https://www.aimenupricer.com/blog/supplier-price-increases",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

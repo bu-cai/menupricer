@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Food Truck Pricing by Event Type",
     description: "Why the same food truck menu needs different pricing for street spots, festivals, and private catering bookings.",
     url: "https://www.aimenupricer.com/blog/food-truck-event-pricing",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

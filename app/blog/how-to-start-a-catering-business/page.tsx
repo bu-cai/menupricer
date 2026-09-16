@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How to Start a Catering Business: Startup Costs, Pricing & Business Plan",
     description: "Complete guide to starting a catering business — costs, pricing, licensing, and business plan tips.",
     url: "https://www.aimenupricer.com/blog/how-to-start-a-catering-business",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -30,6 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `How to Price ${data.name}: Food Cost Breakdown & Menu Price Guide`,
       description: `Food cost breakdown, worked example, and common pricing mistakes for ${data.name.toLowerCase()}.`,
       url: `${base}/how-to-price/${dish}`,
+      type: "article",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
     },
   };
 }

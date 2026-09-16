@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     description:
       "Ten free calculators for menu pricing, food cost, profit margin, and delivery commission — no signup required.",
     url: "https://www.aimenupricer.com/tools",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

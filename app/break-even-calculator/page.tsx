@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     description:
       "Calculate the revenue and covers your restaurant needs to break even, from fixed costs, average check, and variable cost percentage.",
     url: "https://www.aimenupricer.com/break-even-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "What Is Yield in Cooking? Definition, Formula & Percentage Chart",
     description: "Yield in cooking explained — definition, formula, and yield percentage reference table for proteins, vegetables, and produce.",
     url: "https://www.aimenupricer.com/blog/what-is-yield-in-cooking",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

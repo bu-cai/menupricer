@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Why ChatGPT Can't Price Your Menu (And What Actually Works)",
     description: "A general AI chatbot can explain pricing formulas but has no memory of your menu and no way to recalculate when costs change. Here's the specific gap.",
     url: "https://www.aimenupricer.com/blog/why-chatgpt-cant-price-your-menu",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

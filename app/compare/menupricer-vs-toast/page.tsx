@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "MenuPricer vs Toast POS — Menu Pricing Comparison",
     description: "Toast is a full restaurant platform. MenuPricer is a dedicated food cost and menu pricing calculator. Here's when you need each.",
     url: "https://www.aimenupricer.com/compare/menupricer-vs-toast",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

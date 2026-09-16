@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
     description: "Coffee shop drink pricing formula, food cost benchmarks, and sample price list for espresso, cold brew, and specialty beverages.",
     url: "https://www.aimenupricer.com/blog/coffee-shop-menu-pricing",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

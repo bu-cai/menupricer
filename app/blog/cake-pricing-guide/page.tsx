@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     title: "Cake Pricing Guide: How Much to Charge for a Custom Cake (2026)",
     description: "Per-serving cake pricing formula, a servings chart by cake size, and how to quote tiered and novelty cakes without underpricing your labor.",
     url: "https://www.aimenupricer.com/blog/cake-pricing-guide",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

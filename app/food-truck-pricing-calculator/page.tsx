@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     description:
       "Calculate the right menu price for food trucks. Includes ingredients, labor, truck overhead, and event fees.",
     url: "https://www.aimenupricer.com/food-truck-pricing-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

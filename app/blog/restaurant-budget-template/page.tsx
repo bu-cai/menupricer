@@ -6,7 +6,14 @@ export const metadata: Metadata = {
   title: "Restaurant Budget Template: How to Forecast Food Cost, Labor & Revenue",
   description: "How to build a restaurant budget — monthly P&L template, food cost and labor targets, revenue forecasting, and weekly actual vs budget tracking.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/restaurant-budget-template" },
-  openGraph: { url: "https://www.aimenupricer.com/blog/restaurant-budget-template" },
+  openGraph: {
+    title: "Restaurant Budget Template: How to Forecast Food Cost, Labor & Revenue",
+    description:
+      "How to build a restaurant budget — monthly P&L template, food cost and labor targets, revenue forecasting, and weekly actual vs budget tracking.",
+    url: "https://www.aimenupricer.com/blog/restaurant-budget-template",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
+  },
 };
 
 const SCHEMA = {

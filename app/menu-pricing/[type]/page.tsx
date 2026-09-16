@@ -32,6 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${data.name} Menu Pricing Calculator — MenuPricer`,
       description: `Calculate the right menu prices for your ${data.nameFull.toLowerCase()}. Target ${data.marginRange} gross margin with free AI-powered pricing.`,
       url: `${base}/menu-pricing/${type}`,
+      type: "website",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
     },
   };
 }

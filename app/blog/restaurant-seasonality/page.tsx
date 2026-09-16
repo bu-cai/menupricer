@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Restaurant Seasonality: How to Adjust Menu Prices When Ingredient Costs Change",
     description: "Manage restaurant seasonality — adjust menu prices as ingredient costs shift with the seasons without alienating regular customers.",
     url: "https://www.aimenupricer.com/blog/restaurant-seasonality",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

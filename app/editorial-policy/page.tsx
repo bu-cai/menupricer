@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     description:
       "How MenuPricer researches, sources, and updates its restaurant pricing content.",
     url: "https://www.aimenupricer.com/editorial-policy",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Portion Control: The Cheapest Way to Fix Food Cost",
     description: "How portion drift silently raises food cost, and the specific checks that catch it before it shows up on the P&L.",
     url: "https://www.aimenupricer.com/blog/portion-control-food-cost",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

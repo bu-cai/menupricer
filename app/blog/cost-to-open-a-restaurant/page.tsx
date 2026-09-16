@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How Much Does It Cost to Open a Restaurant? Full Cost Breakdown",
     description: "Complete restaurant startup cost breakdown — from lease deposits to equipment, licenses, and working capital reserves.",
     url: "https://www.aimenupricer.com/blog/cost-to-open-a-restaurant",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

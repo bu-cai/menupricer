@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     description:
       "Alternatives to major restaurant costing platforms, compared by price, setup time, and intended use.",
     url: "https://www.aimenupricer.com/alternatives",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Free Food Costing Template: How to Build a Recipe Cost Spreadsheet",
     description: "Recipe costing template guide — what columns you need, how to calculate food cost percentage, and a free online alternative to spreadsheets.",
     url: "https://www.aimenupricer.com/blog/food-costing-template",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

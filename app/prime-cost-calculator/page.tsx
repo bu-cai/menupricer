@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     description:
       "Calculate your restaurant's prime cost percentage from revenue, food cost, and labor cost. See how it compares to industry benchmarks.",
     url: "https://www.aimenupricer.com/prime-cost-calculator",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     description:
       "Three practical ways to cost a restaurant menu when the recipes were never written down.",
     url: "https://www.aimenupricer.com/blog/recipe-costing-without-recipes",
+    type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 

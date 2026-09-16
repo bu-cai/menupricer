@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     description:
       "Plain-language definitions for restaurant pricing and food cost terms, with links to the full guide for each.",
     url: "https://www.aimenupricer.com/glossary",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
   },
 };
 
