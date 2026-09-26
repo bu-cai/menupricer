@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "What prime cost means in a restaurant, the prime cost formula, industry benchmarks, and strategies to reduce it without sacrificing quality.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/prime-cost-restaurant",
 };
 

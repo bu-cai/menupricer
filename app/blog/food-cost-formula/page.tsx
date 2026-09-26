@@ -5,11 +5,11 @@ import LogoIcon from "@/components/LogoIcon";
 export const metadata: Metadata = {
   title: "Food Cost Formula: How to Calculate Food Cost Percentage (2026)",
   description:
-    "The exact food cost formula restaurant owners use to calculate food cost percentage per dish and across the full menu — with examples, benchmarks, and a free calculator.",
+    "Food cost % = (Ingredient cost ÷ Menu price) × 100. Target 28–35% for most restaurants. Full formula breakdown, worked examples for every restaurant type, and a free calculator.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/food-cost-formula" },
   openGraph: {
     title: "Food Cost Formula: Calculate Food Cost Percentage",
-    description: "The exact formula to calculate food cost per dish and food cost percentage — with examples for every restaurant type.",
+    description: "Food cost % = (Ingredient cost ÷ Menu price) × 100. Full formula with worked examples, benchmarks by restaurant type, and a free calculator.",
     url: "https://www.aimenupricer.com/blog/food-cost-formula",
     images: [{ url: "/images/hero-restaurant-pricing.png", width: 1200, height: 630, alt: "Restaurant owner calculating food cost percentage" }],
   },
@@ -23,7 +23,7 @@ const SCHEMA = {
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   datePublished: "2026-06-15",
-  dateModified: "2026-07-21",
+  dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/food-cost-formula",
 };
 

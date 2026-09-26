@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "How to calculate food cost percentage — the formula, worked examples, and industry benchmarks for restaurants, cafes, food trucks, and bakeries.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/food-cost-percentage-calculator",
 };
 

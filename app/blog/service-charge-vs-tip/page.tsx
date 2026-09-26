@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "The difference between a service charge, tip, and gratuity at a restaurant — definitions, who keeps the money, and the operator perspective on setting policy.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/service-charge-vs-tip",
 };
 

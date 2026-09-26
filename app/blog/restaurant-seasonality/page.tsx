@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Guide to managing restaurant seasonality — how ingredient cost swings affect food cost percentage, when to reprice the menu, how to build seasonal menus, and how to protect profit margins.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-seasonality",
 };
 

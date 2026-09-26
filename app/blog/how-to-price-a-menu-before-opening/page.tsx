@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "A step-by-step process for pricing a restaurant menu before opening day, when there is no sales history, no actual vs. theoretical food cost comparison, and no data on which dishes will sell.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/how-to-price-a-menu-before-opening",
 };
 

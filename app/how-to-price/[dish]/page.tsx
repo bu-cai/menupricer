@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {};
   const base = "https://www.aimenupricer.com";
   return {
-    title: `How to Price ${data.name}`,
-    description: `${data.name} typically runs a food cost of ${data.foodCostRange}, supporting a menu price of ${data.typicalPriceRange}. Full ingredient cost breakdown, worked example, and common pricing mistakes.`,
+    title: `How to Price ${data.name} [2026]: ${data.typicalPriceRange} Menu Price Guide`,
+    description: `${data.name} typically sells for ${data.typicalPriceRange} on restaurant menus, with a food cost of ${data.foodCostRange}. Full ingredient cost breakdown, worked pricing example, and the top mistakes that erode your margins.`,
     keywords: [
       `how to price ${data.name.toLowerCase()}`,
       `${data.name.toLowerCase()} food cost`,
@@ -57,7 +57,7 @@ export default async function DishPricePage({ params }: Props) {
             author: { "@type": "Organization", name: "MenuPricer", url: base },
             publisher: { "@type": "Organization", name: "MenuPricer", url: base },
             datePublished: "2026-07-28",
-            dateModified: "2026-07-28",
+            dateModified: "2026-09-27",
             mainEntityOfPage: `${base}/how-to-price/${dish}`,
           }),
         }}

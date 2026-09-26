@@ -22,7 +22,7 @@ const SCHEMA = {
   description: "Food costing and recipe costing software compared by category — recipe costing, invoice/AP automation, and full inventory control — with who each is built for.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-08-21", dateModified: "2026-08-21",
+  datePublished: "2026-08-21", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/best-food-costing-software",
 };
 

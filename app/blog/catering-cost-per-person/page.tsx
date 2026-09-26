@@ -4,11 +4,11 @@ import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
   title: "Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)",
-  description: "How much does catering cost per person? Average catering prices for 50, 100, and 150 guests — by service style, event type, and what is included in the quote.",
+  description: "How much does catering cost per person? Expect $25–$150/head for most events. Full price breakdown for 50, 100 & 150 guests by service style, event type, and what's included.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/catering-cost-per-person" },
   openGraph: {
     title: "Catering Cost Per Person: Prices for 50, 100 & 150 Guests (2026)",
-    description: "Average catering costs per person for different event sizes and service styles — what to expect and what drives the price.",
+    description: "Catering costs $25–$150/head depending on service style. Full price breakdown for 50, 100 & 150 guests — what to expect and what drives the price.",
     url: "https://www.aimenupricer.com/blog/catering-cost-per-person",
     type: "article",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "What catering costs per person for different event sizes, service styles, and event types — with average price ranges and what is included.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/catering-cost-per-person",
 };
 

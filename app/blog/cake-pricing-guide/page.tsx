@@ -22,7 +22,7 @@ const SCHEMA = {
   description: "Per-serving cake pricing formula, servings chart by cake size, and how independent cake decorators avoid underpricing labor and design time.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-30", dateModified: "2026-07-30",
+  datePublished: "2026-07-30", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/cake-pricing-guide",
 };
 

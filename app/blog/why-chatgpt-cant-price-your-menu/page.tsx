@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "General AI chatbots can explain the food cost formula accurately but have no persistent memory of your specific menu, no way to recalculate saved dishes when a supplier price changes, and can give different answers to the same question twice.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/why-chatgpt-cant-price-your-menu",
 };
 

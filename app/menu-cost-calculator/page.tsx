@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MenuCostCalculatorClient from "./MenuCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Menu Cost Calculator — Price Any Dish",
+  title: "Menu Cost Calculator [Free] — Price Any Dish in 30 Seconds",
   description:
-    "Free menu cost calculator for restaurant owners. Enter your ingredient costs, set your target margin, and instantly get the right menu price. Calculate menu item cost, profit margin, and food cost percentage.",
+    "Free menu cost calculator for restaurant owners. Enter ingredient cost + target margin → get the right menu price instantly. No signup required. Works for any dish, any restaurant type.",
   keywords: [
     "menu cost calculator",
     "menu pricing calculator",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://www.aimenupricer.com/menu-cost-calculator",
   },
   openGraph: {
-    title: "Menu Cost Calculator — Free Menu Pricing Tool for Restaurants",
+    title: "Menu Cost Calculator [Free] — Price Any Dish in 30 Seconds",
     description:
-      "Calculate the perfect menu price in seconds. Enter ingredient cost, set your margin target, and get your ideal price — free for restaurant owners.",
+      "Enter ingredient cost + target margin → get the right menu price instantly. Free for restaurant owners. No signup. Works for any dish or restaurant type.",
     url: "https://www.aimenupricer.com/menu-cost-calculator",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],

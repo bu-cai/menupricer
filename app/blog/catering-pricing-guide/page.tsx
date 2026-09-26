@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Per-person catering pricing benchmarks, food cost formula for catering, and how to build quotes for weddings, corporate events, and social catering.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-22", dateModified: "2026-07-22",
+  datePublished: "2026-07-22", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/catering-pricing-guide",
 };
 

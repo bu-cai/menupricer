@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Coffee shop pricing formula, average food cost benchmarks for cafes, and a complete sample price list for espresso drinks, cold brew, and food items.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-22", dateModified: "2026-07-22",
+  datePublished: "2026-07-22", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/coffee-shop-menu-pricing",
 };
 

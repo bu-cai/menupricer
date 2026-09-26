@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "The 8 most critical restaurant KPIs: food cost percentage, labor cost percentage, prime cost, table turnover rate, average check size, RevPASH, customer acquisition cost, and net profit margin.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-kpis",
 };
 

@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "The definition of a corkage fee, typical amounts charged at restaurants, how to set a corkage policy, and when to waive the fee to maintain goodwill.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/corkage-fee",
 };
 

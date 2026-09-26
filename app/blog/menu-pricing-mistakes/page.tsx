@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "The recurring pricing mistakes that quietly erode restaurant profit, from copying competitor prices without checking their cost structure to never repricing after a supplier increase.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/menu-pricing-mistakes",
 };
 

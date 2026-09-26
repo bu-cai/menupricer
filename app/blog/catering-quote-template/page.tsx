@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "A catering quote needs to cover food cost, labor, equipment rental, and travel while remaining clear enough for a client to approve without a follow-up call. The structure and line items that make that possible.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/catering-quote-template",
 };
 

@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Complete breakdown of restaurant startup costs including commercial lease, kitchen build-out, equipment, licenses, pre-opening labor, and working capital requirements by restaurant type.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/cost-to-open-a-restaurant",
 };
 

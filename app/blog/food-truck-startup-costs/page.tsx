@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Complete breakdown of food truck startup costs including truck purchase, kitchen equipment, permits, licenses, and ongoing monthly expenses.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/food-truck-startup-costs",
 };
 

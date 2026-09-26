@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Step-by-step guide to starting a catering business, including startup costs, catering business plan, pricing strategy, licensing requirements, and marketing tips.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/how-to-start-a-catering-business",
 };
 

@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Meal prep businesses need a different pricing model than a restaurant menu because batch production cost and subscription-based revenue create a different cost and cancellation structure.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/meal-prep-business-pricing",
 };
 

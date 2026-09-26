@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "A concrete review schedule for restaurant menu pricing — weekly checks, monthly deep reviews, and the specific triggers that should force an immediate reprice regardless of calendar.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/how-often-to-reprice-menu",
 };
 

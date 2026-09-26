@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "How to read a restaurant profit and loss statement, what each line item means, and how to use the P&L to find and fix the biggest drains on profitability.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-profit-loss-statement",
 };
 

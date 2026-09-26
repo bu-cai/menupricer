@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "What ghost kitchens are, what they cost to start, and how to price your menu when your only revenue channel is delivery platforms.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/ghost-kitchen-pricing",
 };
 

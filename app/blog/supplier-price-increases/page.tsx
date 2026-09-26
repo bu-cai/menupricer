@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "A decision framework for responding to a supplier price increase, based on whether the increase is industry-wide or supplier-specific, and how much of your menu the ingredient actually touches.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/supplier-price-increases",
 };
 

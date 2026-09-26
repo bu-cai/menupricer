@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "A food truck's real cost structure shifts significantly between a daily street lunch spot, a weekend festival with a vendor fee, and a private catering booking — and pricing should shift with it.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/food-truck-event-pricing",
 };
 

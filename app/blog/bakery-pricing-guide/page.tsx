@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Bakery product pricing formula — ingredient cost markup, labor, overhead, and custom cake pricing for retail and wholesale bakery operations.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-22", dateModified: "2026-07-22",
+  datePublished: "2026-07-22", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/bakery-pricing-guide",
 };
 

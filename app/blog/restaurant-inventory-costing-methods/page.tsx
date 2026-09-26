@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Complete guide to restaurant inventory costing methods — FIFO (First In, First Out) vs weighted average cost, how each affects food cost reporting, and when to use each method.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-inventory-costing-methods",
 };
 

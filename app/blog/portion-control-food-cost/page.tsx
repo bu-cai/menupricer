@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "Portion drift is one of the most common and least noticed sources of rising food cost. Fixing it requires no new equipment or supplier negotiation — just measurement and a consistent standard.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-28", dateModified: "2026-07-28",
+  datePublished: "2026-07-28", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/portion-control-food-cost",
 };
 

@@ -23,7 +23,7 @@ const SCHEMA = {
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   datePublished: "2026-07-21",
-  dateModified: "2026-07-21",
+  dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/recipe-yield",
 };
 

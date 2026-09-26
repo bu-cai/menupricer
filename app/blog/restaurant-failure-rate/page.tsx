@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "The restaurant failure rate is often cited as 90% — the reality is more nuanced. Learn what actually causes restaurants to close, and how pricing is at the center of most failures.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-25", dateModified: "2026-07-25",
+  datePublished: "2026-07-25", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/restaurant-failure-rate",
 };
 

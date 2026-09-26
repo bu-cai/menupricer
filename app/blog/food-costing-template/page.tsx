@@ -4,11 +4,11 @@ import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
   title: "Free Food Costing Template: How to Build a Recipe Cost Spreadsheet",
-  description: "A free food costing template for restaurants — what to include, how to set up your recipe cost spreadsheet, and how to use it to price every dish profitably.",
+  description: "Free food costing template for restaurants. Download or copy our recipe cost spreadsheet — includes ingredient cost columns, yield %, food cost %, and suggested menu price formula.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/food-costing-template" },
   openGraph: {
     title: "Free Food Costing Template: How to Build a Recipe Cost Spreadsheet",
-    description: "Recipe costing template guide — what columns you need, how to calculate food cost percentage, and a free online alternative to spreadsheets.",
+    description: "Free recipe cost spreadsheet template — ingredient cost columns, yield %, food cost %, and suggested menu price. Plus a faster online alternative.",
     url: "https://www.aimenupricer.com/blog/food-costing-template",
     type: "article",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "What to include in a food costing template, how to structure your recipe costing spreadsheet, and how to use it to set profitable menu prices.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/food-costing-template",
 };
 

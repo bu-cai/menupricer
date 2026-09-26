@@ -21,7 +21,7 @@ const SCHEMA = {
   description: "What yield means in cooking and recipe development — how to calculate yield percentage and why it matters for food costing and menu pricing.",
   author: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
   publisher: { "@type": "Organization", name: "MenuPricer", url: "https://www.aimenupricer.com" },
-  datePublished: "2026-07-24", dateModified: "2026-07-24",
+  datePublished: "2026-07-24", dateModified: "2026-09-27",
   mainEntityOfPage: "https://www.aimenupricer.com/blog/what-is-yield-in-cooking",
 };
 
