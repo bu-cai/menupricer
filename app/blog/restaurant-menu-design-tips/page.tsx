@@ -37,7 +37,7 @@ const BREADCRUMB = {
 const FAQ_SCHEMA = {
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "What is the most important rule in restaurant menu design?", acceptedAnswer: { "@type": "Answer", text: "The most important rule is item placement. Eye-tracking research from Cornell University shows customers most often look at the upper-right corner of a two-panel menu first — a zone called the 'golden triangle.' Place your highest-margin dishes in these prime locations. The items in the best positions sell 20-30% more than identical items placed elsewhere on the menu." } },
+    { "@type": "Question", name: "What is the most important rule in restaurant menu design?", acceptedAnswer: { "@type": "Answer", text: "The most important rule is item placement. Eye-tracking research on menu scanning behavior shows customers most often look toward the upper-right corner of a two-panel menu first — a zone commonly called the 'golden triangle.' Place your highest-margin dishes in these prime locations. Industry menu-engineering studies commonly report a 20-30% sales lift for items in the best positions, though the exact figure varies by study and menu format." } },
     { "@type": "Question", name: "How many items should a restaurant menu have?", acceptedAnswer: { "@type": "Answer", text: "Research suggests the ideal menu size is 7 items per category (the Hick's Law principle for decision-making). More choices increase decision fatigue and slow table turns. Fine dining can go as low as 5-6 per category; fast casual can extend to 10-12 if categories are well-organized. The golden rule: if adding an item doesn't either serve a new customer segment or significantly increase margin, remove an item instead." } },
     { "@type": "Question", name: "Should restaurants use $ signs on their menus?", acceptedAnswer: { "@type": "Answer", text: "No. Research from Cornell University's Center for Hospitality Research found that removing $ signs from menus increases spending by an average of 8.15%. The dollar sign triggers 'pain of paying' psychology. Instead, list prices as plain numbers (e.g., 18 instead of $18.00). Also avoid decimal points unless necessary — '18' reads better than '18.00' and reduces price salience." } },
     { "@type": "Question", name: "What is menu anchoring and how does it work?", acceptedAnswer: { "@type": "Answer", text: "Menu anchoring means placing an expensive item prominently to make other items seem more reasonably priced by comparison. A $68 prime rib at the top of your entrees list makes the $34 salmon look like a great value — even if $34 is above your normal price range. The anchor doesn't need to sell well; its job is to shift price perception for everything around it. Most restaurants see a 10-20% increase in average entree sales after strategic anchoring." } },
@@ -47,13 +47,14 @@ const FAQ_SCHEMA = {
 const TIPS = [
   {
     n: "01", title: "Place high-margin items in the golden triangle",
-    body: "Eye-tracking studies show customers scan two-panel menus starting upper-right, then upper-left, then center. These zones — the golden triangle — get disproportionate attention. Put your Stars (high-margin, high-popularity) here. Items in prime positions sell 20-30% more than the same dish placed elsewhere.",
+    body: "Eye-tracking studies show customers scan two-panel menus starting upper-right, then upper-left, then center. These zones — the golden triangle — get disproportionate attention. Put your Stars (high-margin, high-popularity) here. Menu-engineering research commonly cites a 20-30% sales lift for items in prime positions, though the exact figure varies by study.",
     tag: "Layout"
   },
   {
     n: "02", title: "Remove the $ sign from every price",
-    body: "Cornell University research found removing $ signs increases average spending by 8.15%. The dollar sign activates 'pain of paying' in the brain. Write prices as plain numbers: 18 not $18.00. While you're at it, remove decimal points too — 18 not 18.00 reduces price salience further.",
-    tag: "Psychology"
+    body: "A Cornell University study found removing $ signs increased average per-person spending by 8.15%. The dollar sign activates 'pain of paying' in the brain. Write prices as plain numbers: 18 not $18.00. While you're at it, remove decimal points too — 18 not 18.00 reduces price salience further.",
+    tag: "Psychology",
+    source: { label: "Cornell Chronicle, 2009", href: "https://news.cornell.edu/stories/2009/12/beware-menus-dont-use-dollar-signs" },
   },
   {
     n: "03", title: "Use an anchor item to shift price perception",
@@ -92,7 +93,7 @@ const TIPS = [
   },
   {
     n: "10", title: "Add photos selectively — not for everything",
-    body: "Photos increase sales of the specific item shown by 20-30%. But photos for every item cheapen the menu and signal a chain restaurant aesthetic. Use 1-3 curated photos per menu spread, of your most photogenic and highest-margin dishes. Avoid stock photography — use real photos of your actual food.",
+    body: "Photos are commonly reported to lift sales of the specific item shown by 20-30% in menu-engineering case studies. But photos for every item cheapen the menu and signal a chain restaurant aesthetic. Use 1-3 curated photos per menu spread, of your most photogenic and highest-margin dishes. Avoid stock photography — use real photos of your actual food.",
     tag: "Visual"
   },
   {
@@ -172,6 +173,11 @@ export default function RestaurantMenuDesignTipsPage() {
                       </>
                     ) : tip.body}
                   </p>
+                  {"source" in tip && tip.source && (
+                    <a href={tip.source.href} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-xs text-gray-400 hover:text-orange-500 underline">
+                      Source: {tip.source.label}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

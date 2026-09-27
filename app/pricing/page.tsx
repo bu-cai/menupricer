@@ -252,6 +252,7 @@ export default function PricingPage() {
               <p className="text-xs text-gray-400 mt-1">left on the table<br />per month</p>
             </div>
           </div>
+          <p className="text-xs text-gray-500 text-center -mt-3 mb-6">$2 × 50 covers/day × 30 days/month = $3,000/month</p>
           <p className="text-sm text-gray-400 text-center border-t border-gray-700 pt-5">
             MenuPricer Pro costs <span className="text-white font-bold">$9/month</span>. It pays for itself the first time you find one underpriced dish — which usually happens in the first sitting.
           </p>
