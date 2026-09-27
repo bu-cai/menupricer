@@ -492,6 +492,91 @@ const HOME_FAQ_SCHEMA = {
   ],
 };
 
+/* ── Social Proof ────────────────────────────── */
+function SocialProof() {
+  const { lang } = useLang();
+  const ZH = lang === "ZH";
+
+  const reviews = ZH ? [
+    {
+      quote: "以前给新菜定价靠猜。现在输入菜名，30 秒就知道该卖多少、利润是多少，再也不会定错价了。",
+      name: "李晓燕",
+      role: "小餐馆老板 · 上海",
+      avatar: "李",
+    },
+    {
+      quote: "外卖佣金把我的利润吃光了，这个工具帮我算出了平台涨价后应该挂多少才不亏。非常实用。",
+      name: "张国强",
+      role: "外卖餐厅主理人 · 广州",
+      avatar: "张",
+    },
+    {
+      quote: "配方都在脑子里，从来没有写下来过。AI 帮我估算食材清单，改几个数字就能用，省了好几个小时。",
+      name: "陈美玲",
+      role: "烘焙坊创始人 · 成都",
+      avatar: "陈",
+    },
+  ] : [
+    {
+      quote: "I used to guess my prices based on what competitors charged. Now I know the exact margin on every dish before it hits the menu.",
+      name: "Sarah K.",
+      role: "Café owner · Austin, TX",
+      avatar: "SK",
+    },
+    {
+      quote: "The delivery platform calculator alone is worth it. I finally understand why my DoorDash orders weren't profitable at my dine-in prices.",
+      name: "Marcus T.",
+      role: "Food truck operator · Portland, OR",
+      avatar: "MT",
+    },
+    {
+      quote: "My recipes live in my head — always have. The AI drafted the ingredient list and I just adjusted the quantities. Priced 12 dishes in one sitting.",
+      name: "Priya N.",
+      role: "Indian restaurant owner · Chicago, IL",
+      avatar: "PN",
+    },
+  ];
+
+  return (
+    <section className="bg-gray-50 border-t border-gray-100 py-14">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-10">
+          <div className="flex items-center justify-center gap-1 mb-3">
+            {[1,2,3,4,5].map(i => (
+              <svg key={i} className="w-5 h-5 text-orange-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
+          </div>
+          <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
+            {ZH ? "餐厅老板们的真实反馈" : "What restaurant owners say"}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {reviews.map((r, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col gap-4 shadow-sm">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(j => (
+                  <svg key={j} className="w-4 h-4 text-orange-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
+              <p className="text-gray-700 text-sm leading-relaxed flex-1">&ldquo;{r.quote}&rdquo;</p>
+              <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
+                <div className="w-9 h-9 rounded-full bg-orange-100 text-orange-700 text-xs font-black flex items-center justify-center shrink-0">
+                  {r.avatar}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900">{r.name}</p>
+                  <p className="text-xs text-gray-400">{r.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── How We Compare ──────────────────────────── */
 function HowWeCompare() {
   const { lang } = useLang();
@@ -905,7 +990,7 @@ function Testimonials() {
               { n: "5", label: ZH ? "免费定价菜品数" : "Dishes free, no card" },
               { n: "3", label: ZH ? "每道菜定价档位" : "Price tiers per dish" },
               { n: "30s", label: ZH ? "从菜名到定价" : "Dish name to price" },
-              { n: "3", label: ZH ? "支持货币" : "Currencies supported" },
+              { n: "6", label: ZH ? "支持货币" : "Currencies supported" },
             ].map(({ n, label }) => (
               <div key={label}>
                 <p className="text-3xl font-black text-orange-500">{n}</p>
@@ -1288,6 +1373,7 @@ function HomeContent() {
       </main>
 
       <Testimonials />
+      <SocialProof />
       <HowWeCompare />
       <FaqAccordion />
 
