@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/what-should-food-cost-be`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/how-to-price-baked-goods`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/menu-costing-guide`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/menu-pricing-formula`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     // Resource pages — free tools targeting informational keywords
     { url: `${base}/recipe-costing-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/food-cost-spreadsheet`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },

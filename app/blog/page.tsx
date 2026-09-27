@@ -21,6 +21,14 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: "menu-pricing-formula",
+    title: "Menu Pricing Formula: Turn Food Cost Into the Right Price",
+    description: "The formula for turning ingredient cost into a sellable price — a manual ingredient cost calculator walkthrough, the Q factor buffer, and worked examples.",
+    category: "Menu Pricing",
+    readTime: "7 min read",
+    featured: true,
+  },
+  {
     slug: "recipe-costing-without-recipes",
     title: "You Don't Have Written Recipes. Here's How to Cost Your Menu Anyway",
     description: "Most costing tools assume you already have written recipes — most working kitchens don't. Three practical ways to cost a menu when the recipes only exist in someone's head, two of which need no software at all.",

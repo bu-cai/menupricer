@@ -5,7 +5,7 @@ import LogoIcon from "@/components/LogoIcon";
 export const metadata: Metadata = {
   title: "Restaurant Pricing Glossary",
   description:
-    "Plain-language definitions for 30 restaurant pricing and food cost terms — food cost percentage, prime cost, menu engineering, yield, par level, and more.",
+    "Plain-language definitions for 31 restaurant pricing and food cost terms — food cost percentage, prime cost, menu engineering, yield, par level, and more.",
   alternates: { canonical: "https://www.aimenupricer.com/glossary" },
   openGraph: {
     title: "Restaurant Pricing Glossary | MenuPricer",
@@ -143,6 +143,11 @@ const TERMS: Term[] = [
     term: "Prime Cost",
     def: "Food cost plus labor cost combined, as a percentage of revenue. It's the fastest single diagnostic for restaurant health because it captures your two largest controllable expenses in one number, typically targeted at 55–65%.",
     href: "/blog/prime-cost-restaurant",
+  },
+  {
+    term: "Q Factor",
+    def: "A small percentage — typically 3% to 8% — added on top of a recipe's itemized ingredient cost to cover items too minor to track line by line: cooking oil, salt, pepper, garnish, a splash of wine. Skipping it means every dish quietly under-costs by a few percent.",
+    href: "/blog/menu-pricing-formula",
   },
   {
     term: "RevPASH",
