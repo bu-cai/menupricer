@@ -1036,12 +1036,20 @@ function HomeContent() {
     fetch("/api/user/plan").then(r => r.json()).then(d => setUserPlan(d.plan ?? "free"));
   }, [session]);
 
-  // Show success toast after Stripe redirect
+  // Handle URL params: ?upgraded=1 (Stripe redirect back) and ?upgrade=1|annual (pricing page CTA)
   useEffect(() => {
-    if (typeof window !== "undefined" && new URLSearchParams(window.location.search).get("upgraded") === "1") {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("upgraded") === "1") {
       setUserPlan("pro");
       setSyncToast(true);
       setTimeout(() => setSyncToast(false), 4000);
+      window.history.replaceState({}, "", "/");
+    }
+    const upgradeParam = params.get("upgrade");
+    if (upgradeParam === "1" || upgradeParam === "annual") {
+      setUpgradeReason("upgrade_required");
+      setShowUpgrade(true);
       window.history.replaceState({}, "", "/");
     }
   }, []);
