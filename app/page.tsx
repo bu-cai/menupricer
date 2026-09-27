@@ -21,7 +21,7 @@ import { exportMenuPdf } from "@/lib/exportMenuPdf";
 import LogoIcon from "@/components/LogoIcon";
 import UpgradeModal from "@/components/UpgradeModal";
 import LoginModal from "@/components/LoginModal";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import {
   cloudLoadMenus, cloudSaveMenus,
   cloudLoadHistory, cloudSaveHistory,
@@ -1246,7 +1246,6 @@ function HomeContent() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <OnboardingModal />
       {showUpgrade && (
         <UpgradeModal reason="menu_limit" onClose={() => setShowUpgrade(false)} />
       )}
@@ -1322,6 +1321,32 @@ function HomeContent() {
           <div className={activeTab === "pricer" ? "grid grid-cols-1 lg:grid-cols-2 gap-8 pb-24 lg:pb-0" : "hidden"}>
             {/* Left: Form */}
             <div className="space-y-5">
+              {/* Free quota counter — only show once at least 1 dish is priced */}
+              {userPlan === "free" && menuItems.length > 0 && (
+                <div className="bg-white rounded-xl border border-gray-200 px-4 py-3">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs text-gray-500">
+                      {lang === "ZH" ? "免费菜品额度" : "Free dishes used"}
+                    </span>
+                    <span className={`text-xs font-bold ${menuItems.length >= FREE_LIMIT ? "text-orange-600" : "text-gray-700"}`}>
+                      {menuItems.length}/{FREE_LIMIT}
+                    </span>
+                  </div>
+                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                    <div
+                      className={`h-full rounded-full transition-all duration-500 ${menuItems.length >= FREE_LIMIT ? "bg-orange-500" : menuItems.length >= FREE_LIMIT - 1 ? "bg-amber-400" : "bg-orange-400"}`}
+                      style={{ width: `${Math.min((menuItems.length / FREE_LIMIT) * 100, 100)}%` }}
+                    />
+                  </div>
+                  {menuItems.length >= FREE_LIMIT - 1 && (
+                    <p className="text-xs text-orange-600 font-semibold mt-1.5">
+                      {menuItems.length >= FREE_LIMIT
+                        ? (lang === "ZH" ? "免费额度已用完 — 升级后可无限添加" : "Free limit reached — upgrade to add unlimited dishes")
+                        : (lang === "ZH" ? "仅剩 1 个免费名额" : "1 free dish remaining")}
+                    </p>
+                  )}
+                </div>
+              )}
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 hover:shadow-md transition-shadow">
                 <CostForm
                   onSubmit={handleSubmit}
@@ -1365,6 +1390,31 @@ function HomeContent() {
               />
               {prices.length > 0 && (
                 <ProfitChart totalCost={totalCost} prices={prices} labels={priceLabels} />
+              )}
+              {/* Save nudge — shown after first result, only for guests */}
+              {result && !loading && !session && (
+                <div className="bg-orange-50 border border-orange-200 rounded-xl px-4 py-3.5 flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-gray-800">
+                      {lang === "ZH" ? "登录后保存这道菜" : "Save this dish to My Menu"}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-0.5 truncate">
+                      {lang === "ZH" ? "免费登录 · 多设备同步 · 随时查看" : "Free · Cloud sync · Access anywhere"}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => signIn("google")}
+                    className="flex items-center gap-2 bg-white border border-gray-200 hover:border-orange-300 hover:bg-orange-50 text-sm font-bold text-gray-700 px-3 py-2 rounded-lg transition-all whitespace-nowrap flex-shrink-0 shadow-sm"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    {lang === "ZH" ? "Google 登录" : "Sign in"}
+                  </button>
+                </div>
               )}
               {!result && !loading && <ExamplePreview />}
             </div>
