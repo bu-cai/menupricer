@@ -86,10 +86,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/catering-quote-template`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/cake-pricing-guide`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/blog/best-food-costing-software`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/blog/what-is-food-cost-percentage`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/food-cost-management`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // Alternatives — high commercial intent
     { url: `${base}/alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/alternatives/marketman-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/alternatives/marginedge-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/alternatives/meez-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/alternatives/menu-coster-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     // Free tools hub & glossary
     { url: `${base}/tools`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
