@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import BakeryCalculatorClient from "./BakeryCalculatorClient";
 
 export const metadata: Metadata = {
@@ -145,6 +146,29 @@ export default function BakeryCalculatorPage() {
         }}
       />
       <BakeryCalculatorClient />
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/blog/bakery-pricing-guide" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Bakery</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Bakery Pricing Guide: Price Baked Goods for Profit →</p>
+            </Link>
+            <Link href="/blog/cake-pricing-guide" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Bakery</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Cake Pricing Guide: How Much to Charge →</p>
+            </Link>
+            <Link href="/blog/how-to-price-baked-goods" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Bakery</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">How to Price Baked Goods: The Formula →</p>
+            </Link>
+            <Link href="/recipe-cost-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Free Tool</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Recipe Cost Calculator — Cost Per Serving →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

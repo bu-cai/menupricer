@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CocktailPricingCalculatorClient from "./CocktailPricingCalculatorClient";
 
 export const metadata: Metadata = {
@@ -125,6 +126,29 @@ export default function CocktailPricingCalculatorPage() {
         }}
       />
       <CocktailPricingCalculatorClient />
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/blog/food-cost-formula" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Cost</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Food Cost Formula: Calculate Food Cost % →</p>
+            </Link>
+            <Link href="/blog/markup-vs-margin" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Markup vs Margin: The Mistake That Costs Thousands →</p>
+            </Link>
+            <Link href="/blog/restaurant-menu-design-tips" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Design</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Restaurant Menu Design Tips: 12 Rules →</p>
+            </Link>
+            <Link href="/restaurant-markup-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Free Tool</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Restaurant Markup Calculator →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

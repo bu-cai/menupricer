@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import RecipeCostCalculatorClient from "./RecipeCostCalculatorClient";
 
 export const metadata: Metadata = {
@@ -143,6 +144,29 @@ export default function RecipeCostCalculatorPage() {
         }}
       />
       <RecipeCostCalculatorClient />
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/blog/how-to-cost-a-dish" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Cost</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">How to Cost a Dish: Step-by-Step Guide →</p>
+            </Link>
+            <Link href="/blog/recipe-costing-without-recipes" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Cost</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">No Written Recipes? Cost Your Menu Anyway →</p>
+            </Link>
+            <Link href="/blog/menu-pricing-formula" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Menu Pricing Formula: Turn Food Cost Into a Price →</p>
+            </Link>
+            <Link href="/food-cost-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Free Tool</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Free Food Cost Calculator →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

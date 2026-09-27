@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import FoodTruckCalculatorClient from "./FoodTruckCalculatorClient";
 
 export const metadata: Metadata = {
@@ -144,6 +145,29 @@ export default function FoodTruckCalculatorPage() {
         }}
       />
       <FoodTruckCalculatorClient />
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/blog/food-truck-startup-costs" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Truck</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Food Truck Startup Costs: Full Breakdown →</p>
+            </Link>
+            <Link href="/blog/food-truck-event-pricing" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Food Truck</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Food Truck Pricing by Event Type →</p>
+            </Link>
+            <Link href="/blog/how-to-price-a-restaurant-menu" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Menu Pricing</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">How to Price a Restaurant Menu: Complete Guide →</p>
+            </Link>
+            <Link href="/delivery-platform-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Free Tool</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">DoorDash & Uber Eats Commission Calculator →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

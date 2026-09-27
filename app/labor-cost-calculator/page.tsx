@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LaborCostCalculatorClient from "./LaborCostCalculatorClient";
 
 export const metadata: Metadata = {
@@ -125,6 +126,29 @@ export default function LaborCostCalculatorPage() {
         }}
       />
       <LaborCostCalculatorClient />
+      <div className="bg-gray-50 border-t border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Related guides</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href="/blog/prime-cost-restaurant" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Profitability</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">What Is Prime Cost? Formula Explained →</p>
+            </Link>
+            <Link href="/blog/restaurant-kpis" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Profitability</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">8 Restaurant KPIs Every Owner Should Track →</p>
+            </Link>
+            <Link href="/blog/restaurant-budget-template" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Profitability</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Restaurant Budget Template →</p>
+            </Link>
+            <Link href="/prime-cost-calculator" className="group bg-white border border-gray-200 hover:border-orange-300 rounded-xl p-4 transition-all">
+              <p className="text-xs text-orange-500 font-bold mb-1">Free Tool</p>
+              <p className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Prime Cost Calculator →</p>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
