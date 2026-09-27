@@ -13,7 +13,7 @@ const translations = {
 
   // CostForm
   dishName: { EN: "Dish Name", ZH: "菜品名称" },
-  dishNamePlaceholder: { EN: "e.g. General Tso's Chicken", ZH: "例：左宗鸡" },
+  dishNamePlaceholder: { EN: "e.g. General Tso's Chicken", ZH: "例：左宗棠鸡" },
   ingredients: { EN: "Ingredients", ZH: "食材清单" },
   addIngredient: { EN: "+ Add Ingredient", ZH: "+ 添加食材" },
   ingredientName: { EN: "Ingredient", ZH: "食材名" },
@@ -93,6 +93,10 @@ const translations = {
   totalCostBaseline: { EN: "Total cost baseline", ZH: "总成本基准" },
   profit: { EN: "profit", ZH: "利润" },
   aiEstimated: { EN: "✨ AI Estimated", ZH: "✨ AI 估算" },
+  aiEstimatedDisclaimer: {
+    EN: "Costs estimated by AI based on typical North American wholesale prices. Adjust for your actual supplier costs for more accurate pricing.",
+    ZH: "以上成本为 AI 根据北美市场批发价估算，请结合你的实际供应商成本调整，定价会更准确。",
+  },
   currencyLabel: { EN: "Currency", ZH: "货币" },
   shareBtn: { EN: "Share", ZH: "分享" },
   shareCopied: { EN: "✓ Link copied!", ZH: "✓ 链接已复制！" },
@@ -137,7 +141,7 @@ const translations = {
 
   // Empty state
   emptyHint: { EN: "👆 Fill in costs to generate analysis", ZH: "👆 填写左侧即可生成类似分析" },
-  exampleLabel: { EN: "Example: General Tso's Chicken", ZH: "示例：左宗鸡" },
+  exampleLabel: { EN: "Example: General Tso's Chicken", ZH: "示例：左宗棠鸡" },
 
   // Mobile bar
   currentCost: { EN: "Total Cost", ZH: "当前总成本" },

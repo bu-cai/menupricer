@@ -137,7 +137,7 @@ export default function PricingResult({ content, loading, dishName = "dish", tot
 
   const tierColors = [
     { border: "border-gray-200", bg: "bg-gray-50", badge: "" },
-    { border: "border-orange-300", bg: "bg-orange-50", badge: "Best" },
+    { border: "border-orange-300", bg: "bg-orange-50", badge: t("recommended", lang) },
     { border: "border-amber-300", bg: "bg-amber-50", badge: "" },
   ];
 
@@ -240,7 +240,7 @@ export default function PricingResult({ content, loading, dishName = "dish", tot
                 )}
                 <p className="text-xs text-gray-500 mb-1">{tier.name}</p>
                 <p className="text-xl font-black text-gray-900">{formatPrice(tier.price, currency)}</p>
-                <p className="text-xs font-semibold text-orange-500 mt-1">Margin {tier.margin.toFixed(0)}%</p>
+                <p className="text-xs font-semibold text-orange-500 mt-1">{t("grossMargin", lang)} {tier.margin.toFixed(0)}%</p>
                 {tier.scene && <p className="text-xs text-gray-400 mt-1 leading-tight">{tier.scene}</p>}
               </div>
             );
@@ -257,7 +257,7 @@ export default function PricingResult({ content, loading, dishName = "dish", tot
       {isEstimate && content && !loading && (
         <div className="mb-3 flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2.5 text-xs text-amber-700">
           <span className="text-base leading-none mt-0.5">⚠️</span>
-          <span>Costs estimated by AI based on typical North American wholesale prices. Adjust for your actual supplier costs for more accurate pricing.</span>
+          <span>{t("aiEstimatedDisclaimer", lang)}</span>
         </div>
       )}
       <div className="space-y-0.5">

@@ -64,9 +64,9 @@ function parseEstimatedIngredientCost(content: string): number {
 function ExamplePreview() {
   const { lang } = useLang();
   const exampleTiers = [
-    { name: "Budget", price: 6.99, margin: 72 },
-    { name: "Standard", price: 8.99, margin: 79, recommended: true },
-    { name: "Premium", price: 12.99, margin: 86 },
+    { name: t("tierBudget", lang), price: 6.99, margin: 72 },
+    { name: t("tierStandard", lang), price: 8.99, margin: 79, recommended: true },
+    { name: t("tierPremium", lang), price: 12.99, margin: 86 },
   ];
   return (
     <div className="relative bg-white rounded-2xl border border-dashed border-orange-200 p-6 overflow-hidden">
@@ -77,18 +77,18 @@ function ExamplePreview() {
       <div className="opacity-30 select-none pointer-events-none">
         <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl">🤖</span>
-          <h2 className="text-base font-bold text-gray-800">AI Pricing Analysis</h2>
+          <h2 className="text-base font-bold text-gray-800">{t("aiAnalysis", lang)}</h2>
           <span className="ml-auto text-xs text-gray-400">{t("exampleLabel", lang)}</span>
         </div>
         <div className="grid grid-cols-3 gap-3 mb-4">
           {exampleTiers.map((tier, i) => (
             <div key={i} className={`relative rounded-xl border-2 p-3 text-center ${tier.recommended ? "border-orange-300 bg-orange-50" : "border-gray-200 bg-gray-50"}`}>
               {tier.recommended && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">Best</span>
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">{t("recommended", lang)}</span>
               )}
               <p className="text-xs text-gray-500 mb-1">{tier.name}</p>
               <p className="text-xl font-black text-gray-900">${tier.price}</p>
-              <p className="text-xs font-semibold text-orange-500 mt-1">Margin {tier.margin}%</p>
+              <p className="text-xs font-semibold text-orange-500 mt-1">{t("grossMargin", lang)} {tier.margin}%</p>
             </div>
           ))}
         </div>
