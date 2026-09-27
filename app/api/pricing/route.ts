@@ -1,14 +1,13 @@
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import { NextRequest } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getUser, upsertUser, checkUserRateLimit, checkIpRateLimit } from "@/lib/db";
 
-const proxyClient = process.env.DATAEYESAI_BASE_URL
-  ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, baseURL: process.env.DATAEYESAI_BASE_URL })
-  : null;
-
-const directClient = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = new OpenAI({
+  apiKey: process.env.DATAEYESAI_API_KEY,
+  baseURL: process.env.DATAEYESAI_BASE_URL ?? "https://cloud.dataeyes.ai/v1",
+});
 
 function getClientIp(req: NextRequest): string {
   return (
@@ -232,32 +231,20 @@ Daily units needed to cover fixed costs (assuming $150/day in rent/labor/utiliti
 
 Be specific, professional, and data-driven.`;
 
-  const streamParams = {
-    model: "claude-haiku-4-5-20251001" as const,
-    max_tokens: 1500,
-    messages: [{ role: "user" as const, content: prompt }],
-  };
-
   let stream;
   try {
-    const client = proxyClient ?? directClient;
-    stream = await client.messages.stream(streamParams);
-  } catch {
-    if (!proxyClient) {
-      return new Response(JSON.stringify({ error: "AI service unavailable" }), {
-        status: 502,
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-    try {
-      stream = await directClient.messages.stream(streamParams);
-    } catch (err2) {
-      const msg = err2 instanceof Error ? err2.message : "AI service unavailable";
-      return new Response(JSON.stringify({ error: msg }), {
-        status: 502,
-        headers: { "Content-Type": "application/json" },
-      });
-    }
+    stream = await client.chat.completions.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1500,
+      messages: [{ role: "user", content: prompt }],
+      stream: true,
+    });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "AI service unavailable";
+    return new Response(JSON.stringify({ error: msg }), {
+      status: 502,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   const encoder = new TextEncoder();
@@ -265,9 +252,8 @@ Be specific, professional, and data-driven.`;
     async start(controller) {
       try {
         for await (const chunk of stream) {
-          if (chunk.type === "content_block_delta" && chunk.delta.type === "text_delta") {
-            controller.enqueue(encoder.encode(chunk.delta.text));
-          }
+          const text = chunk.choices[0]?.delta?.content;
+          if (text) controller.enqueue(encoder.encode(text));
         }
       } catch (err) {
         const msg = err instanceof Error ? err.message : "Stream error";

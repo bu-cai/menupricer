@@ -1,9 +1,9 @@
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import { NextRequest } from "next/server";
 
-const client = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-  baseURL: process.env.DATAEYESAI_BASE_URL ?? "https://api.anthropic.com",
+const client = new OpenAI({
+  apiKey: process.env.DATAEYESAI_API_KEY,
+  baseURL: process.env.DATAEYESAI_BASE_URL ?? "https://cloud.dataeyes.ai/v1",
 });
 
 export async function POST(req: NextRequest) {
@@ -31,7 +31,7 @@ Rules:
 - Return only the JSON object, nothing else`;
 
   try {
-    const response = await client.messages.create({
+    const response = await client.chat.completions.create({
       model: "claude-opus-4-7",
       max_tokens: 1024,
       messages: [
@@ -39,12 +39,8 @@ Rules:
           role: "user",
           content: [
             {
-              type: "image",
-              source: {
-                type: "base64",
-                media_type: mimeType as "image/jpeg" | "image/png" | "image/gif" | "image/webp",
-                data: image,
-              },
+              type: "image_url",
+              image_url: { url: `data:${mimeType};base64,${image}` },
             },
             { type: "text", text: prompt },
           ],
@@ -52,7 +48,7 @@ Rules:
       ],
     });
 
-    const text = response.content[0].type === "text" ? response.content[0].text : "{}";
+    const text = response.choices[0]?.message?.content ?? "{}";
     const cleaned = text.replace(/```json?\n?/g, "").replace(/```/g, "").trim();
     const parsed = JSON.parse(cleaned);
     const dishName = typeof parsed.dishName === "string" ? parsed.dishName : "";
