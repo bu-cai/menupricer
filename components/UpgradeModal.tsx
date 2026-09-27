@@ -197,8 +197,18 @@ export default function UpgradeModal({ onClose, reason }: Props) {
             </p>
           </div>
 
+          {/* Money-back guarantee */}
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-lg shrink-0">🛡️</span>
+            <p className="text-xs text-gray-600 leading-snug">
+              {isZH
+                ? "首 30 天不满意？全额退款，无需理由。"
+                : "Not happy in the first 30 days? Full refund, no questions asked."}
+            </p>
+          </div>
+
           {/* CTA — action + outcome, price is secondary */}
-          <div className="space-y-2">
+          <div className="space-y-3">
             <button
               onClick={handleUpgrade}
               disabled={loading}
@@ -210,12 +220,14 @@ export default function UpgradeModal({ onClose, reason }: Props) {
                   ? (isZH ? "解锁完整菜单 — $79/年" : "Unlock My Full Menu — $79/yr")
                   : (isZH ? "解锁完整菜单 — $9/月" : "Unlock My Full Menu — $9/mo")}
             </button>
-            <button
-              onClick={onClose}
-              className="w-full py-2.5 text-gray-400 text-xs hover:text-gray-500 transition-colors"
-            >
-              {isZH ? "暂时继续使用免费版" : "Keep using the free plan for now"}
-            </button>
+            <p className="text-center">
+              <button
+                onClick={onClose}
+                className="text-gray-400 text-xs hover:text-gray-500 transition-colors"
+              >
+                {isZH ? "暂时继续使用免费版" : "Keep using the free plan for now"}
+              </button>
+            </p>
           </div>
 
           <p className="text-center text-xs text-gray-400 mt-3">

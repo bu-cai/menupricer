@@ -1027,6 +1027,7 @@ function HomeContent() {
   const [isSharedView, setIsSharedView] = useState(false);
   const [userPlan, setUserPlan] = useState<"free" | "pro">("free");
   const [showUpgrade, setShowUpgrade] = useState(false);
+  const [upgradeReason, setUpgradeReason] = useState<"menu_limit" | "batch_pricing" | "upgrade_required" | "pdf_export">("menu_limit");
   const [showLoginModal, setShowLoginModal] = useState(false);
   const syncedRef = useRef(false);
 
@@ -1129,6 +1130,7 @@ function HomeContent() {
   const handleAddToMenu = (tiers: MenuTier[]) => {
     const isNew = !menuItems.find(m => m.dishName === currentDishName);
     if (isNew && userPlan === "free" && menuItems.length >= FREE_LIMIT) {
+      setUpgradeReason("menu_limit");
       setShowUpgrade(true);
       return;
     }
@@ -1168,6 +1170,7 @@ function HomeContent() {
       ? reallyNew.slice(0, Math.max(0, FREE_LIMIT - menuItems.length))
       : reallyNew;
     if (allowed.length < reallyNew.length && userPlan === "free") {
+      setUpgradeReason("menu_limit");
       setShowUpgrade(true);
     }
     const toAdd: MenuItem[] = allowed.map(item => ({
@@ -1247,7 +1250,7 @@ function HomeContent() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {showUpgrade && (
-        <UpgradeModal reason="menu_limit" onClose={() => setShowUpgrade(false)} />
+        <UpgradeModal reason={upgradeReason} onClose={() => setShowUpgrade(false)} />
       )}
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
 
@@ -1390,6 +1393,54 @@ function HomeContent() {
               />
               {prices.length > 0 && (
                 <ProfitChart totalCost={totalCost} prices={prices} labels={priceLabels} />
+              )}
+              {/* Analytics preview — locked teaser for free users */}
+              {result && !loading && userPlan === "free" && (
+                <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                  <div className="px-4 py-3 flex items-center justify-between border-b border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm">📊</span>
+                      <span className="text-sm font-bold text-gray-800">
+                        {lang === "ZH" ? "菜单利润分析" : "Menu Analytics"}
+                      </span>
+                    </div>
+                    <span className="inline-flex items-center gap-1 bg-orange-100 text-orange-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                      🔒 Pro
+                    </span>
+                  </div>
+                  <div className="relative px-4 py-4">
+                    <div className="space-y-3 blur-sm select-none pointer-events-none" aria-hidden="true">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-gray-500">{lang === "ZH" ? "最高利润菜品" : "Highest margin dish"}</span>
+                        <span className="font-bold text-green-600">{currentDishName || "Kung Pao Chicken"} · 74%</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-gray-500">{lang === "ZH" ? "平均利润率" : "Avg profit margin"}</span>
+                        <span className="font-bold text-gray-700">68%</span>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between text-xs mb-1">
+                          <span className="text-gray-500">{lang === "ZH" ? "低于目标成本线" : "Below cost target"}</span>
+                          <span className="font-bold text-orange-600">1 dish ⚠️</span>
+                        </div>
+                        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-orange-400 rounded-full" style={{ width: "20%" }} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/85 backdrop-blur-[1px]">
+                      <p className="text-xs font-bold text-gray-700 mb-2 text-center px-4">
+                        {lang === "ZH" ? "升级后查看哪道菜最赚钱" : "See which dish makes you the most money"}
+                      </p>
+                      <button
+                        onClick={() => { setUpgradeReason("upgrade_required"); setShowUpgrade(true); }}
+                        className="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors"
+                      >
+                        {lang === "ZH" ? "解锁分析面板 →" : "Unlock Analytics →"}
+                      </button>
+                    </div>
+                  </div>
+                </div>
               )}
               {/* Save nudge — shown after first result, only for guests */}
               {result && !loading && !session && (
