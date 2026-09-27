@@ -1289,6 +1289,11 @@ function HomeContent() {
             >
               <span>
                 ✅ {lang === "ZH" ? `已加入菜单：${currentDishName}` : `Added "${currentDishName}" to menu`}
+                {userPlan === "free" && menuItems.length === 2 && (
+                  <span className="text-orange-300 ml-2">
+                    {lang === "ZH" ? "· 升级后可看哪道菜最赚钱 →" : "· Upgrade to see your best-margin dish →"}
+                  </span>
+                )}
                 {userPlan === "free" && menuItems.length >= FREE_LIMIT - 1 && (
                   <span className="text-orange-300 ml-2">
                     {lang === "ZH"

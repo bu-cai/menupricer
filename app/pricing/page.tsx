@@ -75,7 +75,7 @@ const FAQ_SCHEMA = {
     {
       "@type": "Question",
       name: "Do you offer refunds?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes — if you're not satisfied within 7 days of subscribing, contact us for a full refund." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes — if you're not satisfied within 30 days of subscribing, contact us for a full refund, no questions asked." },
     },
   ],
 };
@@ -112,7 +112,7 @@ const FAQS = [
   },
   {
     q: "Do you offer refunds?",
-    a: "Yes — if you're not satisfied within 7 days of subscribing, contact us for a full refund.",
+    a: "Yes — if you're not satisfied within 30 days of subscribing, contact us for a full refund, no questions asked.",
   },
 ];
 
@@ -228,6 +228,33 @@ export default function PricingPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* ROI anchor — the math that makes $9/mo feel trivially small */}
+      <section className="max-w-3xl mx-auto px-6 pb-4">
+        <div className="bg-gray-900 rounded-2xl px-8 py-7 text-white">
+          <p className="text-xs font-bold text-orange-400 uppercase tracking-widest mb-3">The math</p>
+          <p className="text-xl font-black leading-snug mb-6">
+            One underpriced dish costs more than a year of Pro.
+          </p>
+          <div className="grid grid-cols-3 gap-4 text-center mb-6">
+            <div>
+              <p className="text-3xl font-black text-orange-400">$2</p>
+              <p className="text-xs text-gray-400 mt-1">avg underpricing<br />per dish</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-orange-400">×50</p>
+              <p className="text-xs text-gray-400 mt-1">covers<br />per day</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-white">$3,000</p>
+              <p className="text-xs text-gray-400 mt-1">left on the table<br />per month</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-400 text-center border-t border-gray-700 pt-5">
+            MenuPricer Pro costs <span className="text-white font-bold">$9/month</span>. It pays for itself the first time you find one underpriced dish — which usually happens in the first sitting.
+          </p>
         </div>
       </section>
 
