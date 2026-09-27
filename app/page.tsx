@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import CostForm from "@/components/CostForm";
 import PricingResult from "@/components/PricingResult";
 import ProfitChart from "@/components/ProfitChart";
@@ -212,6 +213,16 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
               )}
             </button>
           ))}
+          <span className="w-px h-4 bg-gray-200 mx-1 flex-shrink-0" />
+          <Link href="/tools" className="px-4 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all">
+            Tools
+          </Link>
+          <Link href="/blog" className="px-4 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all">
+            Blog
+          </Link>
+          <Link href="/pricing" className="px-4 py-1.5 text-sm font-semibold rounded-lg text-orange-600 hover:text-orange-700 hover:bg-orange-50 transition-all">
+            Pricing
+          </Link>
         </nav>
 
         {/* Right controls */}
@@ -243,12 +254,12 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 
       {/* Mobile tab nav — the desktop nav above is hidden below sm, so this is
           the only way to reach "My Menu" on a phone. */}
-      <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 -mt-1">
+      <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 -mt-1 overflow-x-auto">
         {(["pricer", "menu"] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`relative px-4 py-1.5 text-sm font-semibold rounded-lg transition-all ${
+            className={`relative px-4 py-1.5 text-sm font-semibold rounded-lg transition-all flex-shrink-0 ${
               activeTab === tab
                 ? "text-orange-600 bg-orange-50"
                 : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
@@ -266,6 +277,16 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
             )}
           </button>
         ))}
+        <span className="w-px h-4 bg-gray-200 mx-1 flex-shrink-0" />
+        <Link href="/tools" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
+          Tools
+        </Link>
+        <Link href="/blog" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
+          Blog
+        </Link>
+        <Link href="/pricing" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-orange-600 hover:text-orange-700 hover:bg-orange-50 transition-all flex-shrink-0">
+          Pricing
+        </Link>
       </nav>
     </header>
   );
