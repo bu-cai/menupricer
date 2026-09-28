@@ -2,13 +2,15 @@
 
 > AI-powered menu pricing tool that helps restaurant owners, cafés, bakeries, food trucks, and caterers calculate the right selling price for any menu item — starting from just a dish name, no written recipe required.
 
-MenuPricer estimates ingredient costs with AI, then calculates food cost percentage, gross margin, and a recommended price across three tiers (Budget, Standard, Premium). It also accounts for delivery platform commissions (DoorDash, Uber Eats, Grubhub). Free for up to 5 dishes; Pro plan is $9/month or $79/year for unlimited dishes, batch pricing, and PDF export.
+MenuPricer estimates ingredient costs with AI, then calculates food cost percentage, gross margin, and a recommended price across three tiers (Budget, Standard, Premium). It also accounts for delivery platform commissions (DoorDash, Uber Eats, Grubhub). Free for up to 5 dishes; Pro plan is $9/month or $79/year for unlimited dishes, batch pricing, analytics, and PDF export.
 
 ## Core Tool
 
 - [Homepage / AI Pricing Tool](https://www.aimenupricer.com/): Type a dish name, get AI-estimated ingredient costs and 3 pricing tiers in under a minute.
-- [Pricing](https://www.aimenupricer.com/pricing): Free vs Pro plan details.
+- [Pricing](https://www.aimenupricer.com/pricing): Free vs Pro plan details, including a feature comparison table.
 - [About](https://www.aimenupricer.com/about): What MenuPricer is, who it's for, and how it works.
+- [Editorial Policy](https://www.aimenupricer.com/editorial-policy): How statistics and benchmarks are sourced and reviewed.
+- [Glossary](https://www.aimenupricer.com/glossary): Plain-language definitions for 31 restaurant pricing and food cost terms.
 
 ## Free Calculators
 
@@ -27,29 +29,62 @@ MenuPricer estimates ingredient costs with AI, then calculates food cost percent
 - [Break-Even Calculator](https://www.aimenupricer.com/break-even-calculator)
 - [Portion Cost Calculator](https://www.aimenupricer.com/portion-cost-calculator)
 - [Cocktail Pricing Calculator](https://www.aimenupricer.com/cocktail-pricing-calculator)
+- [All free calculators](https://www.aimenupricer.com/tools)
 
-## Guides
+## Guides — Menu Pricing & Food Cost Fundamentals
 
 - [How to Price a Restaurant Menu](https://www.aimenupricer.com/blog/how-to-price-a-restaurant-menu)
+- [Menu Pricing Formula](https://www.aimenupricer.com/blog/menu-pricing-formula)
 - [Food Cost Formula](https://www.aimenupricer.com/blog/food-cost-formula)
+- [What Is Food Cost Percentage?](https://www.aimenupricer.com/blog/what-is-food-cost-percentage)
+- [Food Cost Percentage by Restaurant Type](https://www.aimenupricer.com/blog/food-cost-percentage-by-restaurant-type)
+- [What Should Food Cost Be in a Restaurant?](https://www.aimenupricer.com/blog/what-should-food-cost-be)
+- [Menu Costing 101](https://www.aimenupricer.com/blog/menu-costing-guide)
+- [How to Cost a Dish](https://www.aimenupricer.com/blog/how-to-cost-a-dish)
 - [Recipe Costing Without Written Recipes](https://www.aimenupricer.com/blog/recipe-costing-without-recipes)
-- [Restaurant Profit Margin](https://www.aimenupricer.com/blog/restaurant-profit-margin)
+- [Markup vs Margin](https://www.aimenupricer.com/blog/markup-vs-margin)
+- [12 Menu Pricing Mistakes](https://www.aimenupricer.com/blog/menu-pricing-mistakes)
+- [How to Raise Menu Prices](https://www.aimenupricer.com/blog/how-to-raise-menu-prices)
+- [Food Cost Management: 7 Methods](https://www.aimenupricer.com/blog/food-cost-management)
+- [Why ChatGPT Can't Price Your Menu](https://www.aimenupricer.com/blog/why-chatgpt-cant-price-your-menu)
+
+## Guides — By Business Type
+
 - [Bakery Pricing Guide](https://www.aimenupricer.com/blog/bakery-pricing-guide)
 - [Cake Pricing Guide](https://www.aimenupricer.com/blog/cake-pricing-guide)
+- [How to Price Baked Goods](https://www.aimenupricer.com/blog/how-to-price-baked-goods)
 - [Catering Pricing Guide](https://www.aimenupricer.com/blog/catering-pricing-guide)
+- [Catering Cost Per Person](https://www.aimenupricer.com/blog/catering-cost-per-person)
+- [How to Start a Catering Business](https://www.aimenupricer.com/blog/how-to-start-a-catering-business)
+- [Coffee Shop Menu Pricing](https://www.aimenupricer.com/blog/coffee-shop-menu-pricing)
+- [Food Truck Startup Costs](https://www.aimenupricer.com/blog/food-truck-startup-costs)
+- [Food Truck Pricing by Event Type](https://www.aimenupricer.com/blog/food-truck-event-pricing)
+- [What Is a Ghost Kitchen?](https://www.aimenupricer.com/blog/ghost-kitchen-pricing)
+
+## Guides — Profitability & Operations
+
+- [Restaurant Profit Margin](https://www.aimenupricer.com/blog/restaurant-profit-margin)
+- [What Is Prime Cost?](https://www.aimenupricer.com/blog/prime-cost-restaurant)
+- [8 Restaurant KPIs to Track](https://www.aimenupricer.com/blog/restaurant-kpis)
+- [Restaurant Profit and Loss Statement](https://www.aimenupricer.com/blog/restaurant-profit-loss-statement)
+- [Restaurant Budget Template](https://www.aimenupricer.com/blog/restaurant-budget-template)
+- [Restaurant Bookkeeping 101](https://www.aimenupricer.com/blog/restaurant-bookkeeping)
+- [Cost to Open a Restaurant](https://www.aimenupricer.com/blog/cost-to-open-a-restaurant)
+- [Restaurant Failure Rate](https://www.aimenupricer.com/blog/restaurant-failure-rate)
+- [DoorDash vs Uber Eats Commission](https://www.aimenupricer.com/blog/delivery-platform-commission)
 - [Menu Engineering](https://www.aimenupricer.com/blog/menu-engineering)
-- [Why ChatGPT Can't Price Your Menu](https://www.aimenupricer.com/blog/why-chatgpt-cant-price-your-menu)
-- [Full blog index](https://www.aimenupricer.com/blog)
+- [Restaurant Menu Design Tips](https://www.aimenupricer.com/blog/restaurant-menu-design-tips)
+- [Full blog index (51 guides)](https://www.aimenupricer.com/blog)
 
 ## By Restaurant Type & Region
 
-- [Menu Pricing by Restaurant Type](https://www.aimenupricer.com/menu-pricing)
+- [Menu Pricing by Restaurant Type (20 types)](https://www.aimenupricer.com/menu-pricing)
 - [How to Price Any Dish (50 dishes)](https://www.aimenupricer.com/how-to-price)
 - [Restaurant Pricing by Country (UK, Canada, Australia)](https://www.aimenupricer.com/restaurant-pricing)
-- [Glossary of Pricing Terms](https://www.aimenupricer.com/glossary)
 
-## Comparisons
+## Comparisons & Alternatives
 
+- [Compare MenuPricer to other tools](https://www.aimenupricer.com/compare)
 - [MenuPricer vs Spreadsheets](https://www.aimenupricer.com/compare/menupricer-vs-spreadsheet)
 - [MenuPricer vs Square](https://www.aimenupricer.com/compare/menupricer-vs-square)
 - [MenuPricer vs Toast](https://www.aimenupricer.com/compare/menupricer-vs-toast)
@@ -57,3 +92,5 @@ MenuPricer estimates ingredient costs with AI, then calculates food cost percent
 - [MenuPricer vs MenuTotal](https://www.aimenupricer.com/compare/menupricer-vs-menutotal)
 - [MarketMan Alternatives](https://www.aimenupricer.com/alternatives/marketman-alternatives)
 - [MarginEdge Alternatives](https://www.aimenupricer.com/alternatives/marginedge-alternatives)
+- [Meez Alternatives](https://www.aimenupricer.com/alternatives/meez-alternatives)
+- [Menu Coster Alternatives](https://www.aimenupricer.com/alternatives/menu-coster-alternatives)

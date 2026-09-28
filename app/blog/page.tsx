@@ -396,6 +396,46 @@ const POSTS = [
     readTime: "7 min read",
     featured: false,
   },
+  {
+    slug: "what-is-food-cost-percentage",
+    title: "What Is Food Cost Percentage? Definition, Formula, and Targets (2026)",
+    description: "Food cost percentage is the share of a menu price that goes to ingredients. Learn the formula, what good looks like for different restaurant types, and how to lower it.",
+    category: "Food Cost",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    slug: "food-cost-management",
+    title: "Food Cost Management for Restaurants: 7 Proven Methods (2026)",
+    description: "Food cost management is how restaurants keep ingredient spend under control. This guide covers the 7 most effective methods, what to measure, and how to act on the numbers.",
+    category: "Food Cost",
+    readTime: "8 min read",
+    featured: false,
+  },
+  {
+    slug: "what-should-food-cost-be",
+    title: "What Should Food Cost Be in a Restaurant? Targets by Type (2026)",
+    description: "What should your food cost be? Targets range from 25–35% depending on your restaurant type. Here are the benchmarks, why they differ, and what to do if you're over.",
+    category: "Food Cost",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    slug: "how-to-price-baked-goods",
+    title: "How to Price Baked Goods: The Formula Every Bakery Needs (2026)",
+    description: "How to price baked goods correctly: ingredient cost, overhead allocation, labor, and the markup formula that gives you a sustainable margin. Works for home bakers and commercial bakeries.",
+    category: "Bakery",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    slug: "menu-costing-guide",
+    title: "Menu Costing 101: How to Cost a Restaurant Menu from Scratch (2026)",
+    description: "Menu costing is how restaurants know whether their prices are sustainable. This guide covers ingredient cost, yield, food cost percentage, and a step-by-step process for costing a full menu.",
+    category: "Food Cost",
+    readTime: "8 min read",
+    featured: false,
+  },
 ];
 
 const CATEGORIES = ["All", "Menu Pricing", "Food Cost", "Menu Design", "Catering", "Bakery", "Café", "Profitability", "Delivery", "Food Truck"];

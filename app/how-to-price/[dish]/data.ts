@@ -729,7 +729,7 @@ export const DISH_DATA: Record<string, DishPriceData> = {
     name: "Breakfast Plate",
     category: "Breakfast / Diner",
     foodCostRange: "26–32%",
-    typicalPriceRange: "$10–$15",
+    typicalPriceRange: "$8–$12",
     costBreakdown: [
       { ingredient: "Eggs", note: "One of the cheapest proteins on any menu, though prices can spike seasonally", costShare: "10–15%" },
       { ingredient: "Breakfast meat (bacon, sausage)", note: "The main protein cost lever", costShare: "25–35%" },

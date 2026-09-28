@@ -59,6 +59,7 @@ export default function MenuPricingClient({ data }: Props) {
             <span className="flex items-center gap-1.5"><span className="text-green-500 font-bold">✓</span> Avg check: {data.avgCheckSize}</span>
             <span className="flex items-center gap-1.5"><span className="text-green-500 font-bold">✓</span> Food cost: {data.foodCostPct}%</span>
           </div>
+          <p className="text-xs text-gray-400 mt-4">Typical range for US independent restaurants · Last reviewed: September 2026</p>
         </div>
       </section>
 
