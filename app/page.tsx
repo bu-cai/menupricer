@@ -12,7 +12,7 @@ import { formatPrice } from "@/lib/currency";
 import { LanguageProvider, useLang } from "@/lib/LanguageContext";
 import { CurrencyProvider, useCurrency } from "@/lib/CurrencyContext";
 import { Currency, SYMBOLS } from "@/lib/currency";
-import { t, getFaq } from "@/lib/i18n";
+import { t, getFaq, type Lang } from "@/lib/i18n";
 import OnboardingModal from "@/components/OnboardingModal";
 import AuthButton from "@/components/AuthButton";
 import MenuView from "@/components/MenuView";
@@ -50,6 +50,29 @@ function parsePrices(content: string): number[] {
 // model claims elsewhere in the text, so the number shown in the side panel
 // and history is at least internally consistent with the ingredient list
 // the user is looking at.
+// Cycles through the same "what the AI is doing" phrases PricingResult shows
+// during a real request, so the static homepage demo doesn't just say
+// "AI analyzing…" with no substance behind it — and never a fake % progress.
+function CyclingAIStep({ lang }: { lang: Lang }) {
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setStep((s) => (s + 1) % 4), 1400);
+    return () => clearInterval(id);
+  }, []);
+  const key = (["loadingStep0", "loadingStep1", "loadingStep2", "loadingStep3"] as const)[step];
+  return (
+    <span key={step} className="text-[11px] font-bold text-gray-700" style={{ animation: "fade-in 300ms ease both" }}>
+      {t(key, lang)}
+    </span>
+  );
+}
+
+function friendlyPricingError(lang: "EN" | "ZH"): string {
+  return lang === "ZH"
+    ? "抱歉，这次定价没有生成成功。请稍等几秒再试一次；如果反复出现，写信到 support@aimenupricer.com 告诉我们。"
+    : "Sorry, this pricing request didn't go through. Please wait a moment and try again — if it keeps happening, email support@aimenupricer.com and we'll take a look.";
+}
+
 function parseEstimatedIngredientCost(content: string): number {
   const re = /(?:Est\.?\s*cost|估算成本)[:：]\s*\$?([\d.]+)/g;
   let sum = 0;
@@ -254,40 +277,44 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 
       {/* Mobile tab nav — the desktop nav above is hidden below sm, so this is
           the only way to reach "My Menu" on a phone. */}
-      <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 -mt-1 overflow-x-auto">
-        {(["pricer", "menu"] as const).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`relative px-4 py-1.5 text-sm font-semibold rounded-lg transition-all flex-shrink-0 ${
-              activeTab === tab
-                ? "text-orange-600 bg-orange-50"
-                : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
-            }`}
-          >
-            {tab === "pricer" ? t("tabPricer", lang) : (
-              <span className="flex items-center gap-1.5">
-                {t("tabMenu", lang)}
-                {menuCount > 0 && (
-                  <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
-                    {menuCount}
-                  </span>
-                )}
-              </span>
-            )}
-          </button>
-        ))}
-        <span className="w-px h-4 bg-gray-200 mx-1 flex-shrink-0" />
-        <Link href="/tools" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
-          Tools
-        </Link>
-        <Link href="/blog" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
-          Blog
-        </Link>
-        <Link href="/pricing" className="px-3 py-1.5 text-sm font-semibold rounded-lg text-orange-600 hover:text-orange-700 hover:bg-orange-50 transition-all flex-shrink-0">
-          Pricing
-        </Link>
-      </nav>
+      <div className="sm:hidden relative">
+        <nav className="flex items-center gap-0.5 px-4 pb-2 -mt-1 overflow-x-auto scrollbar-none" style={{ scrollbarWidth: "none" }}>
+          {(["pricer", "menu"] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`relative px-3 py-1.5 text-sm font-semibold rounded-lg transition-all flex-shrink-0 ${
+                activeTab === tab
+                  ? "text-orange-600 bg-orange-50"
+                  : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+              }`}
+            >
+              {tab === "pricer" ? t("tabPricer", lang) : (
+                <span className="flex items-center gap-1.5">
+                  {t("tabMenu", lang)}
+                  {menuCount > 0 && (
+                    <span className="bg-orange-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                      {menuCount}
+                    </span>
+                  )}
+                </span>
+              )}
+            </button>
+          ))}
+          <span className="w-px h-4 bg-gray-200 mx-1 flex-shrink-0" />
+          <Link href="/tools" className="px-2.5 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
+            Tools
+          </Link>
+          <Link href="/blog" className="px-2.5 py-1.5 text-sm font-semibold rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-50 transition-all flex-shrink-0">
+            Blog
+          </Link>
+          <Link href="/pricing" className="px-2.5 py-1.5 text-sm font-semibold rounded-lg text-orange-600 hover:text-orange-700 hover:bg-orange-50 transition-all flex-shrink-0">
+            Pricing
+          </Link>
+        </nav>
+        {/* Fade hint that the row scrolls further, in case it still overflows on a given device */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-2 w-8 bg-gradient-to-l from-white to-transparent" />
+      </div>
     </header>
   );
 }
@@ -868,7 +895,7 @@ function Hero({ onStart }: { onStart?: () => void }) {
                   <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
                     <span className="text-[10px]">🤖</span>
                   </div>
-                  <span className="text-[11px] font-bold text-gray-700">AI analyzing…</span>
+                  <CyclingAIStep lang={lang} />
                   <span className="ml-auto flex gap-0.5">
                     {[0, 1, 2].map(i => (
                       <span key={i} className="w-1 h-1 rounded-full bg-orange-400 animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
@@ -1242,7 +1269,7 @@ function HomeContent() {
         body: JSON.stringify({ dishName, totalCost: 0, ingredientCost: 0, breakdown: "", estimateMode: true, lang }),
       });
       if (res.status === 429) { const e = await res.json().catch(() => ({})); setLoading(false); if (e.reason === "login_required") { setShowLoginModal(true); } else { setShowUpgrade(true); } return; }
-      if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
+      if (!res.ok) { setResult(friendlyPricingError(lang)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
       while (true) { const { done, value } = await reader.read(); if (done) break; full += decoder.decode(value); setResult(full); }
@@ -1257,7 +1284,7 @@ function HomeContent() {
       }
       const prices = parsePrices(full);
       saveHistory(dishName, estIngredientCost > 0 ? estIngredientCost * 1.25 : 0, prices[1] ?? prices[0]);
-    } catch (err) { setResult("Request failed.\n\n" + String(err)); }
+    } catch { setResult(friendlyPricingError(lang)); }
     finally { setLoading(false); }
   };
 
@@ -1275,13 +1302,13 @@ function HomeContent() {
         body: JSON.stringify({ dishName: data.dishName, totalCost: total, ingredientCost: ic, breakdown: bd, lang }),
       });
       if (res.status === 429) { const e = await res.json().catch(() => ({})); setLoading(false); if (e.reason === "login_required") { setShowLoginModal(true); } else { setShowUpgrade(true); } return; }
-      if (!res.ok) { const e = await res.json().catch(() => ({})); setResult((lang === "ZH" ? "AI 服务暂时不可用，请稍后重试。\n\n错误：" : "AI service unavailable. Please try again later.\n\nError: ") + (e.error ?? res.statusText)); setLoading(false); return; }
+      if (!res.ok) { setResult(friendlyPricingError(lang)); setLoading(false); return; }
       if (!res.body) return;
       const reader = res.body.getReader(); const decoder = new TextDecoder(); let full = "";
       while (true) { const { done, value } = await reader.read(); if (done) break; full += decoder.decode(value); setResult(full); }
       const prices = parsePrices(full);
       saveHistory(data.dishName, total, prices[1] ?? prices[0], data);
-    } catch (err) { setResult("Request failed.\n\n" + String(err)); }
+    } catch { setResult(friendlyPricingError(lang)); }
     finally { setLoading(false); }
   };
 
