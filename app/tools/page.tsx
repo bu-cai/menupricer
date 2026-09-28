@@ -2,21 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
-export const metadata: Metadata = {
-  title: "Free Restaurant Pricing Calculators",
-  description:
-    "Ten free calculators for restaurant, bakery, café, food truck, and catering pricing — food cost, menu markup, profit margin, delivery commission, and more. No signup required.",
-  alternates: { canonical: "https://www.aimenupricer.com/tools" },
-  openGraph: {
-    title: "Free Restaurant Pricing Calculators | MenuPricer",
-    description:
-      "Ten free calculators for menu pricing, food cost, profit margin, and delivery commission — no signup required.",
-    url: "https://www.aimenupricer.com/tools",
-    type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
-  },
-};
-
 const BREADCRUMB = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -125,6 +110,23 @@ const VERTICAL_TOOLS = [
   },
 ];
 
+const TOTAL_TOOLS = CORE_TOOLS.length + ADVANCED_TOOLS.length + VERTICAL_TOOLS.length;
+
+export const metadata: Metadata = {
+  title: "Free Restaurant Pricing Calculators",
+  description:
+    `${TOTAL_TOOLS} free calculators for restaurant, bakery, café, food truck, and catering pricing — food cost, menu markup, profit margin, delivery commission, and more. No signup required.`,
+  alternates: { canonical: "https://www.aimenupricer.com/tools" },
+  openGraph: {
+    title: "Free Restaurant Pricing Calculators | MenuPricer",
+    description:
+      `${TOTAL_TOOLS} free calculators for menu pricing, food cost, profit margin, and delivery commission — no signup required.`,
+    url: "https://www.aimenupricer.com/tools",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
+  },
+};
+
 export default function ToolsHubPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -153,7 +155,7 @@ export default function ToolsHubPage() {
             Free Restaurant<br /><span className="text-orange-500">Pricing Calculators</span>
           </h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            Ten free calculators covering food cost, menu markup, profit margin, and delivery
+            {TOTAL_TOOLS} free calculators covering food cost, menu markup, profit margin, and delivery
             commission — plus dedicated tools for bakeries, cafés, food trucks, and caterers. No
             signup required for a single calculation.
           </p>
