@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, type CSSProperties } from "react";
 import Link from "next/link";
 import CostForm from "@/components/CostForm";
 import PricingResult from "@/components/PricingResult";
@@ -293,6 +293,8 @@ function Navbar({ activeTab, setActiveTab, menuCount }: {
 }
 
 /* ── Hero Mockup ─────────────────────────────── */
+const HERO_DISH_NAME = "Kung Pao Chicken";
+
 function HeroMockup() {
   const tiers = [
     { label: "Budget", price: "$8.99", margin: 65, dim: true },
@@ -304,8 +306,29 @@ function HeroMockup() {
     { label: "Labor", pct: 20, color: "bg-blue-300" },
     { label: "Overhead", pct: 10, color: "bg-purple-300" },
   ];
+
+  // Typewriter reveal for the dish name — the one part of the sequence that
+  // isn't a plain CSS stagger, since the text itself has to build up
+  // character by character rather than just fading/sliding in as a whole.
+  const [typedName, setTypedName] = useState("");
+  useEffect(() => {
+    const reduceMotion = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) { setTypedName(HERO_DISH_NAME); return; }
+    let i = 0;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
+    const startTimeout = setTimeout(() => {
+      intervalId = setInterval(() => {
+        i++;
+        setTypedName(HERO_DISH_NAME.slice(0, i));
+        if (i >= HERO_DISH_NAME.length && intervalId) clearInterval(intervalId);
+      }, 38);
+    }, 500);
+    return () => { clearTimeout(startTimeout); if (intervalId) clearInterval(intervalId); };
+  }, []);
+  const nameDone = typedName.length === HERO_DISH_NAME.length;
+
   return (
-    <div className="relative select-none" style={{ animation: "hero-sub 800ms ease 400ms both" }}>
+    <div className="relative select-none max-w-sm mx-auto lg:max-w-none lg:mx-0" style={{ animation: "hero-sub 800ms ease 400ms both" }}>
       {/* Ambient glow */}
       <div className="absolute -inset-6 bg-gradient-to-br from-orange-200/40 to-amber-100/20 rounded-3xl blur-3xl" />
 
@@ -329,26 +352,33 @@ function HeroMockup() {
             <div className="flex items-center gap-2">
               <span className="text-base">🍜</span>
               <div>
-                <p className="text-xs font-black text-gray-900">Kung Pao Chicken</p>
-                <p className="text-[10px] text-gray-400">Total cost: $3.15</p>
+                <p className="text-xs font-black text-gray-900 min-h-[14px]">
+                  {typedName}
+                  {!nameDone && <span className="inline-block w-0.5 h-3 bg-gray-400 animate-pulse -mb-0.5 ml-0.5" />}
+                </p>
+                <p className="text-[10px] text-gray-400" style={{ animation: nameDone ? "fade-in 300ms ease both" : undefined, opacity: nameDone ? undefined : 0 }}>
+                  Total cost: $3.15
+                </p>
               </div>
             </div>
-            <span className="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+            <span className="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full flex items-center gap-1"
+              style={{ animation: "scale-in 300ms ease 1450ms both" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse inline-block" />
               AI Done
             </span>
           </div>
 
           {/* Cost breakdown bar */}
-          <div>
+          <div style={{ animation: "slide-up 400ms ease 1500ms both" }}>
             <p className="text-[9px] font-bold text-gray-400 uppercase tracking-wide mb-1">Cost Breakdown</p>
-            <div className="flex rounded-full overflow-hidden h-2 gap-px">
-              {costs.map((c) => (
-                <div key={c.label} className={`${c.color} h-full`} style={{ width: `${c.pct}%` }} />
+            <div className="flex rounded-full overflow-hidden h-2 gap-px bg-gray-100">
+              {costs.map((c, i) => (
+                <div key={c.label} className={`${c.color} h-full`}
+                  style={{ "--bar-w": `${c.pct}%`, animation: `bar-grow 450ms ease ${1550 + i * 120}ms both` } as CSSProperties} />
               ))}
-              <div className="bg-green-400 h-full flex-1" />
+              <div className="bg-green-400 h-full flex-1" style={{ animation: "fade-in 300ms ease 1900ms both" }} />
             </div>
-            <div className="flex items-center gap-3 mt-1.5">
+            <div className="flex items-center gap-3 mt-1.5" style={{ animation: "fade-in 300ms ease 1950ms both" }}>
               {costs.map((c) => (
                 <span key={c.label} className="flex items-center gap-1 text-[9px] text-gray-400">
                   <span className={`w-1.5 h-1.5 rounded-full ${c.color} inline-block`} />
@@ -364,14 +394,15 @@ function HeroMockup() {
 
           {/* Pricing tiers */}
           <div className="grid grid-cols-3 gap-1.5">
-            {tiers.map((t) => (
+            {tiers.map((t, i) => (
               <div key={t.label} className={`relative rounded-xl border-2 p-2 text-center ${
                 t.recommended
                   ? "border-orange-400 bg-gradient-to-b from-orange-50 to-white shadow-sm"
                   : "border-gray-100 bg-gray-50/80"
-              }`}>
+              }`} style={{ animation: `slide-up 400ms ease ${2200 + i * 150}ms both` }}>
                 {t.recommended && (
-                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full whitespace-nowrap"
+                    style={{ animation: "scale-in 250ms ease 2650ms both" }}>
                     ★ BEST
                   </span>
                 )}
@@ -381,7 +412,7 @@ function HeroMockup() {
                 <div className="mt-1 h-1 bg-gray-100 rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full ${t.recommended ? "bg-orange-400" : "bg-gray-300"}`}
-                    style={{ width: `${t.margin}%` }}
+                    style={{ "--bar-w": `${t.margin}%`, animation: `bar-grow 400ms ease ${2350 + i * 150}ms both` } as CSSProperties}
                   />
                 </div>
                 <p className={`text-[9px] font-bold mt-0.5 ${t.recommended ? "text-orange-500" : "text-gray-400"}`}>{t.margin}% margin</p>
@@ -390,7 +421,7 @@ function HeroMockup() {
           </div>
 
           {/* AI menu copy preview */}
-          <div className="bg-gray-50 rounded-xl p-2.5 border border-gray-100">
+          <div className="bg-gray-50 rounded-xl p-2.5 border border-gray-100" style={{ animation: "slide-up 400ms ease 3000ms both" }}>
             <p className="text-[9px] font-black text-orange-500 uppercase tracking-wide mb-1.5">✦ AI Menu Copy</p>
             <p className="text-[10px] text-gray-600 leading-relaxed">
               &ldquo;Wok-tossed chicken with roasted peanuts in a&nbsp;
@@ -405,7 +436,7 @@ function HeroMockup() {
           </div>
 
           {/* Delivery row */}
-          <div className="flex items-center justify-between bg-blue-50 rounded-lg px-3 py-2">
+          <div className="flex items-center justify-between bg-blue-50 rounded-lg px-3 py-2" style={{ animation: "fade-slide-left 400ms ease 3600ms both" }}>
             <div className="flex items-center gap-1.5">
               <span className="text-xs">🛵</span>
               <span className="text-[10px] font-semibold text-blue-700">DoorDash price</span>
@@ -417,7 +448,8 @@ function HeroMockup() {
       </div>
 
       {/* Floating badge — food cost readout for the Standard tier shown above */}
-      <div className="absolute -bottom-4 -right-4 bg-white border border-gray-200 rounded-2xl px-3 py-2 shadow-xl shadow-gray-200/60 flex items-center gap-2.5">
+      <div className="absolute -bottom-4 -right-4 bg-white border border-gray-200 rounded-2xl px-3 py-2 shadow-xl shadow-gray-200/60 flex items-center gap-2.5"
+        style={{ animation: "hero-badge 350ms ease 4150ms both" }}>
         <div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center text-sm">✓</div>
         <div>
           <p className="text-[9px] text-gray-400 leading-none">Food cost</p>
@@ -426,7 +458,8 @@ function HeroMockup() {
       </div>
 
       {/* Floating badge — top left */}
-      <div className="absolute -top-3 -left-3 bg-orange-500 text-white rounded-xl px-2.5 py-1.5 shadow-lg shadow-orange-200 flex items-center gap-1.5">
+      <div className="absolute -top-3 -left-3 bg-orange-500 text-white rounded-xl px-2.5 py-1.5 shadow-lg shadow-orange-200 flex items-center gap-1.5"
+        style={{ animation: "hero-badge 350ms ease 4000ms both" }}>
         <span className="text-xs">⚡</span>
         <span className="text-[10px] font-black">30 seconds</span>
       </div>
@@ -781,8 +814,8 @@ function Hero({ onStart }: { onStart?: () => void }) {
             </div>
           </div>
 
-          {/* Right: product mockup */}
-          <div className="hidden lg:block">
+          {/* Right: product mockup — shown on mobile too, stacked below the copy */}
+          <div className="mt-10 lg:mt-0">
             <HeroMockup />
           </div>
         </div>
