@@ -231,6 +231,44 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Free vs Pro — quick-scan comparison */}
+      <section className="max-w-3xl mx-auto px-6 pb-4">
+        <div className="border border-gray-200 rounded-2xl overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="text-left px-5 py-3 font-bold text-gray-500">Feature</th>
+                <th className="text-center px-5 py-3 font-bold text-gray-500 w-24">Free</th>
+                <th className="text-center px-5 py-3 font-bold text-orange-500 w-28">Pro</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {[
+                { feature: "Dishes", free: "5", pro: "Unlimited" },
+                { feature: "AI pricing (3 tiers)", free: true, pro: true },
+                { feature: "Food cost calculator", free: true, pro: true },
+                { feature: "Delivery commission calculator", free: true, pro: true },
+                { feature: "AI-written menu copy", free: true, pro: true },
+                { feature: "Batch pricing", free: false, pro: "20 at once" },
+                { feature: "Analytics — best-margin dishes", free: false, pro: true },
+                { feature: "PDF export with branding", free: false, pro: true },
+                { feature: "Cloud sync across devices", free: false, pro: true },
+              ].map((row) => (
+                <tr key={row.feature}>
+                  <td className="px-5 py-3 text-gray-700">{row.feature}</td>
+                  <td className="px-5 py-3 text-center text-gray-400">
+                    {row.free === true ? <span className="text-gray-400">✓</span> : row.free === false ? "—" : row.free}
+                  </td>
+                  <td className="px-5 py-3 text-center font-semibold text-gray-900">
+                    {row.pro === true ? <span className="text-orange-500">✓</span> : row.pro}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* ROI anchor — the math that makes $9/mo feel trivially small */}
       <section className="max-w-3xl mx-auto px-6 pb-4">
         <div className="bg-gray-900 rounded-2xl px-8 py-7 text-white">
