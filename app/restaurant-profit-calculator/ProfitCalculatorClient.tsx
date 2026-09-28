@@ -76,9 +76,15 @@ export default function ProfitCalculatorClient() {
             Restaurant Profit Calculator<br /><span className="text-orange-500">Net Profit & Margin Estimator</span>
           </h1>
           <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-6">
             Enter your revenue, food cost, labor, and overhead to calculate your net profit and see where your money goes.
           </p>
+          <div className="text-left max-w-xl mx-auto bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5">
+            <p className="text-xs font-bold text-orange-600 uppercase tracking-wide mb-2">Short answer</p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              The average net profit margin for a restaurant is 3–9%. Full-service restaurants average 3–5%, fast casual 6–9%, and bars/nightclubs up to 10–15%. Many restaurants operate on very thin margins, making cost control critical.
+            </p>
+          </div>
         </div>
       </section>
 

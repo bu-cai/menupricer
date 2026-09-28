@@ -82,9 +82,15 @@ export default function DeliveryCalculatorClient() {
             Delivery Platform<br /><span className="text-orange-500">Commission Calculator</span>
           </h1>
           <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-6">
             See exactly how much DoorDash, Uber Eats, and Grubhub take per order — and calculate the delivery price you need to protect your margin.
           </p>
+          <div className="text-left max-w-xl mx-auto bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5">
+            <p className="text-xs font-bold text-orange-600 uppercase tracking-wide mb-2">Short answer</p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              To keep the same take-home revenue as dine-in, divide by (1 − commission rate) — don't just add a flat percentage. At 25% commission, a $12 dine-in dish needs to be priced at $12 ÷ 0.75 = $16 on the platform to net the same $12.
+            </p>
+          </div>
         </div>
       </section>
 

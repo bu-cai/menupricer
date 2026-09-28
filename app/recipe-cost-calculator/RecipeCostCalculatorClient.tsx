@@ -77,9 +77,15 @@ export default function RecipeCostCalculatorClient() {
             Recipe Cost Calculator<br /><span className="text-orange-500">for Restaurants</span>
           </h1>
           <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-6">
             Add your ingredients to get exact recipe cost, cost per serving, and the ideal menu price — instantly.
           </p>
+          <div className="text-left max-w-xl mx-auto bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5">
+            <p className="text-xs font-bold text-orange-600 uppercase tracking-wide mb-2">Short answer</p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Add up the cost of every ingredient used in one batch of the recipe — for each one, (Amount used ÷ Package size) × Package price — then sum them for total recipe cost, and divide by the number of servings to get cost per serving.
+            </p>
+          </div>
         </div>
       </section>
 

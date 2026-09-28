@@ -112,9 +112,15 @@ export default function FoodCostCalculatorClient() {
             <span className="text-orange-500">for Restaurants</span>
           </h1>
           <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-6">
             Calculate your food cost percentage, find the ideal menu price, and see your profit margin — instantly.
           </p>
+          <div className="text-left max-w-xl mx-auto bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5">
+            <p className="text-xs font-bold text-orange-600 uppercase tracking-wide mb-2">Short answer</p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Food cost percentage is the ratio of ingredient costs to the selling price of a dish. For example, if a dish costs $3 to make and sells for $10, the food cost percentage is 30%. Most restaurants target 28–35%.
+            </p>
+          </div>
         </div>
       </section>
 

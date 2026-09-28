@@ -126,9 +126,15 @@ export default function MenuCostCalculatorClient() {
             <span className="text-orange-500">for Restaurants</span>
           </h1>
           <p className="text-sm text-gray-400 mb-4">Last reviewed: July 28, 2026</p>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-6">
             Calculate your menu item cost, set your profit margin, and instantly get the right selling price — free for restaurant owners.
           </p>
+          <div className="text-left max-w-xl mx-auto bg-gray-50 border-l-4 border-orange-400 rounded-r-xl p-5">
+            <p className="text-xs font-bold text-orange-600 uppercase tracking-wide mb-2">Short answer</p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Menu Price = Ingredient Cost ÷ (1 − Target Margin %). For example, if a dish costs $4 to make and you want a 70% margin, the price is $4 ÷ 0.30 = $13.33. This is the same formula the calculator below runs automatically.
+            </p>
+          </div>
         </div>
       </section>
 
