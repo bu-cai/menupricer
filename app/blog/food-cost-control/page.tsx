@@ -177,7 +177,7 @@ export default function FoodCostControlPage() {
 
           <header className="mb-10">
             <div className="flex items-center gap-2 text-orange-400 text-sm font-medium mb-3">
-              <LogoIcon className="w-4 h-4" />
+              <LogoIcon size={16} />
               <span>MenuPricer Guide · {DATE_DISPLAY}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
