@@ -101,6 +101,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/alternatives/marginedge-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/alternatives/meez-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/alternatives/menu-coster-alternatives`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    // New blog pages — batch 14
+    { url: `${base}/blog/what-is-food-cost`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/how-to-cost-a-meal`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/restaurant-cost-breakdown`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    // New calculator page — batch 14
+    { url: `${base}/ingredient-cost-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     // Free tools hub & glossary
     { url: `${base}/tools`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
