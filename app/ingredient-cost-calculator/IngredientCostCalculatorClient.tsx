@@ -239,13 +239,13 @@ export default function IngredientCostCalculatorClient() {
       <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-6 text-center">
         <h2 className="text-white font-bold text-lg mb-2">Want AI-Powered Pricing Analysis?</h2>
         <p className="text-gray-400 text-sm mb-4 max-w-md mx-auto">
-          MenuPricer&apos;s AI analyzes your dish, benchmarks against competitor prices, and suggests the optimal price for your market â€” not just the math.
+          MenuPricer&apos;s AI analyzes your dish, benchmarks against competitor prices, and suggests the optimal price for your market â€?not just the math.
         </p>
         <Link
           href="/"
           className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-6 py-2.5 rounded-xl transition-colors text-sm"
         >
-          <LogoIcon className="w-4 h-4" />
+          <LogoIcon size={16} />
           Try AI Pricing Free
         </Link>
       </div>

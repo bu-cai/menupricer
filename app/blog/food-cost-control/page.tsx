@@ -294,7 +294,7 @@ If variance > 2–3%: investigate immediately
                 href="/"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg"
               >
-                <LogoIcon className="w-5 h-5" />
+                <LogoIcon size={20} />
                 Calculate Your Food Cost
               </Link>
             </section>

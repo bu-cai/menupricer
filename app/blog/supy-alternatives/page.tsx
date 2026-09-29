@@ -8,15 +8,15 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "5 Best Supy Alternatives for Restaurant Food Costing (2026)",
   description:
-    "Looking for Supy alternatives? Compare the best food costing and inventory management tools for restaurants â€” including free options and AI-powered platforms.",
+    "Looking for Supy alternatives? Compare the best food costing and inventory management tools for restaurants â€?including free options and AI-powered platforms.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/supy-alternatives" },
   openGraph: {
     title: "5 Best Supy Alternatives for Restaurant Food Costing (2026)",
     description:
-      "Compare Supy alternatives for restaurant food costing â€” MenuPricer, MarketMan, Craftable, MarginEdge, and Meez. Pricing, features, and who each is best for.",
+      "Compare Supy alternatives for restaurant food costing â€?MenuPricer, MarketMan, Craftable, MarginEdge, and Meez. Pricing, features, and who each is best for.",
     url: "https://www.aimenupricer.com/blog/supy-alternatives",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "5 Best Supy Alternatives for Restaurant Food Costing (2026)",
   description:
-    "A comparison of the best Supy alternatives for restaurant food costing and inventory management â€” with pricing, key features, and guidance on which tool fits which restaurant.",
+    "A comparison of the best Supy alternatives for restaurant food costing and inventory management â€?with pricing, key features, and guidance on which tool fits which restaurant.",
   url: "https://www.aimenupricer.com/blog/supy-alternatives",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What are the best Supy alternatives?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The best Supy alternatives for food costing and inventory management are: (1) MenuPricer â€” AI-powered menu pricing with instant cost analysis; (2) MarketMan â€” full inventory and procurement management; (3) Craftable â€” enterprise F&B cost management; (4) MarginEdge â€” accounting-integrated food costing; (5) Meez â€” recipe costing with culinary focus.",
+        text: "The best Supy alternatives for food costing and inventory management are: (1) MenuPricer â€?AI-powered menu pricing with instant cost analysis; (2) MarketMan â€?full inventory and procurement management; (3) Craftable â€?enterprise F&B cost management; (4) MarginEdge â€?accounting-integrated food costing; (5) Meez â€?recipe costing with culinary focus.",
       },
     },
     {
@@ -83,7 +83,7 @@ const TOOLS = [
     description: "MenuPricer focuses on the core task of converting ingredient costs into optimal menu prices. Enter your ingredients, get your food cost, theoretical food cost %, and an AI-suggested price based on dish type and market context.",
     pros: [
       "AI-suggested menu prices (not just formula math)",
-      "Free tier available â€” no credit card required",
+      "Free tier available â€?no credit card required",
       "Instant dish costing, no onboarding required",
       "Supports delivery platform price calculations",
     ],
@@ -107,7 +107,7 @@ const TOOLS = [
       "Multi-location support",
     ],
     cons: [
-      "Higher price point ($249â€“$549/mo)",
+      "Higher price point ($249â€?549/mo)",
       "Longer onboarding curve",
       "Overkill for single-location operators",
     ],
@@ -119,7 +119,7 @@ const TOOLS = [
     name: "Craftable",
     tag: "Best for: Enterprise F&B groups",
     url: null,
-    description: "Craftable (formerly Bevager/Foodager) targets enterprise F&B operations â€” hotels, large restaurant groups, and venues. Covers ordering, invoicing, recipe costing, and variance analysis.",
+    description: "Craftable (formerly Bevager/Foodager) targets enterprise F&B operations â€?hotels, large restaurant groups, and venues. Covers ordering, invoicing, recipe costing, and variance analysis.",
     pros: [
       "Enterprise-grade multi-unit support",
       "Covers both food and beverage costing",
@@ -127,7 +127,7 @@ const TOOLS = [
       "Mobile receiving and inventory apps",
     ],
     cons: [
-      "Enterprise pricing â€” not disclosed publicly",
+      "Enterprise pricing â€?not disclosed publicly",
       "Complex setup for smaller operators",
       "Not suitable for single restaurants",
     ],
@@ -159,7 +159,7 @@ const TOOLS = [
     name: "Meez",
     tag: "Best for: Recipe-centric costing",
     url: null,
-    description: "Meez is a recipe management and food costing platform built for chefs. It focuses on recipe scaling, version control, and nutritional data alongside cost tracking â€” making it popular with culinary-first operations.",
+    description: "Meez is a recipe management and food costing platform built for chefs. It focuses on recipe scaling, version control, and nutritional data alongside cost tracking â€?making it popular with culinary-first operations.",
     pros: [
       "Chef-friendly recipe interface",
       "Recipe scaling and version management",
@@ -196,14 +196,14 @@ export default function SupyAlternativesPage() {
 
           <header className="mb-10">
             <div className="flex items-center gap-2 text-orange-400 text-sm font-medium mb-3">
-              <LogoIcon className="w-4 h-4" />
+              <LogoIcon size={16} />
               <span>MenuPricer Comparison Â· {DATE_DISPLAY}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
               5 Best Supy Alternatives for Restaurant Food Costing (2026)
             </h1>
             <p className="text-lg text-gray-400 leading-relaxed">
-              Supy is a capable inventory platform, but it is not the right fit for every restaurant. Here are the five best alternatives â€” from free AI-powered pricing tools to enterprise-grade inventory systems.
+              Supy is a capable inventory platform, but it is not the right fit for every restaurant. Here are the five best alternatives â€?from free AI-powered pricing tools to enterprise-grade inventory systems.
             </p>
           </header>
 
@@ -263,7 +263,7 @@ export default function SupyAlternativesPage() {
                     <p className="text-red-400 font-semibold text-xs mb-2">Cons</p>
                     <ul className="space-y-1">
                       {t.cons.map((c) => (
-                        <li key={c} className="text-gray-300 text-xs flex gap-2"><span className="text-red-400">âˆ’</span>{c}</li>
+                        <li key={c} className="text-gray-300 text-xs flex gap-2"><span className="text-red-400">âˆ?/span>{c}</li>
                       ))}
                     </ul>
                   </div>
@@ -281,7 +281,7 @@ export default function SupyAlternativesPage() {
                 {t.rank === 1 && (
                   <div className="mt-4">
                     <Link href="/" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-5 py-2 rounded-xl transition-colors text-sm">
-                      <LogoIcon className="w-4 h-4" />
+                      <LogoIcon size={16} />
                       Try MenuPricer Free
                     </Link>
                   </div>
@@ -294,11 +294,11 @@ export default function SupyAlternativesPage() {
               <h2 className="text-2xl font-bold text-white mb-4">How to Choose the Right Supy Alternative</h2>
               <div className="space-y-3">
                 {[
-                  { q: "You need menu pricing and food cost analysis only", a: "â†’ MenuPricer. Free to start, AI-powered, no complex onboarding." },
-                  { q: "You need full inventory and supplier management", a: "â†’ MarketMan. The closest direct Supy alternative with comparable inventory depth." },
-                  { q: "You are a hotel F&B department or large restaurant group", a: "â†’ Craftable. Built for enterprise multi-unit operations." },
-                  { q: "You want automated invoice-to-cost-report workflows", a: "â†’ MarginEdge. Best for operators with formal accounting processes." },
-                  { q: "You are culinary-driven and want recipe management + costing", a: "â†’ Meez. Chef-friendly interface with strong recipe version control." },
+                  { q: "You need menu pricing and food cost analysis only", a: "â†?MenuPricer. Free to start, AI-powered, no complex onboarding." },
+                  { q: "You need full inventory and supplier management", a: "â†?MarketMan. The closest direct Supy alternative with comparable inventory depth." },
+                  { q: "You are a hotel F&B department or large restaurant group", a: "â†?Craftable. Built for enterprise multi-unit operations." },
+                  { q: "You want automated invoice-to-cost-report workflows", a: "â†?MarginEdge. Best for operators with formal accounting processes." },
+                  { q: "You are culinary-driven and want recipe management + costing", a: "â†?Meez. Chef-friendly interface with strong recipe version control." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-lg p-4">
                     <p className="text-white text-sm font-medium mb-1">{q}</p>
@@ -315,7 +315,7 @@ export default function SupyAlternativesPage() {
                 {[
                   { q: "What is Supy used for?", a: "Supy is a restaurant inventory management and food costing platform used primarily in the Middle East and internationally. It handles purchase orders, supplier management, inventory tracking, and food cost reporting." },
                   { q: "What are the best Supy alternatives?", a: "MenuPricer (AI menu pricing, free tier), MarketMan (full inventory), Craftable (enterprise), MarginEdge (accounting-integrated), and Meez (recipe-centric costing)." },
-                  { q: "Is there a free Supy alternative?", a: "Yes â€” MenuPricer offers a free tier for dish costing and AI-suggested menu prices. It covers the pricing side of what Supy does, without the inventory management layer." },
+                  { q: "Is there a free Supy alternative?", a: "Yes â€?MenuPricer offers a free tier for dish costing and AI-suggested menu prices. It covers the pricing side of what Supy does, without the inventory management layer." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
                     <p className="text-white font-semibold mb-2">{q}</p>
@@ -337,7 +337,7 @@ export default function SupyAlternativesPage() {
                   ["/food-cost-calculator", "Free Food Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">â†’</span>{label}
+                    <span className="text-gray-600">â†?/span>{label}
                   </Link>
                 ))}
               </div>

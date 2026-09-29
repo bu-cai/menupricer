@@ -6,17 +6,17 @@ const DATE_PUBLISHED = "2026-09-29";
 const DATE_DISPLAY = "September 2026";
 
 export const metadata: Metadata = {
-  title: "7 Restaurant Menu Pricing Strategies (with Examples) â€” 2026",
+  title: "7 Restaurant Menu Pricing Strategies (with Examples) â€?2026",
   description:
-    "The most effective restaurant menu pricing strategies explained â€” cost-plus, competitive, psychological, value-based, and more. With real examples and when to use each.",
+    "The most effective restaurant menu pricing strategies explained â€?cost-plus, competitive, psychological, value-based, and more. With real examples and when to use each.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/restaurant-menu-pricing-strategies" },
   openGraph: {
     title: "7 Restaurant Menu Pricing Strategies (with Examples)",
     description:
-      "Cost-plus, psychological pricing, competitive, value-based â€” the 7 key restaurant pricing strategies with examples and guidance on when to use each.",
+      "Cost-plus, psychological pricing, competitive, value-based â€?the 7 key restaurant pricing strategies with examples and guidance on when to use each.",
     url: "https://www.aimenupricer.com/blog/restaurant-menu-pricing-strategies",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "7 Restaurant Menu Pricing Strategies (with Examples)",
   description:
-    "A comprehensive guide to restaurant menu pricing strategies â€” cost-plus, psychological pricing, competitive pricing, value-based, bundle pricing, and more.",
+    "A comprehensive guide to restaurant menu pricing strategies â€?cost-plus, psychological pricing, competitive pricing, value-based, bundle pricing, and more.",
   url: "https://www.aimenupricer.com/blog/restaurant-menu-pricing-strategies",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -52,7 +52,7 @@ const FAQ_SCHEMA = {
       name: "What are the main menu pricing strategies for restaurants?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The main restaurant menu pricing strategies are: (1) Cost-plus pricing â€” add a markup over food cost; (2) Competitive pricing â€” benchmark against local competitors; (3) Psychological pricing â€” use $9.99 instead of $10; (4) Value-based pricing â€” price based on perceived customer value; (5) Bundle pricing â€” combo meals and prix fixe; (6) Dynamic pricing â€” adjust prices by time or demand; (7) Menu engineering â€” use placement and design to steer choices.",
+        text: "The main restaurant menu pricing strategies are: (1) Cost-plus pricing â€?add a markup over food cost; (2) Competitive pricing â€?benchmark against local competitors; (3) Psychological pricing â€?use $9.99 instead of $10; (4) Value-based pricing â€?price based on perceived customer value; (5) Bundle pricing â€?combo meals and prix fixe; (6) Dynamic pricing â€?adjust prices by time or demand; (7) Menu engineering â€?use placement and design to steer choices.",
       },
     },
     {
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What is the most common restaurant pricing method?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cost-plus pricing is the most common starting point â€” calculate your food cost per dish and divide by your target food cost percentage to get the minimum selling price. Most restaurants then adjust upward using psychological pricing and competitive benchmarking.",
+        text: "Cost-plus pricing is the most common starting point â€?calculate your food cost per dish and divide by your target food cost percentage to get the minimum selling price. Most restaurants then adjust upward using psychological pricing and competitive benchmarking.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "How should a restaurant set menu prices?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Start with cost-plus pricing: calculate your food cost per dish and divide by your target food cost % (usually 28â€“35%). Then adjust using competitive benchmarking (what do similar restaurants charge?) and psychological pricing (charm pricing, anchor dishes). Finally, use menu engineering to position high-margin items prominently.",
+        text: "Start with cost-plus pricing: calculate your food cost per dish and divide by your target food cost % (usually 28â€?5%). Then adjust using competitive benchmarking (what do similar restaurants charge?) and psychological pricing (charm pricing, anchor dishes). Finally, use menu engineering to position high-margin items prominently.",
       },
     },
   ],
@@ -89,7 +89,7 @@ const STRATEGIES = [
     tagline: "The math-first baseline",
     desc: "Calculate your food cost per portion, then divide by your target food cost percentage to set the floor price. Every other strategy starts here.",
     formula: "Menu Price = Food Cost Ã· Target Food Cost %",
-    example: "Pasta costs $3.20 to make. Target 30% food cost â†’ minimum price $10.67 â†’ round to $12.95",
+    example: "Pasta costs $3.20 to make. Target 30% food cost â†?minimum price $10.67 â†?round to $12.95",
     best: "All restaurants, as a starting point. Never price below this floor.",
     risk: "Can underprice if your market can bear more, or overprice if you are in a cost-sensitive segment.",
   },
@@ -97,9 +97,9 @@ const STRATEGIES = [
     n: 2,
     name: "Competitive Pricing",
     tagline: "Benchmark against local rivals",
-    desc: "Research what 3â€“5 direct competitors charge for similar dishes. Price within 10â€“15% of the market median, then differentiate on quality or experience.",
-    formula: "Your Price â‰ˆ Competitor Median Ã— (1 Â± positioning premium)",
-    example: "Local burgers average $14. You use premium beef â†’ price at $16 (14% premium, justified by ingredients).",
+    desc: "Research what 3â€? direct competitors charge for similar dishes. Price within 10â€?5% of the market median, then differentiate on quality or experience.",
+    formula: "Your Price â‰?Competitor Median Ã— (1 Â± positioning premium)",
+    example: "Local burgers average $14. You use premium beef â†?price at $16 (14% premium, justified by ingredients).",
     best: "High-competition areas, delivery platforms where customers compare prices directly.",
     risk: "Ignores your cost structure. Profitable competitors may have lower costs than you.",
   },
@@ -108,7 +108,7 @@ const STRATEGIES = [
     name: "Psychological Pricing",
     tagline: "The perception layer",
     desc: "Small price adjustments that change how customers perceive value. These are applied on top of your cost-plus baseline.",
-    formula: "Round down to .95 or .99 â€” or drop the cents entirely for upscale menus",
+    formula: "Round down to .95 or .99 â€?or drop the cents entirely for upscale menus",
     example: "$12.99 feels much cheaper than $13.00. But $28 (no cents) signals fine dining better than $27.99.",
     best: "Fast casual and casual dining for value perception. Fine dining: use whole numbers, no dollar signs.",
     risk: "Overused pricing tricks can feel cheap. Match the technique to your brand positioning.",
@@ -119,7 +119,7 @@ const STRATEGIES = [
     tagline: "Price what it is worth to the customer",
     desc: "Set prices based on the perceived value to the customer rather than just your cost. Works for signature dishes, chef specials, and exclusive ingredients.",
     formula: "Price = Customer willingness to pay (tested through observation and competitor analysis)",
-    example: "A wagyu burger costs $9 to make. Customers routinely pay $32 for wagyu burgers in your city â†’ price at $28â€“30, not the cost-plus floor of $26.",
+    example: "A wagyu burger costs $9 to make. Customers routinely pay $32 for wagyu burgers in your city â†?price at $28â€?0, not the cost-plus floor of $26.",
     best: "Signature dishes, tasting menus, items with strong brand recognition or exclusive sourcing.",
     risk: "Requires market knowledge. Overpricing kills volume; underpricing leaves money on the table.",
   },
@@ -128,7 +128,7 @@ const STRATEGIES = [
     name: "Bundle Pricing",
     tagline: "Combo meals and prix fixe",
     desc: "Sell multiple items together at a price lower than the sum of parts. Increases average check and moves slower items alongside high-demand items.",
-    formula: "Bundle Price = Sum of items Ã— (0.85â€“0.92) â€” still at 28â€“35% food cost on the bundle",
+    formula: "Bundle Price = Sum of items Ã— (0.85â€?.92) â€?still at 28â€?5% food cost on the bundle",
     example: "Burger $14 + fries $5 + drink $3 = $22 Ã  la carte. Bundle for $18.95. Customer saves $3, you sell more volume.",
     best: "Fast casual, lunch specials, family meals, catering. Especially effective for delivery.",
     risk: "If the anchor item is already discounted, the bundle may undermine margin. Cost the bundle as a whole.",
@@ -137,9 +137,9 @@ const STRATEGIES = [
     n: 6,
     name: "Dynamic Pricing",
     tagline: "Adjust prices by time and demand",
-    desc: "Charge different prices for the same item at different times â€” happy hour, surge pricing at peak, lunch specials. Balances demand and maximizes revenue per seat.",
-    formula: "Off-peak price = standard Ã— 0.70â€“0.85. Peak price = standard Ã— 1.10â€“1.20",
-    example: "Steak $34 at dinner â†’ $24 at lunch prix fixe. Same steak, different contribution to covers-per-seat.",
+    desc: "Charge different prices for the same item at different times â€?happy hour, surge pricing at peak, lunch specials. Balances demand and maximizes revenue per seat.",
+    formula: "Off-peak price = standard Ã— 0.70â€?.85. Peak price = standard Ã— 1.10â€?.20",
+    example: "Steak $34 at dinner â†?$24 at lunch prix fixe. Same steak, different contribution to covers-per-seat.",
     best: "Restaurants with predictable peaks, bars, delivery platforms. Requires customer communication.",
     risk: "Customers feel manipulated if pricing feels unfair. Transparent labeling ('lunch price') is essential.",
   },
@@ -148,8 +148,8 @@ const STRATEGIES = [
     name: "Menu Engineering",
     tagline: "Use placement to steer choices",
     desc: "Price anchoring and visual design influence what customers order. Place a high-priced item at the top of a category to make others look reasonable. Put high-margin items in the golden triangle (upper-right, first item listed).",
-    formula: "No formula â€” it is positioning, not arithmetic",
-    example: "List a $48 lobster at the top of mains. The $28 salmon below it now feels like good value â€” even though $28 is your real target price.",
+    formula: "No formula â€?it is positioning, not arithmetic",
+    example: "List a $48 lobster at the top of mains. The $28 salmon below it now feels like good value â€?even though $28 is your real target price.",
     best: "All restaurants. The easiest ROI improvement on a menu reprint.",
     risk: "Works only if you know which items are high-margin. Requires accurate food cost data first.",
   },
@@ -175,14 +175,14 @@ export default function RestaurantMenuPricingStrategiesPage() {
 
           <header className="mb-10">
             <div className="flex items-center gap-2 text-orange-400 text-sm font-medium mb-3">
-              <LogoIcon className="w-4 h-4" />
+              <LogoIcon size={16} />
               <span>MenuPricer Guide Â· {DATE_DISPLAY}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
               7 Restaurant Menu Pricing Strategies (with Examples)
             </h1>
             <p className="text-lg text-gray-400 leading-relaxed">
-              How you price your menu determines your profit margins, customer perception, and competitive position. Here are the seven strategies used by successful restaurants â€” and when to apply each.
+              How you price your menu determines your profit margins, customer perception, and competitive position. Here are the seven strategies used by successful restaurants â€?and when to apply each.
             </p>
           </header>
 
@@ -199,7 +199,7 @@ export default function RestaurantMenuPricingStrategiesPage() {
               </thead>
               <tbody className="divide-y divide-gray-800">
                 {[
-                  ["Cost-plus", "Every restaurant â€” baseline", "Low"],
+                  ["Cost-plus", "Every restaurant â€?baseline", "Low"],
                   ["Competitive", "High-competition / delivery", "Low"],
                   ["Psychological", "Fast casual, casual dining", "Low"],
                   ["Value-based", "Signatures, upscale", "Medium"],
@@ -258,7 +258,7 @@ export default function RestaurantMenuPricingStrategiesPage() {
             {/* How to combine */}
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">How to Combine Multiple Strategies</h2>
-              <p>Most successful restaurants layer 3â€“4 strategies. A common sequence:</p>
+              <p>Most successful restaurants layer 3â€? strategies. A common sequence:</p>
               <div className="mt-4 space-y-3">
                 {[
                   ["Step 1", "Cost-plus", "Calculate the floor price for every dish. This is non-negotiable."],
@@ -288,7 +288,7 @@ export default function RestaurantMenuPricingStrategiesPage() {
                   },
                   {
                     q: "What is the most common restaurant pricing method?",
-                    a: "Cost-plus pricing â€” calculate food cost per dish, divide by target food cost % â€” is the most common starting point. It ensures every item covers its ingredient cost before anything else.",
+                    a: "Cost-plus pricing â€?calculate food cost per dish, divide by target food cost % â€?is the most common starting point. It ensures every item covers its ingredient cost before anything else.",
                   },
                   {
                     q: "What is psychological pricing in restaurants?",
@@ -317,7 +317,7 @@ export default function RestaurantMenuPricingStrategiesPage() {
                 href="/"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg"
               >
-                <LogoIcon className="w-5 h-5" />
+                <LogoIcon size={20} />
                 Calculate Your Menu Prices
               </Link>
             </section>
@@ -334,7 +334,7 @@ export default function RestaurantMenuPricingStrategiesPage() {
                   ["/food-cost-calculator", "Free Food Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">â†’</span>{label}
+                    <span className="text-gray-600">â†?/span>{label}
                   </Link>
                 ))}
               </div>

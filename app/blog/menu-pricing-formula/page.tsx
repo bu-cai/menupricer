@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Menu Pricing Formula: Calculate the Right Price for Every Dish",
     description:
-      "How to use the menu pricing formula to set profitable, competitive prices — with examples, variations, and a free calculator.",
+      "How to use the menu pricing formula to set profitable, competitive prices �?with examples, variations, and a free calculator.",
     url: "https://www.aimenupricer.com/blog/menu-pricing-formula",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer — AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer �?AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "The Menu Pricing Formula: Calculate the Right Price for Every Dish",
   description:
-    "A complete guide to the menu pricing formula — Selling Price = Food Cost ÷ Food Cost % — with worked examples, delivery adjustments, and common mistakes.",
+    "A complete guide to the menu pricing formula �?Selling Price = Food Cost ÷ Food Cost % �?with worked examples, delivery adjustments, and common mistakes.",
   url: "https://www.aimenupricer.com/blog/menu-pricing-formula",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "What target food cost percentage should I use in the formula?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Use 28–35% for most full-service restaurants. Fast casual targets 25–30%. Fine dining allows 30–38%. The formula gives you the minimum price to hit your target. You can price higher if the market allows it.",
+        text: "Use 28�?5% for most full-service restaurants. Fast casual targets 25�?0%. Fine dining allows 30�?8%. The formula gives you the minimum price to hit your target. You can price higher if the market allows it.",
       },
     },
     {
@@ -84,7 +84,7 @@ const FAQ_SCHEMA = {
       name: "How do you adjust the menu pricing formula for delivery?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Add the delivery platform commission to the formula: Delivery Price = Food Cost ÷ (Target Food Cost % × (1 − Commission %)). For a 25% commission: Food Cost ÷ (0.30 × 0.75) = Food Cost ÷ 0.225. This is roughly a 33% price increase over your dine-in price.",
+        text: "Add the delivery platform commission to the formula: Delivery Price = Food Cost ÷ (Target Food Cost % × (1 �?Commission %)). For a 25% commission: Food Cost ÷ (0.30 × 0.75) = Food Cost ÷ 0.225. This is roughly a 33% price increase over your dine-in price.",
       },
     },
   ],
@@ -110,7 +110,7 @@ export default function MenuPricingFormulaPage() {
 
           <header className="mb-10">
             <div className="flex items-center gap-2 text-orange-400 text-sm font-medium mb-3">
-              <LogoIcon className="w-4 h-4" />
+              <LogoIcon size={16} />
               <span>MenuPricer Guide · {DATE_DISPLAY}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
@@ -153,12 +153,12 @@ export default function MenuPricingFormulaPage() {
               <p>You will use both versions regularly:</p>
               <div className="mt-4 space-y-4">
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-5">
-                  <p className="text-white font-semibold mb-2">Version 1 — Find the selling price</p>
+                  <p className="text-white font-semibold mb-2">Version 1 �?Find the selling price</p>
                   <pre className="text-green-400 font-mono text-sm">{`Selling Price = Food Cost ÷ Target FC%
 Use when: pricing a new dish or repricing after cost changes`}</pre>
                 </div>
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-5">
-                  <p className="text-white font-semibold mb-2">Version 2 — Check your current food cost %</p>
+                  <p className="text-white font-semibold mb-2">Version 2 �?Check your current food cost %</p>
                   <pre className="text-green-400 font-mono text-sm">{`Food Cost % = (Food Cost ÷ Selling Price) × 100
 Use when: auditing existing menu prices`}</pre>
                 </div>
@@ -216,12 +216,12 @@ Use when: auditing existing menu prices`}</pre>
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Fast food / QSR", "25–28%", "3.6× – 4.0× cost"],
-                      ["Fast casual", "28–32%", "3.1× – 3.6× cost"],
-                      ["Casual dining", "30–35%", "2.9× – 3.3× cost"],
-                      ["Fine dining", "32–38%", "2.6× – 3.1× cost"],
-                      ["Bakery / café", "28–35%", "2.9× – 3.6× cost"],
-                      ["Bar food", "25–30%", "3.3× – 4.0× cost"],
+                      ["Fast food / QSR", "25�?8%", "3.6× �?4.0× cost"],
+                      ["Fast casual", "28�?2%", "3.1× �?3.6× cost"],
+                      ["Casual dining", "30�?5%", "2.9× �?3.3× cost"],
+                      ["Fine dining", "32�?8%", "2.6× �?3.1× cost"],
+                      ["Bakery / café", "28�?5%", "2.9× �?3.6× cost"],
+                      ["Bar food", "25�?0%", "3.3× �?4.0× cost"],
                     ].map(([seg, pct, mult]) => (
                       <tr key={seg}>
                         <td className="py-3 pr-6 text-white">{seg}</td>
@@ -239,13 +239,13 @@ Use when: auditing existing menu prices`}</pre>
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Adjusting the Formula for Delivery Platforms</h2>
               <p>
-                Delivery apps (DoorDash, Uber Eats, Grubhub) charge 15–30% commission on every order. If you use the same price as dine-in, your effective food cost skyrockets.
+                Delivery apps (DoorDash, Uber Eats, Grubhub) charge 15�?0% commission on every order. If you use the same price as dine-in, your effective food cost skyrockets.
               </p>
               <div className="mt-4 bg-gray-900 rounded-xl p-5 border border-gray-800">
-                <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`Delivery Price = Food Cost ÷ (Target FC% × (1 − Commission%))
+                <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`Delivery Price = Food Cost ÷ (Target FC% × (1 �?Commission%))
 
 Example (25% commission, 30% target):
-  Delivery Price = $4.50 ÷ (0.30 × (1 − 0.25))
+  Delivery Price = $4.50 ÷ (0.30 × (1 �?0.25))
                 = $4.50 ÷ (0.30 × 0.75)
                 = $4.50 ÷ 0.225
                 = $20.00  (vs. $15.00 dine-in)`}</pre>
@@ -283,13 +283,13 @@ Markup = 233%`}</pre>
               <h2 className="text-2xl font-bold text-white mb-4">4 Common Mistakes with the Menu Pricing Formula</h2>
               <div className="space-y-3">
                 {[
-                  ["Not accounting for yield/waste", "Raw ingredient cost ≠ usable cost. Divide by yield percentage before applying the formula."],
+                  ["Not accounting for yield/waste", "Raw ingredient cost �?usable cost. Divide by yield percentage before applying the formula."],
                   ["Using retail ingredient prices", "Always use your wholesale invoice prices. Retail prices will make you underprice."],
-                  ["Setting the same FC% for all dishes", "High-margin categories (desserts, drinks) can target 20–25%. Low-margin proteins may need 35%. Mix intentionally."],
-                  ["Never updating the formula inputs", "Supplier prices change. Recalculate every 3–6 months, or when a major ingredient cost shifts by more than 10%."],
+                  ["Setting the same FC% for all dishes", "High-margin categories (desserts, drinks) can target 20�?5%. Low-margin proteins may need 35%. Mix intentionally."],
+                  ["Never updating the formula inputs", "Supplier prices change. Recalculate every 3�? months, or when a major ingredient cost shifts by more than 10%."],
                 ].map(([title, desc]) => (
                   <div key={title} className="flex gap-3 bg-gray-900 border border-gray-800 rounded-lg p-4">
-                    <span className="text-red-400 font-bold text-sm mt-0.5 flex-shrink-0">✗</span>
+                    <span className="text-red-400 font-bold text-sm mt-0.5 flex-shrink-0">�?/span>
                     <div>
                       <p className="text-white font-semibold text-sm">{title}</p>
                       <p className="text-gray-400 text-sm mt-1">{desc}</p>
@@ -306,8 +306,8 @@ Markup = 233%`}</pre>
                 {[
                   { q: "What is the menu pricing formula?", a: "Selling Price = Food Cost ÷ Target Food Cost %. Divide the ingredient cost per portion by your target food cost percentage (as a decimal) to get the minimum selling price." },
                   { q: "How do you calculate menu price from food cost?", a: "Calculate total ingredient cost for one portion, then divide by your target food cost % (e.g. 0.30 for 30%). Round the result up to a psychologically appealing price." },
-                  { q: "What target food cost percentage should I use?", a: "28–35% for most restaurants. Fast casual 25–30%. Fine dining 30–38%. The formula gives your floor price — you can price higher if your market allows." },
-                  { q: "How do you adjust for delivery platform commissions?", a: "Use: Delivery Price = Food Cost ÷ (Target FC% × (1 − Commission %)). A 25% commission requires roughly a 33% price increase over dine-in to maintain the same margin." },
+                  { q: "What target food cost percentage should I use?", a: "28�?5% for most restaurants. Fast casual 25�?0%. Fine dining 30�?8%. The formula gives your floor price �?you can price higher if your market allows." },
+                  { q: "How do you adjust for delivery platform commissions?", a: "Use: Delivery Price = Food Cost ÷ (Target FC% × (1 �?Commission %)). A 25% commission requires roughly a 33% price increase over dine-in to maintain the same margin." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
                     <p className="text-white font-semibold mb-2">{q}</p>
@@ -321,13 +321,13 @@ Markup = 233%`}</pre>
             <section className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Apply the Formula Instantly</h2>
               <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-                Enter your ingredients and target food cost % — MenuPricer runs the formula and adds AI-powered pricing analysis for your market.
+                Enter your ingredients and target food cost % �?MenuPricer runs the formula and adds AI-powered pricing analysis for your market.
               </p>
               <Link
                 href="/"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg"
               >
-                <LogoIcon className="w-5 h-5" />
+                <LogoIcon size={20} />
                 Try the Pricing Calculator
               </Link>
             </section>
@@ -344,7 +344,7 @@ Markup = 233%`}</pre>
                   ["/ingredient-cost-calculator", "Ingredient Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">→</span>{label}
+                    <span className="text-gray-600">�?/span>{label}
                   </Link>
                 ))}
               </div>

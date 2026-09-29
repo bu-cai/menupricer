@@ -8,15 +8,15 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "Food Costing 101: A Beginner's Guide for Restaurants (2026)",
   description:
-    "Learn food costing from scratch â€” what it is, why it matters, and how to calculate food cost for every dish on your menu. The complete beginner's guide.",
+    "Learn food costing from scratch â€?what it is, why it matters, and how to calculate food cost for every dish on your menu. The complete beginner's guide.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/food-costing-101" },
   openGraph: {
     title: "Food Costing 101: A Beginner's Guide for Restaurants",
     description:
-      "The complete beginner's guide to restaurant food costing â€” formulas, examples, target percentages, and common mistakes to avoid.",
+      "The complete beginner's guide to restaurant food costing â€?formulas, examples, target percentages, and common mistakes to avoid.",
     url: "https://www.aimenupricer.com/blog/food-costing-101",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "Food Costing 101: A Beginner's Guide for Restaurants",
   description:
-    "A complete introduction to restaurant food costing â€” what it means, why it matters, how to calculate food cost per dish, and how to set profitable menu prices.",
+    "A complete introduction to restaurant food costing â€?what it means, why it matters, how to calculate food cost per dish, and how to set profitable menu prices.",
   url: "https://www.aimenupricer.com/blog/food-costing-101",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "What food cost percentage should a restaurant target?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most restaurants target 28â€“35% food cost. Fast casual typically aims for 28â€“32%. Fine dining can run up to 38% because of higher check averages. The key benchmark is prime cost (food + labor) staying under 60% of total revenue.",
+        text: "Most restaurants target 28â€?5% food cost. Fast casual typically aims for 28â€?2%. Fine dining can run up to 38% because of higher check averages. The key benchmark is prime cost (food + labor) staying under 60% of total revenue.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "How do you calculate food cost for a recipe?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "List every ingredient in the recipe with the quantity used per portion. Find the unit cost for each ingredient from your most recent supplier invoice. Multiply quantity by unit cost for each ingredient. Sum all ingredient costs â€” this is your food cost per dish. Divide by your target food cost percentage to get the minimum menu price.",
+        text: "List every ingredient in the recipe with the quantity used per portion. Find the unit cost for each ingredient from your most recent supplier invoice. Multiply quantity by unit cost for each ingredient. Sum all ingredient costs â€?this is your food cost per dish. Divide by your target food cost percentage to get the minimum menu price.",
       },
     },
   ],
@@ -86,7 +86,7 @@ const STEPS = [
   {
     n: 1,
     title: "List every ingredient and quantity",
-    desc: "Write down every ingredient that goes into one serving of the dish â€” including cooking oil, garnishes, sauces, and sides. Many beginners forget small-cost items like salt, pepper, and herbs. These add up.",
+    desc: "Write down every ingredient that goes into one serving of the dish â€?including cooking oil, garnishes, sauces, and sides. Many beginners forget small-cost items like salt, pepper, and herbs. These add up.",
     example: `Grilled Chicken (1 portion):
   Chicken breast:    180g
   Olive oil:          10ml
@@ -98,12 +98,12 @@ const STEPS = [
   {
     n: 2,
     title: "Find the unit cost from your invoices",
-    desc: "Use your most recent supplier invoice â€” not the supermarket retail price. Convert pack prices to unit costs. For example: a 5kg bag of chicken costs $22 â†’ $4.40 per kg â†’ $0.792 per 100g.",
-    example: `Chicken breast:  $4.40/kg  â†’ $0.0044/g
-Olive oil:       $12/1L    â†’ $0.012/ml
-Garlic:          $3.20/kg  â†’ $0.0032/g
+    desc: "Use your most recent supplier invoice â€?not the supermarket retail price. Convert pack prices to unit costs. For example: a 5kg bag of chicken costs $22 â†?$4.40 per kg â†?$0.792 per 100g.",
+    example: `Chicken breast:  $4.40/kg  â†?$0.0044/g
+Olive oil:       $12/1L    â†?$0.012/ml
+Garlic:          $3.20/kg  â†?$0.0032/g
 Lemon:           $0.35 each
-Mixed herbs:     $18/100g  â†’ $0.18/g
+Mixed herbs:     $18/100g  â†?$0.18/g
 Salt & pepper:   ~$0.05 (estimated)`,
   },
   {
@@ -122,7 +122,7 @@ Total food cost:             $1.43`,
   {
     n: 4,
     title: "Adjust for yield and waste",
-    desc: "Raw ingredients lose weight during preparation â€” trimming, cooking, evaporation. The usable portion is called yield. Divide by yield % to get the true cost.",
+    desc: "Raw ingredients lose weight during preparation â€?trimming, cooking, evaporation. The usable portion is called yield. Divide by yield % to get the true cost.",
     example: `Chicken breast yield after trimming: 92%
 True cost = $0.79 Ã· 0.92 = $0.86
 
@@ -161,7 +161,7 @@ export default function FoodCosting101Page() {
 
           <header className="mb-10">
             <div className="flex items-center gap-2 text-orange-400 text-sm font-medium mb-3">
-              <LogoIcon className="w-4 h-4" />
+              <LogoIcon size={16} />
               <span>MenuPricer Guide Â· {DATE_DISPLAY}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
@@ -186,12 +186,12 @@ export default function FoodCosting101Page() {
               <h2 className="text-2xl font-bold text-white mb-4">The Two Core Formulas</h2>
               <div className="space-y-4">
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-5">
-                  <p className="text-white font-semibold mb-2">Formula 1 â€” Food cost per dish</p>
+                  <p className="text-white font-semibold mb-2">Formula 1 â€?Food cost per dish</p>
                   <pre className="text-green-400 font-mono text-sm">{`Food Cost = Î£ (ingredient quantity Ã— unit cost)`}</pre>
                   <p className="text-gray-400 text-xs mt-2">Sum of every ingredient&apos;s cost for one portion</p>
                 </div>
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-5">
-                  <p className="text-white font-semibold mb-2">Formula 2 â€” Menu price from food cost</p>
+                  <p className="text-white font-semibold mb-2">Formula 2 â€?Menu price from food cost</p>
                   <pre className="text-green-400 font-mono text-sm">{`Menu Price = Food Cost Ã· Target Food Cost %`}</pre>
                   <p className="text-gray-400 text-xs mt-2">The minimum selling price to hit your target margin</p>
                 </div>
@@ -226,11 +226,11 @@ export default function FoodCosting101Page() {
                 {[
                   ["Food cost per dish", "The total ingredient cost to produce one serving. This is your starting number for everything else."],
                   ["Food cost percentage (FC%)", "Food cost expressed as a share of the selling price. FC% = (Food Cost Ã· Selling Price) Ã— 100."],
-                  ["Yield percentage", "The proportion of a raw ingredient that is usable after trimming, peeling, or cooking. A chicken breast with 92% yield means 100g raw â†’ 92g usable."],
+                  ["Yield percentage", "The proportion of a raw ingredient that is usable after trimming, peeling, or cooking. A chicken breast with 92% yield means 100g raw â†?92g usable."],
                   ["Prime cost", "Food cost + labor cost. Should stay under 60% of revenue for most restaurant types."],
-                  ["Theoretical food cost", "What your food cost should be based on recipes and sales mix â€” before actual waste, theft, or over-portioning."],
-                  ["Actual food cost", "What you actually spent: (Beginning Inventory + Purchases âˆ’ Ending Inventory) Ã· Revenue."],
-                  ["Variance", "Actual FC% âˆ’ Theoretical FC%. More than 2â€“3% signals a problem worth investigating."],
+                  ["Theoretical food cost", "What your food cost should be based on recipes and sales mix â€?before actual waste, theft, or over-portioning."],
+                  ["Actual food cost", "What you actually spent: (Beginning Inventory + Purchases âˆ?Ending Inventory) Ã· Revenue."],
+                  ["Variance", "Actual FC% âˆ?Theoretical FC%. More than 2â€?% signals a problem worth investigating."],
                 ].map(([term, def]) => (
                   <div key={term} className="flex gap-3 bg-gray-900 border border-gray-800 rounded-lg p-4">
                     <span className="text-orange-400 font-semibold text-sm flex-shrink-0 w-40">{term}</span>
@@ -254,12 +254,12 @@ export default function FoodCosting101Page() {
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Fast food / QSR", "25â€“28%", "3.6â€“4.0Ã—"],
-                      ["Fast casual", "28â€“32%", "3.1â€“3.6Ã—"],
-                      ["Casual dining", "28â€“35%", "2.9â€“3.6Ã—"],
-                      ["Fine dining", "30â€“38%", "2.6â€“3.3Ã—"],
-                      ["Bakery / cafÃ©", "28â€“35%", "2.9â€“3.6Ã—"],
-                      ["Bar / gastropub", "22â€“28%", "3.6â€“4.5Ã—"],
+                      ["Fast food / QSR", "25â€?8%", "3.6â€?.0Ã—"],
+                      ["Fast casual", "28â€?2%", "3.1â€?.6Ã—"],
+                      ["Casual dining", "28â€?5%", "2.9â€?.6Ã—"],
+                      ["Fine dining", "30â€?8%", "2.6â€?.3Ã—"],
+                      ["Bakery / cafÃ©", "28â€?5%", "2.9â€?.6Ã—"],
+                      ["Bar / gastropub", "22â€?8%", "3.6â€?.5Ã—"],
                     ].map(([type, pct, mult]) => (
                       <tr key={type}>
                         <td className="py-3 pr-4 text-white">{type}</td>
@@ -277,14 +277,14 @@ export default function FoodCosting101Page() {
               <h2 className="text-2xl font-bold text-white mb-4">5 Beginner Mistakes in Food Costing</h2>
               <div className="space-y-3">
                 {[
-                  ["Using retail prices", "Always use your actual wholesale invoice price. Retail prices are 30â€“60% higher and will cause you to underprice."],
-                  ["Skipping small ingredients", "Salt, pepper, oil, herbs, and garnishes add up to $0.20â€“0.50 per dish. Over 200 covers a day that is $40â€“100 in untracked cost."],
-                  ["Forgetting yield loss", "Raw weight â‰  plated weight. Proteins lose 15â€“25% to cooking. Vegetables lose 10â€“30% to trimming. Always apply yield %."],
-                  ["Costing once and forgetting", "Supplier prices change. Recost your top 20% highest-selling dishes every 3â€“6 months, or whenever a major ingredient cost shifts."],
-                  ["Using the same FC% for every dish", "Proteins run 35â€“45% food cost. Beverages and desserts run 15â€“25%. Price each category at its own target to optimize total margin."],
+                  ["Using retail prices", "Always use your actual wholesale invoice price. Retail prices are 30â€?0% higher and will cause you to underprice."],
+                  ["Skipping small ingredients", "Salt, pepper, oil, herbs, and garnishes add up to $0.20â€?.50 per dish. Over 200 covers a day that is $40â€?00 in untracked cost."],
+                  ["Forgetting yield loss", "Raw weight â‰?plated weight. Proteins lose 15â€?5% to cooking. Vegetables lose 10â€?0% to trimming. Always apply yield %."],
+                  ["Costing once and forgetting", "Supplier prices change. Recost your top 20% highest-selling dishes every 3â€? months, or whenever a major ingredient cost shifts."],
+                  ["Using the same FC% for every dish", "Proteins run 35â€?5% food cost. Beverages and desserts run 15â€?5%. Price each category at its own target to optimize total margin."],
                 ].map(([title, desc]) => (
                   <div key={title} className="flex gap-3 bg-gray-900 border border-gray-800 rounded-lg p-4">
-                    <span className="text-red-400 font-bold text-sm mt-0.5 flex-shrink-0">âœ—</span>
+                    <span className="text-red-400 font-bold text-sm mt-0.5 flex-shrink-0">âœ?/span>
                     <div>
                       <p className="text-white font-semibold text-sm">{title}</p>
                       <p className="text-gray-400 text-sm mt-1">{desc}</p>
@@ -301,7 +301,7 @@ export default function FoodCosting101Page() {
                 {[
                   { q: "What is food costing?", a: "The process of calculating the ingredient cost to produce one serving of a dish, then using that number to set a profitable menu price." },
                   { q: "What is the food costing formula?", a: "Two formulas: (1) Food Cost per Dish = Î£(quantity Ã— unit cost); (2) Menu Price = Food Cost Ã· Target FC%. Example: $4.20 cost Ã· 0.30 = $14 minimum price." },
-                  { q: "What food cost percentage should a restaurant target?", a: "28â€“35% for most restaurants. Fast casual targets 28â€“32%. Fine dining can run up to 38%. The key benchmark is prime cost (food + labor) under 60% of revenue." },
+                  { q: "What food cost percentage should a restaurant target?", a: "28â€?5% for most restaurants. Fast casual targets 28â€?2%. Fine dining can run up to 38%. The key benchmark is prime cost (food + labor) under 60% of revenue." },
                   { q: "How do you calculate food cost for a recipe?", a: "List every ingredient with its quantity per portion. Find the unit cost from your supplier invoice. Multiply quantity Ã— unit cost for each ingredient. Sum the totals. Adjust for yield. Divide by your target FC% to get the minimum menu price." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -316,13 +316,13 @@ export default function FoodCosting101Page() {
             <section className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Skip the Spreadsheet</h2>
               <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-                MenuPricer does all five steps for you. Enter your ingredients, get your food cost, your minimum price, and an AI-suggested optimal price â€” in seconds.
+                MenuPricer does all five steps for you. Enter your ingredients, get your food cost, your minimum price, and an AI-suggested optimal price â€?in seconds.
               </p>
               <Link
                 href="/"
                 className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-8 py-3 rounded-xl transition-colors text-lg"
               >
-                <LogoIcon className="w-5 h-5" />
+                <LogoIcon size={20} />
                 Cost Your First Dish Free
               </Link>
             </section>
@@ -339,7 +339,7 @@ export default function FoodCosting101Page() {
                   ["/ingredient-cost-calculator", "Ingredient Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">â†’</span>{label}
+                    <span className="text-gray-600">â†?/span>{label}
                   </Link>
                 ))}
               </div>
