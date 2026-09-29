@@ -8,7 +8,7 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "Restaurant Cost Breakdown: Every Expense Category and Target % (2026)",
   description:
-    "A complete breakdown of restaurant costs â€?food, labor, rent, utilities, and more â€?with target percentage benchmarks for each category. Know where your money goes.",
+    "A complete breakdown of restaurant costs â€” food, labor, rent, utilities, and more â€” with target percentage benchmarks for each category. Know where your money goes.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/restaurant-cost-breakdown" },
   openGraph: {
     title: "Restaurant Cost Breakdown: Every Expense Category and Target %",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "See every restaurant cost category with industry-standard target percentages. Food, labor, rent, marketing, and more.",
     url: "https://www.aimenupricer.com/blog/restaurant-cost-breakdown",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "Restaurant Cost Breakdown: Every Expense Category and Target %",
   description:
-    "A complete restaurant cost breakdown covering food, labor, occupancy, utilities, and more â€?with benchmarks and actionable advice for each category.",
+    "A complete restaurant cost breakdown covering food, labor, occupancy, utilities, and more â€” with benchmarks and actionable advice for each category.",
   url: "https://www.aimenupricer.com/blog/restaurant-cost-breakdown",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -52,7 +52,7 @@ const FAQ_SCHEMA = {
       name: "What are the main costs in a restaurant?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The main restaurant costs are: food cost (28â€?5% of revenue), labor cost (25â€?5%), occupancy/rent (5â€?0%), utilities (3â€?%), marketing (1â€?%), supplies and smallwares (1â€?%), and technology/POS (1â€?%). Prime cost â€?food plus labor â€?is the key metric and should stay below 60% of revenue.",
+        text: "The main restaurant costs are: food cost (28â€“35% of revenue), labor cost (25â€“35%), occupancy/rent (5â€“10%), utilities (3â€“5%), marketing (1â€“3%), supplies and smallwares (1â€“2%), and technology/POS (1â€“2%). Prime cost â€” food plus labor â€” is the key metric and should stay below 60% of revenue.",
       },
     },
     {
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What percentage of restaurant revenue should food cost be?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Food cost should be 28â€?5% of revenue for most restaurants. Fast casual targets 25â€?0%. Fine dining allows up to 38% because of higher ticket prices. Most operators use the prime cost benchmark: food + labor should stay under 60% of revenue.",
+        text: "Food cost should be 28â€“35% of revenue for most restaurants. Fast casual targets 25â€“30%. Fine dining allows up to 38% because of higher ticket prices. Most operators use the prime cost benchmark: food + labor should stay under 60% of revenue.",
       },
     },
     {
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "What is the biggest cost for a restaurant?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Labor is typically the largest single cost for a full-service restaurant, running 30â€?5% of revenue. Food cost is second at 28â€?5%. Together (prime cost) they consume 55â€?5% of every dollar earned, which is why both are tracked closely.",
+        text: "Labor is typically the largest single cost for a full-service restaurant, running 30â€“35% of revenue. Food cost is second at 28â€“35%. Together (prime cost) they consume 55â€“65% of every dollar earned, which is why both are tracked closely.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "What is restaurant prime cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Prime cost is food cost plus labor cost â€?the two largest controllable expenses in a restaurant. A healthy prime cost is under 60% of revenue. Full-service restaurants targeting profitability aim for 55â€?8%.",
+        text: "Prime cost is food cost plus labor cost â€” the two largest controllable expenses in a restaurant. A healthy prime cost is under 60% of revenue. Full-service restaurants targeting profitability aim for 55â€“58%.",
       },
     },
     {
@@ -84,23 +84,23 @@ const FAQ_SCHEMA = {
       name: "What is a typical restaurant profit margin?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Restaurant net profit margins are typically 3â€?%. Full-service restaurants average 3â€?%. Fast casual averages 6â€?%. Fine dining varies widely. Margins this thin mean every percentage point of cost control matters significantly.",
+        text: "Restaurant net profit margins are typically 3â€“9%. Full-service restaurants average 3â€“5%. Fast casual averages 6â€“9%. Fine dining varies widely. Margins this thin mean every percentage point of cost control matters significantly.",
       },
     },
   ],
 };
 
 const COSTS = [
-  { cat: "Food Cost", target: "28â€?5%", fixed: false, notes: "Raw ingredients for all menu items. The most directly controllable cost." },
-  { cat: "Labor Cost", target: "25â€?5%", fixed: false, notes: "Wages, salaries, taxes, benefits for all front and back of house staff." },
-  { cat: "Rent / Occupancy", target: "5â€?0%", fixed: true, notes: "Base rent, CAM charges, property taxes. Higher for urban/high-traffic locations." },
-  { cat: "Utilities", target: "3â€?%", fixed: true, notes: "Electricity, gas, water. Kitchen equipment drives most consumption." },
-  { cat: "Marketing & Advertising", target: "1â€?%", fixed: false, notes: "Social media, email, promotions, delivery platform fees." },
-  { cat: "Supplies & Smallwares", target: "1â€?%", fixed: false, notes: "Takeout containers, cleaning supplies, gloves, paper goods." },
-  { cat: "Technology & POS", target: "0.5â€?%", fixed: true, notes: "POS system, reservation software, ordering platforms." },
-  { cat: "Insurance", target: "0.5â€?%", fixed: true, notes: "General liability, workers' comp, property insurance." },
-  { cat: "Repairs & Maintenance", target: "1â€?%", fixed: false, notes: "Equipment servicing, facility upkeep, unexpected breakdowns." },
-  { cat: "Credit Card Fees", target: "2â€?%", fixed: false, notes: "Processing fees on card transactions, typically 1.5â€?.5% per transaction." },
+  { cat: "Food Cost", target: "28â€“35%", fixed: false, notes: "Raw ingredients for all menu items. The most directly controllable cost." },
+  { cat: "Labor Cost", target: "25â€“35%", fixed: false, notes: "Wages, salaries, taxes, benefits for all front and back of house staff." },
+  { cat: "Rent / Occupancy", target: "5â€“10%", fixed: true, notes: "Base rent, CAM charges, property taxes. Higher for urban/high-traffic locations." },
+  { cat: "Utilities", target: "3â€“5%", fixed: true, notes: "Electricity, gas, water. Kitchen equipment drives most consumption." },
+  { cat: "Marketing & Advertising", target: "1â€“3%", fixed: false, notes: "Social media, email, promotions, delivery platform fees." },
+  { cat: "Supplies & Smallwares", target: "1â€“2%", fixed: false, notes: "Takeout containers, cleaning supplies, gloves, paper goods." },
+  { cat: "Technology & POS", target: "0.5â€“1%", fixed: true, notes: "POS system, reservation software, ordering platforms." },
+  { cat: "Insurance", target: "0.5â€“1%", fixed: true, notes: "General liability, workers' comp, property insurance." },
+  { cat: "Repairs & Maintenance", target: "1â€“2%", fixed: false, notes: "Equipment servicing, facility upkeep, unexpected breakdowns." },
+  { cat: "Credit Card Fees", target: "2â€“3%", fixed: false, notes: "Processing fees on card transactions, typically 1.5â€“3.5% per transaction." },
 ];
 
 export default function RestaurantCostBreakdownPage() {
@@ -137,7 +137,7 @@ export default function RestaurantCostBreakdownPage() {
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 mb-10">
             <p className="text-orange-300 font-semibold text-sm mb-2">The most important benchmark</p>
             <p className="text-white font-mono text-lg">Prime Cost (Food + Labor) &lt; 60% of revenue</p>
-            <p className="text-gray-400 text-sm mt-1">Everything else â€?rent, utilities, marketing â€?must fit into the remaining 40% to leave a profit margin.</p>
+            <p className="text-gray-400 text-sm mt-1">Everything else â€” rent, utilities, marketing â€” must fit into the remaining 40% to leave a profit margin.</p>
           </div>
 
           <div className="space-y-10 text-gray-300 leading-relaxed">
@@ -180,12 +180,12 @@ export default function RestaurantCostBreakdownPage() {
               <div className="space-y-2">
                 {[
                   { label: "Revenue", val: "$50,000", bar: 100, color: "bg-gray-600", prefix: "" },
-                  { label: "Food Cost (30%)", val: "âˆ?15,000", bar: 30, color: "bg-orange-500", prefix: "" },
-                  { label: "Labor Cost (28%)", val: "âˆ?14,000", bar: 28, color: "bg-orange-500", prefix: "" },
+                  { label: "Food Cost (30%)", val: "âˆ’$15,000", bar: 30, color: "bg-orange-500", prefix: "" },
+                  { label: "Labor Cost (28%)", val: "âˆ’$14,000", bar: 28, color: "bg-orange-500", prefix: "" },
                   { label: "Prime Cost subtotal", val: "$21,000 left", bar: 42, color: "bg-gray-700 border border-orange-500/40", prefix: "" },
-                  { label: "Rent (7%)", val: "âˆ?3,500", bar: 7, color: "bg-blue-500/60", prefix: "" },
-                  { label: "Utilities (4%)", val: "âˆ?2,000", bar: 4, color: "bg-blue-500/60", prefix: "" },
-                  { label: "Other (6%)", val: "âˆ?3,000", bar: 6, color: "bg-blue-500/60", prefix: "" },
+                  { label: "Rent (7%)", val: "âˆ’$3,500", bar: 7, color: "bg-blue-500/60", prefix: "" },
+                  { label: "Utilities (4%)", val: "âˆ’$2,000", bar: 4, color: "bg-blue-500/60", prefix: "" },
+                  { label: "Other (6%)", val: "âˆ’$3,000", bar: 6, color: "bg-blue-500/60", prefix: "" },
                   { label: "Net Profit (5%)", val: "$2,500", bar: 5, color: "bg-green-500", prefix: "" },
                 ].map(({ label, val, bar, color }) => (
                   <div key={label} className="flex items-center gap-3">
@@ -208,22 +208,22 @@ export default function RestaurantCostBreakdownPage() {
                   <h3 className="text-blue-300 font-semibold mb-3">Fixed Costs</h3>
                   <p className="text-gray-400 text-sm mb-3">Incurred regardless of how much you sell. Cannot be reduced quickly.</p>
                   <ul className="space-y-1 text-sm text-gray-300">
-                    <li>â€?Rent / lease</li>
-                    <li>â€?Insurance</li>
-                    <li>â€?Technology & POS subscriptions</li>
-                    <li>â€?Salaried management</li>
-                    <li>â€?Loan repayments</li>
+                    <li>â€¢ Rent / lease</li>
+                    <li>â€¢ Insurance</li>
+                    <li>â€¢ Technology & POS subscriptions</li>
+                    <li>â€¢ Salaried management</li>
+                    <li>â€¢ Loan repayments</li>
                   </ul>
                 </div>
                 <div className="bg-gray-900 border border-green-500/30 rounded-xl p-5">
                   <h3 className="text-green-300 font-semibold mb-3">Variable Costs</h3>
                   <p className="text-gray-400 text-sm mb-3">Scale with your sales volume. Easier to control in the short term.</p>
                   <ul className="space-y-1 text-sm text-gray-300">
-                    <li>â€?Food cost</li>
-                    <li>â€?Hourly labor</li>
-                    <li>â€?Supplies & paper goods</li>
-                    <li>â€?Credit card processing fees</li>
-                    <li>â€?Delivery platform commissions</li>
+                    <li>â€¢ Food cost</li>
+                    <li>â€¢ Hourly labor</li>
+                    <li>â€¢ Supplies & paper goods</li>
+                    <li>â€¢ Credit card processing fees</li>
+                    <li>â€¢ Delivery platform commissions</li>
                   </ul>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function RestaurantCostBreakdownPage() {
 
             {/* Deep dive: food */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">Deep Dive: Food Cost (28â€?5%)</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Deep Dive: Food Cost (28â€“35%)</h2>
               <p>
                 Food cost is the most directly controllable line item. Unlike rent, you can reduce food cost this week through better purchasing, tighter portion control, and reduced waste.
               </p>
@@ -245,12 +245,12 @@ export default function RestaurantCostBreakdownPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Fast food / QSR", "25â€?0%"],
-                      ["Fast casual", "28â€?2%"],
-                      ["Casual dining", "28â€?5%"],
-                      ["Fine dining", "30â€?8%"],
-                      ["Bakery / cafÃ©", "28â€?5%"],
-                      ["Catering", "25â€?5%"],
+                      ["Fast food / QSR", "25â€“30%"],
+                      ["Fast casual", "28â€“32%"],
+                      ["Casual dining", "28â€“35%"],
+                      ["Fine dining", "30â€“38%"],
+                      ["Bakery / cafÃ©", "28â€“35%"],
+                      ["Catering", "25â€“35%"],
                     ].map(([type, target]) => (
                       <tr key={type}>
                         <td className="py-3 pr-6 text-white">{type}</td>
@@ -264,7 +264,7 @@ export default function RestaurantCostBreakdownPage() {
 
             {/* Deep dive: labor */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">Deep Dive: Labor Cost (25â€?5%)</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Deep Dive: Labor Cost (25â€“35%)</h2>
               <p>
                 Labor is often the <strong className="text-white">largest single cost</strong> in a full-service restaurant. It includes wages, salaries, payroll taxes (7.65% for FICA), workers' compensation, and benefits.
               </p>
@@ -274,7 +274,7 @@ export default function RestaurantCostBreakdownPage() {
                 <p className="text-gray-500 text-xs mt-3">Include all front-of-house, back-of-house, management, and owner draws in the labor number.</p>
               </div>
               <p className="mt-4">
-                Many operators track back-of-house (BOH) and front-of-house (FOH) labor separately. BOH typically runs 12â€?8% of revenue; FOH 10â€?5%.
+                Many operators track back-of-house (BOH) and front-of-house (FOH) labor separately. BOH typically runs 12â€“18% of revenue; FOH 10â€“15%.
               </p>
             </section>
 
@@ -294,12 +294,12 @@ export default function RestaurantCostBreakdownPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["QSR / Fast Food", "25â€?0%", "25â€?0%", "50â€?8%", "6â€?%"],
-                      ["Fast Casual", "28â€?2%", "25â€?0%", "53â€?0%", "5â€?%"],
-                      ["Casual Dining", "28â€?5%", "28â€?5%", "56â€?5%", "3â€?%"],
-                      ["Fine Dining", "30â€?8%", "30â€?5%", "60â€?8%", "3â€?%"],
-                      ["Bar / Nightclub", "18â€?4%", "30â€?5%", "50â€?8%", "7â€?2%"],
-                      ["Bakery", "28â€?5%", "25â€?5%", "55â€?5%", "3â€?%"],
+                      ["QSR / Fast Food", "25â€“30%", "25â€“30%", "50â€“58%", "6â€“9%"],
+                      ["Fast Casual", "28â€“32%", "25â€“30%", "53â€“60%", "5â€“8%"],
+                      ["Casual Dining", "28â€“35%", "28â€“35%", "56â€“65%", "3â€“6%"],
+                      ["Fine Dining", "30â€“38%", "30â€“35%", "60â€“68%", "3â€“7%"],
+                      ["Bar / Nightclub", "18â€“24%", "30â€“35%", "50â€“58%", "7â€“12%"],
+                      ["Bakery", "28â€“35%", "25â€“35%", "55â€“65%", "3â€“5%"],
                     ].map(([type, food, labor, prime, net]) => (
                       <tr key={type}>
                         <td className="py-3 pr-4 text-white text-sm">{type}</td>
@@ -321,19 +321,19 @@ export default function RestaurantCostBreakdownPage() {
                 {[
                   {
                     q: "What are the main costs in a restaurant?",
-                    a: "Food (28â€?5%), labor (25â€?5%), rent (5â€?0%), utilities (3â€?%), marketing (1â€?%), and supplies (1â€?%) are the main categories. Prime cost (food + labor) is the key metric â€?target under 60% of revenue.",
+                    a: "Food (28â€“35%), labor (25â€“35%), rent (5â€“10%), utilities (3â€“5%), marketing (1â€“3%), and supplies (1â€“2%) are the main categories. Prime cost (food + labor) is the key metric â€” target under 60% of revenue.",
                   },
                   {
                     q: "What is the biggest cost for a restaurant?",
-                    a: "Labor is typically the largest single cost for full-service restaurants at 30â€?5% of revenue. Food cost is second at 28â€?5%. Together they form prime cost.",
+                    a: "Labor is typically the largest single cost for full-service restaurants at 30â€“35% of revenue. Food cost is second at 28â€“35%. Together they form prime cost.",
                   },
                   {
                     q: "What is a typical restaurant profit margin?",
-                    a: "Net margins are typically 3â€?%. Full-service restaurants average 3â€?%; fast casual averages 6â€?%. Margins are thin, so every point of cost reduction matters.",
+                    a: "Net margins are typically 3â€“9%. Full-service restaurants average 3â€“5%; fast casual averages 6â€“9%. Margins are thin, so every point of cost reduction matters.",
                   },
                   {
                     q: "What is restaurant prime cost?",
-                    a: "Prime cost = food cost + labor cost. The most important cost benchmark for restaurants. Target under 60% of revenue. Full-service restaurants targeting good profitability aim for 55â€?8%.",
+                    a: "Prime cost = food cost + labor cost. The most important cost benchmark for restaurants. Target under 60% of revenue. Full-service restaurants targeting good profitability aim for 55â€“58%.",
                   },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -376,7 +376,7 @@ export default function RestaurantCostBreakdownPage() {
                     href={href}
                     className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3"
                   >
-                    <span className="text-gray-600">â†?/span>
+                    <span className="text-gray-600">â†’</span>
                     {label}
                   </Link>
                 ))}

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Is Food Cost? Definition, Formula & How Restaurants Track It",
     description:
-      "Clear definition of food cost â€?the actual dollar spend on ingredients â€?plus formulas, benchmarks, and how to lower it.",
+      "Clear definition of food cost â€” the actual dollar spend on ingredients â€” plus formulas, benchmarks, and how to lower it.",
     url: "https://www.aimenupricer.com/blog/what-is-food-cost",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -52,7 +52,7 @@ const FAQ_SCHEMA = {
       name: "What is food cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Food cost is the total dollar amount a restaurant spends on raw ingredients to produce its menu items over a given period. It is calculated as: Beginning Inventory + Purchases âˆ?Ending Inventory = Food Cost. A higher food cost means less money available for labor, overhead, and profit.",
+        text: "Food cost is the total dollar amount a restaurant spends on raw ingredients to produce its menu items over a given period. It is calculated as: Beginning Inventory + Purchases âˆ’ Ending Inventory = Food Cost. A higher food cost means less money available for labor, overhead, and profit.",
       },
     },
     {
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What is the difference between food cost and food cost percentage?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Food cost is a dollar amount â€?the actual money spent on ingredients. Food cost percentage is a ratio â€?food cost divided by revenue, expressed as a percent. For example, if you spend $8,000 on food and earn $30,000 in sales, your food cost is $8,000 and your food cost percentage is 26.7%. Most restaurant benchmarking uses the percentage because it normalizes for volume.",
+        text: "Food cost is a dollar amount â€” the actual money spent on ingredients. Food cost percentage is a ratio â€” food cost divided by revenue, expressed as a percent. For example, if you spend $8,000 on food and earn $30,000 in sales, your food cost is $8,000 and your food cost percentage is 26.7%. Most restaurant benchmarking uses the percentage because it normalizes for volume.",
       },
     },
     {
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "What is a good food cost for a restaurant?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "In dollar terms, food cost should equal 28â€?5% of food revenue for most full-service restaurants. Fast casual typically targets 25â€?0%. Fine dining allows up to 38% because higher ticket prices offset the ratio. The key benchmark is the prime cost (food + labor): keep it under 60% of revenue.",
+        text: "In dollar terms, food cost should equal 28â€“35% of food revenue for most full-service restaurants. Fast casual typically targets 25â€“30%. Fine dining allows up to 38% because higher ticket prices offset the ratio. The key benchmark is the prime cost (food + labor): keep it under 60% of revenue.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "How do you calculate food cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Food cost = Beginning Inventory + Food Purchases âˆ?Ending Inventory. To find food cost per dish: add up the cost of each ingredient in one portion. To find food cost percentage: divide food cost by revenue and multiply by 100.",
+        text: "Food cost = Beginning Inventory + Food Purchases âˆ’ Ending Inventory. To find food cost per dish: add up the cost of each ingredient in one portion. To find food cost percentage: divide food cost by revenue and multiply by 100.",
       },
     },
     {
@@ -127,7 +127,7 @@ export default function WhatIsFoodCostPage() {
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 mb-10">
             <p className="text-orange-300 font-semibold text-sm mb-1">One-sentence definition</p>
             <p className="text-white text-lg font-medium">
-              Food cost is the dollar amount spent on ingredients â€?calculated as Beginning Inventory + Purchases âˆ?Ending Inventory.
+              Food cost is the dollar amount spent on ingredients â€” calculated as Beginning Inventory + Purchases âˆ’ Ending Inventory.
             </p>
           </div>
 
@@ -147,9 +147,9 @@ export default function WhatIsFoodCostPage() {
                 <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`Food Cost =
   Beginning Inventory
 + Food Purchases During Period
-âˆ?Ending Inventory`}</pre>
+âˆ’ Ending Inventory`}</pre>
                 <p className="text-gray-500 text-sm mt-3">
-                  Example: $5,200 beginning + $12,000 purchases âˆ?$4,800 ending = <strong className="text-white">$12,400 food cost</strong>
+                  Example: $5,200 beginning + $12,000 purchases âˆ’ $4,800 ending = <strong className="text-white">$12,400 food cost</strong>
                 </p>
               </div>
             </section>
@@ -187,7 +187,7 @@ export default function WhatIsFoodCostPage() {
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 text-white font-medium">Variance</td>
-                      <td className="py-3 pr-6">Actual minus ideal â€?reveals waste/theft</td>
+                      <td className="py-3 pr-6">Actual minus ideal â€” reveals waste/theft</td>
                       <td className="py-3 text-orange-300">3% gap = $1,200 lost</td>
                     </tr>
                   </tbody>
@@ -207,7 +207,7 @@ export default function WhatIsFoodCostPage() {
               <div className="mt-4 bg-gray-900 rounded-xl p-5 border border-gray-800">
                 <pre className="text-green-400 font-mono text-sm">{`Dish Food Cost = Î£ (Ingredient Quantity Ã— Ingredient Unit Price)`}</pre>
                 <p className="text-gray-500 text-sm mt-3">
-                  Example â€?Margherita Pizza: flour $0.35 + tomatoes $0.60 + mozzarella $1.40 + olive oil $0.25 = <strong className="text-white">$2.60 food cost per dish</strong>
+                  Example â€” Margherita Pizza: flour $0.35 + tomatoes $0.60 + mozzarella $1.40 + olive oil $0.25 = <strong className="text-white">$2.60 food cost per dish</strong>
                 </p>
               </div>
               <p className="mt-4">
@@ -215,7 +215,7 @@ export default function WhatIsFoodCostPage() {
               </p>
               <div className="mt-3 bg-gray-900 rounded-xl p-5 border border-gray-800">
                 <pre className="text-green-400 font-mono text-sm">{`Menu Price = Dish Food Cost Ã· Target Food Cost %
-Pizza example: $2.60 Ã· 0.30 = $8.67 â†?round to $8.99`}</pre>
+Pizza example: $2.60 Ã· 0.30 = $8.67 â†’ round to $8.99`}</pre>
               </div>
             </section>
 
@@ -233,13 +233,13 @@ Pizza example: $2.60 Ã· 0.30 = $8.67 â†?round to $8.99`}</pre>
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Fast food / QSR", "25â€?0%", "High volume, standardized recipes"],
-                      ["Fast casual", "28â€?2%", "Better ingredients, moderate tickets"],
-                      ["Casual dining", "28â€?5%", "Full service, mixed menu"],
-                      ["Fine dining", "30â€?8%", "Premium ingredients, high ticket price"],
-                      ["Pizza / Italian", "25â€?0%", "High-margin dough base"],
-                      ["Bakery / cafÃ©", "28â€?5%", "Labor-intensive, specialty products"],
-                      ["Catering", "25â€?5%", "Volume purchasing offsets cost"],
+                      ["Fast food / QSR", "25â€“30%", "High volume, standardized recipes"],
+                      ["Fast casual", "28â€“32%", "Better ingredients, moderate tickets"],
+                      ["Casual dining", "28â€“35%", "Full service, mixed menu"],
+                      ["Fine dining", "30â€“38%", "Premium ingredients, high ticket price"],
+                      ["Pizza / Italian", "25â€“30%", "High-margin dough base"],
+                      ["Bakery / cafÃ©", "28â€“35%", "Labor-intensive, specialty products"],
+                      ["Catering", "25â€“35%", "Volume purchasing offsets cost"],
                     ].map(([type, target, why]) => (
                       <tr key={type}>
                         <td className="py-3 pr-6 text-white">{type}</td>
@@ -260,7 +260,7 @@ Pizza example: $2.60 Ã· 0.30 = $8.67 â†?round to $8.99`}</pre>
                 {[
                   ["Over-portioning", "Staff serving larger portions than the recipe specifies"],
                   ["Food waste & spoilage", "Ordering too much, poor FIFO rotation"],
-                  ["Theft", "Employee theft is estimated to cause 4â€?% of restaurant losses"],
+                  ["Theft", "Employee theft is estimated to cause 4â€“6% of restaurant losses"],
                   ["Incorrect purchasing", "Buying at retail instead of wholesale prices"],
                   ["Supplier price increases", "Not repricing menu after cost increases"],
                   ["Untested recipes", "Costing guesses instead of measured ingredients"],
@@ -277,7 +277,7 @@ Pizza example: $2.60 Ã· 0.30 = $8.67 â†?round to $8.99`}</pre>
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Food Cost and Prime Cost</h2>
               <p>
-                Food cost alone does not tell the full story. Restaurant profitability is better measured by <strong className="text-white">prime cost</strong> â€?the sum of food cost and labor cost.
+                Food cost alone does not tell the full story. Restaurant profitability is better measured by <strong className="text-white">prime cost</strong> â€” the sum of food cost and labor cost.
               </p>
               <div className="mt-4 bg-gray-900 rounded-xl p-5 border border-gray-800">
                 <pre className="text-green-400 font-mono text-sm">{`Prime Cost = Food Cost + Labor Cost
@@ -286,10 +286,10 @@ Target: Prime Cost < 60% of revenue
 Example:
   Food cost %:  30%
   Labor cost %: 28%
-  Prime cost %: 58% âœ?(healthy)`}</pre>
+  Prime cost %: 58% âœ“ (healthy)`}</pre>
               </div>
               <p className="mt-4">
-                A restaurant with a 28% food cost but 38% labor cost has a 66% prime cost â€?unsustainable. Both numbers must be managed together.
+                A restaurant with a 28% food cost but 38% labor cost has a 66% prime cost â€” unsustainable. Both numbers must be managed together.
               </p>
             </section>
 
@@ -300,15 +300,15 @@ Example:
                 {[
                   {
                     q: "What is the difference between food cost and food cost percentage?",
-                    a: "Food cost is a dollar amount (money spent on ingredients). Food cost percentage is that dollar amount divided by revenue â€?a ratio used for benchmarking across different-sized restaurants.",
+                    a: "Food cost is a dollar amount (money spent on ingredients). Food cost percentage is that dollar amount divided by revenue â€” a ratio used for benchmarking across different-sized restaurants.",
                   },
                   {
                     q: "What is a good food cost for a restaurant?",
-                    a: "Most full-service restaurants target 28â€?5% food cost percentage. Fast casual targets 25â€?0%. The key benchmark is prime cost (food + labor) staying below 60% of revenue.",
+                    a: "Most full-service restaurants target 28â€“35% food cost percentage. Fast casual targets 25â€“30%. The key benchmark is prime cost (food + labor) staying below 60% of revenue.",
                   },
                   {
                     q: "How do you calculate food cost?",
-                    a: "Period food cost = Beginning Inventory + Purchases âˆ?Ending Inventory. Per-dish food cost = sum of (ingredient quantity Ã— unit price) for all components in one serving.",
+                    a: "Period food cost = Beginning Inventory + Purchases âˆ’ Ending Inventory. Per-dish food cost = sum of (ingredient quantity Ã— unit price) for all components in one serving.",
                   },
                   {
                     q: "What causes high food cost in restaurants?",
@@ -355,7 +355,7 @@ Example:
                     href={href}
                     className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3"
                   >
-                    <span className="text-gray-600">â†?/span>
+                    <span className="text-gray-600">â†’</span>
                     {label}
                   </Link>
                 ))}

@@ -8,15 +8,15 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "Ideal Food Cost Percentage: Industry Benchmarks by Restaurant Type (2026)",
   description:
-    "What is the ideal food cost percentage for a restaurant? The answer depends on your segment. See benchmarks by type, why 28‚Ä?5% is the standard, and how to hit your target.",
+    "What is the ideal food cost percentage for a restaurant? The answer depends on your segment. See benchmarks by type, why 28‚Äì35% is the standard, and how to hit your target.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/ideal-food-cost-percentage" },
   openGraph: {
     title: "Ideal Food Cost Percentage: Industry Benchmarks by Restaurant Type",
     description:
-      "The ideal food cost percentage for restaurants is 28‚Ä?5%. See benchmarks by segment, why the range varies, and how to calculate your own target.",
+      "The ideal food cost percentage for restaurants is 28‚Äì35%. See benchmarks by segment, why the range varies, and how to calculate your own target.",
     url: "https://www.aimenupricer.com/blog/ideal-food-cost-percentage",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer ‚Ä?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer ‚Äî AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "Ideal Food Cost Percentage: Industry Benchmarks by Restaurant Type",
   description:
-    "A data-driven guide to ideal food cost percentages for restaurants ‚Ä?what the industry standard is, why it varies by segment, and how to calculate and hit your target.",
+    "A data-driven guide to ideal food cost percentages for restaurants ‚Äî what the industry standard is, why it varies by segment, and how to calculate and hit your target.",
   url: "https://www.aimenupricer.com/blog/ideal-food-cost-percentage",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -52,7 +52,7 @@ const FAQ_SCHEMA = {
       name: "What is the ideal food cost percentage for a restaurant?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The ideal food cost percentage for most restaurants is 28‚Ä?5%. Fast food and fast casual target 25‚Ä?0%. Fine dining allows up to 38% because of higher ticket prices. The 'ideal' percentage is the one that lets you cover labor and overhead and still generate profit ‚Ä?typically meaning prime cost (food + labor) stays under 60% of revenue.",
+        text: "The ideal food cost percentage for most restaurants is 28‚Äì35%. Fast food and fast casual target 25‚Äì30%. Fine dining allows up to 38% because of higher ticket prices. The 'ideal' percentage is the one that lets you cover labor and overhead and still generate profit ‚Äî typically meaning prime cost (food + labor) stays under 60% of revenue.",
       },
     },
     {
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What is a good food cost percentage?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A good food cost percentage is one that fits your restaurant type and leaves room for a profitable prime cost. For most casual dining and fast casual restaurants, 28‚Ä?2% is considered good. Below 25% is excellent but may require sacrificing ingredient quality. Above 38% is a warning sign unless you are a high-end fine dining operation.",
+        text: "A good food cost percentage is one that fits your restaurant type and leaves room for a profitable prime cost. For most casual dining and fast casual restaurants, 28‚Äì32% is considered good. Below 25% is excellent but may require sacrificing ingredient quality. Above 38% is a warning sign unless you are a high-end fine dining operation.",
       },
     },
     {
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "Why does the ideal food cost percentage vary between restaurants?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It varies because of differences in average check size, ingredient quality, labor model, and menu mix. A fine dining restaurant serves a $60 entr√©e with $18 in ingredients ‚Ä?30% food cost. A fast food restaurant serves a $10 meal with $2.50 in ingredients ‚Ä?25% food cost. Both are 'ideal' for their segment because the rest of their cost structure is designed around that ratio.",
+        text: "It varies because of differences in average check size, ingredient quality, labor model, and menu mix. A fine dining restaurant serves a $60 entr√©e with $18 in ingredients ‚Äî 30% food cost. A fast food restaurant serves a $10 meal with $2.50 in ingredients ‚Äî 25% food cost. Both are 'ideal' for their segment because the rest of their cost structure is designed around that ratio.",
       },
     },
     {
@@ -84,22 +84,22 @@ const FAQ_SCHEMA = {
       name: "Is 30% food cost good?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes ‚Ä?30% food cost is generally considered good for most full-service restaurants. It allows a gross margin of 70%, which when combined with 28‚Ä?2% labor leaves roughly 38‚Ä?2% of revenue to cover rent, utilities, marketing, and profit. The key check is whether prime cost (food + labor) is under 60%.",
+        text: "Yes ‚Äî 30% food cost is generally considered good for most full-service restaurants. It allows a gross margin of 70%, which when combined with 28‚Äì32% labor leaves roughly 38‚Äì42% of revenue to cover rent, utilities, marketing, and profit. The key check is whether prime cost (food + labor) is under 60%.",
       },
     },
   ],
 };
 
 const BENCHMARKS = [
-  { type: "Fast Food / QSR", ideal: "25‚Ä?8%", range: "22‚Ä?0%", why: "High volume, standardized recipes, minimal table service labor", prime: "50‚Ä?8%" },
-  { type: "Fast Casual", ideal: "28‚Ä?2%", range: "25‚Ä?3%", why: "Better ingredients than QSR, counter service reduces FOH labor", prime: "53‚Ä?2%" },
-  { type: "Casual Dining", ideal: "28‚Ä?3%", range: "26‚Ä?6%", why: "Full table service, mixed menu with proteins and starches", prime: "56‚Ä?5%" },
-  { type: "Fine Dining", ideal: "30‚Ä?5%", range: "28‚Ä?0%", why: "Premium proteins, high ticket prices offset higher ingredient cost", prime: "58‚Ä?8%" },
-  { type: "Bakery / Caf√©", ideal: "28‚Ä?3%", range: "25‚Ä?8%", why: "High labor content in baked goods; pastry margin varies widely", prime: "55‚Ä?5%" },
-  { type: "Bar / Gastropub", ideal: "22‚Ä?8%", range: "20‚Ä?2%", why: "Beverage sales at 15‚Ä?5% cost pull overall average down significantly", prime: "50‚Ä?0%" },
-  { type: "Pizza", ideal: "25‚Ä?0%", range: "22‚Ä?3%", why: "High-margin dough base; cheese is the main cost driver", prime: "52‚Ä?2%" },
-  { type: "Food Truck", ideal: "28‚Ä?5%", range: "25‚Ä?8%", why: "Lower rent offsets slightly higher food cost flexibility", prime: "55‚Ä?5%" },
-  { type: "Catering", ideal: "25‚Ä?2%", range: "22‚Ä?8%", why: "Volume purchasing discounts; labor model is event-based", prime: "50‚Ä?2%" },
+  { type: "Fast Food / QSR", ideal: "25‚Äì28%", range: "22‚Äì30%", why: "High volume, standardized recipes, minimal table service labor", prime: "50‚Äì58%" },
+  { type: "Fast Casual", ideal: "28‚Äì32%", range: "25‚Äì33%", why: "Better ingredients than QSR, counter service reduces FOH labor", prime: "53‚Äì62%" },
+  { type: "Casual Dining", ideal: "28‚Äì33%", range: "26‚Äì36%", why: "Full table service, mixed menu with proteins and starches", prime: "56‚Äì65%" },
+  { type: "Fine Dining", ideal: "30‚Äì35%", range: "28‚Äì40%", why: "Premium proteins, high ticket prices offset higher ingredient cost", prime: "58‚Äì68%" },
+  { type: "Bakery / Caf√©", ideal: "28‚Äì33%", range: "25‚Äì38%", why: "High labor content in baked goods; pastry margin varies widely", prime: "55‚Äì65%" },
+  { type: "Bar / Gastropub", ideal: "22‚Äì28%", range: "20‚Äì32%", why: "Beverage sales at 15‚Äì25% cost pull overall average down significantly", prime: "50‚Äì60%" },
+  { type: "Pizza", ideal: "25‚Äì30%", range: "22‚Äì33%", why: "High-margin dough base; cheese is the main cost driver", prime: "52‚Äì62%" },
+  { type: "Food Truck", ideal: "28‚Äì35%", range: "25‚Äì38%", why: "Lower rent offsets slightly higher food cost flexibility", prime: "55‚Äì65%" },
+  { type: "Catering", ideal: "25‚Äì32%", range: "22‚Äì38%", why: "Volume purchasing discounts; labor model is event-based", prime: "50‚Äì62%" },
 ];
 
 export default function IdealFoodCostPercentagePage() {
@@ -129,7 +129,7 @@ export default function IdealFoodCostPercentagePage() {
               Ideal Food Cost Percentage: Industry Benchmarks by Restaurant Type
             </h1>
             <p className="text-lg text-gray-400 leading-relaxed">
-              The ideal food cost percentage is not one number ‚Ä?it depends on your segment, labor model, and check average. Here is what the data says for each restaurant type.
+              The ideal food cost percentage is not one number ‚Äî it depends on your segment, labor model, and check average. Here is what the data says for each restaurant type.
             </p>
           </header>
 
@@ -137,7 +137,7 @@ export default function IdealFoodCostPercentagePage() {
           <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-5 mb-10">
             <p className="text-orange-300 font-semibold text-sm mb-2">The one-sentence answer</p>
             <p className="text-white font-medium text-lg">
-              The ideal food cost percentage for most restaurants is <strong>28‚Ä?5%</strong> ‚Ä?but what matters more is keeping prime cost (food + labor) under <strong>60%</strong> of revenue.
+              The ideal food cost percentage for most restaurants is <strong>28‚Äì35%</strong> ‚Äî but what matters more is keeping prime cost (food + labor) under <strong>60%</strong> of revenue.
             </p>
           </div>
 
@@ -181,15 +181,15 @@ export default function IdealFoodCostPercentagePage() {
                 {[
                   {
                     factor: "Average check size",
-                    detail: "A fine dining restaurant selling $60 entr√©es can afford $18‚Ä?0 in ingredient cost (30‚Ä?3%). A fast food restaurant selling $10 combos can only afford $2.50‚Ä?.00 (25‚Ä?0%). Higher check = more room for expensive ingredients.",
+                    detail: "A fine dining restaurant selling $60 entr√©es can afford $18‚Äì20 in ingredient cost (30‚Äì33%). A fast food restaurant selling $10 combos can only afford $2.50‚Äì3.00 (25‚Äì30%). Higher check = more room for expensive ingredients.",
                   },
                   {
                     factor: "Labor cost model",
-                    detail: "Prime cost = food + labor. If your labor runs 28%, you can afford 32% food cost and still hit 60% prime cost. If labor runs 35% (full-service), you need food cost below 25% ‚Ä?or accept a 60%+ prime cost that compresses profit.",
+                    detail: "Prime cost = food + labor. If your labor runs 28%, you can afford 32% food cost and still hit 60% prime cost. If labor runs 35% (full-service), you need food cost below 25% ‚Äî or accept a 60%+ prime cost that compresses profit.",
                   },
                   {
                     factor: "Menu category mix",
-                    detail: "Beverage and dessert categories typically run 15‚Ä?5% food cost. Proteins run 35‚Ä?5%. A bar that derives 50% of revenue from beverages can run a much lower overall food cost % than a steakhouse. Mix matters as much as individual dish costs.",
+                    detail: "Beverage and dessert categories typically run 15‚Äì25% food cost. Proteins run 35‚Äì45%. A bar that derives 50% of revenue from beverages can run a much lower overall food cost % than a steakhouse. Mix matters as much as individual dish costs.",
                   },
                 ].map(({ factor, detail }) => (
                   <div key={factor} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -207,17 +207,17 @@ export default function IdealFoodCostPercentagePage() {
                 Your ideal food cost % is the highest food cost you can sustain while keeping prime cost under 60%. Here is the formula:
               </p>
               <div className="mt-4 bg-gray-900 rounded-xl p-5 border border-gray-800">
-                <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`Ideal FC% = 60% ‚à?Your Labor Cost %
+                <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`Ideal FC% = 60% ‚àí Your Labor Cost %
 
 Example:
   Your labor cost runs 30% of revenue
-  Ideal food cost = 60% ‚à?30% = 30%
+  Ideal food cost = 60% ‚àí 30% = 30%
 
-  If labor = 28% ‚Ü?can afford 32% food cost
-  If labor = 35% ‚Ü?must target 25% food cost`}</pre>
+  If labor = 28% ‚Üí can afford 32% food cost
+  If labor = 35% ‚Üí must target 25% food cost`}</pre>
               </div>
               <p className="mt-4 text-sm">
-                This is your <em>prime cost ceiling</em>. You can run higher food cost if you have unusually low rent, no debt service, or other below-average fixed costs ‚Ä?but 60% prime cost is the standard safety line.
+                This is your <em>prime cost ceiling</em>. You can run higher food cost if you have unusually low rent, no debt service, or other below-average fixed costs ‚Äî but 60% prime cost is the standard safety line.
               </p>
             </section>
 
@@ -227,9 +227,9 @@ Example:
               <div className="space-y-3">
                 {[
                   { range: "Under 22%", color: "bg-blue-500/20 border-blue-500/40 text-blue-300", label: "Investigate", note: "Very low food cost can mean portion sizes are too small, ingredient quality is suffering, or menu prices are too high for your market." },
-                  { range: "22‚Ä?8%", color: "bg-green-500/20 border-green-500/40 text-green-300", label: "Excellent", note: "Typical for QSR, fast food, or bar programs with strong beverage mix. Healthy if intentional." },
-                  { range: "28‚Ä?5%", color: "bg-green-500/20 border-green-500/40 text-green-300", label: "Target zone", note: "Industry standard for most restaurant types. Strong profitability if labor is controlled." },
-                  { range: "35‚Ä?0%", color: "bg-yellow-500/20 border-yellow-500/40 text-yellow-300", label: "Caution", note: "Acceptable for fine dining or specialty protein concepts, but requires below-average labor cost. Monitor closely." },
+                  { range: "22‚Äì28%", color: "bg-green-500/20 border-green-500/40 text-green-300", label: "Excellent", note: "Typical for QSR, fast food, or bar programs with strong beverage mix. Healthy if intentional." },
+                  { range: "28‚Äì35%", color: "bg-green-500/20 border-green-500/40 text-green-300", label: "Target zone", note: "Industry standard for most restaurant types. Strong profitability if labor is controlled." },
+                  { range: "35‚Äì40%", color: "bg-yellow-500/20 border-yellow-500/40 text-yellow-300", label: "Caution", note: "Acceptable for fine dining or specialty protein concepts, but requires below-average labor cost. Monitor closely." },
                   { range: "Above 40%", color: "bg-red-500/20 border-red-500/40 text-red-300", label: "Warning", note: "Unsustainable for most concepts. Indicates menu underpricing, uncontrolled waste, or over-purchasing. Immediate review needed." },
                 ].map(({ range, color, label, note }) => (
                   <div key={range} className={`border rounded-xl p-4 ${color}`}>
@@ -247,22 +247,22 @@ Example:
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Is 30% Food Cost Good?</h2>
               <p>
-                Yes ‚Ä?30% is generally considered a solid food cost for most full-service restaurants. Here is why:
+                Yes ‚Äî 30% is generally considered a solid food cost for most full-service restaurants. Here is why:
               </p>
               <div className="mt-4 bg-gray-900 rounded-xl p-5 border border-gray-800">
                 <pre className="text-green-400 font-mono text-sm leading-relaxed whitespace-pre-wrap">{`On $100 of revenue:
   Food cost (30%):     $30.00
   Labor (30%):         $30.00
-  Prime cost:          $60.00  ‚Ü?hits the 60% threshold
+  Prime cost:          $60.00  ‚Üê hits the 60% threshold
 
   Rent (7%):            $7.00
   Utilities (4%):       $4.00
   Other costs (6%):     $6.00
 
-  Net profit (3%):      $3.00  ‚Ü?thin but viable`}</pre>
+  Net profit (3%):      $3.00  ‚Üê thin but viable`}</pre>
               </div>
               <p className="mt-4 text-sm">
-                Notice that 30% food cost at 30% labor leaves almost no margin. This is why restaurants with typical labor models (28‚Ä?2%) target food cost closer to 28‚Ä?0%, not 33‚Ä?5%.
+                Notice that 30% food cost at 30% labor leaves almost no margin. This is why restaurants with typical labor models (28‚Äì32%) target food cost closer to 28‚Äì30%, not 33‚Äì35%.
               </p>
             </section>
 
@@ -271,10 +271,10 @@ Example:
               <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 {[
-                  { q: "What is the ideal food cost percentage for a restaurant?", a: "28‚Ä?5% for most restaurants. Fast food 25‚Ä?8%. Fine dining up to 38%. The real benchmark is prime cost (food + labor) staying under 60% of revenue." },
-                  { q: "What is a good food cost percentage?", a: "28‚Ä?2% is considered good for most casual dining and fast casual restaurants. Below 25% is excellent but risks quality. Above 38% is a warning sign unless you are a high-end operation with high check averages." },
-                  { q: "Why does the ideal percentage vary between restaurants?", a: "Average check size, labor model, and menu mix all determine what is sustainable. Fine dining can afford 33% food cost because check averages are high. Bars can run lower because beverages cost 15‚Ä?0% to produce." },
-                  { q: "Is 30% food cost good?", a: "Yes, generally. At 30% food cost and 30% labor, prime cost is 60% ‚Ä?right at the industry threshold. Profit depends on keeping rent, utilities, and other costs under 30% of revenue." },
+                  { q: "What is the ideal food cost percentage for a restaurant?", a: "28‚Äì35% for most restaurants. Fast food 25‚Äì28%. Fine dining up to 38%. The real benchmark is prime cost (food + labor) staying under 60% of revenue." },
+                  { q: "What is a good food cost percentage?", a: "28‚Äì32% is considered good for most casual dining and fast casual restaurants. Below 25% is excellent but risks quality. Above 38% is a warning sign unless you are a high-end operation with high check averages." },
+                  { q: "Why does the ideal percentage vary between restaurants?", a: "Average check size, labor model, and menu mix all determine what is sustainable. Fine dining can afford 33% food cost because check averages are high. Bars can run lower because beverages cost 15‚Äì20% to produce." },
+                  { q: "Is 30% food cost good?", a: "Yes, generally. At 30% food cost and 30% labor, prime cost is 60% ‚Äî right at the industry threshold. Profit depends on keeping rent, utilities, and other costs under 30% of revenue." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
                     <p className="text-white font-semibold mb-2">{q}</p>
@@ -288,7 +288,7 @@ Example:
             <section className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Check Your Current Food Cost %</h2>
               <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-                Enter your dish ingredients and see your actual food cost percentage ‚Ä?and whether you are hitting your ideal target.
+                Enter your dish ingredients and see your actual food cost percentage ‚Äî and whether you are hitting your ideal target.
               </p>
               <Link
                 href="/"
@@ -311,7 +311,7 @@ Example:
                   ["/prime-cost-calculator", "Prime Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">‚Ü?/span>{label}
+                    <span className="text-gray-600">‚Üí</span>{label}
                   </Link>
                 ))}
               </div>

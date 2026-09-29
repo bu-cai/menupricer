@@ -8,7 +8,7 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "What Does MP Mean on a Menu? Market Price Explained (2026)",
   description:
-    "MP on a menu means 'market price' â€?the dish is priced based on the current cost of the ingredient. Learn why restaurants use MP, what it means for diners, and when to ask.",
+    "MP on a menu means 'market price' â€” the dish is priced based on the current cost of the ingredient. Learn why restaurants use MP, what it means for diners, and when to ask.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/what-does-mp-mean-on-a-menu" },
   openGraph: {
     title: "What Does MP Mean on a Menu? Market Price Explained",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "MP on a menu means market price. Learn why restaurants list certain dishes this way, how much MP dishes typically cost, and whether you should ask before ordering.",
     url: "https://www.aimenupricer.com/blog/what-does-mp-mean-on-a-menu",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "What Does MP Mean on a Menu? Market Price Explained",
   description:
-    "MP on a restaurant menu stands for 'market price' â€?the item is priced based on the current wholesale cost of the ingredient. This guide explains why restaurants use MP and what diners should know.",
+    "MP on a restaurant menu stands for 'market price' â€” the item is priced based on the current wholesale cost of the ingredient. This guide explains why restaurants use MP and what diners should know.",
   url: "https://www.aimenupricer.com/blog/what-does-mp-mean-on-a-menu",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "Should I ask what the MP price is before ordering?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes â€?always ask your server for the current price of any MP item before ordering. MP dishes are often significantly more expensive than other menu items. There is no social awkwardness in asking; servers expect it and should have the current price ready.",
+        text: "Yes â€” always ask your server for the current price of any MP item before ordering. MP dishes are often significantly more expensive than other menu items. There is no social awkwardness in asking; servers expect it and should have the current price ready.",
       },
     },
     {
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "Why do restaurants use market price instead of listing a fixed price?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Restaurants use market price for ingredients whose wholesale cost changes frequently â€?often daily for fresh seafood or weekly for seasonal produce. Printing a fixed price on a menu that is reprinted monthly would either lock the restaurant into a loss when costs spike, or mislead customers when costs drop. MP lets the restaurant adjust the selling price in real time to maintain a consistent food cost percentage.",
+        text: "Restaurants use market price for ingredients whose wholesale cost changes frequently â€” often daily for fresh seafood or weekly for seasonal produce. Printing a fixed price on a menu that is reprinted monthly would either lock the restaurant into a loss when costs spike, or mislead customers when costs drop. MP lets the restaurant adjust the selling price in real time to maintain a consistent food cost percentage.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "How much does a market price dish typically cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "MP dishes are almost always among the most expensive items on the menu. Live lobster typically runs $45â€?5 depending on size and season. Whole fish MP dishes usually fall in the $35â€?5 range. Oysters priced MP are often $3â€? each. The price depends on the restaurant type, location, and current wholesale market.",
+        text: "MP dishes are almost always among the most expensive items on the menu. Live lobster typically runs $45â€“85 depending on size and season. Whole fish MP dishes usually fall in the $35â€“65 range. Oysters priced MP are often $3â€“5 each. The price depends on the restaurant type, location, and current wholesale market.",
       },
     },
   ],
@@ -109,7 +109,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
               What Does MP Mean on a Menu? Market Price Explained
             </h1>
             <p className="text-lg text-gray-400 leading-relaxed">
-              You see &ldquo;Lobster â€?MP&rdquo; on the menu. What does MP mean, how much should you expect to pay, and should you ask before ordering?
+              You see &ldquo;Lobster â€” MP&rdquo; on the menu. What does MP mean, how much should you expect to pay, and should you ask before ordering?
             </p>
           </header>
 
@@ -126,7 +126,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">What MP Means on a Menu</h2>
               <p>
-                MP stands for <strong className="text-white">market price</strong> â€?also written as &ldquo;mkt price&rdquo; or occasionally spelled out in full. It means the restaurant is not listing a fixed price for the dish because the cost of the ingredient fluctuates.
+                MP stands for <strong className="text-white">market price</strong> â€” also written as &ldquo;mkt price&rdquo; or occasionally spelled out in full. It means the restaurant is not listing a fixed price for the dish because the cost of the ingredient fluctuates.
               </p>
               <p className="mt-3">
                 Instead of printing one price that may be wrong within days, the kitchen sets the selling price based on what they paid for the ingredient that week (or even that day).
@@ -164,7 +164,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
                 </div>
               </div>
               <p className="mt-4">
-                Market price solves both problems. The kitchen adjusts the selling price daily or weekly to maintain a consistent food cost percentage â€?typically 30â€?8% for premium seafood â€?regardless of what the market does.
+                Market price solves both problems. The kitchen adjusts the selling price daily or weekly to maintain a consistent food cost percentage â€” typically 30â€“38% for premium seafood â€” regardless of what the market does.
               </p>
             </section>
 
@@ -182,12 +182,12 @@ export default function WhatDoesMpMeanOnAMenuPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Live Maine lobster", "$45â€?5", "Winter, holiday season"],
-                      ["Whole fish (branzino, sea bass)", "$35â€?5", "Winter, weather disruptions"],
-                      ["King crab legs (per lb)", "$55â€?0", "Off-season (late summer)"],
-                      ["Oysters (each)", "$3â€?", "Summer spawning season"],
-                      ["Dungeness crab", "$40â€?0", "Early season (Novâ€“Dec)"],
-                      ["Sea urchin (uni)", "$28â€?5", "Demand exceeds supply year-round"],
+                      ["Live Maine lobster", "$45â€“85", "Winter, holiday season"],
+                      ["Whole fish (branzino, sea bass)", "$35â€“65", "Winter, weather disruptions"],
+                      ["King crab legs (per lb)", "$55â€“90", "Off-season (late summer)"],
+                      ["Oysters (each)", "$3â€“5", "Summer spawning season"],
+                      ["Dungeness crab", "$40â€“70", "Early season (Novâ€“Dec)"],
+                      ["Sea urchin (uni)", "$28â€“55", "Demand exceeds supply year-round"],
                     ].map(([item, range, spike]) => (
                       <tr key={item}>
                         <td className="py-3 pr-4 text-white">{item}</td>
@@ -204,9 +204,9 @@ export default function WhatDoesMpMeanOnAMenuPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Should You Always Ask the Price Before Ordering MP?</h2>
               <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-5">
-                <p className="text-green-300 font-semibold mb-2">Yes â€?always ask.</p>
+                <p className="text-green-300 font-semibold mb-2">Yes â€” always ask.</p>
                 <p className="text-gray-300 text-sm">
-                  There is no social awkwardness in asking your server for the current price of any MP item. Servers expect this question and should have the price ready. MP dishes frequently cost 2â€?Ã— more than the next most expensive item on the menu, and you have every right to know the price before you commit.
+                  There is no social awkwardness in asking your server for the current price of any MP item. Servers expect this question and should have the price ready. MP dishes frequently cost 2â€“3Ã— more than the next most expensive item on the menu, and you have every right to know the price before you commit.
                 </p>
               </div>
               <p className="mt-4">If a server cannot tell you the current price or seems uncertain, ask them to check with the kitchen before you order.</p>
@@ -218,7 +218,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
               <div className="mt-4 space-y-3">
                 {[
                   ["1. Check the wholesale invoice", "The invoice from the fish market or supplier shows the cost per pound or per piece for that delivery."],
-                  ["2. Apply food cost formula", "Selling Price = Ingredient Cost Ã· Target Food Cost %. For a whole branzino at $12/lb with a 33% target: $12 Ã· 0.33 = $36.36 â†?price at $38."],
+                  ["2. Apply food cost formula", "Selling Price = Ingredient Cost Ã· Target Food Cost %. For a whole branzino at $12/lb with a 33% target: $12 Ã· 0.33 = $36.36 â†’ price at $38."],
                   ["3. Brief the staff", "Servers are told the current MP price each shift. This is part of the pre-service staff meeting."],
                   ["4. Adjust as needed", "If the daily delivery cost rises sharply mid-week, the price is updated for the next service."],
                 ].map(([step, desc]) => (
@@ -238,7 +238,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
                   { q: "What does MP mean on a menu?", a: "MP stands for market price. The dish is priced based on the current wholesale cost of the main ingredient, which changes with supply and demand. Common for lobster, whole fish, crab, and oysters." },
                   { q: "Should I ask what the MP price is before ordering?", a: "Yes, always. MP dishes are often the most expensive items on the menu. Servers expect the question and should have the current price ready." },
                   { q: "Why do restaurants use market price instead of a fixed price?", a: "Because the ingredient cost changes too frequently to print a reliable price. MP lets the kitchen adjust the selling price daily or weekly to maintain a consistent food cost percentage without reprinting menus." },
-                  { q: "How much does a market price dish typically cost?", a: "MP dishes vary widely. Live lobster typically runs $45â€?5, whole fish $35â€?5, king crab $55â€?0/lb, and oysters $3â€? each. Always ask your server for the current price." },
+                  { q: "How much does a market price dish typically cost?", a: "MP dishes vary widely. Live lobster typically runs $45â€“85, whole fish $35â€“65, king crab $55â€“90/lb, and oysters $3â€“5 each. Always ask your server for the current price." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
                     <p className="text-white font-semibold mb-2">{q}</p>
@@ -252,7 +252,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
             <section className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Set Your Own Market Price Correctly</h2>
               <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-                If you are a restaurant operator, MenuPricer helps you calculate the right selling price from your current ingredient cost â€?so your MP dishes always hit your target margin.
+                If you are a restaurant operator, MenuPricer helps you calculate the right selling price from your current ingredient cost â€” so your MP dishes always hit your target margin.
               </p>
               <Link
                 href="/"
@@ -275,7 +275,7 @@ export default function WhatDoesMpMeanOnAMenuPage() {
                   ["/blog/how-often-to-reprice-menu", "When to Reprice Your Menu"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">â†?/span>{label}
+                    <span className="text-gray-600">â†’</span>{label}
                   </Link>
                 ))}
               </div>

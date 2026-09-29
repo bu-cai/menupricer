@@ -8,15 +8,15 @@ const DATE_DISPLAY = "September 2026";
 export const metadata: Metadata = {
   title: "How to Price Food to Sell: 6 Steps That Maximize Orders (2026)",
   description:
-    "How to price food to sell â€?covering food cost targets, psychological pricing, competitive research, and strategies that maximize both volume and profit margin.",
+    "How to price food to sell â€” covering food cost targets, psychological pricing, competitive research, and strategies that maximize both volume and profit margin.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/how-to-price-food-to-sell" },
   openGraph: {
     title: "How to Price Food to Sell: 6 Steps That Maximize Orders",
     description:
-      "A 6-step guide to pricing food so it sells â€?from calculating your cost floor to using psychological pricing, competitive benchmarking, and menu placement.",
+      "A 6-step guide to pricing food so it sells â€” from calculating your cost floor to using psychological pricing, competitive benchmarking, and menu placement.",
     url: "https://www.aimenupricer.com/blog/how-to-price-food-to-sell",
     type: "article",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -25,7 +25,7 @@ const SCHEMA = {
   "@type": "BlogPosting",
   headline: "How to Price Food to Sell: 6 Steps That Maximize Orders",
   description:
-    "A practical guide to pricing food so it actually sells â€?balancing profitability and customer perception with a 6-step process for restaurants and food businesses.",
+    "A practical guide to pricing food so it actually sells â€” balancing profitability and customer perception with a 6-step process for restaurants and food businesses.",
   url: "https://www.aimenupricer.com/blog/how-to-price-food-to-sell",
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_PUBLISHED,
@@ -52,7 +52,7 @@ const FAQ_SCHEMA = {
       name: "How do you price food to sell well?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "To price food so it sells: (1) Calculate your ingredient cost floor using the formula Selling Price = Food Cost Ã· Target Food Cost %. (2) Benchmark 3â€? local competitors. (3) Apply psychological pricing like $9.95 instead of $10. (4) Offer a value anchor â€?a slightly higher-priced item that makes others look affordable. (5) Place best-selling and high-margin items prominently. (6) Test with specials before committing to permanent pricing.",
+        text: "To price food so it sells: (1) Calculate your ingredient cost floor using the formula Selling Price = Food Cost Ã· Target Food Cost %. (2) Benchmark 3â€“5 local competitors. (3) Apply psychological pricing like $9.95 instead of $10. (4) Offer a value anchor â€” a slightly higher-priced item that makes others look affordable. (5) Place best-selling and high-margin items prominently. (6) Test with specials before committing to permanent pricing.",
       },
     },
     {
@@ -60,7 +60,7 @@ const FAQ_SCHEMA = {
       name: "What is the best way to price food for a restaurant?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The most reliable method is cost-plus pricing: calculate your food cost per dish, divide by your target food cost % (28â€?5% for most restaurants), then adjust upward with psychological pricing and competitive benchmarking. This ensures every item is profitable while staying competitive.",
+        text: "The most reliable method is cost-plus pricing: calculate your food cost per dish, divide by your target food cost % (28â€“35% for most restaurants), then adjust upward with psychological pricing and competitive benchmarking. This ensures every item is profitable while staying competitive.",
       },
     },
     {
@@ -68,7 +68,7 @@ const FAQ_SCHEMA = {
       name: "What food cost percentage should I target to sell at a competitive price?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Target 28â€?5% food cost for most restaurant types. This gives you enough room to price competitively while covering labor, rent, and overhead. If your food cost target is 30%, your selling price should be at least 3.33Ã— your ingredient cost.",
+        text: "Target 28â€“35% food cost for most restaurant types. This gives you enough room to price competitively while covering labor, rent, and overhead. If your food cost target is 30%, your selling price should be at least 3.33Ã— your ingredient cost.",
       },
     },
     {
@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "Why isn't my food selling even though my prices seem fair?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Common reasons food does not sell despite fair pricing: (1) Menu placement â€?items buried in the middle of a category get fewer orders; move your best items to the top or add a box around them. (2) No value anchor â€?without a higher-priced item nearby, mid-priced items feel expensive. (3) Weak menu descriptions â€?describing taste and texture increases orders by up to 27%. (4) Inconsistent quality â€?price is rarely the reason for low sales if quality varies.",
+        text: "Common reasons food does not sell despite fair pricing: (1) Menu placement â€” items buried in the middle of a category get fewer orders; move your best items to the top or add a box around them. (2) No value anchor â€” without a higher-priced item nearby, mid-priced items feel expensive. (3) Weak menu descriptions â€” describing taste and texture increases orders by up to 27%. (4) Inconsistent quality â€” price is rarely the reason for low sales if quality varies.",
       },
     },
   ],
@@ -87,33 +87,33 @@ const STEPS = [
     n: 1,
     title: "Calculate your cost floor first",
     subtitle: "Never price below this number",
-    body: "Before anything else, calculate your ingredient cost per portion. This is the absolute floor â€?pricing below it means selling at a loss.",
+    body: "Before anything else, calculate your ingredient cost per portion. This is the absolute floor â€” pricing below it means selling at a loss.",
     detail: `Selling Price = Food Cost Ã· Target Food Cost %
 
 Example:
   Pasta dish costs $3.80 to make
   Target 30% food cost
   Minimum price = $3.80 Ã· 0.30 = $12.67
-  â†?Price at $13.95 or $14.50`,
+  â†’ Price at $13.95 or $14.50`,
     tip: "Price above the floor, never at it. You need room for waste, portion variance, and price promotions.",
   },
   {
     n: 2,
     title: "Research what your market will actually pay",
     subtitle: "Competitive benchmarking",
-    body: "Visit or check menus from 3â€? competitors that serve the same customer type. What do they charge for comparable dishes? This tells you the price range customers in your area expect.",
+    body: "Visit or check menus from 3â€“5 competitors that serve the same customer type. What do they charge for comparable dishes? This tells you the price range customers in your area expect.",
     detail: `Research questions:
-  â€?What is the local median price for this dish?
-  â€?Are you above or below that median â€?intentionally?
-  â€?What is the highest price this dish type commands locally?
-  â€?Are there any outliers (very low or very high) and why?`,
-    tip: "Price 10â€?5% above the median if you offer better quality or experience. Match the median if you compete on value.",
+  â€¢ What is the local median price for this dish?
+  â€¢ Are you above or below that median â€” intentionally?
+  â€¢ What is the highest price this dish type commands locally?
+  â€¢ Are there any outliers (very low or very high) and why?`,
+    tip: "Price 10â€“15% above the median if you offer better quality or experience. Match the median if you compete on value.",
   },
   {
     n: 3,
     title: "Apply psychological pricing",
     subtitle: "Small tweaks, real impact",
-    body: "Psychological pricing changes how customers perceive the price â€?not the actual value. Two key techniques work for food:",
+    body: "Psychological pricing changes how customers perceive the price â€” not the actual value. Two key techniques work for food:",
     detail: `Charm pricing (casual dining):
   $13.95 feels noticeably cheaper than $14.00
   $9.99 feels much cheaper than $10.00
@@ -131,13 +131,13 @@ Removing dollar signs:
     n: 4,
     title: "Create a value anchor",
     subtitle: "Make your real target price look affordable",
-    body: "An anchor is a high-priced item whose job is to make everything else look reasonable. You are not trying to sell the anchor â€?you are using it to reframe customer perception.",
+    body: "An anchor is a high-priced item whose job is to make everything else look reasonable. You are not trying to sell the anchor â€” you are using it to reframe customer perception.",
     detail: `Without anchor:
-  Steak $32 â†?feels expensive
+  Steak $32 â†’ feels expensive
 
 With anchor:
   Wagyu Steak $58
-  Steak $32 â†?now feels like good value
+  Steak $32 â†’ now feels like good value
 
 The anchor shifts the mental reference point.
 Customers compare prices to each other on the menu,
@@ -150,14 +150,14 @@ not to an abstract idea of 'fair.'`,
     subtitle: "Menu engineering 101",
     body: "Where a dish appears on the menu is as important as its price. The first item in any category gets the most orders. The upper-right of a two-column menu is the 'golden triangle' that eyes land on first.",
     detail: `High-sell placement:
-  â€?First item in a category
-  â€?Items in a box or with a photo
-  â€?Items marked 'Chef's Pick' or 'Most Popular'
+  â€¢ First item in a category
+  â€¢ Items in a box or with a photo
+  â€¢ Items marked 'Chef's Pick' or 'Most Popular'
 
 Low-sell placement:
-  â€?Middle of a long list
-  â€?Items without descriptions
-  â€?Items on the back page or a separate insert
+  â€¢ Middle of a long list
+  â€¢ Items without descriptions
+  â€¢ Items on the back page or a separate insert
 
 Move your highest-margin dishes to high-sell positions.`,
     tip: "Test placement changes before a full menu reprint. Add a 'staff recommend' verbal or table tent for two weeks and measure the lift.",
@@ -168,11 +168,11 @@ Move your highest-margin dishes to high-sell positions.`,
     subtitle: "Use specials and limited offers",
     body: "If you are unsure whether customers will pay your target price, test it as a special before adding it permanently to the menu. A two-week special gives you real sales data with no commitment.",
     detail: `Testing approach:
-  Week 1â€?: Run at target price as a special
+  Week 1â€“2: Run at target price as a special
   Measure: orders per service, send-backs, feedback
 
   If it sells well: add to the permanent menu
-  If price resistance: reduce by $1â€? and retest
+  If price resistance: reduce by $1â€“2 and retest
   If it flies: consider whether you priced too low`,
     tip: "Track your specials data. The sell-through rate of a special at different price points is the most reliable pricing research you can do.",
   },
@@ -222,7 +222,7 @@ export default function HowToPriceFoodToSellPage() {
                 <p className="text-gray-400">Good margin per dish but volume drops. Total profit still falls.</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mt-3">The 6 steps below find the sweet spot â€?profitable <em>and</em> attractive to customers.</p>
+            <p className="text-gray-400 text-sm mt-3">The 6 steps below find the sweet spot â€” profitable <em>and</em> attractive to customers.</p>
           </div>
 
           <div className="space-y-6 text-gray-300 leading-relaxed">
@@ -258,7 +258,7 @@ export default function HowToPriceFoodToSellPage() {
                   ["No value anchor", "Without a more expensive item nearby, mid-range prices feel expensive. Add a premium option above your target item."],
                   ["Weak description", "A dish described as 'Grilled Salmon, lemon butter' will outsell 'Salmon' every time. Sensory descriptions increase orders."],
                   ["Inconsistent quality", "If customers have had a bad experience, they stop ordering the item regardless of price. Check execution consistency first."],
-                  ["No social proof", "'Chef's Favourite', 'Most Popular', or staff recommendations can lift a slow-seller 20â€?0% with zero price change."],
+                  ["No social proof", "'Chef's Favourite', 'Most Popular', or staff recommendations can lift a slow-seller 20â€“40% with zero price change."],
                 ].map(([issue, desc]) => (
                   <div key={issue} className="flex gap-3 bg-gray-900 border border-gray-800 rounded-lg p-4">
                     <span className="text-orange-400 font-bold text-sm mt-0.5 flex-shrink-0">Â·</span>
@@ -277,8 +277,8 @@ export default function HowToPriceFoodToSellPage() {
               <div className="space-y-4">
                 {[
                   { q: "How do you price food to sell well?", a: "Calculate your cost floor (Food Cost Ã· Target FC%), benchmark competitors, apply psychological pricing, create a value anchor, place high-margin items prominently, and test with specials before committing." },
-                  { q: "What is the best way to price food for a restaurant?", a: "Cost-plus pricing: calculate food cost per dish, divide by target FC% (28â€?5%), then adjust using psychological pricing and competitive benchmarking." },
-                  { q: "What food cost percentage should I target to stay competitive?", a: "28â€?5% for most restaurants. This gives you room to price competitively while covering overhead. At 30% target, your price should be at least 3.33Ã— your ingredient cost." },
+                  { q: "What is the best way to price food for a restaurant?", a: "Cost-plus pricing: calculate food cost per dish, divide by target FC% (28â€“35%), then adjust using psychological pricing and competitive benchmarking." },
+                  { q: "What food cost percentage should I target to stay competitive?", a: "28â€“35% for most restaurants. This gives you room to price competitively while covering overhead. At 30% target, your price should be at least 3.33Ã— your ingredient cost." },
                   { q: "Why isn't my food selling even though prices seem fair?", a: "Usually not the price. Check menu placement first (top of category sells more), then add a value anchor, improve dish descriptions, and check execution consistency." },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -293,7 +293,7 @@ export default function HowToPriceFoodToSellPage() {
             <section className="bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Price Every Dish in Seconds</h2>
               <p className="text-gray-300 mb-6 max-w-lg mx-auto">
-                MenuPricer calculates your cost floor, applies AI pricing analysis, and suggests an optimal selling price â€?covering steps 1 and 2 in under a minute.
+                MenuPricer calculates your cost floor, applies AI pricing analysis, and suggests an optimal selling price â€” covering steps 1 and 2 in under a minute.
               </p>
               <Link
                 href="/"
@@ -316,7 +316,7 @@ export default function HowToPriceFoodToSellPage() {
                   ["/food-cost-calculator", "Free Food Cost Calculator"],
                 ].map(([href, label]) => (
                   <Link key={href} href={href} className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
-                    <span className="text-gray-600">â†?/span>{label}
+                    <span className="text-gray-600">â†’</span>{label}
                   </Link>
                 ))}
               </div>

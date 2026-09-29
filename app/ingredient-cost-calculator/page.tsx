@@ -6,7 +6,7 @@ import IngredientCostCalculatorClient from "./IngredientCostCalculatorClient";
 export const metadata: Metadata = {
   title: "Free Ingredient Cost Calculator for Restaurants (2026)",
   description:
-    "Calculate the total ingredient cost for any recipe. Enter each ingredient, quantity, and price â€?get total cost per portion, suggested menu price, and gross margin instantly.",
+    "Calculate the total ingredient cost for any recipe. Enter each ingredient, quantity, and price â€” get total cost per portion, suggested menu price, and gross margin instantly.",
   keywords: [
     "ingredient cost calculator",
     "ingredient pricing calculator",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Enter your recipe ingredients and get total cost per portion, suggested menu price, and gross margin in seconds.",
     url: "https://www.aimenupricer.com/ingredient-cost-calculator",
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€?AI-powered menu pricing for restaurants" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MenuPricer â€” AI-powered menu pricing for restaurants" }],
   },
 };
 
@@ -69,7 +69,7 @@ const FAQ_SCHEMA = {
       name: "What food cost percentage should I target?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most restaurants target 28â€?5% food cost. Fast casual aims for 25â€?0%. Fine dining allows up to 38%. Set your target based on your restaurant type and then divide your ingredient cost by that percentage to find the minimum selling price.",
+        text: "Most restaurants target 28â€“35% food cost. Fast casual aims for 25â€“30%. Fine dining allows up to 38%. Set your target based on your restaurant type and then divide your ingredient cost by that percentage to find the minimum selling price.",
       },
     },
     {
@@ -77,7 +77,7 @@ const FAQ_SCHEMA = {
       name: "Does this calculator include labor and overhead?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No â€?this calculator covers ingredient cost only. Labor (typically 25â€?5% of revenue) and overhead are managed separately. The suggested menu price is based purely on hitting your ingredient food cost percentage target.",
+        text: "No â€” this calculator covers ingredient cost only. Labor (typically 25â€“35% of revenue) and overhead are managed separately. The suggested menu price is based purely on hitting your ingredient food cost percentage target.",
       },
     },
   ],
@@ -183,12 +183,12 @@ Suggested menu price = Total cost Ã· Target food cost %`}</pre>
                   </thead>
                   <tbody className="divide-y divide-gray-800">
                     {[
-                      ["Fast food / QSR", "25â€?0%", "28%"],
-                      ["Fast casual", "28â€?2%", "30%"],
-                      ["Casual dining", "28â€?5%", "32%"],
-                      ["Fine dining", "30â€?8%", "33%"],
-                      ["Bakery / cafÃ©", "28â€?5%", "32%"],
-                      ["Catering / events", "25â€?5%", "30%"],
+                      ["Fast food / QSR", "25â€“30%", "28%"],
+                      ["Fast casual", "28â€“32%", "30%"],
+                      ["Casual dining", "28â€“35%", "32%"],
+                      ["Fine dining", "30â€“38%", "33%"],
+                      ["Bakery / cafÃ©", "28â€“35%", "32%"],
+                      ["Catering / events", "25â€“35%", "30%"],
                     ].map(([type, range, typical]) => (
                       <tr key={type}>
                         <td className="py-3 pr-6 text-white">{type}</td>
@@ -216,11 +216,11 @@ Suggested menu price = Total cost Ã· Target food cost %`}</pre>
                   },
                   {
                     q: "What food cost percentage should I target?",
-                    a: "Most restaurants target 28â€?5%. Fast casual 25â€?0%. Fine dining up to 38%. Divide your ingredient cost by that percentage to find the minimum menu price.",
+                    a: "Most restaurants target 28â€“35%. Fast casual 25â€“30%. Fine dining up to 38%. Divide your ingredient cost by that percentage to find the minimum menu price.",
                   },
                   {
                     q: "Does this calculator include labor?",
-                    a: "No â€?ingredient cost only. Labor (25â€?5%) and overhead are tracked separately as percentages of total revenue.",
+                    a: "No â€” ingredient cost only. Labor (25â€“35%) and overhead are tracked separately as percentages of total revenue.",
                   },
                 ].map(({ q, a }) => (
                   <div key={q} className="bg-gray-900 border border-gray-800 rounded-xl p-5">
@@ -248,7 +248,7 @@ Suggested menu price = Total cost Ã· Target food cost %`}</pre>
                     href={href}
                     className="flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm transition-colors bg-gray-900 border border-gray-800 rounded-lg px-4 py-3"
                   >
-                    <span className="text-gray-600">â†?/span>
+                    <span className="text-gray-600">â†’</span>
                     {label}
                   </Link>
                 ))}
