@@ -4,6 +4,8 @@ export interface DishPriceData {
   category: string;
   foodCostRange: string;
   typicalPriceRange: string;
+  metaTitle?: string;
+  metaDescription?: string;
   costBreakdown: { ingredient: string; note: string; costShare: string }[];
   worked: {
     items: { ingredient: string; amount: string; cost: number }[];
@@ -827,6 +829,8 @@ export const DISH_DATA: Record<string, DishPriceData> = {
     category: "Café / Beverage",
     foodCostRange: "22–30%",
     typicalPriceRange: "$6–$9",
+    metaTitle: "How Much Does a Smoothie Cost? ($6–$9 Menu Price + Ingredient Breakdown)",
+    metaDescription: "Smoothies typically cost $6–$9 at cafés and juice bars. See the full ingredient breakdown — fruit, base, add-ins, packaging — and how restaurants calculate the right price.",
     costBreakdown: [
       { ingredient: "Fruit (fresh or frozen)", note: "The main cost driver, varies by seasonality and whether fresh or frozen is used", costShare: "35–50%" },
       { ingredient: "Liquid base (juice, milk, yogurt)", note: "Moderate cost, protein or specialty milk add-ins raise it", costShare: "20–30%" },
@@ -1129,6 +1133,8 @@ export const DISH_DATA: Record<string, DishPriceData> = {
     category: "Café / Dessert",
     foodCostRange: "18–26%",
     typicalPriceRange: "$6–$9",
+    metaTitle: "How Much Does a Milkshake Cost? ($6–$9 Menu Price + Cost Breakdown)",
+    metaDescription: "Milkshakes typically cost $6–$9 at restaurants and diners. Full ingredient breakdown — ice cream, mix-ins, packaging — and how to price specialty shake variations.",
     costBreakdown: [
       { ingredient: "Ice cream base", note: "The dominant cost, scales with quality and quantity used", costShare: "50–60%" },
       { ingredient: "Milk", note: "Low individual cost", costShare: "8–12%" },

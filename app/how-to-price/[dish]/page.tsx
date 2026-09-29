@@ -16,9 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = DISH_DATA[dish];
   if (!data) return {};
   const base = "https://www.aimenupricer.com";
+  const defaultTitle = `How to Price ${data.name} [2026]: ${data.typicalPriceRange} Menu Price Guide`;
+  const defaultDescription = `${data.name} typically sells for ${data.typicalPriceRange} on restaurant menus, with a food cost of ${data.foodCostRange}. Full ingredient cost breakdown, worked pricing example, and the top mistakes that erode your margins.`;
   return {
-    title: `How to Price ${data.name} [2026]: ${data.typicalPriceRange} Menu Price Guide`,
-    description: `${data.name} typically sells for ${data.typicalPriceRange} on restaurant menus, with a food cost of ${data.foodCostRange}. Full ingredient cost breakdown, worked pricing example, and the top mistakes that erode your margins.`,
+    title: data.metaTitle ?? defaultTitle,
+    description: data.metaDescription ?? defaultDescription,
     keywords: [
       `how to price ${data.name.toLowerCase()}`,
       `${data.name.toLowerCase()} food cost`,

@@ -3,8 +3,8 @@ import Link from "next/link";
 import LogoIcon from "@/components/LogoIcon";
 
 export const metadata: Metadata = {
-  title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
-  description: "Coffee shop pricing strategy — how to price espresso drinks, cold brew, food items, and specialty beverages. Includes food cost benchmarks, markup formula, and sample price list.",
+  title: "Coffee Shop Menu Pricing: Latte $4–$7, Cold Brew $5–$8 (2026 Guide)",
+  description: "Coffee shop drinks typically cost $3–$8 on menus. Pricing benchmarks for espresso, lattes, cold brew, and specialty beverages — plus the formula operators use to price every drink for profit.",
   alternates: { canonical: "https://www.aimenupricer.com/blog/coffee-shop-menu-pricing" },
   openGraph: {
     title: "Coffee Shop Menu Pricing: How to Price Every Drink for Profit (2026)",
