@@ -107,6 +107,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/restaurant-cost-breakdown`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     // New calculator page — batch 14
     { url: `${base}/ingredient-cost-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    // New blog pages — batch 15
+    { url: `${base}/blog/ideal-food-cost-percentage`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/restaurant-menu-pricing-strategies`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/menu-pricing-formula`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog/food-cost-control`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     // Free tools hub & glossary
     { url: `${base}/tools`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/glossary`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
